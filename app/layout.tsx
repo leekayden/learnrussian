@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
   title: "learnrussian — русский шаг за шагом",
   description:
-    "A structured Russian course from A2 to C1: grammar, vocabulary with spaced repetition, and daily practice.",
+    "A structured Russian course from A2 to C2: grammar, vocabulary with spaced repetition, and daily practice.",
 };
 
 export default function RootLayout({
