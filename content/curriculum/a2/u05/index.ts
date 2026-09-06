@@ -12,7 +12,7 @@ export const u05: Unit = {
       id: "a2-u05-l1",
       title: "Step 1: с + instrumental — with someone",
       topicIds: ["a2-u05-instrumental-sg"],
-      vocab: ["жена", "муж", "друг", "подруга", "Таня", "брат", "сестра", "друзья", "вместе", "разговаривать"],
+      vocab: ["жена", "муж", "друг", "подруга", "сестра", "брат", "вместе", "разговаривать", "знакомый", "коллега"],
       grammar: [
         {
           title: "с + instrumental = company",
@@ -147,7 +147,7 @@ Present-tense plain predicate stays nominative: Он врач.`,
       id: "a2-u05-l4",
       title: "Step 4: свой — one's own",
       topicIds: ["a2-u05-instrumental-sg"],
-      vocab: ["свой", "свои", "своих", "работа", "семья", "дом", "машина", "друг", "мнение", "любить"],
+      vocab: ["свой", "работа", "семья", "дом", "машина", "друг", "мнение", "любить", "хобби", "каждый"],
       grammar: [
         {
           title: "The subject owns it → свой",
