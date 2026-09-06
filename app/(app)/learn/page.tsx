@@ -44,7 +44,7 @@ export default async function LearnPage() {
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Learn</h1>
           <p className="text-muted-foreground">
-            Grammar-first units from A2 to C1. Small lessons, steady progress.
+            Grammar-first units from A2 to C2. Small lessons, steady progress.
           </p>
         </div>
         {due + fresh > 0 ? (
