@@ -1,7 +1,7 @@
 // Curriculum content types. Content files under content/curriculum are
 // statically imported and typechecked against these.
 
-export const LEVELS = ["a2", "b1", "b2", "c1"] as const;
+export const LEVELS = ["a2", "b1", "b2", "c1", "c2"] as const;
 export type Level = (typeof LEVELS)[number];
 
 export const LEVEL_LABELS: Record<Level, string> = {
@@ -9,6 +9,7 @@ export const LEVEL_LABELS: Record<Level, string> = {
   b1: "B1",
   b2: "B2",
   c1: "C1",
+  c2: "C2",
 };
 
 export const LEVEL_DESCRIPTIONS: Record<Level, string> = {
@@ -16,6 +17,7 @@ export const LEVEL_DESCRIPTIONS: Record<Level, string> = {
   b1: "Plurals everywhere, participles, verbal adverbs, complex sentences.",
   b2: "Aspect semantics, impersonal constructions, indirect speech, style.",
   c1: "Advanced syntax, word formation, registers, idiomatic grammar.",
+  c2: "Near-native mastery: case synonymy, aspect stylistics, particles, phraseology.",
 };
 
 /** One self-contained explanation block. Notes must be complete enough to

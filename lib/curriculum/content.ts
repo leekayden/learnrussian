@@ -6,8 +6,9 @@ import { a2 } from "@/content/curriculum/a2";
 import { b1 } from "@/content/curriculum/b1";
 import { b2 } from "@/content/curriculum/b2";
 import { c1 } from "@/content/curriculum/c1";
+import { c2 } from "@/content/curriculum/c2";
 
-export const CURRICULUM: Record<Level, LevelCurriculum> = { a2, b1, b2, c1 };
+export const CURRICULUM: Record<Level, LevelCurriculum> = { a2, b1, b2, c1, c2 };
 
 export function getLevel(level: Level): LevelCurriculum {
   return CURRICULUM[level];

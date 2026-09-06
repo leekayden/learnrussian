@@ -1,0 +1,108 @@
+import type { Unit } from "@/lib/curriculum/types";
+
+/** C2 · Unit 7 — Particles and discourse markers. */
+export const u07: Unit = {
+  id: "c2-u07",
+  level: "c2",
+  number: 7,
+  title: "Particles and the music of discourse",
+  topicIds: ["c2-u07-particles-discourse"],
+  lessons: [
+    {
+      id: "c2-u07-l1",
+      title: "же, ли, ведь, уж in live speech",
+      topicIds: ["c2-u07-particles-discourse"],
+      vocab: ["частица", "удивление", "напоминание", "сомнение", "настаивать", "подчёркивать", "разговор", "тон", "смысл", "интонация"],
+      grammar: [
+        {
+          title: "Tiny words, huge differences",
+          body: `- **же** (after the word it targets): reminder/contrast — Он же́ знал! (He DID know!); the same же also = the same: тот же́.
+- **ли** (2nd word of the clause): embedded yes/no question — Зна́ет ли он об э́том? / as emphasis: Что ж, посмо́трим.
+- **ведь** — you know, after all: Ведь я предупрежда́л!
+- **уж / ну** — intensity or resignation: Уж он-то зна́ет. Ну и ну!`,
+          table: {
+            headers: ["Particle", "Job", "Example"],
+            rows: [
+              ["же", "reminder / contrast", "Я же говорил"],
+              ["ли", "embedded question / doubt", "Знает ли он"],
+              ["ведь", "appeal to shared knowledge", "Ведь это ясно"],
+              ["уж", "intensifier", "Уж он-то знает"],
+            ],
+          },
+        },
+      ],
+      exercises: [
+        {
+          id: "c2-u07-l1-e1",
+          type: "single",
+          text: "«Он же знал» expresses:",
+          options: [{ id: "a", label: "reminder/contrast: he DID know" }, { id: "b", label: "a polite request" }], answer: "a"
+        },
+        {
+          id: "c2-u07-l1-e2",
+          type: "single",
+          text: "«Скажи́те, ___ будет встре́ча» (embedded question particle):",
+          options: [{ id: "a", label: "ли" }, { id: "b", label: "же" }], answer: "a"
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "c2-u07-l2",
+      title: "Reported-speech particles: мол, де, -с",
+      topicIds: ["c2-u07-particles-discourse"],
+      vocab: ["мол", "де", "дескать", "свидетель", "отрицать", "жалоба", "шутка", "прибаутка", "чиновник", "фольклор"],
+      grammar: [
+        {
+          title: "Distance markers",
+          body: `- **мол** — he/she says (neutral distancing): Он мол знал заранее. — He says he knew in advance.
+- **де** — alleged (older, bureaucratic): Он, де, при чём? — He claims he's not involved.
+- **дескать** — so-called, supposedly (dismissive): Де'скал всё про'сто.
+- **-с** (attached to verbs, pre-revolutionary clerkdom): Нет-с. — literary flavour only (Chekhov-era).`,
+          examples: [
+            { ru: "Он, мол, ничего' не зна'л.", en: "He says he knew nothing." },
+            { ru: "Де'скал всё про'сто, а по факту — нет.", en: "Supposedly it's all simple, but in fact it isn't." },
+          ],
+          tip: "мол/де/дескать let you quote without vouching — journalists and gossipers live on them.",
+        },
+      ],
+      exercises: [
+        {
+          id: "c2-u07-l2-e1",
+          type: "single",
+          text: "Which particle is dismissive about the reported claim?",
+          options: [{ id: "a", label: "дескать" }, { id: "b", label: "ведь" }], answer: "a"
+        },
+        {
+          id: "c2-u07-l2-e2",
+          type: "true-false",
+          text: "«мол» marks the speaker's own certainty.",
+          answer: false,
+          explanation: "It attributes the claim to someone else.",
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+  ],
+
+  test: [
+    {
+      id: "c2-u07-test-1",
+      type: "single",
+      text: "Reminder/contrast particle:",
+      options: [{ id: "a", label: "же" }, { id: "b", label: "ли" }], answer: "a"
+    },
+    {
+      id: "c2-u07-test-2",
+      type: "single",
+      text: "Embedded yes/no question marker:",
+      options: [{ id: "a", label: "ли" }, { id: "b", label: "мол" }], answer: "a"
+    },
+    {
+      id: "c2-u07-test-3",
+      type: "true-false",
+      text: "«дескать» signals the speaker vouches for the claim.",
+      answer: false,
+    },
+  ],
+};

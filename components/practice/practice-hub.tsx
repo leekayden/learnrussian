@@ -80,7 +80,7 @@ export function PracticeHub({
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap gap-2">
-        {["A2", "B1", "B2"].map((lv) => (
+        {["A2", "B1", "B2", "C1", "C2"].map((lv) => (
           <Button
             key={lv}
             variant={level === lv ? "default" : "outline"}

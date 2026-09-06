@@ -109,7 +109,7 @@ export type SubmitResult = {
 
 /** Grade a lesson attempt, persist progress/XP/mastery, and create SRS cards. */
 export async function submitLesson(
-  level: "a2" | "b1" | "b2" | "c1",
+  level: "a2" | "b1" | "b2" | "c1" | "c2",
   unitNumber: number,
   lessonNumber: number,
   exercises: Exercise[],
