@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 4 — Dative singular: giving, liking, age. */
+/** A2 · Unit 4 — Dative singular, one step at a time. */
 export const u04: Unit = {
   id: "a2-u04",
   level: "a2",
@@ -10,272 +10,266 @@ export const u04: Unit = {
   lessons: [
     {
       id: "a2-u04-l1",
-      title: "Dative endings + the dative pronouns",
+      title: "Step 1: dative endings",
       topicIds: ["a2-u04-dative-sg"],
-      vocab: [
-        "помогать",
-        "звонить",
-        "отвечать",
-        "сказать",
-        "показывать",
-        "объяснять",
-        "друг",
-        "врач",
-        "учитель",
-        "родитель",
-      ],
+      vocab: ["помогать", "звонить", "отвечать", "друг", "врач", "учитель", "сестра", "мать", "Таня", "брат"],
       grammar: [
         {
-          title: "The dative = 'to / for' someone",
-          body: `The **dative** marks the person (or thing) something is done *to* or *for*. Verbs like помогать (to help), звонить (to call), отвечать (to answer) govern it:
-Endings (singular):
-- masculine/neuter consonant → **-у** (друг → дру́гу, врач → врачу́)
-- **-й / -ь** → **-ю** (музе́й → музе́ю, учи́тель → учи́телю)
-- feminine **-а** → **-е** (сестра́ → сестре́)
-- feminine **-я / -ь** → **-е** (Та́ня → Та́не, ма́ть → ма́тери)`,
+          title: "To whom? — dative endings",
+          body: `Verbs like помога́ть (help), звони́ть (call), отвеча́ть (answer) put the person in the **dative**:
+- masculine/neuter → **-у** (дру́гу, врачу́); **-й/-ь** → **-ю** (учи́телю)
+- feminine **-а → -е** (сестре́), **-я/-ь → -е** (Та́не, ма́тери)`,
           table: {
-            headers: ["Nominative", "Dative", "Example"],
+            headers: ["Nominative", "Dative"],
             rows: [
-              ["друг", "другу", "Я звоню другу"],
-              ["учитель", "учителю", "Я отвечаю учителю"],
-              ["сестра", "сестре", "Я помогаю сестре"],
-              ["мать", "матери", "Я помогаю матери"],
+              ["друг", "другу"],
+              ["учитель", "учителю"],
+              ["сестра", "сестре"],
+              ["мать", "матери"],
             ],
           },
-          examples: [
-            { ru: "Я часто звоню' дру'гу.", en: "I often call my friend." },
-            { ru: "Она' помога'ет ма'тери.", en: "She helps (her) mother." },
-          ],
-          tip: "Dative pronouns: мне, тебе, ему́, ей, нам, вам, им. Note он → ему́ (н → м). «Помоги мне!» = Help me!",
-        },
-        {
-          title: "к = towards someone",
-          body: `The preposition **к** (towards, to a person) takes the dative:
-- Я иду́ **к врачу́**. — I'm going to the doctor('s).
-- Приходи́ **к нам**! — Come over to our place!
-Distinguish: **в + accusative** for buildings/places (в шко́лу), **к + dative** for people (к дру́гу).`,
-          examples: [
-            { ru: "Мы е'дем к роди'телям.", en: "We are going to (our) parents." },
-          ],
         },
       ],
       exercises: [
         {
           id: "a2-u04-l1-e1",
           type: "single",
-          text: "Я звоню́ ___. (my sister)",
-          options: [
-            { id: "a", label: "сестра" },
-            { id: "b", label: "сестре" },
-            { id: "c", label: "сестру" },
-          ],
-          answer: "b",
+          text: "Я звоню́ ___. (sister)",
+          options: [{ id: "a", label: "сестре" }, { id: "b", label: "сестру" }], answer: "a",
         },
         {
           id: "a2-u04-l1-e2",
           type: "single",
-          text: "Она́ помога́ет ___. (the teacher)",
-          options: [
-            { id: "a", label: "учитель" },
-            { id: "b", label: "учителю" },
-            { id: "c", label: "учителя" },
-          ],
-          answer: "b",
+          text: "Она́ помога́ет ___. (teacher)",
+          options: [{ id: "a", label: "учителю" }, { id: "b", label: "учителя" }], answer: "a",
         },
         {
           id: "a2-u04-l1-e3",
           type: "fill-blank",
-          text: "Помоги́ {{blank}}, пожа́луйста! *(Help me, please!)*",
-          answers: ["мне"],
-        },
-        {
-          id: "a2-u04-l1-e4",
-          type: "fill-blank",
-          text: "Я иду́ {{blank}} врачу́. *(I am going to the doctor.)*",
-          answers: ["к"],
-        },
-        {
-          id: "a2-u04-l1-e5",
-          type: "true-false",
-          text: "«Он звони́т ей» means “he is calling her”.",
-          answer: true,
+          text: "Я отвеча́ю ___. *(the doctor)*",
+          answers: ["врачу"],
         },
       ],
-      drills: [
-        { kind: "noun-case", count: 4, cases: ["dat"] },
-        { kind: "cloze", count: 2 },
-      ],
+      drills: [{ kind: "noun-case", count: 4, cases: ["dat"] }],
     },
     {
       id: "a2-u04-l2",
-      title: "Age, liking, and impersonal need",
+      title: "Step 2: dative pronouns + к",
       topicIds: ["a2-u04-dative-sg"],
-      vocab: [
-        "нравиться",
-        "нужно",
-        "надо",
-        "можно",
-        "нельзя",
-        "пора",
-        "год",
-        "скучать",
-        "казаться",
-      ],
+      vocab: ["мне", "тебе", "ему", "ей", "нам", "вам", "им", "идти", "приходить", "звонить"],
       grammar: [
         {
-          title: "Age: мне 20 лет",
-          body: `Age uses the dative person + лет/год:
-- Мне **два́дцать лет**. — I am 20 (literally: to me are 20 years).
-- Ей **пять лет**. — She is five.
-- ONE year → год: Ма́льчику **оди́н год**. Numbers 2–4 → го́да (unit 11 covers this).`,
+          title: "мне, тебе, ему, ей, нам, вам, им",
+          body: `Dative pronouns: **мне, тебе́, ему́, ей, нам, вам, им** (note н→м: он → ему́).
+Preposition **к** (to a person) + dative: **к врачу́**, **к нам**, **к дру́гу**.
+vs **в + accusative** for places: в шко́лу.`,
           examples: [
-            { ru: "Ско'лько тебе' лет? — Мне восемна'дцать.", en: "How old are you? — I'm eighteen." },
-          ],
-        },
-        {
-          title: "нравиться: to be liked",
-          body: `Russian "to like" works backwards: the liker is **dative**, the liked thing is the subject:
-- **Мне нра́вится** э́тот го́род. — I like this city (the city is pleasing to me).
-- **Ей нра́вятся** я́блоки. — She likes apples (plural → нра́вятся).
-нра́вится + singular thing / нра́вятся + plural thing.`,
-          examples: [
-            { ru: "Тебе' нра'вится ру'сская му'зыка?", en: "Do you like Russian music?" },
-          ],
-          tip: "Beginners say «Я нравлюсь Москву́» — wrong on both halves. Remember: the thing does the liking-verb; the person is in dative.",
-        },
-        {
-          title: "Impersonal need & permission",
-          body: `These words put the person in the dative too:
-- **мне на́до / ну́жно + infinitive** — I must / I need to: Ей ну́жно рабо́тать.
-- **мне мо́жно** — I may; **мне нельзя́** — I must not: Вам нельзя́ кури́ть здесь.
-- **мне пору́** — it's time (for me): Нам пору́ идти́. — We should get going.
-No subject appears — Russian impersonal sentences simply drop "I/you".`,
-          examples: [
-            { ru: "Мне на'до учи'ть слова'.", en: "I need to learn words." },
-            { ru: "Здесь нельзя' кури'ть.", en: "Smoking is not allowed here." },
+            { ru: "Помоги' мне!", en: "Help me!" },
+            { ru: "Я иду' к врачу'.", en: "I'm going to the doctor('s)." },
           ],
         },
       ],
       exercises: [
         {
           id: "a2-u04-l2-e1",
-          type: "single",
-          text: "___ нра́вится Москва́.",
-          options: [
-            { id: "a", label: "Я" },
-            { id: "b", label: "Мне" },
-            { id: "c", label: "Меня" },
-          ],
-          answer: "b",
+          type: "fill-blank",
+          text: "Помоги́ ___, пожа́луйста! *(me)*",
+          answers: ["мне"],
         },
         {
           id: "a2-u04-l2-e2",
-          type: "single",
-          text: "Ей ___ учи́ть ру́сский язы́к.",
-          options: [
-            { id: "a", label: "нужно" },
-            { id: "b", label: "нужна" },
-            { id: "c", label: "нужен" },
-          ],
-          answer: "a",
-          explanation: "ну́жно is impersonal — it never agrees.",
+          type: "fill-blank",
+          text: "Я иду́ ___ врачу́.",
+          answers: ["к"],
         },
         {
           id: "a2-u04-l2-e3",
+          type: "matching",
+          text: "Pronoun → dative:",
+          prompts: [
+            { id: "p1", label: "он" }, { id: "p2", label: "она" }, { id: "p3", label: "они" },
+          ],
+          responses: [
+            { id: "r1", label: "им" }, { id: "r2", label: "ей" }, { id: "r3", label: "ему" },
+          ],
+          answer: { p1: "r3", p2: "r2", p3: "r1" },
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "a2-u04-l3",
+      title: "Step 3: age — мне 20 лет",
+      topicIds: ["a2-u04-dative-sg"],
+      vocab: ["лет", "год", "года", "сколько", "мальчик", "девочка", "ребёнок", "студент", "бабушка", "дедушка"],
+      grammar: [
+        {
+          title: "Years happen TO you",
+          body: `Age = dative person + лет/год:
+- **Мне два́дцать лет.** — I'm 20.
+- ONE year → **год**: Ма́льчику оди́н год.
+- 2–4 → **го́да**: два го́да, три го́да.`,
+          table: {
+            headers: ["Number", "Word"],
+            rows: [
+              ["1", "год"],
+              ["2–4", "года"],
+              ["5–20", "лет"],
+            ],
+          },
+          tip: "«Ско́лько тебе́ лет?» — how many years are TO you.",
+        },
+      ],
+      exercises: [
+        {
+          id: "a2-u04-l3-e1",
+          type: "single",
+          text: "Ей пять ___.",
+          options: [{ id: "a", label: "лет" }, { id: "b", label: "год" }], answer: "a",
+        },
+        {
+          id: "a2-u04-l3-e2",
+          type: "single",
+          text: "Ре­бёнку оди́н ___.",
+          options: [{ id: "a", label: "год" }, { id: "b", label: "лет" }], answer: "a",
+        },
+        {
+          id: "a2-u04-l3-e3",
           type: "short-answer",
-          text: "Translate: «Сколь́ко ей лет?» — answer for a 25-year-old: (She is 25.)",
-          answer: "ей 25 лет",
-          accept: ["ей двадцать пять лет"],
+          text: "I am 20 (years old):",
+          answer: "мне 20 лет",
+          accept: ["мне двадцать лет"],
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "a2-u04-l4",
+      title: "Step 4: нравиться — liking runs backwards",
+      topicIds: ["a2-u04-dative-sg"],
+      vocab: ["нравиться", "нравятся", "город", "яблоки", "музыка", "фильмы", "книга", "погода", "очень", "больше"],
+      grammar: [
+        {
+          title: "The thing does the liking",
+          body: `- **Мне нра́вится** э́тот го́род. (singular thing → нра́вится)
+- **Ей нра́вятся** я́блоки. (plural → нра́вятся)
+The liker is dative; the liked thing is the SUBJECT.`,
+          table: {
+            headers: ["Person (dat)", "Verb", "Thing (nom)"],
+            rows: [
+              ["Мне", "нравится", "город"],
+              ["Ей", "нравятся", "яблоки"],
+            ],
+          },
+          tip: "Wrong: «Я нра́влюсь Москву́». Right: «Москва́ мне нра́вится».",
+        },
+      ],
+      exercises: [
+        {
+          id: "a2-u04-l4-e1",
+          type: "single",
+          text: "___ нра́вится Москва́.",
+          options: [{ id: "a", label: "Мне" }, { id: "b", label: "Я" }], answer: "a",
         },
         {
-          id: "a2-u04-l2-e4",
-          type: "fill-blank",
-          text: "Уже́ по́здно. {{blank}} пора́ домо́й. *(It's late. It's time for us to go home.)*",
-          answers: ["Нам"],
+          id: "a2-u04-l4-e2",
+          type: "single",
+          text: "Ей ___ ру́сские фи́льмы.",
+          options: [{ id: "a", label: "нравятся" }, { id: "b", label: "нравится" }], answer: "a",
         },
         {
-          id: "a2-u04-l2-e5",
+          id: "a2-u04-l4-e3",
           type: "true-false",
-          text: "«Мне нельзя́ есть мно́го са́хара» means “I must not eat much sugar”.",
+          text: "«Тебе́ нра́вится шо́колад?» asks about liking chocolate.",
           answer: true,
         },
       ],
-      drills: [
-        { kind: "noun-case", count: 3, cases: ["dat"] },
-        { kind: "cloze", count: 3 },
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "a2-u04-l5",
+      title: "Step 5: надо, можно, нельзя, пора",
+      topicIds: ["a2-u04-dative-sg"],
+      vocab: ["надо", "нужно", "можно", "нельзя", "пора", "домой", "курить", "спрашивать", "уходить", "заниматься"],
+      grammar: [
+        {
+          title: "Impersonal needs — person in dative",
+          body: `- **мне на́до / ну́жно + infinitive** — I need to: Ей ну́жно рабо́тать.
+- **мне мо́жно** — I may; **мне нельзя́** — I must not: Вам нельзя́ кури́ть.
+- **мне пору́** — it's time (for me): Нам пору́ идти́.
+No subject — the person just sits in the dative.`,
+          examples: [
+            { ru: "Мне на'до учи'ть слова'.", en: "I need to learn words." },
+          ],
+          tip: "The verb never agrees: ну́жно/нельзя́ are frozen — the DATIVE person is the only variable.",
+        },
       ],
+      exercises: [
+        {
+          id: "a2-u04-l5-e1",
+          type: "single",
+          text: "___ ну́жно учи́ть ру́сский.",
+          options: [{ id: "a", label: "Ей" }, { id: "b", label: "Она" }], answer: "a",
+        },
+        {
+          id: "a2-u04-l5-e2",
+          type: "fill-blank",
+          text: "Уже́ по́здно. ___ пора́ домо́й. *(us)*",
+          answers: ["Нам"],
+        },
+        {
+          id: "a2-u04-l5-e3",
+          type: "true-false",
+          text: "«Здесь нельзя́ кури́ть» = smoking not allowed here.",
+          answer: true,
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
     },
   ],
 
   test: [
     {
-      id: "a2-u04-test-1",
-      type: "single",
-      text: "Я помога́ю ___. (my father — оте́ц)",
-      options: [
-        { id: "a", label: "отец" },
-        { id: "b", label: "отцу" },
-        { id: "c", label: "отца" },
-      ],
-      answer: "b",
+      id: "a2-u04-test-1", type: "single",
+      text: "Я помога́ю ___. (отец)",
+      options: [{ id: "a", label: "отцу" }, { id: "b", label: "отца" }], answer: "a",
     },
     {
-      id: "a2-u04-test-2",
-      type: "short-answer",
-      text: "Translate: (I often call my friend.) — use «звоню́»",
+      id: "a2-u04-test-2", type: "short-answer",
+      text: "Translate: I often call my friend.",
       answer: "я часто звоню другу",
     },
     {
-      id: "a2-u04-test-3",
-      type: "single",
+      id: "a2-u04-test-3", type: "single",
       text: "___ нра́вятся ру́сские фи́льмы.",
-      options: [
-        { id: "a", label: "Ему" },
-        { id: "b", label: "Он" },
-        { id: "c", label: "Его" },
-      ],
-      answer: "a",
+      options: [{ id: "a", label: "Ему" }, { id: "b", label: "Его" }], answer: "a",
     },
     {
-      id: "a2-u04-test-4",
-      type: "fill-blank",
-      text: "{{blank}} нельзя́ опа́здывать. *(You (polite) must not be late.)*",
+      id: "a2-u04-test-4", type: "fill-blank",
+      text: "___ нельзя́ опа́здывать. *(you, polite)*",
       answers: ["Вам"],
     },
     {
-      id: "a2-u04-test-5",
-      type: "true-false",
-      text: "«Мне два́дцать го́да» is correct for “I am 20”.",
+      id: "a2-u04-test-5", type: "true-false",
+      text: "«Мне два́дцать го́да» is correct for “I'm 20”.",
       answer: false,
-      explanation: "20 takes лет: мне два́дцать лет.",
     },
     {
-      id: "a2-u04-test-6",
-      type: "ordering",
+      id: "a2-u04-test-6", type: "ordering",
       text: "Build: **I am going to the doctor.**",
       items: [
-        { id: "1", label: "Я" },
-        { id: "2", label: "иду" },
-        { id: "3", label: "к" },
-        { id: "4", label: "врачу" },
+        { id: "1", label: "Я" }, { id: "2", label: "иду" }, { id: "3", label: "к" }, { id: "4", label: "врачу" },
       ],
       answer: ["1", "2", "3", "4"],
     },
     {
-      id: "a2-u04-test-7",
-      type: "matching",
+      id: "a2-u04-test-7", type: "matching",
       text: "Dative pronouns:",
       prompts: [
-        { id: "p1", label: "он" },
-        { id: "p2", label: "она" },
-        { id: "p3", label: "они" },
-        { id: "p4", label: "мы" },
+        { id: "p1", label: "он" }, { id: "p2", label: "она" }, { id: "p3", label: "они" }, { id: "p4", label: "мы" },
       ],
       responses: [
-        { id: "r1", label: "им" },
-        { id: "r2", label: "ей" },
-        { id: "r3", label: "нам" },
-        { id: "r4", label: "ему" },
+        { id: "r1", label: "им" }, { id: "r2", label: "ей" }, { id: "r3", label: "нам" }, { id: "r4", label: "ему" },
       ],
       answer: { p1: "r4", p2: "r2", p3: "r1", p4: "r3" },
     },
