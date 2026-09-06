@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 3 — Genitive singular: possession, absence, quantity. */
+/** A2 · Unit 3 — Genitive singular, one step at a time. */
 export const u03: Unit = {
   id: "a2-u03",
   level: "a2",
@@ -10,262 +10,271 @@ export const u03: Unit = {
   lessons: [
     {
       id: "a2-u03-l1",
-      title: "Genitive endings: whose is it?",
+      title: "Step 1: masculine genitive — whose is it?",
       topicIds: ["a2-u03-genitive-sg"],
-      vocab: [
-        "машина",
-        "телефон",
-        "ключ",
-        "сумка",
-        "деньги",
-        "чай",
-        "сахар",
-        "молоко",
-        "хлеб",
-        "вода",
-      ],
+      vocab: ["машина", "телефон", "ключ", "брат", "отец", "друг", "дом", "роман", "автор", "учитель"],
       grammar: [
         {
-          title: "What the genitive does",
-          body: `The **genitive** answers "whose?" / "of what?" — and much more: absence (нет), quantity (мно́го), and after prepositions до, по́сле, без, для, о́коло, у, от, из, с (from).
-Endings (singular):
-- masculine consonant → **+а** (до́м → до́ма, телефо́н → телефо́на)
-- masculine **-й / -ь** → **-я** (музе́й → музе́я, слова́рь → словаря́)
-- feminine **-а** → **-ы** (маши́на → маши́ны)
-- feminine **-я / -ь** → **-и** (пе́сня → пе́сни, пло́щадь → пло́щади)
-- neuter **-о** → **-а**, **-е** → **-я** (молоко́ → молока́, мо́ре → мо́ря)`,
+          title: "Masculine → -а / -я",
+          body: `“Whose? Of what?” — masculine nouns add **-а** (hard) or **-я** (soft -й/-ь):
+- телефо́н → телефо́на; музе́й → музе́я; учи́тель → учи́теля
+- Э́то маши́на **бра́та**. — This is my brother's car.
+- Ключ **о́т до́ма** — the key to the house.`,
           table: {
-            caption: "Genitive singular endings",
-            headers: ["Type", "Nominative", "Genitive"],
+            headers: ["Nominative", "Genitive"],
             rows: [
-              ["masc (hard)", "дом", "дома"],
-              ["masc (soft/й)", "музей", "музея"],
-              ["fem -а → -ы", "машина", "машины"],
-              ["fem -я → -и", "песня", "песни"],
-              ["neut -о → -а", "молоко", "молока"],
-              ["neut -е → -я", "море", "моря"],
+              ["брат", "брата"],
+              ["телефон", "телефона"],
+              ["учитель", "учителя"],
             ],
           },
-          examples: [
-            { ru: "Э'то маши'на бра'та.", en: "This is (my) brother's car." },
-            { ru: "Где ключ о'т до'ма?", en: "Where is the key to the house?" },
-          ],
-          tip: "Spelling rule: after к, г, х, ж, ш, ч the feminine genitive is always **-и**, never -ы (кни́га → кни́ги, подру́га → подру́ги).",
-        },
-        {
-          title: "у + genitive: 'have' in Russian",
-          body: `Russian has no verb "to have". Instead: **у + genitive person + есть + thing**:
-- У меня́ есть маши́на. — I have a car. (literally: by me there is a car)
-- У тебя́ есть ключ? — Do you have a key?
-- У бра́та есть телефо́н. — (My) brother has a phone.
-Negation: **У меня́ нет + genitive** — У меня́ нет вре́мени. (I have no time — вре́мя → вре́мени, an -мя noun.)`,
-          examples: [
-            { ru: "У вас есть вода'?", en: "Do you have water?" },
-            { ru: "У меня' нет де'нег.", en: "I have no money." },
-          ],
-          tip: "де́ньги is plural-only; its genitive is де́нег. Learn у меня́ нет де́нег as a chunk.",
         },
       ],
       exercises: [
         {
           id: "a2-u03-l1-e1",
           type: "single",
-          text: "Э́то маши́на ___. (of my father — отец)",
-          options: [
-            { id: "a", label: "отец" },
-            { id: "b", label: "отца" },
-            { id: "c", label: "отцу" },
-          ],
-          answer: "b",
+          text: "Э́то маши́на ___. (отец)",
+          options: [{ id: "a", label: "отца" }, { id: "b", label: "отец" }], answer: "a",
         },
         {
           id: "a2-u03-l1-e2",
-          type: "single",
-          text: "У меня́ нет ___. (time — вре́мя)",
-          options: [
-            { id: "a", label: "время" },
-            { id: "b", label: "времени" },
-            { id: "c", label: "время́" },
-          ],
-          answer: "b",
-          explanation: "-мя nouns → -мени in genitive.",
+          type: "fill-blank",
+          text: "рома́н ___. *(of the writer — писа́тель)*",
+          answers: ["писателя"],
         },
         {
           id: "a2-u03-l1-e3",
-          type: "fill-blank",
-          text: "Чай без {{blank}}, пожа́луйста. *(Tea without sugar, please.)*",
-          answers: ["сахара"],
-        },
-        {
-          id: "a2-u03-l1-e4",
-          type: "fill-blank",
-          text: "У {{blank}} есть соба́ка. *(My sister has a dog.)*",
-          answers: ["сестры"],
-        },
-        {
-          id: "a2-u03-l1-e5",
           type: "true-false",
-          text: "«Кни́га бра́та» means “the brother's book”.",
-          answer: true,
+          text: "«Ключ от до́ма» — дом stays nominative.",
+          answer: false,
+          explanation: "от + genitive: до́ма.",
         },
       ],
-      drills: [
-        { kind: "noun-case", count: 5, cases: ["gen"] },
-        { kind: "cloze", count: 2 },
-      ],
+      drills: [{ kind: "noun-case", count: 4, cases: ["gen"] }],
     },
     {
       id: "a2-u03-l2",
-      title: "Quantities, dates and the genitive",
+      title: "Step 2: feminine & neuter genitive",
       topicIds: ["a2-u03-genitive-sg"],
-      vocab: [
-        "килограмм",
-        "литр",
-        "бутылка",
-        "пачка",
-        "штука",
-        "метр",
-        "минута",
-        "час",
-        "неделя",
-        "месяц",
-      ],
+      vocab: ["сестра", "мать", "книга", "песня", "молоко", "море", "время", "подруга", "тетрадь", "имя"],
       grammar: [
         {
-          title: "Numbers 2+, quantities, мно́го / ма́ло",
-          body: `After words of quantity use the genitive:
-- **мно́го / ма́ло / не́сколько + gen.**: мно́го воды́, ма́ло вре́мени
-- measures: **килогра́мм хлеба, ли́тр молока́, ча́шка ча́я** (ча́шка is feminine → ча́й becomes ча́я? — ча́й is masculine: ча́шки ча́я — the counted noun is genitive: ча́я)
-- **1 + nominative, but 2-4 need a special form (unit 11)** — for now: не́сколько дне́й (several days)`,
-          examples: [
-            { ru: "Дай, пожа'луйста, килогра'мм я'блок.", en: "Give me a kilo of apples, please." },
-            { ru: "У меня' мно'го рабо'ты.", en: "I have a lot of work." },
-          ],
-          tip: "Use the genitive after a quantity — not the accusative. «Я хочу́ воды́» = some water; «Я хочу́ во́ду» = THE water (all of it). Both exist; quantity-flavoured requests prefer genitive.",
-        },
-        {
-          title: "From, after, until, for",
-          body: `These prepositions always take the genitive:
-- **из / с / от** = from: из Росси́и (from Russia), с рабо́ты (from work), от дру́га (from a friend)
-- **до / по́сле** = until / after: до пяти́, по́сле уро́ка
-- **для / без / о́коло / у** = for / without / near / by: для ма́мы, без пробле́м, о́коло до́ма, у окна́`,
-          examples: [
-            { ru: "Я возвраща'юсь с рабо'ты в семь.", en: "I come back from work at seven." },
-            { ru: "По'сле у'жина мы смотрим фи'льм.", en: "After dinner we watch a film." },
-          ],
+          title: "-ы / -и / -а / -я",
+          body: `- feminine **-а → -ы**: маши́на → маши́ны; **-я → -и**: пе́сня → пе́сни; **-ь → -и**: тетра́дь → тетра́ди
+- neuter **-о → -а**: молоко́ → молока́; **-е → -я**: мо́ре → мо́ря
+- Spelling: after к,г,х,ж,ш,ч → always **-и** (подру́га → подру́ги)
+- **-мя** nouns: вре́мя → вре́мени, и́мя → и́мени`,
+          table: {
+            headers: ["Nominative", "Genitive"],
+            rows: [
+              ["машина", "машины"],
+              ["песня", "песни"],
+              ["молоко", "молока"],
+              ["море", "моря"],
+              ["время", "времени"],
+            ],
+          },
         },
       ],
       exercises: [
         {
           id: "a2-u03-l2-e1",
           type: "single",
-          text: "Я приду́ по́сле ___. (the lesson)",
-          options: [
-            { id: "a", label: "урок" },
-            { id: "b", label: "урока" },
-            { id: "c", label: "уроку" },
-          ],
-          answer: "b",
+          text: "У меня́ нет ___. (вре́мя)",
+          options: [{ id: "a", label: "времени" }, { id: "b", label: "время" }], answer: "a",
         },
         {
           id: "a2-u03-l2-e2",
-          type: "single",
-          text: "У мена́ мно́го ___. (work — рабо́та)",
-          options: [
-            { id: "a", label: "работы" },
-            { id: "b", label: "работу" },
-            { id: "c", label: "работе" },
-          ],
-          answer: "a",
+          type: "fill-blank",
+          text: "книга ___. *(of the sister)*",
+          answers: ["сестры"],
         },
         {
           id: "a2-u03-l2-e3",
-          type: "fill-blank",
-          text: "Это пода́рок для {{blank}}. *(This is a present for my mother.)*",
-          answers: ["матери"],
-          explanation: "мать → genitive ма́тери (special).",
+          type: "true-false",
+          text: "After к/г/х write -и: подру́ги.",
+          answer: true,
+        },
+      ],
+      drills: [{ kind: "noun-case", count: 4, cases: ["gen"] }],
+    },
+    {
+      id: "a2-u03-l3",
+      title: "Step 3: у меня есть / у меня нет",
+      topicIds: ["a2-u03-genitive-sg"],
+      vocab: ["есть", "нет", "деньги", "время", "машина", "ключ", "собака", "брат", "вопрос", "ответ"],
+      grammar: [
+        {
+          title: "Possession lives at у + person",
+          body: `- Have: **У меня́ есть** + nominative thing: У меня́ есть соба́ка.
+- Have not: **У меня́ нет** + GENITIVE thing: У меня́ нет соба́ки.
+- Past: У меня́ **была́** соба́ка. (быть agrees with the thing)
+Person goes genitive too: **у бра́та**, **у сестры́**, **у нас**.`,
+          table: {
+            headers: ["Pattern", "Example"],
+            rows: [
+              ["У + gen + есть + nom", "У брата есть машина"],
+              ["У + gen + нет + gen", "У брата нет машины"],
+            ],
+          },
+          tip: "де́ньги is plural-only; genitive де́нег: «У меня́ нет де́нег» — memorise the chunk.",
+        },
+      ],
+      exercises: [
+        {
+          id: "a2-u03-l3-e1",
+          type: "single",
+          text: "У меня́ нет ___. (ключ)",
+          options: [{ id: "a", label: "ключа" }, { id: "b", label: "ключ" }], answer: "a",
         },
         {
-          id: "a2-u03-l2-e4",
+          id: "a2-u03-l3-e2",
           type: "fill-blank",
-          text: "Магази́н на́ходится о́коло {{blank}}. *(The shop is near the house.)*",
+          text: "___ есть вре́мя? *(Do you have time?)*",
+          answers: ["У тебя"],
+        },
+        {
+          id: "a2-u03-l3-e3",
+          type: "true-false",
+          text: "«У меня́ нет де́нег» is correct.",
+          answer: true,
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "a2-u03-l4",
+      title: "Step 4: quantities want the genitive",
+      topicIds: ["a2-u03-genitive-sg"],
+      vocab: ["много", "мало", "несколько", "килограмм", "литр", "чашка", "бутылка", "стакан", "пачка", "яблоко"],
+      grammar: [
+        {
+          title: "мно́го / ма́ло / measures + gen",
+          body: `- **мно́го / ма́ло / не́сколько + genitive**: мно́го рабо́ты, ма́ло вре́мени
+- Measures: **килогра́мм я́блок**, **ли́тр молока́**, **ча́шка ча́я**, **буты́лка воды́**
+- Nuance: «Я хочу́ воды́» = some water; «Я хочу́ во́ду» = that particular water.`,
+          table: {
+            headers: ["Measure", "Genitive"],
+            rows: [
+              ["чашка", "чая"],
+              ["литр", "молока"],
+              ["килограмм", "яблок"],
+            ],
+          },
+        },
+      ],
+      exercises: [
+        {
+          id: "a2-u03-l4-e1",
+          type: "single",
+          text: "У меня́ мно́го ___. (рабо́та)",
+          options: [{ id: "a", label: "работы" }, { id: "b", label: "работу" }], answer: "a",
+        },
+        {
+          id: "a2-u03-l4-e2",
+          type: "fill-blank",
+          text: "Ча́шка ___, пожа́луйста. *(tea)*",
+          answers: ["чая"],
+        },
+        {
+          id: "a2-u03-l4-e3",
+          type: "fill-blank",
+          text: "Купи́ килогра́мм ___. *(apples)*",
+          answers: ["яблок"],
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "a2-u03-l5",
+      title: "Step 5: the genitive preposition family",
+      topicIds: ["a2-u03-genitive-sg"],
+      vocab: ["из", "с", "от", "до", "после", "без", "для", "около", "у", "против"],
+      grammar: [
+        {
+          title: "Eight prepositions, one case",
+          body: `- **из / с / от** = from: из Росси́и, с рабо́ты, от дру́га
+- **до / по́сле** = until / after: до пяти́, по́сле уро́ка
+- **для / без / о́коло / у / про́тив** = for / without / near / by / against
+All of them + **genitive**, no exceptions.`,
+          table: {
+            headers: ["Preposition", "Example"],
+            rows: [
+              ["из", "из Лондона"],
+              ["до", "до вечера"],
+              ["без", "без сахара"],
+              ["около", "около дома"],
+            ],
+          },
+          tip: "«До за́втра!» — until tomorrow — a farewell built on до + gen.",
+        },
+      ],
+      exercises: [
+        {
+          id: "a2-u03-l5-e1",
+          type: "single",
+          text: "Я приду́ по́сле ___. (уро́к)",
+          options: [{ id: "a", label: "урока" }, { id: "b", label: "урок" }], answer: "a",
+        },
+        {
+          id: "a2-u03-l5-e2",
+          type: "fill-blank",
+          text: "Это пода́рок для ___. *(mother — ма́ть → ма́тери)*",
+          answers: ["матери"],
+        },
+        {
+          id: "a2-u03-l5-e3",
+          type: "fill-blank",
+          text: "Магази́н о́коло ___. *(house)*",
           answers: ["дома"],
         },
-        {
-          id: "a2-u03-l2-e5",
-          type: "true-false",
-          text: "«До за́втра» means “until tomorrow”.",
-          answer: true,
-          explanation: "до + genitive: до за́втра — a fixed farewell expression.",
-        },
       ],
-      drills: [
-        { kind: "noun-case", count: 5, cases: ["gen"] },
-        { kind: "cloze", count: 2 },
-      ],
+      drills: [{ kind: "cloze", count: 3 }],
     },
   ],
 
   test: [
     {
-      id: "a2-u03-test-1",
-      type: "single",
+      id: "a2-u03-test-1", type: "single",
       text: "У меня́ нет ___. (car)",
-      options: [
-        { id: "a", label: "машина" },
-        { id: "b", label: "машины" },
-        { id: "c", label: "машину" },
-      ],
-      answer: "b",
+      options: [{ id: "a", label: "машины" }, { id: "b", label: "машину" }], answer: "a",
     },
     {
-      id: "a2-u03-test-2",
-      type: "short-answer",
-      text: "Whose phone is it? — «телефо́н бра́та» means:",
+      id: "a2-u03-test-2", type: "short-answer",
+      text: "Whose phone? — «телефо́н бра́та» means:",
       answer: "брата телефон",
       accept: ["the brother's phone", "brother's phone"],
     },
     {
-      id: "a2-u03-test-3",
-      type: "short-answer",
+      id: "a2-u03-test-3", type: "short-answer",
       text: "Translate: «Я из Росси́и.»",
-      answer: "i am from russia",
-      accept: ["i'm from russia", "i am from russia"],
+      answer: "я из россии",
     },
     {
-      id: "a2-u03-test-4",
-      type: "fill-blank",
-      text: "Ча́шка {{blank}}, пожа́луйста. *(A cup of tea, please.)*",
+      id: "a2-u03-test-4", type: "fill-blank",
+      text: "Ча́шка ___, пожа́луйста.",
       answers: ["чая"],
     },
     {
-      id: "a2-u03-test-5",
-      type: "true-false",
-      text: "«О́коло до́ма» uses the genitive case.",
+      id: "a2-u03-test-5", type: "true-false",
+      text: "«О́коло до́ма» uses the genitive.",
       answer: true,
     },
     {
-      id: "a2-u03-test-6",
-      type: "matching",
+      id: "a2-u03-test-6", type: "matching",
       text: "Preposition → meaning:",
       prompts: [
-        { id: "p1", label: "без" },
-        { id: "p2", label: "для" },
-        { id: "p3", label: "по́сле" },
-        { id: "p4", label: "о́коло" },
+        { id: "p1", label: "без" }, { id: "p2", label: "для" }, { id: "p3", label: "по́сле" }, { id: "p4", label: "о́коло" },
       ],
       responses: [
-        { id: "r1", label: "after" },
-        { id: "r2", label: "without" },
-        { id: "r3", label: "near" },
-        { id: "r4", label: "for" },
+        { id: "r1", label: "after" }, { id: "r2", label: "without" }, { id: "r3", label: "near" }, { id: "r4", label: "for" },
       ],
       answer: { p1: "r2", p2: "r4", p3: "r1", p4: "r3" },
     },
     {
-      id: "a2-u03-test-7",
-      type: "short-answer",
-      text: "У тебя́ есть __? (keys — plural key «ключи́», genitive «ключе́й» — write the genitive)",
+      id: "a2-u03-test-7", type: "short-answer",
+      text: "Genitive plural: ключи́ → (нет ___)",
       answer: "ключей",
     },
   ],
