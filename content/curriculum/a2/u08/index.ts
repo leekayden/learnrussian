@@ -56,7 +56,7 @@ export const u08: Unit = {
       id: "a2-u08-l2",
       title: "Step 2: adjectives in the accusative",
       topicIds: ["a2-u08-adjectives-plurals"],
-      vocab: ["новая", "красивую", "машину", "сумку", "книгу", "видеть", "купить", "большой", "старый", "дом"],
+      vocab: ["новый", "красивый", "машина", "сумка", "книга", "видеть", "купить", "большой", "старый", "учитель"],
       grammar: [
         {
           title: "Match the noun's accusative",
@@ -143,7 +143,7 @@ export const u08: Unit = {
       id: "a2-u08-l4",
       title: "Step 4: plurals — nominative & accusative",
       topicIds: ["a2-u08-adjectives-plurals"],
-      vocab: ["студенты", "дети", "друзья", "глаза", "слова", "вещи", "вопросы", "фотографии", "гости", "дни"],
+      vocab: ["студент", "ребёнок", "друг", "глаз", "слово", "вещь", "вопрос", "фотография", "гость", "день"],
       grammar: [
         {
           title: "Plural -ы/-и; animate accusative = genitive",
@@ -187,7 +187,7 @@ export const u08: Unit = {
       id: "a2-u08-l5",
       title: "Step 5: мой, этот, весь — pronouns that decline",
       topicIds: ["a2-u08-adjectives-plurals"],
-      vocab: ["мой", "твой", "ваш", "наш", "этот", "эта", "это", "весь", "всё", "все"],
+      vocab: ["мой", "твой", "ваш", "наш", "этот", "весь", "всё", "все", "свой", "такой"],
       grammar: [
         {
           title: "Pronouns agree like adjectives",
