@@ -106,7 +106,7 @@ The perfective has NO present tense — its present forms are future.`,
       id: "a2-u07-l3",
       title: "Step 3: choosing in the past — was there a result?",
       topicIds: ["a2-u07-aspect-1"],
-      vocab: ["письмо", "написал", "покупать", "билеты", "экзамен", "сдал", "сдавал", "готовился", "закончил", "ещё"],
+      vocab: ["письмо", "написать", "покупать", "билет", "экзамен", "сдать", "сдавать", "готовиться", "закончить", "ещё"],
       grammar: [
         {
           title: "Ask: did it get done?",
