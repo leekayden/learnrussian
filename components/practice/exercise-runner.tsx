@@ -1,0 +1,669 @@
+"use client";
+
+import { useMemo, useRef, useState } from "react";
+import Link from "next/link";
+import {
+  ArrowDown,
+  ArrowUp,
+  Check,
+  ChevronRight,
+  Download,
+  RotateCcw,
+  X,
+} from "lucide-react";
+import { toast } from "sonner";
+import type { Exercise, Option } from "@/lib/curriculum/types";
+import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
+import { downloadFilename, exercisesToRendererQuiz } from "@/lib/quiz-export";
+import { useTranslit } from "@/components/practice/cyrillic-keyboard";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
+
+export type SubmitResult = {
+  score: number;
+  correct: number;
+  total: number;
+  xpEarned: number;
+  streak: number;
+  completed?: boolean;
+  passed?: boolean;
+};
+
+/** Minimal inline markdown: **bold**, *italic*, > muted line. */
+export function Md({ text, className }: { text: string; className?: string }) {
+  const lines = text.split("\n");
+  return (
+    <div className={className}>
+      {lines.map((line, li) => {
+        if (line.startsWith("> ")) {
+          return (
+            <p key={li} className="text-sm text-muted-foreground">
+              {inline(line.slice(2))}
+            </p>
+          );
+        }
+        return <p key={li}>{line ? inline(line) : "\u00A0"}</p>;
+      })}
+    </div>
+  );
+}
+
+function inline(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*") && part.length > 2) {
+      return (
+        <em key={i} className="text-muted-foreground">
+          {part.slice(1, -1)}
+        </em>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
+export function ExerciseRunner({
+  exercises,
+  submit,
+  exportTitle,
+  onDoneHref,
+  onDoneLabel,
+  passPercent = 70,
+}: {
+  exercises: Exercise[];
+  submit: (
+    exercises: Exercise[],
+    responses: Record<string, ExerciseResponse>,
+  ) => Promise<SubmitResult>;
+  exportTitle?: string;
+  onDoneHref?: string;
+  onDoneLabel?: string;
+  passPercent?: number;
+}) {
+  const [idx, setIdx] = useState(0);
+  const [responses, setResponses] = useState<Record<string, ExerciseResponse>>({});
+  const [blanks, setBlanks] = useState<Record<string, string[]>>({});
+  const [checked, setChecked] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const [result, setResult] = useState<SubmitResult | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const ex = exercises[idx];
+  const response = ex ? responses[ex.id] : undefined;
+  const correctNow = useMemo(
+    () => (ex && checked ? isCorrect(ex, responses[ex.id]) : false),
+    [ex, checked, responses],
+  );
+
+  function setResponse(v: ExerciseResponse) {
+    if (!ex) return;
+    setResponses((r) => ({ ...r, [ex.id]: v }));
+  }
+
+  function check() {
+    if (!ex) return;
+    if (ex.type === "fill-blank") {
+      const values = blanks[ex.id] ?? [];
+      setResponse(values.join("\u0000"));
+      setResponses((r) => ({ ...r, [ex.id]: values.join("\u0000") }));
+      setChecked(isCorrect(ex, values.join("\u0000")));
+    } else if (ex.type === "ordering" && responses[ex.id] === undefined) {
+      // Submitting the given order without moving anything.
+      const initial = ex.items.map((i) => i.id);
+      setResponse(initial);
+      setResponses((r) => ({ ...r, [ex.id]: initial }));
+      setChecked(isCorrect(ex, initial));
+    } else {
+      setChecked(isCorrect(ex, responses[ex.id]));
+    }
+  }
+
+  async function next() {
+    setChecked(false);
+    if (idx + 1 < exercises.length) {
+      setIdx(idx + 1);
+      return;
+    }
+    setSubmitting(true);
+    // Ensure the last fill-blank response is materialised.
+    const finalResponses = { ...responses };
+    for (const e of exercises) {
+      if (e.type === "fill-blank") {
+        finalResponses[e.id] = (blanks[e.id] ?? []).join("\u0000");
+      }
+    }
+    try {
+      const r = await submit(exercises, finalResponses);
+      setResult(r);
+      setFinished(true);
+    } catch {
+      toast.error("Could not save the result — check your connection");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  function restart() {
+    setIdx(0);
+    setResponses({});
+    setBlanks({});
+    setChecked(false);
+    setFinished(false);
+    setResult(null);
+  }
+
+  function exportQuiz() {
+    if (!exportTitle) return;
+    const quiz = exercisesToRendererQuiz(
+      exportTitle,
+      "Generated by learnrussian — drag this file into quiz-renderer → /quizzes/new",
+      exercises,
+    );
+    const blob = new Blob([JSON.stringify(quiz, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = downloadFilename(exportTitle);
+    a.click();
+    URL.revokeObjectURL(url);
+    toast.success("Quiz JSON downloaded — open quiz-renderer → /quizzes/new");
+  }
+
+  if (finished && result) {
+    const passed = (result.passed ?? result.completed ?? result.score >= passPercent);
+    return (
+      <div className="rounded-xl border bg-card p-8 text-center">
+        <div className="text-5xl font-semibold">{result.score}%</div>
+        <p className="mt-2 text-muted-foreground">
+          {result.correct} of {result.total} correct · +{result.xpEarned} XP ·{" "}
+          {result.streak > 0 ? `${result.streak}-day streak 🔥` : ""}
+        </p>
+        <p className={cn("mt-3 font-medium", passed ? "text-green-600" : "text-red-500")}>
+          {passed
+            ? "Отлично! Passed."
+            : `Not yet — you need ${passPercent}% to pass. Review the notes and try again.`}
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <Button variant="outline" onClick={restart}>
+            <RotateCcw className="size-4" /> Try again
+          </Button>
+          {exportTitle ? (
+            <Button variant="outline" onClick={exportQuiz}>
+              <Download className="size-4" /> Export for Quiz Renderer
+            </Button>
+          ) : null}
+        </div>
+        {onDoneHref ? (
+          <div className="mt-4">
+            <Link href={onDoneHref} className="text-sm text-primary hover:underline">
+              {onDoneLabel ?? "Continue →"}
+            </Link>
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
+  if (!ex) return null;
+  const answered =
+    ex.type === "ordering"
+      ? true
+      : ex.type === "fill-blank"
+        ? (blanks[ex.id] ?? []).some((v) => v.trim())
+        : response !== undefined &&
+          (Array.isArray(response)
+            ? response.length > 0
+            : typeof response === "boolean" ||
+              typeof response === "object" ||
+              String(response).length > 0);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-3">
+        <Progress value={((idx + (checked ? 1 : 0)) / exercises.length) * 100} />
+        <span className="shrink-0 text-sm text-muted-foreground">
+          {idx + 1} / {exercises.length}
+        </span>
+      </div>
+
+      <div className="rounded-xl border bg-card p-6">
+        <ExerciseView
+          exercise={ex}
+          response={response}
+          blanks={blanks[ex.id] ?? []}
+          onBlank={(i, v) => {
+            const values = [...(blanks[ex.id] ?? [])];
+            values[i] = v;
+            setBlanks((b) => ({ ...b, [ex.id]: values }));
+          }}
+          onResponse={setResponse}
+          checked={checked}
+          correct={correctNow}
+          inputRef={inputRef}
+          disabled={checked}
+        />
+
+        {checked ? (
+          <div
+            className={cn(
+              "mt-4 rounded-lg border p-3 text-sm",
+              correctNow
+                ? "border-green-600/30 bg-green-500/10 text-green-700 dark:text-green-400"
+                : "border-red-500/30 bg-red-500/10 text-red-600 dark:text-red-400",
+            )}
+          >
+            <div className="flex items-center gap-2 font-medium">
+              {correctNow ? <Check className="size-4" /> : <X className="size-4" />}
+              {correctNow ? "Верно!" : "Not quite."}
+            </div>
+            {!correctNow ? <CorrectAnswer exercise={ex} /> : null}
+            {ex.explanation ? (
+              <div className="mt-1 text-muted-foreground">
+                <Md text={ex.explanation} />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        <div className="mt-5 flex justify-end gap-2">
+          {checked ? (
+            <Button onClick={next} disabled={submitting}>
+              {idx + 1 < exercises.length ? "Next" : "Finish"}
+              <ChevronRight className="size-4" />
+            </Button>
+          ) : (
+            <Button onClick={check} disabled={!answered}>
+              <Check className="size-4" /> Check
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CorrectAnswer({ exercise }: { exercise: Exercise }) {
+  let answer = "";
+  switch (exercise.type) {
+    case "single":
+      answer = exercise.options.find((o) => o.id === exercise.answer)?.label ?? "";
+      break;
+    case "multiple":
+      answer = exercise.options
+        .filter((o) => exercise.answers.includes(o.id))
+        .map((o) => o.label)
+        .join(", ");
+      break;
+    case "true-false":
+      answer = exercise.answer ? "True" : "False";
+      break;
+    case "short-answer":
+      answer = exercise.answer;
+      break;
+    case "ordering":
+      answer = exercise.answer
+        .map((id) => exercise.items.find((it) => it.id === id)?.label ?? id)
+        .join(" ");
+      break;
+    case "fill-blank":
+      answer = exercise.answers.join(" / ");
+      break;
+    case "matching":
+      answer = Object.entries(exercise.answer)
+        .map(([p, r]) => {
+          const prompt = exercise.prompts.find((x) => x.id === p)?.label ?? p;
+          const resp = exercise.responses.find((x) => x.id === r)?.label ?? r;
+          return `${prompt} → ${resp}`;
+        })
+        .join("; ");
+      break;
+  }
+  return (
+    <div className="mt-1">
+      <span className="font-medium">Answer: </span>
+      <span>{answer}</span>
+    </div>
+  );
+}
+
+function ExerciseView({
+  exercise,
+  response,
+  blanks,
+  onBlank,
+  onResponse,
+  checked,
+  correct,
+  inputRef,
+  disabled,
+}: {
+  exercise: Exercise;
+  response: ExerciseResponse | undefined;
+  blanks: string[];
+  onBlank: (i: number, v: string) => void;
+  onResponse: (v: ExerciseResponse) => void;
+  checked: boolean;
+  correct: boolean;
+  inputRef: React.RefObject<HTMLInputElement | null>;
+  disabled: boolean;
+}) {
+  switch (exercise.type) {
+    case "single":
+      return (
+        <div className="space-y-2">
+          <Md text={exercise.text} className="font-medium" />
+          {exercise.options.map((o) => (
+            <button
+              key={o.id}
+              type="button"
+              disabled={disabled}
+              onClick={() => onResponse(o.id)}
+              className={cn(
+                "flex w-full items-center gap-3 rounded-lg border px-4 py-2.5 text-left transition-colors hover:bg-accent",
+                response === o.id && "border-primary bg-primary/5",
+              )}
+            >
+              <span
+                className={cn(
+                  "size-4 rounded-full border",
+                  response === o.id && "border-[5px] border-primary",
+                )}
+              />
+              <Md text={o.label} />
+            </button>
+          ))}
+        </div>
+      );
+    case "multiple":
+      return (
+        <div className="space-y-2">
+          <Md text={exercise.text} className="font-medium" />
+          <p className="text-xs text-muted-foreground">Select all that apply.</p>
+          {exercise.options.map((o) => {
+            const selected = Array.isArray(response) && response.includes(o.id);
+            return (
+              <button
+                key={o.id}
+                type="button"
+                disabled={disabled}
+                onClick={() => {
+                  const current = Array.isArray(response) ? response : [];
+                  onResponse(
+                    selected ? current.filter((x) => x !== o.id) : [...current, o.id],
+                  );
+                }}
+                className={cn(
+                  "flex w-full items-center gap-3 rounded-lg border px-4 py-2.5 text-left transition-colors hover:bg-accent",
+                  selected && "border-primary bg-primary/5",
+                )}
+              >
+                <span
+                  className={cn(
+                    "flex size-4 items-center justify-center rounded border",
+                    selected && "border-primary bg-primary text-primary-foreground",
+                  )}
+                >
+                  {selected ? <Check className="size-3" /> : null}
+                </span>
+                <Md text={o.label} />
+              </button>
+            );
+          })}
+        </div>
+      );
+    case "true-false":
+      return (
+        <div className="space-y-3">
+          <Md text={exercise.text} className="font-medium" />
+          <div className="flex gap-2">
+            {[true, false].map((v) => (
+              <Button
+                key={String(v)}
+                type="button"
+                variant={response === v ? "default" : "outline"}
+                disabled={disabled}
+                onClick={() => onResponse(v)}
+              >
+                {v ? "True" : "False"}
+              </Button>
+            ))}
+          </div>
+        </div>
+      );
+    case "short-answer": {
+      const value = typeof response === "string" ? response : "";
+      return <ShortAnswerView exercise={exercise} value={value} onChange={onResponse} checked={checked} correct={correct} inputRef={inputRef} disabled={disabled} />;
+    }
+    case "ordering": {
+      const order = Array.isArray(response) ? response : exercise.items.map((i) => i.id);
+      const items: Option[] = order
+        .map((id) => exercise.items.find((i) => i.id === id))
+        .filter(Boolean) as Option[];
+      function move(i: number, dir: -1 | 1) {
+        const next = [...order];
+        const j = i + dir;
+        if (j < 0 || j >= next.length) return;
+        [next[i], next[j]] = [next[j], next[i]];
+        onResponse(next);
+      }
+      return (
+        <div className="space-y-2">
+          <Md text={exercise.text} className="font-medium" />
+          <p className="text-xs text-muted-foreground">Put the words in the right order.</p>
+          <div className="space-y-1.5">
+            {items.map((item, i) => (
+              <div
+                key={item.id}
+                className="flex items-center justify-between gap-2 rounded-lg border px-3 py-2"
+              >
+                <span>{item.label}</span>
+                <span className="flex gap-1">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon-xs"
+                    disabled={disabled || i === 0}
+                    onClick={() => move(i, -1)}
+                  >
+                    <ArrowUp className="size-3.5" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon-xs"
+                    disabled={disabled || i === items.length - 1}
+                    onClick={() => move(i, 1)}
+                  >
+                    <ArrowDown className="size-3.5" />
+                  </Button>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    case "fill-blank": {
+      const parts = inlineSegments(exercise.text);
+      // Blank k must map to answers[k] regardless of surrounding text parts.
+      const blankIndexOf: number[] = parts.map((_, idx) =>
+        parts.slice(0, idx).filter((p) => p.blank).length,
+      );
+      return (
+        <div className="space-y-3">
+          <div className="flex flex-wrap items-center gap-1.5 text-lg">
+            {parts.map((part, i) =>
+              part.blank ? (
+                <Input
+                  key={i}
+                  className="inline-block w-36 text-center"
+                  value={blanks[blankIndexOf[i]] ?? ""}
+                  disabled={disabled}
+                  onChange={(e) => onBlank(blankIndexOf[i], e.target.value)}
+                  autoComplete="off"
+                />
+              ) : (
+                <span key={i} className="whitespace-pre-wrap">
+                  {inline(part.text)}
+                </span>
+              ),
+            )}
+          </div>
+          <CyrillicNote />
+        </div>
+      );
+    }
+    case "matching":
+      return (
+        <div className="space-y-2">
+          <Md text={exercise.text} className="font-medium" />
+          {exercise.prompts.map((p) => (
+            <div key={p.id} className="flex items-center justify-between gap-3">
+              <span className="text-sm">{p.label}</span>
+              <select
+                className="w-48 rounded-md border bg-background px-2 py-1.5 text-sm"
+                value={(typeof response === "object" && response !== null && !Array.isArray(response) ? response[p.id] : "") ?? ""}
+                disabled={disabled}
+                onChange={(e) => {
+                  const current =
+                    typeof response === "object" && response !== null && !Array.isArray(response)
+                      ? { ...response }
+                      : {};
+                  current[p.id] = e.target.value;
+                  onResponse(current);
+                }}
+              >
+                <option value="">— choose —</option>
+                {exercise.responses.map((r) => (
+                  <option key={r.id} value={r.id}>
+                    {r.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
+      );
+    default:
+      return null;
+  }
+}
+
+function ShortAnswerView({
+  exercise,
+  value,
+  onChange,
+  checked,
+  correct,
+  inputRef,
+  disabled,
+}: {
+  exercise: Extract<Exercise, { type: "short-answer" }>;
+  value: string;
+  onChange: (v: ExerciseResponse) => void;
+  checked: boolean;
+  correct: boolean;
+  inputRef: React.RefObject<HTMLInputElement | null>;
+  disabled: boolean;
+}) {
+  const [typed, setTyped] = useState(value);
+  const [showKeyboard, setShowKeyboard] = useState(false);
+  const handleTranslit = useTranslit((next) => {
+    setTyped(next);
+    onChange(next);
+  });
+  return (
+    <div className="space-y-2">
+      <Md text={exercise.text} className="font-medium" />
+      <Input
+        ref={inputRef}
+        value={typed}
+        disabled={disabled}
+        onChange={(e) => handleTranslit(e.target.value)}
+        className={cn(
+          "max-w-sm text-lg",
+          checked && (correct ? "border-green-600" : "border-red-500"),
+        )}
+        placeholder="По-русски…"
+        autoComplete="off"
+      />
+      <div>
+        <button
+          type="button"
+          className="text-xs text-muted-foreground hover:text-foreground"
+          onClick={() => setShowKeyboard((s) => !s)}
+        >
+          {showKeyboard ? "Hide keyboard" : "Cyrillic keyboard"}
+        </button>
+        {showKeyboard ? (
+          <CyrillicPalette
+            onInsert={(letter) => {
+              const next = typed + letter;
+              setTyped(next);
+              onChange(next);
+            }}
+          />
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function CyrillicNote() {
+  return (
+    <p className="text-xs text-muted-foreground">
+      Type Latin to get Cyrillic (zh→ж, sh→ш, ya→я) or use the palette below.
+    </p>
+  );
+}
+
+function CyrillicPalette({ onInsert }: { onInsert: (letter: string) => void }) {
+  const PALETTE = [
+    "а","б","в","г","д","е","ё","ж","з","и","й",
+    "к","л","м","н","о","п","р","с","т","у","ф",
+    "х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я",
+  ];
+  return (
+    <div className="mt-2 flex max-w-md flex-wrap gap-1 rounded-lg border bg-muted/40 p-2">
+      {PALETTE.map((letter) => (
+        <button
+          key={letter}
+          type="button"
+          onClick={() => onInsert(letter)}
+          className="h-8 w-8 rounded border bg-card text-sm hover:bg-accent"
+        >
+          {letter}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** Split a fill-blank text into alternating text/blank segments (inline). */
+function inlineSegments(text: string): { text: string; blank: boolean }[] {
+  const parts: { text: string; blank: boolean }[] = [];
+  let rest = text;
+  while (rest) {
+    const i = rest.indexOf("{{blank}}");
+    if (i < 0) {
+      parts.push({ text: rest, blank: false });
+      break;
+    }
+    if (i > 0) parts.push({ text: rest.slice(0, i), blank: false });
+    parts.push({ text: "", blank: true });
+    rest = rest.slice(i + "{{blank}}".length);
+  }
+  return parts;
+}

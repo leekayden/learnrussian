@@ -1,0 +1,400 @@
+// learnrussian — Prisma schema (single file).
+// App-managed tables below; the openrussian dictionary models are appended
+// at the bottom of this file. They were produced by `prisma db pull` against
+// the imported dump so they match the tables exactly — `prisma db push`
+// therefore never alters the dictionary. Treat those models as READ-ONLY.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Better Auth ─────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false) @map("email_verified")
+  image         String?   @db.VarChar(500)
+  role          String    @default("USER") @db.VarChar(32)
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  sessions         Session[]
+  accounts         Account[]
+  profile          LrProfile?
+  lessonProgress   LrLessonProgress[]
+  grammarMastery   LrGrammarMastery[]
+  srsCards         LrSrsCard[]
+  reviewLogs       LrReviewLog[]
+  exerciseAttempts LrExerciseAttempt[]
+  dailyActivity    LrDailyActivity[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id") @db.VarChar(36)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  ipAddress String?  @map("ip_address") @db.VarChar(45)
+  userAgent String?  @map("user_agent") @db.VarChar(500)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  userId                String    @map("user_id") @db.VarChar(36)
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  accessToken           String?   @map("access_token") @db.VarChar(1000)
+  refreshToken          String?   @map("refresh_token") @db.VarChar(1000)
+  idToken               String?   @map("id_token") @db.VarChar(1500)
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?   @db.VarChar(500)
+  password              String?   @db.VarChar(255)
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  @@unique([providerId, accountId])
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id @default(cuid())
+  identifier String
+  value      String    @db.VarChar(1000)
+  expiresAt  DateTime  @map("expires_at")
+  createdAt  DateTime? @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+
+  @@map("verification")
+}
+
+// ─── Learner domain ──────────────────────────────────────────────────────────
+
+model LrProfile {
+  userId               String    @id @map("user_id") @db.VarChar(36)
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyGoalXp          Int       @default(20) @map("daily_goal_xp")
+  timezone             String    @default("UTC") @db.VarChar(64)
+  streakCount          Int       @default(0) @map("streak_count")
+  lastActiveDate       DateTime? @map("last_active_date") @db.Date
+  currentLevel         String    @default("A2") @map("current_level") @db.VarChar(2)
+  placementDone        Boolean   @default(false) @map("placement_done")
+  showStress           Boolean   @default(true) @map("show_stress")
+  showTranslitKeyboard Boolean   @default(true) @map("show_translit_keyboard")
+  createdAt            DateTime  @default(now()) @map("created_at")
+  updatedAt            DateTime  @updatedAt @map("updated_at")
+
+  @@map("lr_profiles")
+}
+
+model LrLessonProgress {
+  userId      String    @map("user_id") @db.VarChar(36)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String    @map("lesson_id") @db.VarChar(64)
+  status      String    @default("in_progress") @db.VarChar(16)
+  bestScore   Int       @default(0) @map("best_score")
+  attempts    Int       @default(0)
+  completedAt DateTime? @map("completed_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@id([userId, lessonId])
+  @@map("lr_lesson_progress")
+}
+
+model LrGrammarMastery {
+  userId        String    @map("user_id") @db.VarChar(36)
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topicId       String    @map("topic_id") @db.VarChar(64)
+  score         Int       @default(0)
+  reps          Int       @default(0)
+  lastPracticed DateTime? @map("last_practiced")
+
+  @@id([userId, topicId])
+  @@map("lr_grammar_mastery")
+}
+
+model LrSrsCard {
+  id         String    @id @default(cuid())
+  userId     String    @map("user_id") @db.VarChar(36)
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // References words.id — kept as a plain Int on purpose: the dictionary
+  // lives in the same DB but is re-importable and must stay decoupled.
+  wordId     Int       @map("word_id")
+  kind       String    @db.VarChar(12) // recog | produce | cloze | audio
+  /// ts-fsrs State: 0 New, 1 Learning, 2 Review, 3 Relearning
+  state      Int       @default(0)
+  due        DateTime
+  stability  Float     @default(0)
+  difficulty Float     @default(0)
+  step       Int       @default(0)
+  reps       Int       @default(0)
+  lapses     Int       @default(0)
+  lastReview DateTime? @map("last_review")
+  suspended  Boolean   @default(false)
+  createdAt  DateTime  @default(now()) @map("created_at")
+
+  logs LrReviewLog[]
+
+  @@index([userId, due])
+  @@unique([userId, wordId, kind])
+  @@map("lr_srs_cards")
+}
+
+model LrReviewLog {
+  id            Int      @id @default(autoincrement())
+  cardId        String   @map("card_id") @db.VarChar(36)
+  card          LrSrsCard @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  userId        String   @map("user_id") @db.VarChar(36)
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating        Int // ts-fsrs Rating 1-4
+  reviewedAt    DateTime @map("reviewed_at")
+  scheduledDays Int      @default(0) @map("scheduled_days")
+  elapsedDays   Int      @default(0) @map("elapsed_days")
+
+  @@index([userId, reviewedAt])
+  @@map("lr_review_logs")
+}
+
+model LrExerciseAttempt {
+  id           Int      @id @default(autoincrement())
+  userId       String   @map("user_id") @db.VarChar(36)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId     String?  @map("lesson_id") @db.VarChar(64)
+  exerciseId   String   @map("exercise_id") @db.VarChar(80)
+  exerciseType String   @map("exercise_type") @db.VarChar(16)
+  correct      Boolean
+  response     Json?
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@index([userId, createdAt])
+  @@map("lr_exercise_attempts")
+}
+
+model LrDailyActivity {
+  userId      String   @map("user_id") @db.VarChar(36)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  day         DateTime @db.Date
+  xp          Int      @default(0)
+  minutes     Int      @default(0)
+  lessonsDone Int      @default(0) @map("lessons_done")
+  reviewsDone Int      @default(0) @map("reviews_done")
+
+  @@id([userId, day])
+  @@map("lr_daily_activity")
+}
+
+// ─── openrussian dictionary (READ-ONLY — produced via `prisma db pull`) ─────
+// Do not edit models casually: they must stay in exact sync with the
+// imported dump tables, otherwise `prisma db push` will try to ALTER them.
+
+model Word {
+  id                Int      @id
+  position          Int?
+  bare              String   @db.VarChar(50)
+  accented          String   @db.VarChar(50)
+  derivedFromWordId Int?     @map("derived_from_word_id")
+  rank              Int?
+  disabled          Boolean  @default(false)
+  audio             String   @db.VarChar(255)
+  usageEn           String?  @map("usage_en") @db.Text
+  usageDe           String?  @map("usage_de") @db.Text
+  numberValue       String?  @map("number_value") @db.Text
+  type              String?  @db.VarChar(20)
+  level             String?  @db.VarChar(2)
+  createdAt         DateTime @map("created_at") @db.DateTime(0)
+
+  adjective      Adjective?
+  noun           Noun?
+  verb           Verb?
+  forms          WordForm[]
+  senses         Translation[]
+  sentenceWords  SentenceWord[]
+  tagWords       TagWord[]
+  /// expressions where this entry is the expression itself
+  asExpression   ExpressionWord[] @relation("expressions_words_expression_idTowords")
+  /// expressions that contain this word
+  inExpressions  ExpressionWord[] @relation("expressions_words_referenced_word_idTowords")
+  derivedFrom    Word?            @relation("wordsTowords", fields: [derivedFromWordId], references: [id], onUpdate: NoAction, map: "fk_words_derived")
+  derivatives    Word[]           @relation("wordsTowords")
+  relsFrom       WordsRel[]       @relation("words_rels_word_idTowords")
+  relsTo         WordsRel[]       @relation("words_rels_rel_word_idTowords")
+
+  @@index([derivedFromWordId], map: "fk_words_derived")
+  @@index([level], map: "idx_words_level")
+  @@index([rank], map: "idx_words_rank")
+  @@index([type], map: "idx_words_type")
+  @@map("words")
+}
+
+model WordForm {
+  id       Int    @id
+  wordId   Int    @map("word_id")
+  formType String @map("form_type") @db.VarChar(50)
+  position Int
+  form     String @db.VarChar(100)
+  formBare String @map("form_bare") @db.VarChar(100)
+  word     Word   @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_words_forms_word")
+
+  @@index([formType], map: "idx_words_forms_type")
+  @@index([wordId], map: "idx_words_forms_word")
+  @@map("words_forms")
+}
+
+model Translation {
+  id        Int     @id
+  wordId    Int     @map("word_id")
+  lang      String  @db.VarChar(2)
+  position  Int
+  tl        String  @db.VarChar(255)
+  exampleRu String? @map("example_ru") @db.Text
+  exampleTl String? @map("example_tl") @db.Text
+  info      String? @db.Text
+  word      Word    @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_translations_word")
+
+  @@index([lang], map: "idx_translations_lang")
+  @@index([wordId], map: "idx_translations_word")
+  @@map("translations")
+}
+
+model Noun {
+  wordId       Int      @id @map("word_id")
+  gender       String?  @db.VarChar(2)
+  partner      String?  @db.VarChar(100)
+  animate      Boolean?
+  indeclinable Boolean  @default(false)
+  sgOnly       Boolean  @default(false) @map("sg_only")
+  plOnly       Boolean  @default(false) @map("pl_only")
+  word         Word     @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_nouns_word")
+
+  @@map("nouns")
+}
+
+model Verb {
+  wordId  Int     @id @map("word_id")
+  aspect  String  @db.VarChar(12)
+  partner String? @db.VarChar(255)
+  word    Word    @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_verbs_word")
+
+  @@map("verbs")
+}
+
+model Adjective {
+  wordId       Int      @id @map("word_id")
+  incomparable Boolean?
+  word         Word     @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_adjectives_word")
+
+  @@map("adjectives")
+}
+
+model Sentence {
+  id          Int                  @id
+  ru          String               @db.Text
+  tatoebaKey  Int                  @map("tatoeba_key")
+  disabled    Boolean              @default(false)
+  level       String?              @db.VarChar(2)
+  translation SentenceTranslation?
+  sentenceWords SentenceWord[]
+
+  @@index([level], map: "idx_sentences_level")
+  @@map("sentences")
+}
+
+model SentenceTranslation {
+  sentenceId Int       @id @map("sentence_id")
+  tlEn       String    @map("tl_en") @db.VarChar(500)
+  tlDe       String?   @map("tl_de") @db.VarChar(500)
+  sentence   Sentence  @relation(fields: [sentenceId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_sent_trans_sentence")
+
+  @@map("sentences_translations")
+}
+
+model SentenceWord {
+  id          Int       @id
+  sentenceId  Int       @map("sentence_id")
+  wordId      Int       @map("word_id")
+  start       Int
+  length      Int
+  formType    String?   @map("form_type") @db.Text
+  sentence    Sentence  @relation(fields: [sentenceId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_sentences_words_sentence")
+  word        Word      @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_sentences_words_word")
+
+  @@index([sentenceId], map: "idx_sentences_words_sentence")
+  @@index([wordId], map: "idx_sentences_words_word")
+  @@map("sentences_words")
+}
+
+model WordsRel {
+  id        Int    @id
+  wordId    Int    @map("word_id")
+  relWordId Int    @map("rel_word_id")
+  relation  String @db.VarChar(10) // related | synonym | antonym
+  word      Word   @relation("words_rels_word_idTowords", fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_words_rels_word")
+  relWord   Word   @relation("words_rels_rel_word_idTowords", fields: [relWordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_words_rels_rel_word")
+
+  @@index([relWordId], map: "idx_words_rels_rel_word")
+  @@index([wordId], map: "idx_words_rels_word")
+  @@map("words_rels")
+}
+
+model Tag {
+  id        Int        @id
+  uid       String     @unique(map: "uq_tags_uid") @db.VarChar(20)
+  nameRu    String     @map("name_ru") @db.VarChar(50)
+  nameEn    String     @map("name_en") @db.VarChar(50)
+  nameDe    String     @map("name_de") @db.VarChar(50)
+  tagWords  TagWord[]
+
+  @@map("tags")
+}
+
+model TagWord {
+  id            Int     @id
+  tagId         Int     @map("tag_id")
+  wordId        Int     @map("word_id")
+  translationId Int?    @map("translation_id")
+  tagText       String? @map("tag_text") @db.Text
+  tag           Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_tags_words_tag")
+  word          Word    @relation(fields: [wordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_tags_words_word")
+
+  @@index([tagId], map: "idx_tags_words_tag")
+  @@index([wordId], map: "idx_tags_words_word")
+  @@map("tags_words")
+}
+
+model ExpressionWord {
+  id              Int    @id
+  expressionId    Int    @map("expression_id")
+  referencedWordId Int   @map("referenced_word_id")
+  start           Int
+  length          Int
+  expression      Word   @relation("expressions_words_expression_idTowords", fields: [expressionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_expr_words_expression")
+  referencedWord  Word   @relation("expressions_words_referenced_word_idTowords", fields: [referencedWordId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_expr_words_referenced_word")
+
+  @@index([expressionId], map: "idx_expr_words_expression")
+  @@index([referencedWordId], map: "idx_expr_words_referenced_word")
+  @@map("expressions_words")
+}
+
+model Scenario {
+  id       String  @id @db.VarChar(20)
+  data     String  @db.LongText
+  audioMp3 String? @map("audio_mp3") @db.VarChar(255)
+  onlyPro  Boolean @default(false) @map("only_pro")
+
+  @@map("scenarios")
+}
