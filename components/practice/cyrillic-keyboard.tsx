@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import { Keyboard } from "lucide-react";
+import { useState } from "react";
+import { CornerDownLeft, Languages } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Ported from quiz-renderer lib/translit.ts — greedy longest-match Latin→Cyrillic.
 const RU_MAP: Record<string, string> = {
@@ -46,127 +47,129 @@ const RU_MAP: Record<string, string> = {
   j: "й",
 };
 
-const PALETTE = [
+const RU_MAX = Math.max(...Object.keys(RU_MAP).map((k) => k.length));
+
+export const RUSSIAN_PALETTE = [
   "а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й",
   "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф",
   "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я",
 ];
 
-/** Greedy longest-match transliteration of trailing Latin input. */
-export function translitTail(value: string, maxLook = 4): { value: string; changed: boolean } {
-  const tailStart = Math.max(0, value.length - maxLook - 1);
-  let head = value.slice(0, tailStart);
-  let tail = value.slice(tailStart);
-  let changed = false;
-  // Walk the tail; at each position try the longest Latin run that maps.
-  let i = 0;
+/** Greedy longest-match over RU_MAP; unknown characters pass through. */
+export function transliterate(input: string): string {
   let out = "";
-  while (i < tail.length) {
-    let matched = "";
-    for (let len = 4; len >= 1; len--) {
-      const sub = tail.slice(i, i + len).toLowerCase();
-      if (sub.length === len && RU_MAP[sub]) {
-        // Preserve capitalisation of the first letter.
-        const mapped = RU_MAP[sub];
-        matched =
-          tail[i] === tail[i].toUpperCase() && tail[i].toLowerCase() !== tail[i]
-            ? mapped.toUpperCase()
-            : mapped;
+  let i = 0;
+  while (i < input.length) {
+    let matched = false;
+    for (let len = Math.min(RU_MAX, input.length - i); len >= 1; len--) {
+      const key = input.slice(i, i + len).toLowerCase();
+      if (Object.prototype.hasOwnProperty.call(RU_MAP, key)) {
+        out += RU_MAP[key];
         i += len;
-        changed = true;
+        matched = true;
         break;
       }
     }
     if (!matched) {
-      out += tail[i];
-      i += 1;
-    } else {
-      out += matched;
+      out += input[i];
+      i++;
     }
   }
-  // If nothing converted, keep the original tail.
-  return { value: changed ? head + out : value, changed };
+  return out;
 }
 
 /**
- * Cyrillic input helper: a click-to-insert letter palette plus a Latin
- * transliteration IME bound to a controlled input.
+ * Russian keyboard helper (port of quiz-renderer's VirtualKeyboard):
+ * a draft box where you type Latin and watch the live Cyrillic conversion,
+ * plus a click-to-insert letter palette. Inserted text is appended to the
+ * target answer via onInsert.
  */
-export function CyrillicKeyboard({
-  targetRef,
-  value,
-  onChange,
-  enabled = true,
+export function RuKeyboard({
+  onInsert,
+  disabled,
+  defaultOpen = false,
 }: {
-  targetRef: React.RefObject<HTMLInputElement | null>;
-  value: string;
-  onChange: (next: string) => void;
-  enabled?: boolean;
+  onInsert: (text: string) => void;
+  disabled?: boolean;
+  defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
+  const [draft, setDraft] = useState("");
 
-  if (!enabled) return null;
+  const converted = transliterate(draft);
 
-  function insertAtCursor(letter: string) {
-    const el = targetRef.current;
-    if (!el) {
-      onChange(value + letter);
-      return;
-    }
-    const start = el.selectionStart ?? value.length;
-    const end = el.selectionEnd ?? value.length;
-    const next = value.slice(0, start) + letter + value.slice(end);
-    onChange(next);
-    requestAnimationFrame(() => {
-      el.focus();
-      el.setSelectionRange(start + letter.length, start + letter.length);
-    });
+  function insertAndClear() {
+    if (!converted) return;
+    onInsert(converted);
+    setDraft("");
   }
 
   return (
-    <div className="mt-2">
+    <div className="mt-1.5">
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
-        title="Toggle Cyrillic keyboard (you can also type with Latin transliteration: shch→щ, zh→ж, ya→я …)"
+        onClick={() => setOpen(!open)}
+        disabled={disabled}
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground",
+          open && "border-primary text-primary",
+          disabled && "cursor-not-allowed opacity-50",
+        )}
       >
-        <Keyboard className="size-3.5" />
+        <Languages className="size-3.5" />
         Русская клавиатура
       </button>
+
       {open ? (
-        <div className="mt-2 flex max-w-md flex-wrap gap-1 rounded-lg border bg-muted/40 p-2">
-          {PALETTE.map((letter) => (
+        <div className="mt-2 space-y-3 rounded-lg border border-border bg-muted/30 p-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <input
+              type="text"
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  insertAndClear();
+                }
+              }}
+              placeholder="privet, shch, ponyal…"
+              className="w-44 rounded-md border border-border bg-background px-2.5 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+            <span className="min-h-[1.75rem] flex-1 truncate rounded-md border border-primary/30 bg-background px-2.5 py-1 text-sm font-medium">
+              {converted || <span className="text-muted-foreground">…</span>}
+            </span>
             <button
-              key={letter}
               type="button"
-              onClick={() => insertAtCursor(letter)}
-              className="h-8 w-8 rounded border bg-card text-sm hover:bg-accent"
+              onClick={insertAndClear}
+              disabled={!converted}
+              title="Append to your answer"
+              className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium disabled:opacity-50"
             >
-              {letter}
+              <CornerDownLeft className="size-3.5" />
+              Вставить
             </button>
-          ))}
+          </div>
+
+          <div className="flex flex-wrap gap-1">
+            {RUSSIAN_PALETTE.map((ch) => (
+              <button
+                key={ch}
+                type="button"
+                onClick={() => onInsert(ch)}
+                className="flex h-7 w-7 items-center justify-center rounded border border-border bg-background text-sm hover:border-primary hover:bg-muted"
+              >
+                {ch}
+              </button>
+            ))}
+          </div>
+
+          <p className="text-[11px] text-muted-foreground">
+            Type Latin (&laquo;privet&raquo;, &laquo;shch&raquo;, &laquo;ponyal&raquo;), press
+            Enter or Вставить to append it to your answer — or tap letters directly.
+          </p>
         </div>
       ) : null}
     </div>
-  );
-}
-
-/** Hook: wraps onChange to apply the translit IME to typed input. */
-export function useTranslit(onChange: (next: string) => void) {
-  const lastValue = useRef("");
-  return useMemo(
-    () => (next: string) => {
-      // Only apply transliteration when Latin letters were just added.
-      if (next.length > lastValue.current.length) {
-        const { value, changed } = translitTail(next);
-        lastValue.current = value;
-        onChange(changed ? value : next);
-        return;
-      }
-      lastValue.current = next;
-      onChange(next);
-    },
-    [onChange],
   );
 }

@@ -25,7 +25,7 @@ export default async function LessonPage({
   if (!found) notFound();
   const { unit: unitData, lesson } = found;
 
-  const { user } = await requireUser();
+  const { user, profile: lessonProfile } = await requireUser();
   const locks = await computeLevelLocks(getLevel(lv), user.id);
   const lock = locks.units[unitData.number - 1];
   const lessonLock = lock?.lessons[lessonNumber - 1];
@@ -179,6 +179,7 @@ export default async function LessonPage({
         <ExerciseRunner
           exercises={exercises}
           submit={submit}
+          keyboard={!!lessonProfile.showTranslitKeyboard}
           exportTitle={`${lv}-u${String(unitNumber).padStart(2, "0")}-l${lessonNumber} ${lesson.title}`}
           onDoneHref={
             lessonNumber < unitData.lessons.length

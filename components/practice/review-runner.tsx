@@ -8,6 +8,7 @@ import type { ReviewItem } from "@/lib/review";
 import { normalizeRu, withStress } from "@/lib/russian";
 import { gradeCard } from "@/app/actions/progress";
 import { AudioButton } from "@/components/audio-button";
+import { RuKeyboard } from "@/components/practice/cyrillic-keyboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
@@ -35,7 +36,13 @@ function kindLabel(kind: ReviewItem["kind"]) {
   }
 }
 
-export function ReviewRunner({ items }: { items: ReviewItem[] }) {
+export function ReviewRunner({
+  items,
+  keyboard = true,
+}: {
+  items: ReviewItem[];
+  keyboard?: boolean;
+}) {
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("prompt");
   const [typed, setTyped] = useState("");
@@ -229,6 +236,12 @@ export function ReviewRunner({ items }: { items: ReviewItem[] }) {
                 placeholder="по-русски…"
                 autoComplete="off"
               />
+              {keyboard ? (
+                <RuKeyboard
+                  onInsert={(t) => setTyped(typed + t)}
+                  disabled={phase === "revealed"}
+                />
+              ) : null}
             </>
           ) : null}
 
@@ -239,6 +252,7 @@ export function ReviewRunner({ items }: { items: ReviewItem[] }) {
               disabled={phase === "revealed"}
               onChange={setBlank}
               onSubmit={() => canReveal && phase === "prompt" && reveal()}
+              keyboard={keyboard}
             />
           ) : null}
         </div>
@@ -299,12 +313,14 @@ function ClozeView({
   disabled,
   onChange,
   onSubmit,
+  keyboard,
 }: {
   text: string;
   value: string;
   disabled: boolean;
   onChange: (v: string) => void;
   onSubmit: () => void;
+  keyboard: boolean;
 }) {
   const parts = text.split("{{blank}}");
   return (

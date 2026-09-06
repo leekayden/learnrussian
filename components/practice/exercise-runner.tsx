@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import type { Exercise, Option } from "@/lib/curriculum/types";
 import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
 import { downloadFilename, exercisesToRendererQuiz } from "@/lib/quiz-export";
-import { useTranslit } from "@/components/practice/cyrillic-keyboard";
+import { RuKeyboard } from "@/components/practice/cyrillic-keyboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
@@ -78,6 +78,7 @@ export function ExerciseRunner({
   onDoneHref,
   onDoneLabel,
   passPercent = 70,
+  keyboard = true,
 }: {
   exercises: Exercise[];
   submit: (
@@ -88,10 +89,12 @@ export function ExerciseRunner({
   onDoneHref?: string;
   onDoneLabel?: string;
   passPercent?: number;
+  keyboard?: boolean;
 }) {
   const [idx, setIdx] = useState(0);
   const [responses, setResponses] = useState<Record<string, ExerciseResponse>>({});
   const [blanks, setBlanks] = useState<Record<string, string[]>>({});
+  const [activeBlank, setActiveBlank] = useState(0);
   const [checked, setChecked] = useState(false);
   const [finished, setFinished] = useState(false);
   const [result, setResult] = useState<SubmitResult | null>(null);
@@ -157,6 +160,7 @@ export function ExerciseRunner({
     setIdx(0);
     setResponses({});
     setBlanks({});
+    setActiveBlank(0);
     setChecked(false);
     setFinished(false);
     setResult(null);
@@ -240,6 +244,7 @@ export function ExerciseRunner({
 
       <div className="rounded-xl border bg-card p-6">
         <ExerciseView
+          key={ex.id}
           exercise={ex}
           response={response}
           blanks={blanks[ex.id] ?? []}
@@ -248,11 +253,19 @@ export function ExerciseRunner({
             values[i] = v;
             setBlanks((b) => ({ ...b, [ex.id]: values }));
           }}
+          activeBlank={activeBlank}
+          onBlankFocus={setActiveBlank}
+          onInsert={(t) => {
+            const values = [...(blanks[ex.id] ?? [])];
+            values[activeBlank] = (values[activeBlank] ?? "") + t;
+            setBlanks((b) => ({ ...b, [ex.id]: values }));
+          }}
           onResponse={setResponse}
           checked={checked}
           correct={correctNow}
           inputRef={inputRef}
           disabled={checked}
+          keyboard={keyboard}
         />
 
         {checked ? (
@@ -343,21 +356,29 @@ function ExerciseView({
   response,
   blanks,
   onBlank,
+  activeBlank,
+  onBlankFocus,
+  onInsert,
   onResponse,
   checked,
   correct,
   inputRef,
   disabled,
+  keyboard,
 }: {
   exercise: Exercise;
   response: ExerciseResponse | undefined;
   blanks: string[];
   onBlank: (i: number, v: string) => void;
+  activeBlank: number;
+  onBlankFocus: (i: number) => void;
+  onInsert: (t: string) => void;
   onResponse: (v: ExerciseResponse) => void;
   checked: boolean;
   correct: boolean;
   inputRef: React.RefObject<HTMLInputElement | null>;
   disabled: boolean;
+  keyboard: boolean;
 }) {
   switch (exercise.type) {
     case "single":
@@ -444,7 +465,7 @@ function ExerciseView({
       );
     case "short-answer": {
       const value = typeof response === "string" ? response : "";
-      return <ShortAnswerView exercise={exercise} value={value} onChange={onResponse} checked={checked} correct={correct} inputRef={inputRef} disabled={disabled} />;
+      return <ShortAnswerView exercise={exercise} value={value} onChange={onResponse} checked={checked} correct={correct} disabled={disabled} keyboard={keyboard} />;
     }
     case "ordering": {
       const order = Array.isArray(response) ? response : exercise.items.map((i) => i.id);
@@ -512,6 +533,7 @@ function ExerciseView({
                   value={blanks[blankIndexOf[i]] ?? ""}
                   disabled={disabled}
                   onChange={(e) => onBlank(blankIndexOf[i], e.target.value)}
+                  onFocus={() => onBlankFocus(blankIndexOf[i])}
                   autoComplete="off"
                 />
               ) : (
@@ -521,7 +543,9 @@ function ExerciseView({
               ),
             )}
           </div>
-          <CyrillicNote />
+          {keyboard ? (
+            <RuKeyboard onInsert={onInsert} disabled={disabled} />
+          ) : null}
         </div>
       );
     }
@@ -567,31 +591,24 @@ function ShortAnswerView({
   onChange,
   checked,
   correct,
-  inputRef,
   disabled,
+  keyboard,
 }: {
   exercise: Extract<Exercise, { type: "short-answer" }>;
   value: string;
   onChange: (v: ExerciseResponse) => void;
   checked: boolean;
   correct: boolean;
-  inputRef: React.RefObject<HTMLInputElement | null>;
   disabled: boolean;
+  keyboard: boolean;
 }) {
-  const [typed, setTyped] = useState(value);
-  const [showKeyboard, setShowKeyboard] = useState(false);
-  const handleTranslit = useTranslit((next) => {
-    setTyped(next);
-    onChange(next);
-  });
   return (
     <div className="space-y-2">
       <Md text={exercise.text} className="font-medium" />
       <Input
-        ref={inputRef}
-        value={typed}
+        value={value}
         disabled={disabled}
-        onChange={(e) => handleTranslit(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
         className={cn(
           "max-w-sm text-lg",
           checked && (correct ? "border-green-600" : "border-red-500"),
@@ -599,54 +616,9 @@ function ShortAnswerView({
         placeholder="По-русски…"
         autoComplete="off"
       />
-      <div>
-        <button
-          type="button"
-          className="text-xs text-muted-foreground hover:text-foreground"
-          onClick={() => setShowKeyboard((s) => !s)}
-        >
-          {showKeyboard ? "Hide keyboard" : "Cyrillic keyboard"}
-        </button>
-        {showKeyboard ? (
-          <CyrillicPalette
-            onInsert={(letter) => {
-              const next = typed + letter;
-              setTyped(next);
-              onChange(next);
-            }}
-          />
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
-function CyrillicNote() {
-  return (
-    <p className="text-xs text-muted-foreground">
-      Type Latin to get Cyrillic (zh→ж, sh→ш, ya→я) or use the palette below.
-    </p>
-  );
-}
-
-function CyrillicPalette({ onInsert }: { onInsert: (letter: string) => void }) {
-  const PALETTE = [
-    "а","б","в","г","д","е","ё","ж","з","и","й",
-    "к","л","м","н","о","п","р","с","т","у","ф",
-    "х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я",
-  ];
-  return (
-    <div className="mt-2 flex max-w-md flex-wrap gap-1 rounded-lg border bg-muted/40 p-2">
-      {PALETTE.map((letter) => (
-        <button
-          key={letter}
-          type="button"
-          onClick={() => onInsert(letter)}
-          className="h-8 w-8 rounded border bg-card text-sm hover:bg-accent"
-        >
-          {letter}
-        </button>
-      ))}
+      {keyboard ? (
+        <RuKeyboard onInsert={(t) => onChange(value + t)} disabled={disabled} />
+      ) : null}
     </div>
   );
 }

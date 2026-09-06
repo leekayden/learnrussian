@@ -25,8 +25,10 @@ const KINDS: { id: DrillKind; title: string; description: string }[] = [
 
 export function PracticeHub({
   start,
+  keyboard = true,
 }: {
   start: (kind: DrillKind, level: string) => Promise<Exercise[]>;
+  keyboard?: boolean;
 }) {
   const [kind, setKind] = useState<DrillKind | null>(null);
   const [level, setLevel] = useState("A2");
@@ -67,6 +69,7 @@ export function PracticeHub({
           return result;
         }}
         exportTitle={`practice-${kind}-${level}`}
+        keyboard={keyboard}
         onDoneHref="/practice"
         onDoneLabel="Another drill →"
         passPercent={100}

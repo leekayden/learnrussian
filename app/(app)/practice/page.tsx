@@ -40,7 +40,7 @@ export default async function PracticePage() {
           Free drills beyond the curriculum — pick a muscle and train it.
         </p>
       </div>
-      <PracticeHub start={start} />
+      <PracticeHub start={start} keyboard={!!profile.showTranslitKeyboard} />
     </div>
   );
 }
