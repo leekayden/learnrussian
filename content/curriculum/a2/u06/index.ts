@@ -103,7 +103,7 @@ export const u06: Unit = {
       id: "a2-u06-l3",
       title: "Step 3: future imperfective — буду + infinitive",
       topicIds: ["a2-u06-past-future"],
-      vocab: ["завтра", "скоро", "буду", "будешь", "будем", "читать", "работать", "отдыхать", "готовиться", "вечер"],
+      vocab: ["завтра", "скоро", "будущее", "читать", "работать", "отдыхать", "готовиться", "вечер", "план", "весь"],
       grammar: [
         {
           title: "буду + infinitive = ongoing future",
