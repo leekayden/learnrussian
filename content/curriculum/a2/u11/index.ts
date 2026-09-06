@@ -192,7 +192,7 @@ Phone numbers: read in single digits or pairs.`,
       id: "a2-u11-l5",
       title: "Step 5: how long vs how often",
       topicIds: ["a2-u11-numerals-time"],
-      vocab: ["час", "два часа", "раз", "каждый день", "часто", "редко", "всегда", "никогда", "обычно", "давно"],
+      vocab: ["час", "раз", "часто", "редко", "всегда", "никогда", "обычно", "давно", "каждый", "неделя"],
       grammar: [
         {
           title: "Duration = bare accusative; frequency = раз в…",
