@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { signUp } from "@/lib/auth-client";
@@ -19,7 +18,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function RegisterPage() {
-  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,14 +30,18 @@ export default function RegisterPage() {
       return;
     }
     setLoading(true);
-    const { error } = await signUp.email({ name, email, password });
-    if (error) {
-      toast.error(error.message ?? "Could not create account");
+    try {
+      const { error } = await signUp.email({ name, email, password });
+      if (error) {
+        setLoading(false);
+        toast.error(error.message ?? "Could not create account");
+        return;
+      }
+      window.location.href = "/dashboard";
+    } catch (err: unknown) {
       setLoading(false);
-      return;
+      toast.error(err instanceof Error ? err.message : "Could not create account");
     }
-    router.push("/dashboard");
-    router.refresh();
   }
 
   return (

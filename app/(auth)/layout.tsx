@@ -1,7 +1,11 @@
 import type { ReactNode } from "react";
+import { redirect } from "next/navigation";
 import { GraduationCap } from "lucide-react";
+import { getSession } from "@/lib/session";
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default async function AuthLayout({ children }: { children: ReactNode }) {
+  const session = await getSession();
+  if (session) redirect("/dashboard");
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted/40 p-6">
       <div className="flex items-center gap-2">

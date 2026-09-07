@@ -1,29 +1,24 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { getSessionCookie } from "better-auth/cookies";
 
 /**
  * Next.js 16 proxy (formerly middleware). Cookie-presence checks only —
  * the authoritative session check happens in server layouts/actions.
  */
 const PROTECTED = ["/dashboard", "/learn", "/review", "/practice", "/progress", "/settings", "/placement"];
-const AUTH_PAGES = ["/login", "/register"];
 
 export function proxy(request: NextRequest) {
-  const hasSessionCookie =
-    request.cookies.has("better-auth.session_token") ||
-    request.cookies.has("better-auth.session_data");
-
+  const hasSession = getSessionCookie(request, { cookiePrefix: "learnrussian" });
   const { pathname } = request.nextUrl;
 
-  if (!hasSessionCookie && PROTECTED.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
+  if (!hasSession && PROTECTED.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
     const login = new URL("/login", request.url);
     login.searchParams.set("next", pathname);
     return NextResponse.redirect(login);
   }
 
-  if (hasSessionCookie && AUTH_PAGES.includes(pathname)) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
+  // Auth pages handle "already signed in" server-side (in their layout)
+  // so a stale/invalid cookie can never cause a redirect loop.
   return NextResponse.next();
 }
 

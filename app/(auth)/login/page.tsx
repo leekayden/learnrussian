@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { signIn } from "@/lib/auth-client";
@@ -19,8 +19,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 function LoginForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const rawNext = searchParams.get("next") ?? searchParams.get("callbackUrl");
+  const nextUrl =
+    rawNext &&
+    rawNext.startsWith("/") &&
+    !rawNext.startsWith("/login") &&
+    !rawNext.startsWith("/register")
+      ? rawNext
+      : "/dashboard";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -28,14 +36,18 @@ function LoginForm() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    const { error } = await signIn.email({ email, password });
-    if (error) {
-      toast.error(error.message ?? "Could not sign in");
+    try {
+      const { error } = await signIn.email({ email, password });
+      if (error) {
+        setLoading(false);
+        toast.error(error.message ?? "Could not sign in");
+        return;
+      }
+      window.location.href = nextUrl;
+    } catch (err: unknown) {
       setLoading(false);
-      return;
+      toast.error(err instanceof Error ? err.message : "Could not sign in");
     }
-    router.push(searchParams.get("next") ?? "/dashboard");
-    router.refresh();
   }
 
   return (
