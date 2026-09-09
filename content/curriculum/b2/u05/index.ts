@@ -12,7 +12,7 @@ export const u05: Unit = {
       id: "b2-u05-l1",
       title: "Step 1: statements and questions",
       topicIds: ["b2-u05-indirect-speech"],
-      vocab: ["объяснять", "сообщить", "добавить", "спросить", "ответить", "занят", "придти", "узнать", "интересно", "позвонить"],
+      vocab: ["объяснять", "сообщить", "добавить", "спросить", "ответить", "занятость", "прийти", "узнать", "интересно", "позвонить"],
       grammar: [
         {
           title: "что for statements, ли for yes/no questions",
@@ -56,7 +56,7 @@ NO tense shifting — Russian keeps the original tense, changes only person.`,
       id: "b2-u05-l2",
       title: "Step 2: commands — что́бы and infinitive reports",
       topicIds: ["b2-u05-indirect-speech"],
-      vocab: ["попросить", "приказать", "велеть", "просьба", "уходи", "прийти", "позвонить", "немедленно", "требовать", "подчиниться"],
+      vocab: ["попросить", "приказать", "велеть", "просьба", "уйти", "прийти", "позвонить", "немедленно", "требовать", "подчиниться"],
       grammar: [
         {
           title: "Reporting commands",
