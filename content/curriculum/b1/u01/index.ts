@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** B1 · Unit 1 — Plurals in all six cases. */
+/** B1 · Unit 1 — Plurals, one step at a time. */
 export const u01: Unit = {
   id: "b1-u01",
   level: "b1",
@@ -10,14 +10,16 @@ export const u01: Unit = {
   lessons: [
     {
       id: "b1-u01-l1",
-      title: "Nominative & accusative plural",
+      title: "Step 1: nominative plural",
       topicIds: ["b1-u01-plurals"],
-      vocab: ["студент", "студентка", "преподаватель", "окно", "здание", "газета", "журнал", "ручка", "тетрадь", "словарь"],
+      vocab: ["студент", "музей", "газета", "тетрадь", "окно", "здание", "преподаватель", "книга", "ручка", "словарь"],
       grammar: [
         {
-          title: "Building the plural",
-          body: `Nominative plural: masculine hard → **-ы** (студе́нты), **-й/-ь** → **-и** (музе́и, преподаватели), feminine **-а/-я** → **-ы/-и** (газе́ты, тетра́ди), neuter **-о/-е** → **-а/-я** (окна́, зда́ния).
-Spelling rule: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги́).`,
+          title: "One plural per gender — with overlaps",
+          body: `- masculine hard → **-ы** (студе́нты); **-й/-ь** → **-и** (музе́и, преподаватели)
+- feminine **-а → -ы**, **-я/-ь → -и** (газе́ты, тетра́ди)
+- neuter **-о → -а**, **-е → -я** (окна́, зда́ния)
+- Spelling: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги́)`,
           table: {
             headers: ["Sg", "Pl", "Sg", "Pl"],
             rows: [
@@ -26,39 +28,11 @@ Spelling rule: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги�
               ["окно", "окна", "здание", "здания"],
             ],
           },
-          examples: [
-            { ru: "Студе'нты чита'ют журна'лы.", en: "The students are reading magazines." },
-          ],
-          tip: "Irregulars to learn now: де́нь → дни, друг → друзья́, сын → сыновья́, брат → бра́тья. Mobile vowels drop out: продаве́ц → продавцы́.",
-        },
-        {
-          title: "Accusative plural: inanimate vs animate",
-          body: `Inanimate accusative plural = nominative plural (Я чита́ю журна́лы).
-**Animate** accusative = genitive plural: Я ви́жу студенто́в (m), студенток (f), друзей (from друг).`,
-          examples: [
-            { ru: "Я ви'жу на'ших преподава'телей.", en: "I see our teachers." },
-          ],
         },
       ],
       exercises: [
         {
           id: "b1-u01-l1-e1",
-          type: "single",
-          text: "В кла́ссе сидя́т ___. (студе́нты — accusative needed?)",
-          options: [
-            { id: "a", label: "Я вижу студентов" },
-            { id: "b", label: "Я вижу студенты" },
-          ],
-          answer: "a",
-        },
-        {
-          id: "b1-u01-l1-e2",
-          type: "fill-blank",
-          text: "У меня́ два́дцать но́вых {{blank}}. *(дру́зья → gen pl after numerals 5+)*",
-          answers: ["друзей"],
-        },
-        {
-          id: "b1-u01-l1-e3",
           type: "matching",
           text: "Singular → plural:",
           prompts: [
@@ -73,21 +47,123 @@ Spelling rule: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги�
           ],
           answer: { p1: "r2", p2: "r3", p3: "r1" },
         },
+        {
+          id: "b1-u01-l1-e2",
+          type: "true-false",
+          text: "«кни́ги» (plural of кни́га) is spelled with -и.",
+          answer: true,
+          explanation: "After к always -и.",
+        },
       ],
-      drills: [{ kind: "cloze", count: 4 }],
+      drills: [{ kind: "cloze", count: 3 }],
     },
     {
       id: "b1-u01-l2",
-      title: "Genitive, dative, instrumental, prepositional plural",
+      title: "Step 2: irregular plurals and mobile vowels",
       topicIds: ["b1-u01-plurals"],
-      vocab: ["вопрос", "ответ", "пример", "ошибка", "слово", "страница", "глава", "письмо", "деньги", "известие"],
+      vocab: ["друг", "брат", "сын", "день", "стул", "продавец", "город", "сестра", "дочь", "мать"],
       grammar: [
         {
-          title: "One ending set for all genders",
-          body: `The great simplification: in dative, instrumental and prepositional plural, all genders share endings:
-- **Dative: -ам / -ям** (студе́нтам, кни́гам, зда́ниям)
-- **Instrumental: -ами / -ями** (студе́нтами, кни́гами, две́рями)
-- **Prepositional: -ах / -ях** (о студе́нтах, в кни́гах, в зда́ниях)`,
+          title: "Learn these twelve by heart",
+          body: `- дeнь → дни, ло́жка → ло́жки... the real irregulars:
+- **друг → друзья́**, **брат → бра́тья**, **сын → сыновья́**, **де́ньги** (pl only)
+- **стул → сту́лья**, **де́рево → дере́вья**
+- Mobile vowel drops: **продаве́ц → продавцы́**, **о́кно → о́кна** (о returns in gen pl)
+- **мать → до́чери / ма́тери** — дочь → до́чери, мать → ма́тери`,
+          table: {
+            headers: ["Singular", "Plural"],
+            rows: [
+              ["друг", "друзья"],
+              ["брат", "братья"],
+              ["сын", "сыновья"],
+              ["стул", "стулья"],
+              ["мать", "матери"],
+            ],
+          },
+          tip: "Some nouns only exist in plural: де́ньги, но́вости, часы́, кани́кулы.",
+        },
+      ],
+      exercises: [
+        {
+          id: "b1-u01-l2-e1",
+          type: "matching",
+          text: "Singular → plural:",
+          prompts: [
+            { id: "p1", label: "друг" },
+            { id: "p2", label: "сын" },
+            { id: "p3", label: "стул" },
+          ],
+          responses: [
+            { id: "r1", label: "стулья" },
+            { id: "r2", label: "друзья" },
+            { id: "r3", label: "сыновья" },
+          ],
+          answer: { p1: "r2", p2: "r3", p3: "r1" },
+        },
+        {
+          id: "b1-u01-l2-e2",
+          type: "true-false",
+          text: "«браты» is the normal plural of бра́т.",
+          answer: false,
+          explanation: "The normal plural is бра́тья; бра́ты appears only jocularly/technically.",
+        },
+      ],
+      drills: [{ kind: "cloze", count: 3 }],
+    },
+    {
+      id: "b1-u01-l3",
+      title: "Step 3: accusative plural — animate vs inanimate",
+      topicIds: ["b1-u01-plurals"],
+      vocab: ["читать", "журнал", "видеть", "студент", "студентка", "друг", "встречать", "знать", "кошка", "собака"],
+      grammar: [
+        {
+          title: "Two accusative plurals",
+          body: `- **Inanimate** = nominative plural: Я чита́ю журна́лы.
+- **Animate** = genitive plural: Я ви́жу студенто́в, студенток, друзе́й.`,
+          table: {
+            headers: ["Noun", "Accusative plural"],
+            rows: [
+              ["журналы (inan)", "журналы"],
+              ["студенты (anim)", "студентов"],
+              ["друзья (anim)", "друзей"],
+            ],
+          },
+        },
+      ],
+      exercises: [
+        {
+          id: "b1-u01-l3-e1",
+          type: "single",
+          text: "Я ви́жу ___.",
+          options: [{ id: "a", label: "студентов" }, { id: "b", label: "студенты" }], answer: "a",
+        },
+        {
+          id: "b1-u01-l3-e2",
+          type: "single",
+          text: "Я чита́ю ___.",
+          options: [{ id: "a", label: "журналы" }, { id: "b", label: "журналов" }], answer: "a",
+        },
+        {
+          id: "b1-u01-l3-e3",
+          type: "fill-blank",
+          text: "Она́ встре́тила ___. *(friends)*",
+          answers: ["друзей"],
+        },
+      ],
+      drills: [{ kind: "noun-case", count: 3, cases: ["acc"] }, { kind: "cloze", count: 2 }],
+    },
+    {
+      id: "b1-u01-l4",
+      title: "Step 4: dative, instrumental, prepositional plural",
+      topicIds: ["b1-u01-plurals"],
+      vocab: ["помогать", "говорить", "гордиться", "заниматься", "вопрос", "родители", "дети", "слово", "письмо", "глава"],
+      grammar: [
+        {
+          title: "All genders share one set",
+          body: `- **Dative: -ам/-ям** (студе́нтам, кни́гам, зда́ниям)
+- **Instrumental: -ами/-ями** (студе́нтами, две́рями)
+- **Prepositional: -ах/-ях** (о студе́нтах, в кни́гах, в зда́ниях)
+Prepositional -ья nouns keep the ь: сту́лья → о сту́льях.`,
           table: {
             headers: ["Case", "Ending", "Example"],
             rows: [
@@ -96,128 +172,123 @@ Spelling rule: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги�
               ["prepositional", "-ах/-ях", "Мы говорим о студентах"],
             ],
           },
-          examples: [
-            { ru: "Де'ти игра'ют с роди'телями.", en: "The children are playing with (their) parents." },
-          ],
-          tip: "Prepositional -ья nouns keep the soft sign lost in nom plural: стулья → о сту́льях, друзья́ → о друзья́х.",
-        },
-        {
-          title: "Genitive plural: the hardest ending in Russian",
-          body: `Rules of thumb:
-- masculine hard → **-ов** (студе́нтов), -й/-ь → **-ев/-ей** (музе́ев, преподавателей)
-- feminine **-а** → drop (кни́га → кни́г), **-я** → **-ь** (пе́сня → пе́сен), **-ь** → **-ей** (тетра́дей)
-- neuter **-о** → drop, restore mobile vowel (окно́ → о́кон), **-е** → **-ей** (мо́ре → море́й)
-- Always-genitive words: мно́го, ма́ло, не́сколько, ско́лько, 5+`,
-          table: {
-            headers: ["Nom pl", "Gen pl", "Type"],
-            rows: [
-              ["студенты", "студентов", "-ов"],
-              ["музеи", "музеев", "-ев"],
-              ["книги", "книг", "drop -а"],
-              ["песни", "песен", "mobile vowel"],
-              ["окна", "окон", "mobile vowel"],
-              ["здания", "зданий", "-ий"],
-            ],
-          },
-          examples: [
-            { ru: "Она' купи'ла пять тетра'дей.", en: "She bought five notebooks." },
-          ],
-          tip: "Some nouns only exist in plural: де́ньги (gen: де́нег), но́вости (gen: изве́стий), часы́ (gen: часов).",
         },
       ],
       exercises: [
         {
-          id: "b1-u01-l2-e1",
+          id: "b1-u01-l4-e1",
           type: "single",
-          text: "Я говори́л со всеми ___. (студе́нты)",
-          options: [
-            { id: "a", label: "студентами" },
-            { id: "b", label: "студентах" },
-            { id: "c", label: "студентам" },
-          ],
-          answer: "a",
+          text: "Я говори́л со все́ми ___. (студе́нты)",
+          options: [{ id: "a", label: "студентами" }, { id: "b", label: "студентах" }], answer: "a",
         },
         {
-          id: "b1-u01-l2-e2",
+          id: "b1-u01-l4-e2",
           type: "fill-blank",
-          text: "У него́ мно́го ___. *(во́просы)*",
-          answers: ["вопросов"],
+          text: "Де́ти игра́ют с ___. *(parents)*",
+          answers: ["родителями"],
         },
         {
-          id: "b1-u01-l2-e3",
-          type: "fill-blank",
-          text: "Мы говори́ли о ___. *(известия — pl-only news)*",
-          answers: ["известиях"],
-        },
-        {
-          id: "b1-u01-l2-e4",
+          id: "b1-u01-l4-e3",
           type: "true-false",
-          text: "Genitive plural of газе́та is газе́т (drop the final -а).",
+          text: "Dative plural: one ending set for every gender.",
           answer: true,
         },
       ],
-      drills: [
-        { kind: "noun-case", count: 6 },
-        { kind: "cloze", count: 2 },
+      drills: [{ kind: "noun-case", count: 4 }, { kind: "cloze", count: 2 }],
+    },
+    {
+      id: "b1-u01-l5",
+      title: "Step 5: genitive plural — the boss level",
+      topicIds: ["b1-u01-plurals"],
+      vocab: ["много", "мало", "несколько", "сколько", "книга", "песня", "здание", "окно", "студент", "музей"],
+      grammar: [
+        {
+          title: "Five patterns cover most of it",
+          body: `- masculine hard → **-ов** (студе́нтов); -й/-ь → **-ев/-ей** (музе́ев, преподавателей)
+- feminine **-а → drop** (кни́г), **-я → -ь** (пе́сен), **-ь → -ей** (тетра́дей)
+- neuter **-о → drop** (о́кон), **-е → -ей** (море́й), **-ие → -ий** (зда́ний)
+- Always: **мно́го / ма́ло / не́сколько / ско́лько / 5+ + gen pl**`,
+          table: {
+            headers: ["Nom pl", "Gen pl", "Pattern"],
+            rows: [
+              ["студенты", "студентов", "-ов"],
+              ["книги", "книг", "drop -а"],
+              ["песни", "песен", "mobile vowel"],
+              ["здания", "зданий", "-ий"],
+            ],
+          },
+          tip: "де́ньги → де́нег, но́вости → но́востей, часы́ → часо́в: learn pl-only nouns as chunks.",
+        },
       ],
+      exercises: [
+        {
+          id: "b1-u01-l5-e1",
+          type: "single",
+          text: "У него́ мно́го ___. (во́просы)",
+          options: [{ id: "a", label: "вопросов" }, { id: "b", label: "вопросы" }], answer: "a",
+        },
+        {
+          id: "b1-u01-l5-e2",
+          type: "fill-blank",
+          text: "Она́ купи́ла пять ___. *(notebooks)*",
+          answers: ["тетрадей"],
+        },
+        {
+          id: "b1-u01-l5-e3",
+          type: "matching",
+          text: "Nom pl → gen pl:",
+          prompts: [
+            { id: "p1", label: "друзья" },
+            { id: "p2", label: "книги" },
+            { id: "p3", label: "здания" },
+          ],
+          responses: [
+            { id: "r1", label: "зданий" },
+            { id: "r2", label: "друзей" },
+            { id: "r3", label: "книг" },
+          ],
+          answer: { p1: "r2", p2: "r3", p3: "r1" },
+        },
+      ],
+      drills: [{ kind: "noun-case", count: 4, cases: ["gen"] }, { kind: "cloze", count: 2 }],
     },
   ],
 
   test: [
     {
-      id: "b1-u01-test-1",
-      type: "single",
+      id: "b1-u01-test-1", type: "single",
       text: "Де́ти игра́ют во дворе́ без ___. (взро́слые)",
-      options: [
-        { id: "a", label: "взрослых" },
-        { id: "b", label: "взрослые" },
-        { id: "c", label: "взрослым" },
-      ],
-      answer: "a",
+      options: [{ id: "a", label: "взрослых" }, { id: "b", label: "взрослые" }], answer: "a",
       explanation: "без + gen pl: взро́слых.",
     },
     {
-      id: "b1-u01-test-2",
-      type: "short-answer",
+      id: "b1-u01-test-2", type: "short-answer",
       text: "5 + ___ (окно́, gen pl)",
       answer: "окон",
     },
     {
-      id: "b1-u01-test-3",
-      type: "single",
-      text: "Он гордится ___. (его́ де́ти)",
-      options: [
-        { id: "a", label: "его детьми" },
-        { id: "b", label: "его детей" },
-        { id: "c", label: "его детьми" },
-      ],
-      answer: "a",
+      id: "b1-u01-test-3", type: "single",
+      text: "Он горди́тся ___. (его́ де́ти)",
+      options: [{ id: "a", label: "его детьми" }, { id: "b", label: "его детей" }], answer: "a",
     },
     {
-      id: "b1-u01-test-4",
-      type: "true-false",
-      text: "Dative plural: все гендеры, один набор окончаний (-ам/-ям).",
+      id: "b1-u01-test-4", type: "true-false",
+      text: "Dative plural: one ending set for all genders (-ам/-ям).",
       answer: true,
     },
     {
-      id: "b1-u01-test-5",
-      type: "matching",
+      id: "b1-u01-test-5", type: "matching",
       text: "Nom pl → gen pl:",
       prompts: [
-        { id: "p1", label: "друзья" },
-        { id: "p2", label: "книги" },
-        { id: "p3", label: "здания" },
+        { id: "p1", label: "друзья" }, { id: "p2", label: "книги" }, { id: "p3", label: "здания" },
       ],
       responses: [
-        { id: "r1", label: "зданий" },
-        { id: "r2", label: "друзей" },
-        { id: "r3", label: "книг" },
+        { id: "r1", label: "зданий" }, { id: "r2", label: "друзей" }, { id: "r3", label: "книг" },
       ],
       answer: { p1: "r2", p2: "r3", p3: "r1" },
     },
     {
-      id: "b1-u01-test-6",
-      type: "short-answer",
+      id: "b1-u01-test-6", type: "short-answer",
       text: "Translate: (I read a lot of books.)",
       answer: "я много читаю книг",
       accept: ["я много читал книг", "я много читаю книги"],
