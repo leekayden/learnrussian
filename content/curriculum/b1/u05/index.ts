@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** B1 · Unit 5 — -ся verbs: the full system. */
+/** B1 · Unit 5 — -ся verbs, one step at a time. */
 export const u05: Unit = {
   id: "b1-u05",
   level: "b1",
@@ -10,15 +10,15 @@ export const u05: Unit = {
   lessons: [
     {
       id: "b1-u05-l1",
-      title: "True reflexive, reciprocal, middle",
+      title: "Step 1: reflexive, reciprocal, middle",
       topicIds: ["b1-u05-reflexives-full"],
-      vocab: ["одеваться", "мыть", "умываться", "брить", "бриться", "знакомить", "знакомиться", "обнимать", "собираться", "купаться"],
+      vocab: ["одеваться", "умываться", "бриться", "знакомиться", "обниматься", "видеться", "собираться", "купаться", "причесываться", "познакомиться"],
       grammar: [
         {
           title: "Three core meanings",
-          body: `**True reflexive** — action on oneself: мыть → мы́ться (wash oneself), одева́ться, бри́ться.
-**Reciprocal** — each other: знако́мить → знако́миться (meet/get acquainted), обнима́ться, ви́деться (Мы ре́дко ви́димся).
-**Middle** — for oneself / in one's own interest: собира́ться (get ready), купа́ться (have a swim), приче́сываться.`,
+          body: `- **True reflexive** — action on oneself: мы́ться, одева́ться, бри́ться
+- **Reciprocal** — each other: знако́миться, обнима́ться, ви́деться (Мы ре́дко ви́димся.)
+- **Middle** — for oneself: собира́ться (get ready), купа́ться (go swimming)`,
           table: {
             headers: ["Verb", "Type", "Meaning"],
             rows: [
@@ -54,46 +54,50 @@ export const u05: Unit = {
           answer: true,
         },
       ],
-      drills: [{ kind: "cloze", count: 4 }],
+      drills: [{ kind: "cloze", count: 3 }],
     },
     {
       id: "b1-u05-l2",
-      title: "Passive -ся, emotion verbs, -сь after vowels",
+      title: "Step 2: passive -ся and emotion verbs",
       topicIds: ["b1-u05-reflexives-full"],
-      vocab: ["строить", "строиться", "продавать", "продаваться", "радоваться", "бояться", "надеяться", "улыбнуться", "гордиться", "интересоваться"],
+      vocab: ["строить", "строиться", "продавать", "радоваться", "бояться", "надеяться", "улыбнуться", "гордиться", "интересоваться", "фрукты"],
       grammar: [
         {
-          title: "Passive -ся and emotion verbs",
-          body: `**Passive**: the thing is the subject, agent optional: Э́тот дом стро́ится у́же... clearer: До́м стро́ится (the house is being built), Продаю́тся я́блоки (apples are sold).
-**Emotion / attitude verbs** govern cases:
-- ра́доваться / горди́ться + **instrumental**: ра́дуюсьве́стям... ра́дуюсь но́востям, горжу́сьcountries? — горжусь страной
-- боя́ться + **genitive**: бою́сь темноты́
-- наде́яться **на + acc**: наде́юсь на тебя́
-- интересова́ться + **instrumental**: интересу́юсь исто́рией`,
-          examples: [
-            { ru: "Здесь продаю'тся све'жие фру'кты.", en: "Fresh fruit is sold here." },
-            { ru: "Я не бою'сь тру'дностей.", en: "I'm not afraid of difficulties." },
-          ],
-          tip: "Spelling: after a vowel the suffix is -сь: учу́сь? — no wait, that's consonant; after vowel: попроси́ла → попросила́сь? Just: она́ купа́лась, они́ купа́лись, я купа́лась (f).",
+          title: "The thing becomes the subject",
+          body: `- **Passive -ся**: До́м стро́ится (being built). Здесь продаю́тся фру́кты (are sold).
+- **Emotion verbs govern cases**:
+  - ра́доваться / горди́ться + **instrumental**: горжу́сь страно́й
+  - боя́ться + **genitive**: бою́сь темноты́
+  - наде́яться **на + acc**: наде́юсь на тебя́
+  - интересова́ться + **instrumental**: интересу́юсь исто́рией`,
+          table: {
+            headers: ["Verb", "Government"],
+            rows: [
+              ["гордиться", "+ instrumental"],
+              ["бояться", "+ genitive"],
+              ["надеяться", "на + accusative"],
+              ["интересоваться", "+ instrumental"],
+            ],
+          },
         },
       ],
       exercises: [
         {
           id: "b1-u05-l2-e1",
           type: "single",
-          text: "Я горжу́сь ___. (его́ успе́хи, instrumental)",
-          options: [{ id: "a", label: "его успехами" }, { id: "b", label: "его успехов" }], answer: "a"
+          text: "Я горжу́сь ___. (его́ успе́хи)",
+          options: [{ id: "a", label: "его успехами" }, { id: "b", label: "его успехов" }], answer: "a",
         },
         {
           id: "b1-u05-l2-e2",
           type: "single",
           text: "Она́ бои́тся ___. (со́баки)",
-          options: [{ id: "a", label: "собак" }, { id: "b", label: "собаку" }], answer: "a"
+          options: [{ id: "a", label: "собак" }, { id: "b", label: "собаку" }], answer: "a",
         },
         {
           id: "b1-u05-l2-e3",
           type: "fill-blank",
-          text: "Мы наде́емся ___ лу́чшее. *(на + acc)*",
+          text: "Мы наде́емся ___ лу́чшее.",
           answers: ["на"],
         },
       ],
@@ -103,27 +107,23 @@ export const u05: Unit = {
 
   test: [
     {
-      id: "b1-u05-test-1",
-      type: "single",
-      text: "Э́тот заво́д ___ в 1980-х. (was built — passive -ся)",
-      options: [{ id: "a", label: "строился" }, { id: "b", label: "построил" }], answer: "a"
+      id: "b1-u05-test-1", type: "single",
+      text: "Э́тот заво́д ___ в 1980-х. (passive -ся, past)",
+      options: [{ id: "a", label: "строился" }, { id: "b", label: "построил" }], answer: "a",
     },
     {
-      id: "b1-u05-test-2",
-      type: "single",
-      text: "Она́ интересу́ется ___. (му́зыка, instrumental)",
-      options: [{ id: "a", label: "музыкой" }, { id: "b", label: "музыку" }], answer: "a"
+      id: "b1-u05-test-2", type: "single",
+      text: "Она́ интересу́ется ___. (му́зыка)",
+      options: [{ id: "a", label: "музыкой" }, { id: "b", label: "музыку" }], answer: "a",
     },
     {
-      id: "b1-u05-test-3",
-      type: "true-false",
-      text: "бойся + accusative: бою́сь соба́ку.",
+      id: "b1-u05-test-3", type: "true-false",
+      text: "бою́сь соба́ку — accusative is correct.",
       answer: false,
       explanation: "Genitive: бою́сь соба́ки.",
     },
     {
-      id: "b1-u05-test-4",
-      type: "short-answer",
+      id: "b1-u05-test-4", type: "short-answer",
       text: "We rarely see each other: (Мы ре́дко…)",
       answer: "мы редко видимся",
     },
