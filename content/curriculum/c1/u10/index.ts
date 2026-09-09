@@ -50,7 +50,7 @@ Same subject required for the verbal adverb; participle agrees with its noun.`,
       id: "c1-u10-l2",
       title: "Step 2: personal → impersonal / active → passive",
       topicIds: ["c1-u10-transformations"],
-      vocab: ["хотеться", "спаться", "работаться", "выпускать", "выпуститься", "писатель", "роман", "написан", "завод", "трудиться"],
+      vocab: ["хотеться", "работаться", "выпускать", "выпускаться", "писатель", "роман", "написать", "завод", "трудиться", "автомобиль"],
       grammar: [
         {
           title: "Dative experiencer and the passive turn",
