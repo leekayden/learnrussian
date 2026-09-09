@@ -12,7 +12,7 @@ export const u10: Unit = {
       id: "b1-u10-l1",
       title: "Step 1: кото́рый as subject or object",
       topicIds: ["b1-u10-complex-sentences"],
-      vocab: ["который", "которая", "которое", "писатель", "роман", "герой", "фильм", "история", "письмо", "девушка"],
+      vocab: ["который", "писатель", "роман", "герой", "фильм", "история", "письмо", "девушка", "журналист", "вопрос"],
       grammar: [
         {
           title: "Case = its job in the subordinate clause",
@@ -49,7 +49,7 @@ Gender/number copy the noun being replaced.`,
       id: "b1-u10-l2",
       title: "Step 2: кото́рый after a preposition",
       topicIds: ["b1-u10-complex-sentences"],
-      vocab: ["которым", "которой", "жив", "центр", "говорить", "вечер", "знакомиться", "река", "мост", "город"],
+      vocab: ["центр", "говорить", "вечер", "знакомиться", "река", "мост", "город", "дом", "статья", "человек"],
       grammar: [
         {
           title: "Preposition moves inside",
