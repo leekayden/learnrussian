@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** B1 · Unit 4 — Aspect II: pair formation and infinitive aspect. */
+/** B1 · Unit 4 — Aspect II, one step at a time. */
 export const u04: Unit = {
   id: "b1-u04",
   level: "b1",
@@ -10,16 +10,17 @@ export const u04: Unit = {
   lessons: [
     {
       id: "b1-u04-l1",
-      title: "-ыва-/-ива- and other pair makers",
+      title: "Step 1: -ыва- / -ива- pair makers",
       topicIds: ["b1-u04-aspect-2"],
       vocab: ["рассказывать", "рассказать", "показывать", "показать", "проверять", "проверить", "выполнять", "выполнить", "давать", "дать"],
       grammar: [
         {
-          title: "The imperfective-making suffixes",
-          body: `Going perfective → imperfective often inserts **-ыва-/-ива-**:
-- рассказа́ть → расска́зывать, показа́ть → пока́зывать
-- проверить → проверя́ть, выполнить → выполня́ть
-Also: **-ва-** after да-/зна- (дать → дава́ть, узна́ть → узнава́ть), and **-ну-** perfectives for a single jab (крича́ть → кри́кнуть).`,
+          title: "Perfective → imperfective by suffix",
+          body: `- рассказа́ть → расска́зывать (-ыва-)
+- показа́ть → пока́зывать
+- провери́ть → проверя́ть (-я-)
+- дать → дава́ть (-ва-); узна́ть → узнава́ть
+- **-ну-** perfectives for a single jab: кри́кнуть (vs крича́ть)`,
           table: {
             headers: ["Perfective", "Imperfective"],
             rows: [
@@ -55,24 +56,29 @@ Also: **-ва-** after да-/зна- (дать → дава́ть, узна́т�
           answer: true,
         },
       ],
-      drills: [{ kind: "cloze", count: 4 }],
+      drills: [{ kind: "cloze", count: 3 }],
     },
     {
       id: "b1-u04-l2",
-      title: "Aspect after начинать, удаваться, and memory verbs",
+      title: "Step 2: infinitive aspect after на́чать, уда́ться, забы́ть",
       topicIds: ["b1-u04-aspect-2"],
-      vocab: ["удаться", "удаваться", "забыть", "вспомнить", "успеть", "опоздать", "кончить", "бросить", "привыкнуть", "нравиться"],
+      vocab: ["удаться", "удаваться", "забыть", "вспомнить", "успеть", "опоздать", "кончить", "бросить", "привыкнуть", "надоедать"],
       grammar: [
         {
-          title: "Which infinitive after which verb",
-          body: `- **нача́ть / ста́ть / ко́нчить + IMPERFECTIVE** (start/stop the process): на́чал чита́ть, ко́нчил писа́ть.
-- **удава́ться / уда́ться + infinitive** — to manage: Мне удало́сь купи́ть биле́ты. (dative + perfective infinitive!)
-- **забы́ть / успе́ть / уда́ться + perfective** — the completed act: Я забы́л закро́ть окно́.
-- **привы́кнуть + imperfective infinitive** — got used to: Он привы́к вста́вать ра́но.`,
-          examples: [
-            { ru: "Нам наконе'ц удало'сь дозвони'ться.", en: "We finally managed to get through." },
-          ],
-          tip: "After забы́ть/успе́ть use the perfective (forgot to DO the deed); after привы́кнуть/надо́есть use the imperfective (habit).",
+          title: "Which infinitive follows which verb",
+          body: `- **на́чать / ста́ть / ко́нчить + IMPERFECTIVE**: на́чал чита́ть, ко́нчил писа́ть
+- **удава́ться / уда́ться + infinitive** (dative experiencer): Мне удало́сь купи́ть биле́ты.
+- **забы́ть / успе́ть + PERFECTIVE**: Я забы́л закро́ть окно́.
+- **привы́кнуть + IMPERFECTIVE**: Он привы́к встава́ть ра́но.`,
+          table: {
+            headers: ["Verb", "Infinitive aspect"],
+            rows: [
+              ["начать / кончить", "imperfective"],
+              ["удаться", "perfective (result)"],
+              ["забыть / успеть", "perfective"],
+              ["привыкнуть / надоедать", "imperfective (habit)"],
+            ],
+          },
         },
       ],
       exercises: [
@@ -80,13 +86,13 @@ Also: **-ва-** after да-/зна- (дать → дава́ть, узна́т�
           id: "b1-u04-l2-e1",
           type: "single",
           text: "Он на́чал ___, но сра́зу же переста́л.",
-          options: [{ id: "a", label: "читать" }, { id: "b", label: "прочитать" }], answer: "a"
+          options: [{ id: "a", label: "читать" }, { id: "b", label: "прочитать" }], answer: "a",
         },
         {
           id: "b1-u04-l2-e2",
           type: "single",
-          text: "Я не ___ купи́ть хле́б. (didn't manage — perfective)",
-          options: [{ id: "a", label: "успел" }, { id: "b", label: "успеваю" }], answer: "a"
+          text: "Я не ___ купи́ть хле́б. (didn't manage)",
+          options: [{ id: "a", label: "успел" }, { id: "b", label: "успеваю" }], answer: "a",
         },
         {
           id: "b1-u04-l2-e3",
@@ -101,26 +107,22 @@ Also: **-ва-** after да-/зна- (дать → дава́ть, узна́т�
 
   test: [
     {
-      id: "b1-u04-test-1",
-      type: "single",
+      id: "b1-u04-test-1", type: "single",
       text: "Imperfective partner of реши́ть:",
-      options: [{ id: "a", label: "решать" }, { id: "b", label: "решу" }], answer: "a"
+      options: [{ id: "a", label: "решать" }, { id: "b", label: "решу" }], answer: "a",
     },
     {
-      id: "b1-u04-test-2",
-      type: "single",
+      id: "b1-u04-test-2", type: "single",
       text: "Мне удало́сь ___. (perfective infinitive)",
-      options: [{ id: "a", label: "купить" }, { id: "b", label: "покупать" }], answer: "a"
+      options: [{ id: "a", label: "купить" }, { id: "b", label: "покупать" }], answer: "a",
     },
     {
-      id: "b1-u04-test-3",
-      type: "true-false",
+      id: "b1-u04-test-3", type: "true-false",
       text: "ко́нчить + imperfective infinitive.",
       answer: true,
     },
     {
-      id: "b1-u04-test-4",
-      type: "short-answer",
+      id: "b1-u04-test-4", type: "short-answer",
       text: "He got used to getting up early: (Он привы́к…)",
       answer: "он привык вставать рано",
     },
