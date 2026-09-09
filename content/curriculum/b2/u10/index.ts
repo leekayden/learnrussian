@@ -12,7 +12,7 @@ export const u10: Unit = {
       id: "b2-u10-l1",
       title: "Step 1: comparative + genitive vs чем",
       topicIds: ["b2-u10-comparatives"],
-      vocab: ["лучше", "хуже", "больше", "меньше", "старше", "моложе", "сравнение", "город", "брат", "высокий"],
+      vocab: ["лучше", "хуже", "больше", "меньше", "старый", "молодой", "сравнение", "город", "брат", "высокий"],
       grammar: [
         {
           title: "Two ways to say “than”",
