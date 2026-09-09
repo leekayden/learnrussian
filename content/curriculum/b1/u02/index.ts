@@ -1,6 +1,6 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** B1 · Unit 2 — Adjective & pronoun plural declension; adjectival nouns. */
+/** B1 · Unit 2 — Adjective plurals and adjectival nouns, one step at a time. */
 export const u02: Unit = {
   id: "b1-u02",
   level: "b1",
@@ -10,30 +10,21 @@ export const u02: Unit = {
   lessons: [
     {
       id: "b1-u02-l1",
-      title: "Adjective plural + feminine/masculine grids",
+      title: "Step 1: adjective plural — nominative & accusative",
       topicIds: ["b1-u02-adj-plurals"],
-      vocab: ["молодой", "старый", "богатый", "бедный", "счастливый", "усталый", "больной", "знаменитый", "русский", "иностранный"],
+      vocab: ["новый", "молодой", "старый", "русский", "иностранный", "знаменитый", "интересный", "книга", "вопрос", "письмо"],
       grammar: [
         {
-          title: "The adjective grid",
-          body: `Adjectives agree fully. The dictionary gives you the whole grid (see any adjective page). Key plural endings:
-- **nom pl: -ые/-ие** (но́вые, си́ние)
-- **gen/acc-animate pl: -ых/-их** (но́вых, си́них)
-- **dat pl: -ым/-им**
-- **inst pl: -ыми/-ими**
-- **prep pl: -ых/-их** (о но́вых)
-Feminine singular: -ая/-ой/-ую/-ой/-ой; masculine singular: -ый/-ого/-ому/-ый|ого/-ом.`,
+          title: "-ые / -ие, and the animate split",
+          body: `- Nominative plural: **-ые/-ие** (но́вые, ру́сские)
+- Accusative plural **inanimate** = nominative: Я чита́ю но́вые кни́ги.
+- Accusative plural **animate** = genitive: Я встрети́л **но́вых** студе́нтов.`,
           table: {
-            caption: "новый (hard) — learn -ым/-ого patterns, the rest follows",
-            headers: ["Case", "m sg", "f sg", "pl"],
+            headers: ["Case", "Form"],
             rows: [
-              ["nom", "новый", "новая", "новые"],
-              ["gen", "нового", "новой", "новых"],
-              ["dat", "новому", "новой", "новым"],
-              ["acc (inan)", "новый", "новую", "новые"],
-              ["acc (anim)", "нового", "новую", "новых"],
-              ["inst", "новым", "новой", "новыми"],
-              ["prep", "новом", "новой", "новых"],
+              ["nom pl", "новые"],
+              ["acc pl (inan)", "новые"],
+              ["acc pl (anim)", "новых"],
             ],
           },
         },
@@ -41,50 +32,106 @@ Feminine singular: -ая/-ой/-ую/-ой/-ой; masculine singular: -ый/-о�
       exercises: [
         {
           id: "b1-u02-l1-e1",
-          type: "fill-blank",
-          text: "Я дово́лен {{blank}} результа́тами. *(новые — instrumental plural)*",
-          answers: ["новыми"],
+          type: "single",
+          text: "Я чита́ю ___. (но́вые журна́лы)",
+          options: [{ id: "a", label: "новые" }, { id: "b", label: "новых" }], answer: "a",
         },
         {
           id: "b1-u02-l1-e2",
           type: "single",
-          text: "Он объясня́ет ___. (мо́лодым студе́нтам)",
-          options: [{ id: "a", label: "молодым студентам" }, { id: "b", label: "молодыми студентами" }], answer: "a"
+          text: "Она́ встрети́ла ___. (но́вые студе́нты)",
+          options: [{ id: "a", label: "новых" }, { id: "b", label: "новые" }], answer: "a",
+        },
+        {
+          id: "b1-u02-l1-e3",
+          type: "true-false",
+          text: "Animate accusative plural of adjectives = genitive plural form.",
+          answer: true,
         },
       ],
-      drills: [{ kind: "adjective-case", count: 6 }],
+      drills: [{ kind: "adjective-case", count: 4, cases: ["acc"] }],
     },
     {
       id: "b1-u02-l2",
-      title: "Adjectival nouns: adjectives that became nouns",
+      title: "Step 2: adjective plural — oblique cases",
       topicIds: ["b1-u02-adj-plurals"],
-      vocab: ["больной", "больница", "взрослый", "учёный", "рабочий", "гостиница", "столовая", "ванная", "свежий"],
+      vocab: ["довольный", "результат", "объяснять", "молодой", "учитель", "говорить", "заниматься", "спорт", "интересный", "люди"],
       grammar: [
         {
-          title: "When adjectives become nouns",
-          body: `Substantivised adjectives decline like adjectives but behave as nouns:
-- **бо́льной / бо́льная** — a patient (m/f): Бо́льной ну́жно о́тдыха́ть. (dative!)
-- **взро́слый / взро́слая** — an adult: Э́та кни́га для взро́слых. (gen pl)
-- **учёный** — a scientist, **рабо́чий** — a worker.
-- Rooms: гости́ная (living room), ва́нная (bathroom), столо́вая (canteen) — all feminine -ая.`,
-          examples: [
-            { ru: "Больны'м ну'жно принима'ть лека'рство.", en: "Patients need to take medicine." },
-          ],
-          tip: "Adjectival nouns keep ADJECTIVE endings, so «больной» (dative) looks different from «больница» (a noun).",
+          title: "-ым / -ыми / -ых",
+          body: `- **Dative: -ым/-им** (но́вым, си́ним): Он объясня́ет **но́вым** студе́нтам.
+- **Instrumental: -ыми/-ими** (но́выми, си́ними): Я дово́лен **но́выми** результа́тами.
+- **Prepositional: -ых/-их** (о но́вых, в си́них)`,
+          table: {
+            headers: ["Case", "Form", "Example"],
+            rows: [
+              ["dat", "новым", "к новым студентам"],
+              ["inst", "новыми", "доволен новыми"],
+              ["prep", "новых", "о новых книгах"],
+            ],
+          },
         },
       ],
       exercises: [
         {
+          id: "b1-u02-l2-e1",
+          type: "fill-blank",
+          text: "Я дово́лен ___ результа́тами. *(но́вые — instrumental)*",
+          answers: ["новыми"],
+        },
+        {
           id: "b1-u02-l2-e2",
           type: "single",
-          text: "Э́тот фильм не для ___. (де́ти)",
-          options: [{ id: "a", label: "детей" }, { id: "b", label: "детям" }], answer: "a"
+          text: "Он объясня́ет ___. (мо́лодые студе́нты, dative)",
+          options: [{ id: "a", label: "молодым студентам" }, { id: "b", label: "молодыми студентами" }], answer: "a",
         },
         {
           id: "b1-u02-l2-e3",
           type: "true-false",
-          text: "«столо́вая» can mean both “the canteen” and “the dining room”.",
+          text: "Instrumental plural: -ыми/-ими.",
           answer: true,
+        },
+      ],
+      drills: [{ kind: "adjective-case", count: 4, cases: ["inst", "dat", "prep"] }],
+    },
+    {
+      id: "b1-u02-l3",
+      title: "Step 3: adjectival nouns — бо́льной, взро́слый, столо́вая",
+      topicIds: ["b1-u02-adj-plurals"],
+      vocab: ["больной", "больница", "взрослый", "учёный", "рабочий", "гостиница", "столовая", "ванная", "свежий", "лекарство"],
+      grammar: [
+        {
+          title: "Adjectives that became nouns",
+          body: `Substantivised adjectives keep ADJECTIVE endings:
+- **бо́льной / бо́льная** — a patient: Бо́льным ну́жно лека́рство. (dative!)
+- **взро́слый** — an adult: кни́га для взро́слых (gen pl)
+- **учёный** — scientist; **рабо́чий** — worker
+- Rooms: гости́ная, ва́нная, столо́вая (living room / bathroom / canteen)`,
+          examples: [
+            { ru: "Больны'м ну'жно принима'ть лека'рство.", en: "Patients need to take medicine." },
+          ],
+          tip: "Для бо́льного (gen) — the adjective declines, not a noun like больница.",
+        },
+      ],
+      exercises: [
+        {
+          id: "b1-u02-l3-e1",
+          type: "single",
+          text: "Э́тот фильм не для ___. (де́ти)",
+          options: [{ id: "a", label: "детей" }, { id: "b", label: "детям" }], answer: "a",
+        },
+        {
+          id: "b1-u02-l3-e2",
+          type: "single",
+          text: "«столо́вая» can mean both “the canteen” and “the dining room”.",
+          options: [{ id: "a", label: "true" }, { id: "b", label: "false" }], answer: "a",
+        },
+        {
+          id: "b1-u02-l3-e3",
+          type: "true-false",
+          text: "Adjectival nouns decline with noun endings (-а, -у).",
+          answer: false,
+          explanation: "They keep ADJECTIVE endings: бо́льному, бо́льных.",
         },
       ],
       drills: [{ kind: "cloze", count: 3 }],
@@ -93,21 +140,18 @@ Feminine singular: -ая/-ой/-ую/-ой/-ой; masculine singular: -ый/-о�
 
   test: [
     {
-      id: "b1-u02-test-1",
-      type: "single",
-      text: "Я говоря́ с ___ (мо́лодые учи́теля́, inst pl)",
-      options: [{ id: "a", label: "молодыми учителями" }, { id: "b", label: "молодых учителей" }], answer: "a"
+      id: "b1-u02-test-1", type: "single",
+      text: "Я говорю́ с ___. (мо́лодые учи́теля́)",
+      options: [{ id: "a", label: "молодыми учителями" }, { id: "b", label: "молодых учителей" }], answer: "a",
     },
     {
-      id: "b1-u02-test-2",
-      type: "true-false",
-      text: "«Бо́льной needs genitive after для»: для бо́льного.",
+      id: "b1-u02-test-2", type: "true-false",
+      text: "«для бо́льного» — genitive of the adjectival noun.",
       answer: true,
     },
     {
-      id: "b1-u02-test-3",
-      type: "short-answer",
-      text: "Inst pl of си́ний: (с си́ними…) — give the ending word си́ними.",
+      id: "b1-u02-test-3", type: "short-answer",
+      text: "Instrumental plural of си́ний:",
       answer: "синими",
     },
   ],
