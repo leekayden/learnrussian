@@ -16,9 +16,11 @@ export const u02: Unit = {
       grammar: [
         {
           title: "-ые / -ие, and the animate split",
-          body: `- Nominative plural: **-ые/-ие** (но́вые, ру́сские)
+          body: `In A2 you declined adjectives in three cases; B1 adds the plural and the remaining cases, completing the grid. The good news: plural adjective endings are identical for all three genders — the noun alone decides -ые vs -ие.- Nominative plural: **-ые/-ие** (но́вые, ру́сские)
 - Accusative plural **inanimate** = nominative: Я чита́ю но́вые кни́ги.
 - Accusative plural **animate** = genitive: Я встрети́л **но́вых** студе́нтов.`,
+          why: "One plural for all genders is the exception that proves the rule: the plural endings come from a different, older declension that never cared about gender. Singular agreement is three systems; plural agreement is one. Half the forms you feared are shared.",
+
           table: {
             headers: ["Case", "Form"],
             rows: [
@@ -59,9 +61,11 @@ export const u02: Unit = {
       grammar: [
         {
           title: "-ым / -ыми / -ых",
-          body: `- **Dative: -ым/-им** (но́вым, си́ним): Он объясня́ет **но́вым** студе́нтам.
+          body: `The oblique cases (dative, instrumental, prepositional) reuse one ending set across the plural — the adjectives simply follow their nouns, which you already decline from A2 Unit 3-5.- **Dative: -ым/-им** (но́вым, си́ним): Он объясня́ет **но́вым** студе́нтам.
 - **Instrumental: -ыми/-ими** (но́выми, си́ними): Я дово́лен **но́выми** результа́тами.
 - **Prepositional: -ых/-их** (о но́вых, в си́них)`,
+          why: "Same logic as the nouns themselves: dative/instrumental/prepositional plurals collapsed all genders into -ам/-ями/-ах centuries ago. Adjectives followed their nouns. Learn the noun ending and the adjective ending is its twin.",
+
           table: {
             headers: ["Case", "Form", "Example"],
             rows: [
@@ -102,7 +106,7 @@ export const u02: Unit = {
       grammar: [
         {
           title: "Adjectives that became nouns",
-          body: `Substantivised adjectives keep ADJECTIVE endings:
+          body: `Russian is full of adjectives that became nouns outright: больной (a patient), учёный (a scientist), гостиная (a living room). They keep ADJECTIVE endings while working as nouns — a hybrid English only manages with phrases like 'the rich'.Substantivised adjectives keep ADJECTIVE endings:
 - **бо́льной / бо́льная** — a patient: Бо́льным ну́жно лека́рство. (dative!)
 - **взро́слый** — an adult: кни́га для взро́слых (gen pl)
 - **учёный** — scientist; **рабо́чий** — worker
