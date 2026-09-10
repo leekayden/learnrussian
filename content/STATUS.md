@@ -18,3 +18,19 @@ Total: 58 units, ~150 micro-lessons, 5 level exams, placement test.
 2. 5-10 vocab words, all present in `words` (verify: `node --env-file=.env scripts/check-vocab.mjs`)
 3. 3-5 exercises + 1-2 drill specs
 4. Unit test gates the next unit (≥80%)
+
+## Notes quality v2 (in progress)
+
+Standard: elaborate but plain-English notes for young adults.
+Each grammar block now has: rich body (what it is + English contrast + when to
+use), optional `why` field (rendered as a "Why it works" callout), table,
+annotated examples, trap-tip explaining WHY learners err. Register: direct
+address, university-life contexts, no childish examples.
+
+| Level | Notes v2 status |
+|---|---|
+| A2 | u01-u08 done; u09-u12 pending |
+| B1 | pending |
+| B2 | pending |
+| C1 | pending |
+| C2 | pending |
