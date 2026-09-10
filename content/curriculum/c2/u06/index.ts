@@ -16,12 +16,16 @@ export const u06: Unit = {
       grammar: [
         {
           title: "Small, dear, or trivial",
-          body: `Suffixes shrink nouns — with warmth or with contempt for the OBJECT'S importance:
+          body: `Diminutives shrink with affection or triviality: до́мик, городо́к, во́дичка, ручка (little hand / handle / pen). Some are fully lexicalised — зубчик = clove of garlic, листок = sheet.
+
+Suffixes shrink nouns — with warmth or with contempt for the OBJECT'S importance:
 - **-ик/-чик**: до́м → до́мик (little house), стол → сто́лик.
 - **-ок/-ёк/-ек** (with vowel drop): го́род → городо́к, ло́жка → ло́жечка... ло́жка → ло́жечка (-ечк-), сынок.
 - **-иц-/-иц**: лу́жа → лу́жица.
 - Feminine -к-/-очк-/-ечк-: вода́ → во́дичка, ру́ка → ру́чка (also: handle/pen!).
 Diminutives of names: Ма́ша → Ма́шенька, Пе́тя → Пе́тенька.`,
+          why: "Diminutives are emotional grammar: they rank the speaker's ATTITUDE toward the object, not its size. Води́чка at a party is affectionate; in a recipe it is just cosy register. And lexicalised ones (ручка) have left size behind entirely.",
+
           table: {
             headers: ["Base", "Diminutive", "Flavour"],
             rows: [
@@ -58,10 +62,13 @@ Diminutives of names: Ма́ша → Ма́шенька, Пе́тя → Пе́т
       grammar: [
         {
           title: "Making things big or ugly",
-          body: `- Augmentatives: **-ищ-/-ещ-**: доми́ще (huge house), ручи́ща (huge/crude hand), бороди́ще.
+          body: `Augmentatives and pejoratives: доми́ще (huge house), ручи́ща (crude paw), старика́шка (old geezer), солдатня́ (derogatory collective). Animate -а nouns like громи́ла take masculine agreement but feminine-looking accusative (вижу громи́лу).
+
+- Augmentatives: **-ищ-/-ещ-**: доми́ще (huge house), ручи́ща (huge/crude hand), бороди́ще.
 - Pejoratives: **-ашк-/-яшк-**: старика́шка (old geezer), мальчи́шка (can be neutral: boy).
 - Collective contempt: **-ня**: солдатня́, матро́сня, бюрократи́ческая братва́ — the -ня pattern (солдатня́) is derogatory.
 - **-ило/-ыло**: громи́ло (bruiser), верзи́ла (lanky fellow) — animate masculine in -а, decline feminine-style but masculine agreement!`,
+          why: "The -ищ- suffix is size with attitude; -ня and -ашк- add contempt. And громи́ла-type nouns agree masculine (вошёл) while declining feminine in the accusative — the noun's meaning (a man) overrides its ending. Agreement follows sense where it must.",
           examples: [
             { ru: "Ру́ки-крюки́, язи'к-лопа'та.", en: "All thumbs and a gift of the gab (folk description)." },
           ],

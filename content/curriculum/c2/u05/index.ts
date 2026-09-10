@@ -16,11 +16,15 @@ export const u05: Unit = {
       grammar: [
         {
           title: "Adjectives that were once participles",
-          body: `Many formal adjectives ARE frozen participles:
+          body: `Many formal adjectives ARE frozen participles: теку́щий моме́нт (the current moment), выдаю́щийся учёный (an outstanding scientist), гряду́щие поколе́ния (generations to come), мину́вший год (the bygone year). They no longer take verbal complements.
+
+Many formal adjectives ARE frozen participles:
 - **теку́щий моме́нт** — the current moment (from теку́т)
 - **выдаю́щийся учёный** — an outstanding scientist (from выдаю́тся)
 - **гряду́щие поколе́ния** — generations to come; **мину́вший год** — the past year; **проше́дшее вре́мя** — past tense.
 They no longer take complements like verbs: «выдаю́щийся» = remarkable, full stop.`,
+          why: "The test: if you cannot naturally add a который-clause after it, it is an adjective now. Выдаю́щийся = remarkable, full stop. The participle origin explains the meaning (literally 'standing out from') but the grammar has moved on.",
+
           table: {
             headers: ["Frozen participle", "Meaning"],
             rows: [
@@ -57,9 +61,12 @@ They no longer take complements like verbs: «выдаю́щийся» = remarka
       grammar: [
         {
           title: "Same root, different job",
-          body: `- **Short (кра́ткая) форма** = the predicate — a RESULT: «Зако́н вы́веден из play»... properly: «Програ́мма вы́ведена на экран» (the program has been brought up on screen).
+          body: `Short participles are predicates — «Програ́мма вы́ведена на экра́н» (has been brought up); long participles are attributes — «выве́денный на экра́н текст». Short forms report a RESULT; long forms describe a state.
+
+- **Short (кра́ткая) форма** = the predicate — a RESULT: «Зако́н вы́веден из play»... properly: «Програ́мма вы́ведена на экран» (the program has been brought up on screen).
 - **Long (по́лная) форма** = attribute inside a noun phrase: «выве́денный на экран текст».
 Short forms dominate official reporting (Установлено, что… — It has been established that…); long forms dominate description.`,
+          why: "The short form is the perfective passive's only predicate shape — «Зако́н при́нят» cannot become «при́нятый зако́н» without changing the meaning to 'an accepted law'. Official Russian (Установлено, что…) runs on short participles; using a long form there is a classic foreigner's slip.",
           examples: [
             { ru: "Установлено, что… (report opening)", en: "It has been established that…" },
           ],
