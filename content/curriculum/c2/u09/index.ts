@@ -16,10 +16,13 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Formulas that lock together",
-          body: `- **в свя́зи с + instr** (owing to), **в хо́де + gen** (in the course of), **в це́лях + gen**, **в соотве́тствии с + instr**, **на основа́нии + gen**.
+          body: `Bureaucratic frames lock together: в свя'зи с + instr, в хо'де + gen, в це'лях + gen, в соотве'тствии с + instr, на основа'нии + gen. Fake participles: вышеизло'женное (the above-stated), насто'ящий догово'р (this present contract).
+
+- **в свя́зи с + instr** (owing to), **в хо́де + gen** (in the course of), **в це́лях + gen**, **в соотве́тствии с + instr**, **на основа́нии + gen**.
 - Fake participles: **вышеизло́женное** (the above-stated), **настоя́щий** (this very document: насто́ящий догово́р).
 - Passive chains: «Ме́роприятия напра́влены на обеспе́чение…» (measures are aimed at ensuring…).
 - Verbs of paperwork: **прилага́ть** (attach), **изы́скивать** (seek out), **урегули́ровать** (settle).`,
+          why: "Канцеляри'т prefers preposition-frames over simple prepositions because weight equals authority: в це'лях безопас­ности sounds more official than для безопас­ности. In casual speech the same phrases become parody — Russians imitate officialese to joke.",
           examples: [
             { ru: "В свя'зи с вышеизло'женным проси'м…", en: "In view of the above we request…" },
           ],
@@ -50,10 +53,13 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Press grammar",
-          body: `- Headlines drop verbs: «Встре́ча в Кремле́: что изве́стно».
+          body: `Journalistic syntax: headlines drop verbs («Встре'ча в Кремле': что изве'стно»), sourcing is evidential (по да'нным исто'чников — according to sources), сообща'ется, что…, накану'не (on the eve / the day before).
+
+- Headlines drop verbs: «Встре́ча в Кремле́: что изве́стно».
 - Infinitive future in headlines: «Пути́н посети́ть Петербу́рг» style is rare; more common: noun strings + colon.
 - Evidential frames: **по да́нным исто́чников** (according to sources), **сообща́ется, что…**, **как сообща́лось ра́нее**.
 - Time shifts: **нака́нуне** (the day before), **вчера́ вско́рь после…**`,
+          why: "По да'нным исто'чников attributes the claim while denying responsibility for it — the sourcing frame is the journalism. And headline noun-strings freeze the future into a plan: the infinitive and verbless title are grammatical compression under deadline pressure.",
           examples: [
             { ru: "По да'нным исто'чников, перегово'ры продолжа'ются.", en: "According to sources, the talks continue." },
           ],

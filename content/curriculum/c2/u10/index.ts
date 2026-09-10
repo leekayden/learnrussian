@@ -16,10 +16,14 @@ export const u10: Unit = {
       grammar: [
         {
           title: "Idioms fix their own grammar",
-          body: `Inside an idiom the forms are FROZEN — don't modernise them:
+          body: `Idiom grammar is FROZEN: заруби'ть на носу' (note it well — dative frozen!), бить баклу'ши (idle), кот напла'кал (very little — no plural), води'ть за нос (lead by the nose). You may inflect the head (заруби'л / заруби'те на носу') but never the frozen case.
+
+Inside an idiom the forms are FROZEN — don't modernise them:
 - **бить баклу́ши** (idler — lit. knock chips), **води́ть за нос** (lead by the nose), **зару́бить на носу́** (note it well — dative frozen!), **кот напла́кал** (very little).
 - Cases inside: **висе́ть на телефо́не** (be on the phone constantly), **втереть очки́** (pull the wool over eyes).
 You may inflect the NOMINAL head: заруби́л / заруби́те на носу́; but never swap the frozen case: «зару́бить на нос» is a recognised error.`,
+          why: "Idioms preserve dead grammar: the dative in на носу' is a fossil of an older construction. Native speakers never reanalyse them — swapping the case («на нос») is a recognised error even though it looks logical. Phraseology is where Russian grammar refuses to modernise.",
+
           table: {
             headers: ["Idiom", "Meaning", "Freeze trap"],
             rows: [
@@ -54,10 +58,13 @@ You may inflect the NOMINAL head: заруби́л / заруби́те на н�
       grammar: [
         {
           title: "Proverb templates",
-          body: `- **Без труда́ не вы́нешь и ры́бку из пруда́.** — no pain, no gain (double negation + genitive).
+          body: `Proverbs freeze perfect patterns: Без труда' не вы'нешь и ры'бку из пруда' (double negation + genitive), Сло'во не воробе'й: вы'летит — не пойма'ешь (perfective futures in sequence), Ти'ше едешь — да'льше бу'дешь (comparative adverbs).
+
+- **Без труда́ не вы́нешь и ры́бку из пруда́.** — no pain, no gain (double negation + genitive).
 - **Сло́во не воробе́й: вы́летит — не пойма́ешь.** — word once out… (perfective futures in sequence)
 - **Ти́ше едешь — да́льше бу́дешь.** — slow and steady (comparatives!).
 - **Копе́йка рубль бережёт.** — a penny saved…`,
+          why: "Proverbs are grammar drills disguised as wisdom: each one freezes a pattern (aspect pairs, imperatives, comparatives) into a memorable line. Collect them as grammar artefacts — they teach aspect and case better than any table.",
           examples: [
             { ru: "Ти'ше едешь — да'льше бу'дешь.", en: "Slow and steady wins the race." },
           ],
