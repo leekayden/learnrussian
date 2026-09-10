@@ -16,11 +16,15 @@ export const u03: Unit = {
       grammar: [
         {
           title: "1st-person imperfective as an act",
-          body: `Speech-act verbs use the **1st-person singular imperfective present** to PERFORM the act in the moment of speaking:
+          body: `Speech-act verbs use the 1st-person imperfective present to PERFORM the act: Обеща́ю! (I promise — the promising happens now), Благодарю́ вас, Извиняюсь, Предлага́ю тост. The perfective would push the act into the future: пообеща́ю = I'll promise (later).
+
+Speech-act verbs use the **1st-person singular imperfective present** to PERFORM the act in the moment of speaking:
 - **Обеща́ю!** — I promise! (the promising happens now)
 - **Благодарю́ вас.** — Thank you (more formal than спаси́бо).
 - **Извиня́юсь** (colloquial) / **прошу́ проще́ния** (careful style).
 The perfective here would break the act: «пообеща́ю» = I'll promise (later) — different meaning.`,
+          why: "Performatives are actions done BY SAYING: the utterance is the deed. That is why only the imperfective present works — the act is ongoing at the instant of speech. Saying «Я поблагодарю́ его» plans a future act; it no longer performs one.",
+
           table: {
             headers: ["Performative", "Act performed"],
             rows: [
@@ -64,10 +68,14 @@ The perfective here would break the act: «пообеща́ю» = I'll promise (
       grammar: [
         {
           title: "Not just time — different words in different aspects",
-          body: `Some pairs diverge lexically:
+          body: `Some aspect pairs split the meaning itself: ре́зать/отреза́ть (cut off), нареза́ть (cut into pieces); сы́пать/насы́пать (pour in) vs вы́сыпать (pour out); слу́шать/прослушать (listen vs [recording] has been played).
+
+Some pairs diverge lexically:
 - **ре́зать / разре́зать** (cut up) vs **отре́зать** (cut off) vs **нареза́ть** (cut into pieces) — prefix decides the result.
 - **сы́пать / насы́пать** — pour in; **вы́сыпать** — pour out; **просы́пать** (colloquial) — oversleep (different verb family!).
 - **слу́шать / прослу́шать** — listen vs miss/hear out (запи́сь прослу́шана = the recording HAS BEEN PLAYED).`,
+          why: "In these pairs the prefix is not just 'done' — it chooses a result-scenario. Запись прослу́шана is bureaucratic passive ('the recording has been reviewed'), and просы́пать drifted to 'oversleep' entirely. Learn each pair with its own scenario, not as pure grammar.",
+
           table: {
             headers: ["Imperfective", "Perfective", "Meaning"],
             rows: [

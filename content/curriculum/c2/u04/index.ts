@@ -16,9 +16,13 @@ export const u04: Unit = {
       grammar: [
         {
           title: "The two prohibitions",
-          body: `- **не + imperfective imperative** = general prohibition, don't even start: Не кури́ здесь! Не тро́гай!
+          body: `Negated imperatives split by aspect: не + imperfective = ban the practice (Не кури́ здесь!), не + perfective = warn against one fateful slip (Не опозда́й! Не упади́! Не забу́дь!).
+
+- **не + imperfective imperative** = general prohibition, don't even start: Не кури́ здесь! Не тро́гай!
 - **не + perfective imperative** = warning against a SPECIFIC, often accidental completion: Не опозда́й! (mind you don't be late), Не забу́дь (don't forget), Не упади́!
 The perfective version fears a one-off mishap; the imperfective bans the practice.`,
+          why: "The perfective prohibition fears a single completed accident — the same 'done' logic, deployed protectively. The imperfective ban targets the behaviour itself. English 'don't' covers both; Russian makes you decide whether you are legislating or warning.",
+
           table: {
             headers: ["Form", "Meaning"],
             rows: [
@@ -61,9 +65,12 @@ The perfective version fears a one-off mishap; the imperfective bans the practic
       grammar: [
         {
           title: "The lost habitual aspect",
-          body: `Russian once had a habitual marker **-ива-/-ва-** + stress shift: ха́живал (used to walk [regularly]), си́живал (used to sit), гова́ривал (used to say), ви́дывал (have seen in one's time).
+          body: `Iteratives — ха́живал, си́живал, гова́ривал, ви́дывал — are old habitual verbs with a stress-shifting suffix -ива-. They survive as folkloric or facetious: «Зна'ем мы, как вы пе'вали!» Modern Russian uses imperfective past with adverbs instead.
+
+Russian once had a habitual marker **-ива-/-ва-** + stress shift: ха́живал (used to walk [regularly]), си́живал (used to sit), гова́ривал (used to say), ви́дывал (have seen in one's time).
 Today they survive as **folkloric/facetious**: «Зна́ем мы, как вы пе́вали!» or literary nostalgia: «Здесь Пу́шкин быва́л».
 Modern Russian expresses habit with imperfective past: он чита́л по вечера́м.`,
+          why: "The -ива- habitual was a full aspect category once; Russian dissolved it and kept a few forms as seasoning. You will read them in Tolstoy and hear them in irony — «Он вида́л ви́ды» (he's seen it all). Never use them neutrally; they carry a wink.",
           examples: [
             { ru: "Мы с ним вмéсте хаживали по грибы.", en: "He and I used to go mushrooming together." },
           ],
