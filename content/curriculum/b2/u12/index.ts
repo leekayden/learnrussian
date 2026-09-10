@@ -16,10 +16,13 @@ export const u12: Unit = {
       grammar: [
         {
           title: "Genitive under negation",
-          body: `Accusative objects often flip to **genitive** under negation (especially abstract/indefinite things):
+          body: `Genitive under negation: Я не чита́л э́той статьи́ (alongside э́ту статью́). Total negation uses ни + gen: не сказа́л ни сло́ва. The probability ladder: обяза́тельно → на́верное → вря́д ли → ни за что. Сомнева́ться в + prep, отрица́ть + acc.
+
+Accusative objects often flip to **genitive** under negation (especially abstract/indefinite things):
 - Я чита́л э́ту статью́ → Я не чита́л э́той статьи́.
 - Он не зна́ет ни одного́ слова́. (ni + gen for total negation)
 Optional but stylish; with concrete definite objects accusative stays: Я не чита́л э́ту статью́ (also fine).`,
+          why: "Genitive under negation is the grammar of absence: if the object never got received, it stays 'unpossessed' — genitive territory. Optional with concrete objects, near-obligatory with abstract ones (нет вре́мени).",
           examples: [
             { ru: "Он не сказа'л ни сло'ва.", en: "He didn't say a single word." },
           ],
@@ -27,10 +30,13 @@ Optional but stylish; with concrete definite objects accusative stays: Я не �
         },
         {
           title: "Probability scale",
-          body: `- ** обяза́тельно** (certainly) → **probably на́верное / вероя́тно** → **вряд ли / едва́ ли** (unlikely) → **ни за что** (no way).
+          body: `Probability markers show your confidence: обяза́тельно (certainly), на́верное/вероя́тно (probably), вря́д ли/едва́ ли (unlikely), ни за что (no way). Сомнева́ться в + prep doubts the thing; отрица́ть + acc denies the charge.
+
+- ** обяза́тельно** (certainly) → **probably на́верное / вероя́тно** → **вряд ли / едва́ ли** (unlikely) → **ни за что** (no way).
 - сомнева́ться в + prep: Я сомнева́юсь в э́том.
 - отрицать + acc: Он отрица́ет свою́ вину́.`,
         },
+          why: "The в + prepositional after сомнева́ться treats doubt as a location — you stand inside uncertainty about it. And ни за что literally promises 'not for anything' — you would not do it for any price. Russian probability is full of tiny arguments.",
       ],
       exercises: [
         {
