@@ -16,9 +16,13 @@ export const u04: Unit = {
       grammar: [
         {
           title: "Pointing at whole clauses",
-          body: `- **Тот, кто**… — He who…: Тот, кто чита́ет, не скуча́ет.
+          body: `Correlative pairs point at whole clauses: Тот, кто чита́ет, не скуча́ет (he who reads doesn't get bored); То, что он пришёл, удиви́ло всех (that he came surprised everyone). The demonstrative (тот/то) takes the case; the clause fills it.
+
+- **Тот, кто**… — He who…: Тот, кто чита́ет, не скуча́ет.
 - **То, что** + clause as subject/object: То, что он пришёл, удиви́ло всех.
 The demonstrative (тот/то) carries the case; the clause fills it.`,
+          why: "The demonstrative exists so the clause has something to hang its case on: То, что... can be a SUBJECT because то carries the nominative. English 'what you said' does this with one word; Russian needs the two-piece set.",
+
           table: {
             headers: ["Correlative", "Example"],
             rows: [
@@ -52,9 +56,12 @@ The demonstrative (тот/то) carries the case; the clause fills it.`,
       grammar: [
         {
           title: "Degree and result",
-          body: `- **Насто́лько…, что** — so…that: Он та́лантлив настолько, что... лени́в.
+          body: `Degree and result: насто́лько…, что (so…that), так что (so — result), словно/бу́дто (as if — literary). Он та́лантлив настолько, что... лени́в. Уже́ по́здно, так что пошли́ домо́й.
+
+- **Насто́лько…, что** — so…that: Он та́лантлив настолько, что... лени́в.
 - **так что** = so (result): Поздне́й... better: Уже́ по́здно, так что пошли́ домо́й.
 - Comparatives: **словно / бу́дто / ро́вно** — as if (literary).`,
+          why: "так что is pure result — no causality, just consequence. It is the workhorse connector of spoken argument: state the fact, add так что, draw the conclusion. The literary comparatives (словно, ро́вно) belong to prose; в speech бу́дто covers everything.",
           examples: [
             { ru: "Он опозда'л, так что заседа'ние уже' шло.", en: "He was late, so the meeting had already started." },
           ],
