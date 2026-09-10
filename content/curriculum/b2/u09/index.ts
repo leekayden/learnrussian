@@ -16,11 +16,14 @@ export const u09: Unit = {
       grammar: [
         {
           title: "One grid to rule them all",
-          body: `Prefixes attach to all three carry pairs:
+          body: `Bring-verbs prefix like motion verbs: принести́ (bring on foot), привезти́ (bring by vehicle), привести́ (bring a person). Same one-trip vs habitual: прино­си́ть/принести́. And переноси́ть = reschedule (move a meeting 'across' time).
+
+Prefixes attach to all three carry pairs:
 - нести́/носи́ть: принести́ (bring), унести́ (carry away), разнести́ (deliver around), перенести́ ( переносить — reschedule!)
 - везти́/вози́ть: привезти́, увезти́, перевезти́ (transport across)
 - вести́/води́ть: привести́ (bring a person), увести́ (lead away), отвести́ (take aside)
 Metaphor: переноси́ть встре́чу (reschedule a meeting), заводи́ть друзья́ (make friends), доводи́ть до бе́зумия.`,
+          why: "The prefix логика transfers wholesale: при- toward the speaker, у- away, пере- across. Перенести́ встре́чу works because time is being treated as space — the meeting gets moved across the calendar. Russian spatial grammar runs the abstract world too.",
           examples: [
             { ru: "Он принё'с мне кофе.", en: "He brought me coffee." },
             { ru: "Встре'чу перенесли' на пя'тницу.", en: "The meeting was moved to Friday." },

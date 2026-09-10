@@ -16,9 +16,13 @@ export const u10: Unit = {
       grammar: [
         {
           title: "Two ways to say “than”",
-          body: `- Short comparative + **genitive**: Он умне́е меня́. Он ста́рше бра́та.
+          body: `Two ways to say 'than': short comparative + genitive (старше бра́та) or чем + nominative (старше, чем брат). The genitive version is shorter and very common in speech; чем is heavier and more formal.
+
+- Short comparative + **genitive**: Он умне́е меня́. Он ста́рше бра́та.
 - **чем + any case** (must repeat the noun's case): Он умне́е, чем я. Это важне́е, чем э́то.
 The genitive version is shorter and very common in speech.`,
+          why: "The genitive after a comparative is Russian's 'of the two' logic — he is older OF THE TWO brothers. чем instead builds a full comparison clause. Both correct; the genitive is what speech prefers and writing tolerates in either form.",
+
           table: {
             headers: ["Pattern", "Example"],
             rows: [
@@ -60,9 +64,13 @@ The genitive version is shorter and very common in speech.`,
       grammar: [
         {
           title: "Intensifiers and the superlative ladder",
-          body: `- **горáздо / значи́тельно / мно́го + comparative** = much: мно́го лу́чше.
+          body: `than…тем builds correlative comparisons: Чем бо́льше, тем лу́чше. Superlative ladder: са́мый (neutral), наибо́лее (formal), -ейший (emphatic bookish): важне́йший. Intensifiers горáздо/значи́тельно/мно́го + comparative = much better.
+
+- **горáздо / значи́тельно / мно́го + comparative** = much: мно́го лу́чше.
 - **чем…, тем…**: Чем бо́льше, тем лу́чше. — The more, the better.
 - Superlative: **са́мый** (neutral), наибо́лее (formal), -ейший (emphatic bookish): важне́йший.`,
+          why: "чем…тем is a fixed correlative frame — both halves required, each holding a comparative. And the three superlative strategies differ by register, not meaning: са́мый for speech, наибо́лее for reports, -ейший for rhetoric. Choosing is choosing a register.",
+
           table: {
             headers: ["Device", "Example"],
             rows: [

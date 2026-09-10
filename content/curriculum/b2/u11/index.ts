@@ -16,9 +16,12 @@ export const u11: Unit = {
       grammar: [
         {
           title: "How spoken Russian saves effort",
-          body: `- Surprise questions: **Ра́зве ты не знал?** (Surely you didn't know?), **Неуже́ли он согласи́лся?**
+          body: `Spoken Russian saves effort: surprise questions with ра́зве/неуже́ли (Ра́зве ты не знал?), ellipsis with the verb dropped but cases intact (Мне бы ко́фе), and а́вось for hopeful fatalism (А́вось повезёт).
+
+- Surprise questions: **Ра́зве ты не знал?** (Surely you didn't know?), **Неуже́ли он согласи́лся?**
 - Ellipsis — the verb drops, cases stay: **Мне бы ко́фе.** (I'd like coffee), **Ему́ не до э́того.**
 - **А́вось** — hoping for the best: А́вось повезёт.`,
+          why: "Ellipsis is grammatical, not sloppy: the dative «мне» plus a bare noun is a complete utterance because case endings carry the meaning the verb would. English needs 'I would like'; Russian's case system makes the verb redundant.",
           examples: [
             { ru: "Мне бы ко'фе и что'-нибу'дь к ча'ю.", en: "I'd like a coffee and something to go with it." },
           ],
@@ -49,9 +52,12 @@ export const u11: Unit = {
       grammar: [
         {
           title: "The grammar of officialdom",
-          body: `- Impersonal officialese: **предполага́ется** (it is assumed), **сле́дует** (one should), **не допуска́ется** (is not permitted).
+          body: `Officialdom has its own grammar: предполага́ется (it is assumed), сле́дует (one should), не допуска́ется (is not permitted), headline infinitives (Откры́ть станцию к ма́ю), and signs like Тре́буется (Wanted).
+
+- Impersonal officialese: **предполага́ется** (it is assumed), **сле́дует** (one should), **не допуска́ется** (is not permitted).
 - Headlines use infinitives / verbless noun strings: **«Откры́ть станцию к ма́ю»**, **«Встре́ча в Кремле́: что изве́стно»**.
 - Set public signs: **Тре́буется** (Wanted), **Ка́сса**, **Ухо́д отсю́да воспрещён** (bookish).`,
+          why: "Official Russian is impersonal on principle: responsibility dissolves into the institution. Предполага́ется has no subject because nobody person is claiming it. Headlines use infinitives to freeze the future into a plan. Learning the register means learning who is allowed NOT to appear in the sentence.",
           examples: [
             { ru: "Не допуска'ется кури'ть.", en: "Smoking is not permitted." },
           ],

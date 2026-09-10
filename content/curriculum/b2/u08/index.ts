@@ -16,10 +16,13 @@ export const u08: Unit = {
       grammar: [
         {
           title: "New information goes last",
-          body: `Word order in Russian is grammar, not preference. Ма́ма прие́хала (news: mom arrived) vs Прие́хала ма́ма (news: it's MOM who arrived). The new information — the rheme — goes last; everything else is shared context (theme).Russian word order is flexible because **case endings** carry grammar. Word order marks what's NEW (rheme usually last):
+          body: `Word order in Russian is grammar, not preference. Ма́ма прие́хала (news: mom arrived) vs Прие́хала ма́ма (news: it's MOM who arrived). The new information — the rheme — goes last; everything else is shared context (theme).
+
+Word order in Russian is grammar, not preference. Ма́ма прие́хала (news: mom arrived) vs Прие́хала ма́ма (news: it's MOM who arrived). The new information — the rheme — goes last; everything else is shared context (theme).Russian word order is flexible because **case endings** carry grammar. Word order marks what's NEW (rheme usually last):
 - **Ма́ма прие́хала.** (answer to: Что случи́лось? — news: mom arrived)
 - **Прие́хала ма́ма.** (answer to: Кто прие́хал? — news: it's MOM)
 Particles sharpen focus: же (contrast/reminder), ведь (you know, after all), именно (precisely), да́же (even).`,
+          why: "Because case endings carry the grammar, Russian can reorder freely — and uses that freedom to mark information structure. English fixes SVO and marks focus with stress; Russian marks it with position. Answering 'who came?' with 'Мама прие́хала' answers a different question than the one asked.",
           examples: [
             { ru: "Я же говори'л!", en: "But I told you so!" },
             { ru: "Он ведь не зна'ет.", en: "You know, he doesn't know." },
