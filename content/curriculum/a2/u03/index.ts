@@ -39,7 +39,7 @@ This case is everywhere once you start noticing it: authorship (рома́н П�
             { ru: "Это диссерта'ция моего' нау'чного руководи'теля.", en: "This is my supervisor's dissertation — a real-world genitive." },
             { ru: "Ключи' от обща'ги у Дима.", en: "The dorm keys are with Dima — two genitive-flavoured constructions stacked." },
           ],
-          tip: "The reflex to fight is leaving the noun bare: «машина брат» is the classic tell of an English speaker. Whenever two nouns sit next to each other and the second one "owns" the first, your hand should reach for -а/-я automatically.",
+          tip: "The reflex to fight is leaving the noun bare: «машина брат» is the classic tell of an English speaker. Whenever two nouns sit next to each other and the second one «owns» the first, your hand should reach for -а/-я automatically.",
         },
       ],
       exercises: [
