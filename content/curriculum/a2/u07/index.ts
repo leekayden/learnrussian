@@ -82,7 +82,7 @@ English gets by with one verb plus helper words (*was reading* / *have read* / *
 - чита́ть → **про**чита́ть (read through)
 - пить → **вы**пить (drink up)
 
-Some pairs change more than a prefix: покупа́ть → **купи́ть** (the whole stem swaps — these are called suppletive pairs and simply need memorising). The dictionary does the bookkeeping for you: every verb's page lists its aspect partner (that is the `partner` field in our database), so you never have to guess.`,
+Some pairs change more than a prefix: покупа́ть → **купи́ть** (the whole stem swaps — these are called suppletive pairs and simply need memorising). The dictionary does the bookkeeping for you: every verb's page lists its aspect partner (the partner field in our database), so you never have to guess.`,
           table: {
             headers: ["Imperfective", "Perfective"],
             rows: [
