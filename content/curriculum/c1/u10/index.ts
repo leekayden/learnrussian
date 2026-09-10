@@ -16,9 +16,12 @@ export const u10: Unit = {
       grammar: [
         {
           title: "Compression devices",
-          body: `- Relative clause → **participle**: «студе́нты, кото́рые сдали́ экза́мен» → «студе́нты, сдавшие экза́мен»
+          body: `Compression transformations: «студе'нты, кото'рые сдали' экза'мен» → «студе'нты, сдавшие экза'мен» (clause → participle); «Когда' он уви'дел нас, он улы'бнулся» → «Уви'дев нас, он улы'бнулся» (clause → verbal adverb).
+
+- Relative clause → **participle**: «студе́нты, кото́рые сдали́ экза́мен» → «студе́нты, сдавшие экза́мен»
 - Clause → **verbal adverb**: «Когда́ он уви́дел нас, он улы́бнулся» → «Уви́дев нас, он улы́бнулся»
 Same subject required for the verbal adverb; participle agrees with its noun.`,
+          why: "Both transformations DELETE a conjunction and its subject — which is why the shared-subject and agreement rules matter so much. The compressed version is one grammatical level higher: exactly the shift from B1-clarity to C1-economy.",
           examples: [
             { ru: "Де'ти, кото'рые игра'ют во дворе', шумя'т. → Де'ти, игра'ющие во дворе', шумя'т.", en: "Children playing in the yard are noisy." },
           ],
@@ -54,9 +57,13 @@ Same subject required for the verbal adverb; participle agrees with its noun.`,
       grammar: [
         {
           title: "Dative experiencer and the passive turn",
-          body: `- Personal → **impersonal**: «Я хочу́ спать» → «Мне хо́чется спать»; «Я не спал» → «Мне не спало́сь»
+          body: `Voice and person shifts: «Я хочу' спать» → «Мне хо'чется спать» (personal → impersonal); «Заво'д вы'пускает автомобиля'ми»... «Заво'д вы'пускает маши'ны» → «Маши'ны выпуска'ются заво'дом» (active → passive with agent instrumental).
+
+- Personal → **impersonal**: «Я хочу́ спать» → «Мне хо́чется спать»; «Я не спал» → «Мне не спало́сь»
 - Active → **passive**: «Заво́д вы́пускает авто́мобили» → «Автомоби́ли выпуска́ются заво́дом»; «Писа́тель написа́л рома́н» → «Рома́н на́писан писа́телем»
 Check agreement after EVERY transformation — number, gender, case.`,
+          why: "The impersonal shift moves the experiencer into the dative and demotes the verb to -ся; the passive shift promotes the object to subject and demotes the agent to instrumental. Every transformation ends with an agreement check — number, gender, case — because transformations break exactly where agreement slips.",
+
           table: {
             headers: ["Personal", "Impersonal"],
             rows: [
