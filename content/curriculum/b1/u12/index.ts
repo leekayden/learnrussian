@@ -16,10 +16,12 @@ export const u12: Unit = {
       grammar: [
         {
           title: "Agent nouns and process nouns",
-          body: `- **-тель** = doer: писа́ть → писа́тель, учи́ть → учи́тель, строи́ть → строи́тель.
+          body: `Noun-building suffixes are the fast track to vocabulary: писа́ть → писа́тель (writer), чита́ть → чте́ние (reading), мо́лодой → мо́лодость (youth), тури́зм. Each suffix carries a job: -тель makes agents, -ние makes processes, -ость makes abstract qualities, -изм makes -isms.- **-тель** = doer: писа́ть → писа́тель, учи́ть → учи́тель, строи́ть → строи́тель.
 - **-ние / -тие** = the process (of perfective verbs): чита́ть → чте́ние, строи́ть → строи́тельство, писа́ть → писа́ние (rare) / письмо́ (result).
 - **-ость** (adj → abstract noun): ра́достный → ра́дость, молодо́й → мо́лодость, сле́пой → слепота́.
 - **-изм** = -ism: тури́зм, капитали́зм, федерали́зм.`,
+          why: "These suffixes are nearly productivity rules: given any verb, -тель predicts its agent and -ние predicts its process noun with 90% accuracy. That is why Russian dictionaries feel smaller than they look — the morphology manufactures vocabulary on demand.",
+
           table: {
             headers: ["Base", "Derived", "Meaning"],
             rows: [
@@ -65,7 +67,7 @@ export const u12: Unit = {
       grammar: [
         {
           title: "-ск-, -н-, -лив-",
-          body: `- **-ск-**: го́род → городско́й, де́ти → де́тский, ру́сский.
+          body: `Adjective suffixes: -ск- for belonging (го́род → городско́й), -лив- for inclination (терпе́ть → терпе́ливый), and verbs from adjectives: бе́лый → белеть (turn white), ста́рый → старе́ть (grow old).- **-ск-**: го́род → городско́й, де́ти → де́тский, ру́сский.
 - **-н-**: де́тство → де́тский? classic: пу́стой → пусты́нный (desert-like).
 - **-лив-** = inclined to: терпе́ть → терпе́ливый, говори́ть → говорли́вый, сча́стье → счастли́вый.
 - Verbs from adjectives: **беле́ть / черне́ть** (to turn white/black), старе́ть (grow old), молоде́ть.`,

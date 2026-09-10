@@ -16,9 +16,11 @@ export const u10: Unit = {
       grammar: [
         {
           title: "Case = its job in the subordinate clause",
-          body: `- Subject: Фильм, **кото́рый** мне понра́вился (nom)
+          body: `Кото́рый is the Russian relative pronoun — but unlike English 'which/who', it must sit right after the noun and take the CASE of its own clause. Subject: фильм, кото́рый мне понра́вился. Object: фильм, кото́рый я ви́дел.- Subject: Фильм, **кото́рый** мне понра́вился (nom)
 - Direct object: Фильм, **кото́рый** я ви́дел (acc)
 Gender/number copy the noun being replaced.`,
+          why: "English 'which' floats free; кото́рый is glued to its noun and inflects like an adjective for gender/number while taking its own clause's case. Two decisions per use — agree with the antecedent, case from the clause — and the placement rule that keeps it adjacent.",
+
           table: {
             headers: ["Function", "Form"],
             rows: [
@@ -53,10 +55,12 @@ Gender/number copy the noun being replaced.`,
       grammar: [
         {
           title: "Preposition moves inside",
-          body: `If the noun needs a preposition, it travels with кото́рый:
+          body: `When the noun needs a preposition, it travels inside the который-phrase: дом, в кото́ром я живу́; де́вушка, с кото́рой я говори́л. The preposition + который comes FIRST in the clause.If the noun needs a preposition, it travels with кото́рый:
 - Дом, **в кото́ром** я живу́ (prep — живу́ в до́ме)
 - Де́вушка, **с кото́рой** я говори́л (inst — говори́л с ней)
 - Писа́тель, **о кото́ром** все говоря́т (prep — говоря́т о нём)`,
+          why: "Preposition-stranding is impossible in Russian — 'the house which I live in' cannot exist. The preposition must precede кото́рый, which is why the form is so often в кото́ром / с кото́рой: everyday verbs are drowning in prepositions, and each one drags its case along.",
+
           table: {
             headers: ["Function", "Form"],
             rows: [
@@ -98,7 +102,7 @@ Gender/number copy the noun being replaced.`,
       grammar: [
         {
           title: "Purpose and time",
-          body: `- **что́бы + past/infinitive** = in order to / that: Я пришёл, что́бы помо́чь. Важно́, что́бы ты пришёл.
+          body: `что́бы marks purpose or a demanded outcome: Я пришёл, что́бы помо́чь. Я хочу́, что́бы ты пришёл. The verb after что́бы is always in the PAST form — even for future meaning.- **что́бы + past/infinitive** = in order to / that: Я пришёл, что́бы помо́чь. Важно́, что́бы ты пришёл.
 - **когда́** = when; **пока́** = while / until: Пока́ я гото́влю, ты накрыва́й на стол.
 Negative purpose: что́бы не + past: Он закры́л окно́, что́бы не шумело́... simpler: что́бы не просту́диться.`,
           examples: [
@@ -137,9 +141,11 @@ Negative purpose: что́бы не + past: Он закры́л окно́, чт
       grammar: [
         {
           title: "Cause, result, concession, compensation",
-          body: `- **потому́ что** = because (after the fact): Я взял зонт, потому́ что шёл дождь.
+          body: `Cause and contrast come in pairs: because → потому́ что (after the fact) / так как (before); result → поэ́тому; concession → хотя́; compensation → зато́. До́м ма́ленький, зато́ све́тлый.- **потому́ что** = because (after the fact): Я взял зонт, потому́ что шёл дождь.
 - **поэ́тому** = therefore (result): Шёл дождь, поэ́тому я взял зонт.
 - **хотя́** = although; **зато́** = but on the other hand (compensation): До́м ма́ленький, зато́ све́тлый.`,
+          why: "Russian discourse connectors are directional: потому́ что must follow the fact it explains, поэ́тому must follow its cause. English 'because' can go anywhere; Russian's two-piece system (cause-word + word order) forces you to decide what is news and what is explanation.",
+
           table: {
             headers: ["Conjunction", "Job"],
             rows: [
