@@ -1,6 +1,9 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 8 — Adjectives agree, one step at a time. */
+/**
+ * A2 · Unit 8 — Adjectives agree, one step at a time. Notes v2:
+ * elaborate explanations, English contrasts, reasoning callouts.
+ */
 export const u08: Unit = {
   id: "a2-u08",
   level: "a2",
@@ -16,9 +19,16 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Copy the noun's gender",
-          body: `- masculine: **-ый/-ий**, after ж/ш/ч/щ stressed **-ой** (большо́й, хоро́ший)
+          body: `In English an adjective is a lazy word — *a new car*, *a new idea*, *new books*: the form never changes. Russian adjectives are workers: they **copy the gender, number and case** of whatever they describe. This agreement is called согласова́ние, and it is why the dictionary gives you a whole grid per adjective.
+
+In the nominative (dictionary) case:
+- masculine: **-ый/-ий**, and after ж/ш/ч/щ a stressed **-ой** (большо́й, чужо́й) — хоро́ший keeps -ий because its stress moved inside
 - feminine: **-ая/-яя** (но́вая, си́няя)
-- neuter: **-ое/-ее** (но́вое, си́нее)`,
+- neuter: **-ое/-ее** (но́вое, си́нее)
+- plural: **-ые/-ие** (но́вые, си́ние) — plural covers all genders at once
+
+There are two families: **hard** (но́вый, with ы) and **soft** (си́ний, with и after a soft н). They mirror each other perfectly — learn one and you get the other free.`,
+          why: `Why do adjectives bother? Because Russian word order is flexible — «но́вый дом» and «дом но́вый» are both possible — so the endings are what bind the adjective to its noun. Agreement is not decoration; it is the glue that tells the listener which words travel together.`,
           table: {
             headers: ["", "hard (новый)", "soft (синий)"],
             rows: [
@@ -28,6 +38,11 @@ export const u08: Unit = {
               ["pl", "новые", "синие"],
             ],
           },
+          examples: [
+            { ru: "Краси'вая площадь в ста'ром го'роде.", en: "A beautiful square in an old city — both adjectives agree." },
+            { ru: "Она' купи'ла си'нее пла'тье.", en: "She bought a blue dress — neuter." },
+          ],
+          tip: "The -ой masculine forms (большо́й, молодо́й) trip people because they look feminine. The rule: stressed ending after ж/ш/ч/щ → -о́й. Unstressed → -ий (хоро́ший has moved its stress inside the word, which is why it keeps -ий).",
         },
       ],
       exercises: [
@@ -60,10 +75,12 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Match the noun's accusative",
-          body: `- masculine inanimate: no change — Я ви́жу **но́вый** дом
+          body: `An adjective in the accusative copies whatever its noun did:
+
+- masculine inanimate: no change — Я ви́жу **но́вый** дом
 - feminine: **-ую/-юю** — Я купи́л **но́вую** маши́ну
 - neuter: no change — **но́вое** письмо́
-- masculine animate: **-ого** — Я ви́жу **но́вого** учителя́`,
+- masculine **animate**: **-ого** — Я ви́жу **но́вого** учителя́ (the adjective goes genitive-like, just like the noun did in Unit 2 Step 3)`,
           table: {
             headers: ["Phrase", "Case"],
             rows: [
@@ -104,9 +121,11 @@ export const u08: Unit = {
       grammar: [
         {
           title: "After в/на/о: -ом / -ой / -ых",
-          body: `- masculine/neuter: **-ом** — в но́вом до́ме, в но́вом письме́
-- feminine: **-ой** — в но́вой кварти́ре
-- plural: **-ых/-их** — в но́вых дома́х`,
+          body: `- masculine/neuter: **-ом/-ем** — в но́вом до́ме, в но́вом письме́
+- feminine: **-ой/-ей** — в но́вой кварти́ре
+- plural: **-ых/-их** — в но́вых дома́х, в си́них джи́нсах
+
+Prepositional is the easiest accusative-follow-up: once you know в + prepositional (Unit 2), the adjective simply follows its noun into the same case.`,
           table: {
             headers: ["Nominative", "Prepositional"],
             rows: [
@@ -147,9 +166,11 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Plural -ы/-и; animate accusative = genitive",
-          body: `- Nominative plural: **-ы/-и** (столы́, му́зеи, кни́ги)
+          body: `- Nominative plural: **-ы/-и** (столы́, му́зеи, кни́ги) — after к,г,х,ж,ш,ч always **-и**
 - Accusative plural of **inanimate** = nominative: Я чита́ю кни́ги.
-- Accusative plural of **animate** = genitive plural: Я ви́жу друзе́й, студе́нтов.`,
+- Accusative plural of **animate** = genitive plural: Я ви́жу друзе́й, студе́нтов.
+
+The animate rule now applies to plurals too — and the genitive plural endings (Step 5 in B1 unit 1) are genuinely the hardest chart in the language. For now: recognise the split, master the forms you meet.`,
           table: {
             headers: ["Singular", "Plural (nom)", "Acc pl"],
             rows: [
@@ -158,7 +179,7 @@ export const u08: Unit = {
               ["друг", "друзья", "друзей (animate!)"],
             ],
           },
-          tip: "Irregulars: де́нь → дни, друг → друзья́, брат → бра́тья, сын → сыновья́.",
+          tip: "Irregulars to know on sight: де́нь → дни, друг → друзья́, брат → бра́тья, сын → сыновья́, стул → сту́лья, ребе́нок → де́ти.",
         },
       ],
       exercises: [
@@ -191,9 +212,14 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Pronouns agree like adjectives",
-          body: `- **мой** → моего́ (gen), моему́ (dat), мою́ (fem acc), моём (prep)
+          body: `Possessives (мой, твой, наш, ваш), demonstratives (этот) and the useful весь (all) decline **exactly like adjectives** — they are adjectives in disguise:
+
+- **мой** → моего́ (gen/acc anim), моему́ (dat), мою́ (fem acc), моём (prep)
 - **этот** → э́того, э́тому, э́ту, э́том
-- **весь** = all: весь день (m acc), всю неде́лю (f acc), всё вре́мя, все лю́ди`,
+- **весь** → всего́, всю, всему́, всём — «весь день» (all day), «вся семья́» (the whole family)
+
+One nuance: его/её/их (his/her/their) **never change**. They are frozen genitives and stay that way in every case: Я ви́жу его́ сестру́, Я говорю́ с его́ сестро́й — его́ stays его́.`,
+          why: `Why do мой and наш decline while его/её/их do not? Because мой/наш are originally adjective-like pronouns (they agree), while его/её/их are frozen genitives of он/она/они — already in a case, so nothing further happens to them. Etymology explains the asymmetry.`,
           table: {
             headers: ["Nominative", "Accusative", "Prepositional"],
             rows: [
