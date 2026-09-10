@@ -16,11 +16,14 @@ export const u05: Unit = {
       grammar: [
         {
           title: "Marking the source of knowledge",
-          body: `Evidential markers show WHERE the knowledge comes from:
+          body: `Evidential markers show WHERE knowledge came from: должно быть / очеви́дно / по-ви́димому (inference), ка́жется (impression), оказа́лось (discovery against expectation), я́кобы (reported with doubt), бу́дто бы (as if). «Он я́кобы был там» = he claims he was there — and I'm not vouching.
+
+Evidential markers show WHERE the knowledge comes from:
 - **должно быть / очеви́дно / по-ви́димому** — inference: Должно быть, он за́нят.
 - **ка́жется / оказа́лось** — impression vs discovery: Ка́жется, дождь ко́нчился. Оказа́лось, что... 
 - **я́кобы** — reported with doubt: Он я́кобы был там. (he CLAIMED to be)
 - **ка́к бу́дто / бу́дто бы** — as if (doubtful reporting): Он бу́дто бы не зна́л.`,
+          why: "я́кобы and бу́дто бы cast doubt on the REPORT, not the event — journalists and gossipers live on them. And «Вам бы отдохну́ть» is advice without an imperative: бы marks the situation as unreal/desirable, the dative names who would benefit. Soft advice, no order given.",
           examples: [
             { ru: "Он я'кобы ничего' не зна'л.", en: "He claims he knew nothing (and we doubt it)." },
           ],
