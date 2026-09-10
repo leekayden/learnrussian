@@ -1,6 +1,9 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 9 — Motion verbs I, one step at a time. */
+/**
+ * A2 · Unit 9 — Motion verbs I, one step at a time. Notes v2:
+ * elaborate explanations, English contrasts, reasoning callouts.
+ */
 export const u09: Unit = {
   id: "a2-u09",
   level: "a2",
@@ -16,10 +19,14 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Direction × transport",
-          body: `- **идти́** — on foot, right now, one direction: Я иду́ в шко́лу.
-- **ходи́ть** — on foot, habitually / round trips: Я хожу́ в шко́лу.
-- **е́хать** — by vehicle, now: Я е́ду домо́й.
-- **е́здить** — by vehicle, habitually: Я е́зжу на рабо́ту.`,
+          body: `English has one verb — *to go* — and lets context do the rest. Russian refuses to be vague: it forces you to specify **two facts** about every journey before you can even open your mouth.
+
+**Fact 1: on foot or by vehicle?** Идти́/ходи́ть are for walking; е́хать/е́здить are for any transport — car, bus, train, bike, horse.
+
+**Fact 2: one direction or round trip?** Идти́/е́хать describe motion **in progress right now** or **one single journey**: Я иду́ в шко́лу (I'm on my way). Ходи́ть/е́здить describe **habits and round trips** — there AND back: Я хожу́ в шко́лу (I attend school), Я е́зжу на рабо́ту (I commute).
+
+So «Я е́зжу в Москву́» does not mean "I'm driving to Moscow" — it means you make that trip repeatedly. And «Я иду́ в кино́» means you are literally on your way, foot-powered, this minute.`,
+          why: `Why four verbs where English needs one? Russian divides motion along two axes that matter grammatically: the *mode* (foot vs vehicle) and the *shape* of the journey (single vector vs repeated circuit). The round-trip verbs exist because the question "how do you get to work?" is about a recurring circuit, not a one-time vector — a distinction English speakers feel but never had to encode.`,
           table: {
             headers: ["", "one direction (now)", "habitual / round trips"],
             rows: [
@@ -27,7 +34,11 @@ export const u09: Unit = {
               ["by vehicle", "ехать", "ездить"],
             ],
           },
-          tip: "Round trip = там AND back → ходить/ездить. One journey in progress → идти/ехать.",
+          examples: [
+            { ru: "Смотри', она' идёт к нам!", en: "Look — she's coming toward us! One vector, on foot, unfolding now." },
+            { ru: "Я е'зжу к роди'телям раз в ме'сяц.", en: "I visit my parents once a month — a recurring circuit, by transport." },
+          ],
+          tip: "The classic error: «Я е́ду на рабо́ту на метро́» said as a general habit. If you *always* take the metro, you е́здите. Reserve е́ду for the journey happening today — «Сего́дня я е́ду на рабо́ту пешко́м, метро́ закры́то».",
         },
       ],
       exercises: [
@@ -60,10 +71,15 @@ export const u09: Unit = {
       grammar: [
         {
           title: "All four conjugated",
-          body: `- идти́: иду́, идёшь, идёт, идём, идёте, иду́т
-- е́хать: е́ду, е́дешь, е́дет, е́дем, е́дете, е́дут
-- ходи́ть: хожу́, хо́дишь, хо́дит, хо́дим, хо́дите, хо́дят
-- е́здить: е́зжу, е́здишь, е́здит, е́здим, е́здите, е́здят`,
+          body: `Here are the four base verbs in full. Notice that идти́ and е́хать are both irregular-but-predictable: иду́ keeps its д, е́ду keeps its е — and the endings are the ones you already know.
+
+- **идти́**: иду́, идёшь, идёт, идём, идёте, иду́т (ё marks the stress)
+- **е́хать**: е́ду, е́дешь, е́дет, е́дем, е́дете, е́дут
+- **ходи́ть**: хожу́, хо́дишь, хо́дит, хо́дим, хо́дите, хо́дят (ш appears in я!)
+- **е́здить**: е́зжу, е́здишь, е́здит, е́здим, е́здите, е́здят
+
+Later you will meet their siblings — бежать́ (run), плыть (swim), лете́ть (fly) — which follow the same logic but keep their own quirks. The grid above is the core investment; everything else builds on it.`,
+          why: `The -ш- in хожу́ is the same consonant history you met with писа́ть → пишу́: an old *х* softened toward ш before the personal ending. And ё in идёшь is not decoration — ё is always stressed in Russian, so these forms announce themselves loudly in speech, which is exactly what motion verbs do in conversation.`,
           table: {
             headers: ["Person", "идти", "ехать"],
             rows: [
@@ -104,13 +120,21 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Means of transport",
-          body: `- **на + prepositional**: на авто́бусе, на метро́, на маши́не, на по́езде, на самолё́те, на та́кси
-- **пешко́м** = on foot (adverb — no preposition!)
-Destination: в/на + accusative — Я е́ду **в Казань на по́езде**.`,
-          examples: [
-            { ru: "Она' прие'хала на та-кси.", en: "She arrived by taxi." },
-          ],
-          tip: "Fixed: на метро́ (never в метро́); на по́езде; but в маши́не = inside the car (location).",
+          body: `To say **how** you travel, Russian puts the transport into the prepositional after **на**: на авто́бусе, на метро́, на маши́не, на по́езде, на самолё́те, на та́кси. Walking is the exception — **пешко́м** is a pure adverb with no preposition at all: Я пришёл пешко́м.
+
+The destination keeps the rule from Unit 2: в/на + accusative. So a full journey is two case decisions stacked: **Я е́ду в Казань на по́езде** (to Kazan — accusative; by train — prepositional).
+
+Watch the fine print: **на метро́** never becomes «в метро́» when talking about means of travel, but «в метро́» is fine for *location inside the system* («в метро́ хо́лодно»). And на та́кси means riding by taxi; в такси́ means sitting inside one.`,
+          why: `Why «на» for transport? Historically you climbed *onto* vehicles — they were platforms, not boxes. Trains and buses still work that way (на по́езде, на авто́бусе — you get ON). Cars are the modern loophole: на маши́не treats the car as a means, в маши́не treats it as a box you sit inside. The preposition remembers when vehicles stopped being open-air.`,
+          table: {
+            headers: ["Phrase", "Meaning"],
+            rows: [
+              ["на автобусе", "by bus"],
+              ["на метро", "by metro"],
+              ["пешком", "on foot"],
+              ["в такси", "inside the taxi (location)"],
+            ],
+          },
         },
       ],
       exercises: [
@@ -143,14 +167,20 @@ Destination: в/на + accusative — Я е́ду **в Казань на по́�
       grammar: [
         {
           title: "по- = one whole trip (perfective)",
-          body: `- **пойти́ / пое́хать** = set off, go (one complete trip):
-- Мы **пойдём** в кино́? — Shall we go?
-- Она́ **по́ехала** домо́й. — She set off home.
-- **Дава́й пойдём гуля́ть!** — Let's go for a walk!`,
-          examples: [
-            { ru: "Дава'й пойдём гуля'ть!", en: "Let's go for a walk!" },
-          ],
-          tip: "по- makes them perfective: future meaning or one completed departure.",
+          body: `Add **по-** to идти́ and е́хать and you get their perfective partners: **пойти́** and **пое́хать** — to set off, to make one complete trip. They carry future meaning or a single completed departure:
+
+- Мы **пойдём** в кино́? — Shall we go to the movies? (one planned trip)
+- Она́ **по́ехала** домо́й. — She headed home. (one departure, completed)
+
+In invitations they are unbeatable: **Дава́й пойдём гуля́ть!** — Let's go for a walk! The по- prefix promises a beginning and an end, which is what an invitation needs.`,
+          why: `Why does по- make the trip "complete"? По- is the prefix of *setting a boundary* — it appears all over Russian marking actions with a finish line (поесть = have a bite, попить = have a drink). Пойти́ frames the journey as one bounded event: you leave, you arrive, done. That is why it loves future tense and invitations.`,
+          table: {
+            headers: ["Imperfective", "Perfective", "Feel"],
+            rows: [
+              ["идти в кино", "пойти в кино", "was heading vs will head off"],
+              ["ехать домой", "поехать домой", "was riding vs set off home"],
+            ],
+          },
         },
       ],
       exercises: [
