@@ -16,11 +16,13 @@ export const u02: Unit = {
       grammar: [
         {
           title: "The dative experiencer + impersonal verb",
-          body: `Russian prefers agentless sentences: the person goes **dative**, the verb stays 3rd person:
+          body: `Russian builds sentences without subjects: Мне хо́чется спать (lit. 'to-me wants-itself to-sleep'). The experiencer sits in the dative, the verb is impersonal, and nobody is the hero. The family: хо́чется (feel like), прихо́дится (have to, by circumstance), удаётся (manage to), сто́ит (be worth).Russian prefers agentless sentences: the person goes **dative**, the verb stays 3rd person:
 - **Мне хо́чется спать.** — I feel like sleeping. (хо́чется/хоте́лось)
 - **Ей прихо́дится рабо́тать ве́черами.** — She has to work evenings. (приходи́тся/пришло́сь/придё́тся)
 - **Нам удало́сь дого́вори́ться.** — We managed to agree. (удава́ться/уда́стся)
 - **Сто́ит поду́мать.** — It's worth thinking about. **Сле́дует учи́ть** — one should learn.`,
+          why: "Impersonal constructions treat states as circumstances, not choices — nobody willed the sleepiness; it simply is. The dative experiencer (from A2: мне хо́лодно, мне 20 лет) extends to desires and obligations. B2 just makes the family tree visible.",
+
           table: {
             headers: ["Verb", "Meaning", "Example"],
             rows: [
@@ -62,7 +64,7 @@ export const u02: Unit = {
       grammar: [
         {
           title: "Predicates of state",
-          body: `- **нет / не бы́ло + gen.**: Де́нег нет. Ра́ньше здесь не́ бы́ло метро́.
+          body: `The no-subject family keeps growing: Жаль вре́мени (pity about the time), Мне ле́нь встать (I can't be bothered), Отсюда́ ви́дно мо́ре (the sea is visible from here), Ему́ тру́дно говори́ть (it's hard for him to speak). English needs 'it is…for me'; Russian puts the dative first and drops the scaffolding.- **нет / не бы́ло + gen.**: Де́нег нет. Ра́ньше здесь не́ бы́ло метро́.
 - **жа́ль + gen/inf**: Жаль вре́мени. Жа́ль уходи́ть.
 - **ле́нь + inf** (colloquial): Мне ле́нь встава́ть. — I can't be bothered to get up.
 - **видно / слы́шно**: Отсюда́ хорошо́ ви́дно мо́ре.

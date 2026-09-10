@@ -16,7 +16,7 @@ export const u03: Unit = {
       grammar: [
         {
           title: "Patient + short participle + agent",
-          body: `Pattern: **Patient + short participle (+ agent instrumental)**:
+          body: `Short participles are predicates: Кни́га прочи́тана (the book HAS BEEN read). Long participles are attributes: прочи́танная кни́га (a read book — descriptor). The pair рассе́янный/рассе́ян shows the split: absent-minded (trait) vs scattered (state).Pattern: **Patient + short participle (+ agent instrumental)**:
 - Письмо́ **напи́сано** (автором). — The letter was written (by the author).
 - Решéние **бы́ло при́нято** коми́ссией. — The decision was taken by the commission.
 Short forms only in predicates; long forms only inside noun phrases (на́писанное письмо́).`,
@@ -56,10 +56,12 @@ Short forms only in predicates; long forms only inside noun phrases (на́пи�
       grammar: [
         {
           title: "Ongoing passives use -ся",
-          body: `- Imperfective passive = **-ся** on the verb, thing as subject:
+          body: `Imperfective passives use -ся instead: Письмо́ пи́шется (the letter is being written), Здесь продаю́тся фру́кты. Only perfective verbs earn short participle forms — a process can't have a completed-result form.- Imperfective passive = **-ся** on the verb, thing as subject:
 - Письмо́ **пи́шется**. — The letter is being written.
 - Здесь **продаю́тся** фру́кты. — Fruit is sold here.
 - Автомоби́ли **выпуска́ются** заво́дом. — Cars are produced by the factory (agent instrumental also with -ся!).`,
+          why: "The aspect system polices the passive twice over: -ся passives are imperfective (ongoing/general), short participles are perfective (completed result). Choosing between them is the same 'process vs done' question you first met in A2 Unit 7 — now in the passive voice.",
+
           table: {
             headers: ["Tense of action", "Form"],
             rows: [

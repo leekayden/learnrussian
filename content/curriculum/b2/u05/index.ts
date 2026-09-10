@@ -16,10 +16,12 @@ export const u05: Unit = {
       grammar: [
         {
           title: "что for statements, ли for yes/no questions",
-          body: `- Statements: Он сказа́л: «Я за́нят» → Он сказа́л, **что** он за́нят.
+          body: `Indirect speech: statements take что (Он сказа́л, что за́нят), yes/no questions take ли (Он спроси́л, приду́ ли я), wh-questions keep their word (спроси́л, где я был). Crucially, NO tense shifting — Russian reports speech in its original tense.- Statements: Он сказа́л: «Я за́нят» → Он сказа́л, **что** он за́нят.
 - Yes/no questions: Он спроси́л: «Ты придёшь?» → Он спроси́л, **приду́ ли я** (ли after the key word).
 - Wh-questions keep the question word: Она́ спроси́ла, **где** я был.
 NO tense shifting — Russian keeps the original tense, changes only person.`,
+          why: "English backshifts tenses in reported speech (*'I am busy' → he said he WAS busy*); Russian refuses. The reported words are treated as quoted reality, not re-timed. Only the person changes — everything else stands as the original speaker said it.",
+
           table: {
             headers: ["Direct", "Indirect"],
             rows: [
@@ -60,10 +62,12 @@ NO tense shifting — Russian keeps the original tense, changes only person.`,
       grammar: [
         {
           title: "Reporting commands",
-          body: `- **Он попроси́л, что́бы я пришёл.** (что́бы + past)
+          body: `Commands are reported with что́бы + past (Она́ попроси́ла, что́бы я позвони́л) or with a direct infinitive after проси́ть/веле́ть/приказа́ть (Он веле́л мне уйти́). Stronger verbs sound more authoritarian: веле́ть and приказа́ть belong to bosses and fairy-tale tsars.- **Он попроси́л, что́бы я пришёл.** (что́бы + past)
 - **Он попроси́л меня́ + infinitive**: Он попроси́л меня́ позвони́ть.
 - Stronger verbs: веле́ть, приказа́ть, тре́бовать + что́бы / infinitive:
   Он веле́л мне уйти́. — He ordered me to leave.`,
+          why: "The что́бы-frame treats the command as a demanded unreal event — hypothetical particle inside, past form outside. The bare-infinitive frame treats it as an order transmitted verbatim. Register and power live in the choice.",
+
           table: {
             headers: ["Direct", "Indirect"],
             rows: [

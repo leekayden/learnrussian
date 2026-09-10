@@ -16,7 +16,9 @@ export const u04: Unit = {
       grammar: [
         {
           title: "Frozen verbal adverbs",
-          body: `Set phrases where the gerund no longer needs a subject:
+          body: `Some verbal adverbs are frozen into phrases and lost their subject requirement: судя́ по (judging by), кста́ти говоря́ (by the way), открове́нно говоря́ (frankly speaking), спуста́ год (a year later). «Судя́ по у́лицам, пра́здник» — the streets don't judge; the idiom does.
+
+Frozen forms and their shapes:
 - **судя́ по** + dat (judging by): Судя́ по у́лицам, пра́здник.
 - **к ра́тко говоря́** — in short; **открове́нно говоря́** — frankly.
 - **невзирая на** = despite (formal).
@@ -50,7 +52,9 @@ Time: **спустя́** + acc (a while later): Спустя́ год он ве�
       grammar: [
         {
           title: "Cause, concession, contrast",
-          body: `- **несмотря́ на то что** = although (+ clause); **несмотря́ на + acc** = despite (+ noun).
+          body: `The B2 connector toolkit: несмотря́ на то что (although), благодаря́ + dat (thanks to — positive outcomes), из-за + gen (because of — negative ones), вме́сто того что́бы + inf (instead of doing), тем не ме́нее (nevertheless).
+
+- **несмотря́ на то что** = although (+ clause); **несмотря́ на + acc** = despite (+ noun).
 - **благодаря́ + dat** = thanks to (positive); **из-за + gen** = because of (negative).
 - **в то вре́мя как** = while/whereas; **впрочем / однако́ / тем не ме́нее** = however.
 - **вместо того что́бы + inf** = instead of doing: Вме́сто того что́бы спорить, подумай.`,
