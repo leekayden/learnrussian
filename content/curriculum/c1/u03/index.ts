@@ -16,9 +16,12 @@ export const u03: Unit = {
       grammar: [
         {
           title: "Compression and stance",
-          body: `Writers compress chains of actions: «Он встал, помолча́в, и, не глядя на нас, вы́шел» (He stood, silent a moment, and left without looking at us).
+          body: `Literary verbal adverbs compress whole clauses: «Он встал, помолча́в, и, не глядя на нас, вы́шел» — stood, silent a moment, and left without looking. Perfective -в for prior actions, imperfective -я for simultaneous manner. The golden rule: the verbal adverb's subject MUST be the main clause's subject — «Подходя́ к станции, у меня́ слетела шля́па» (Chekhov's joke) is wrong because the hat wasn't walking.
+
+Writers compress chains of actions: «Он встал, помолча́в, и, не глядя на нас, вы́шел» (He stood, silent a moment, and left without looking at us).
 Adverbial gerunds also express MANNER: игра́ючи (effortlessly), лю́бясь... молча́ (wordlessly — lexicalised).
 Perfective gerunds sequence events BEFORE the main verb: Прочита́в, он вздохну́л.`,
+          why: "When subjects diverge between the gerund and the main verb, Russian grammar rejects the construction — use a когда́-clause instead. And some gerunds are lexicalised: молча́ stopped being 'while silent' and became just an adverb meaning silently — grammar fossilised into vocabulary.",
           examples: [
             { ru: "Не перестава'я, она' писа'ла.", en: "Without pausing, she kept writing." },
           ],
