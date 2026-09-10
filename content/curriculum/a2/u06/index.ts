@@ -1,6 +1,9 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 6 — Past & future, one step at a time. */
+/**
+ * A2 · Unit 6 — Past & future, one step at a time. Notes v2:
+ * elaborate explanations, English contrasts, reasoning callouts.
+ */
 export const u06: Unit = {
   id: "a2-u06",
   level: "a2",
@@ -16,9 +19,17 @@ export const u06: Unit = {
       grammar: [
         {
           title: "Drop -ть, add -л/-ла/-ло/-ли",
-          body: `The past has NO person endings — only gender/number:
-- **-л** (he), **-ла** (she), **-ло** (it), **-ли** (they / мы / вы)
-- The SPEAKER's gender decides я: Я чита́л (man) / Я чита́ла (woman).`,
+          body: `After the six-endings system of the present, the past will feel like a holiday. There are **no person endings at all** — only gender and number:
+
+- **-л** for he (and for я, if the speaker is male)
+- **-ла** for she (and for я, if female)
+- **-ло** for it (neuter)
+- **-ли** for they — and also for мы, вы, and polite вы
+
+So a woman says «Я чита́ла», a man says «Я чита́л» — the same sentence, and the ending reveals the speaker's gender. English never does that; Russian does it every time anyone talks about themselves in the past.
+
+Formation: infinitive minus **-ть**, plus the ending.чита́ть → чита́-л / чита́-ла / чита́-ли. That is the whole machinery.`,
+          why: `Why so simple? Because the past tense in Russian descends from an old participle («the one who did») that agreed in gender like an adjective — which is exactly why the endings -л/-ла/-ло/-ли look like short adjectives. The person (я/ты/он) was originally shown by a helper word that fell away, leaving gender agreement behind. You are seeing grammar archaeology every time you say «чита́л».`,
           table: {
             headers: ["Subject", "Form"],
             rows: [
@@ -28,7 +39,11 @@ export const u06: Unit = {
               ["мы / вы / они", "работали"],
             ],
           },
-          tip: "-чь verbs: мочь → мог/могла́; помо́чь → помо́г/помогла́.",
+          examples: [
+            { ru: "Вчера' я гуля'л по це'нтру.", en: "Yesterday I strolled through the centre — male speaker." },
+            { ru: "Мы слу'шали ле'кцию вчерa'.", en: "We listened to a lecture yesterday — -ли for мы." },
+          ],
+          tip: "Verbs ending in **-чь** and mono-syllabic stems do something special: мочь → мог/могла́, беречь → берёг/берегла́. The ь disappears and a guttural consonant surfaces. They are few, frequent, and worth memorising as singles.",
         },
       ],
       exercises: [
@@ -63,9 +78,14 @@ export const u06: Unit = {
       grammar: [
         {
           title: "был / была / было / были agree with the THING",
-          body: `- Вчера́ я **был** до́ма. — I was at home (speaker's gender).
-- Possession in the past: **У меня́ бы́ла маши́на.** — I had a car (была́ agrees with маши́на!).
-- У него́ **было** вре́мя. У роди́телей **бы́ли** ключи́.`,
+          body: `Two jobs for the past of быть:
+
+**1. Location/fact**: Вчера́ я **был** до́ма. — Yesterday I was at home. (был agrees with the speaker: male был, female была́)
+
+**2. Possession**: **У меня́ бы́ла маши́на.** — I had a car. Here бы́ла agrees with **маши́на** — the THING — because in the у-construction the thing is the grammatical subject. «У меня́ был телефи́н» (masc), «было вре́мя» (neut), «были ключи́» (plural).
+
+This is the mirror image of English, where *I* is clearly the subject of *I had a car*. In Russian the car owns the sentence.`,
+          why: `Remember from Unit 3 that «У меня́ есть маши́на» treats the car as the subject ("by me there is a car"). The past simply adds the gender agreement that any Russian subject requires. Whoever or whatever is the subject — even an object — pulls agreement. This is why «У меня́ бы́ли пробле́мы» is plural: problems were the subject all along.`,
           table: {
             headers: ["Thing", "Past of быть"],
             rows: [
@@ -107,14 +127,23 @@ export const u06: Unit = {
       grammar: [
         {
           title: "буду + infinitive = ongoing future",
-          body: `**бу́ду / бу́дешь / бу́дет / бу́дем / бу́дете / бу́дут** + infinitive:
-- За́втра я **бу́ду чита́ть** весь день.
-- Мы **бу́дем жить** в Москве́.
-Only бу́ду conjugates — the second verb stays infinitive.`,
-          examples: [
-            { ru: "Что ты бу'дешь де'лать ве'чером?", en: "What will you be doing tonight?" },
-          ],
-          tip: "Never «бу́ду чита́ю» — never two conjugated verbs.",
+          body: `For futures that describe an **ongoing process, plan or intention**, Russian uses the future of быть plus the infinitive:
+
+- За́втра я **бу́ду чита́ть** весь день. — Tomorrow I'll be reading all day.
+- Мы **бу́дем жить** в Москве́. — We will live in Moscow.
+- Что ты **бу́дешь де́лать** ве́чером? — What will you be doing tonight?
+
+Only бу́ду conjugates; the second verb stays frozen in the infinitive. This is called the **future compound** (сложное будущее) — compound because two words build it.`,
+          why: `Think of бу́ду as the actual verb ("I will be") and the infinitive as what you will be *doing*: бу́ду чита́ть = "I will be reading". The English progressive (*will be reading*) is the closest feel. Russian simply has no single-word way to say an ongoing future with an imperfective verb — so быть carries the tense and the other verb carries the meaning.`,
+          table: {
+            headers: ["Person", "Future of быть"],
+            rows: [
+              ["я", "буду"],
+              ["ты", "будешь"],
+              ["он / она", "будет"],
+              ["мы / вы / они", "будем / будете / будут"],
+            ],
+          },
         },
       ],
       exercises: [
@@ -147,14 +176,18 @@ Only бу́ду conjugates — the second verb stays infinitive.`,
       grammar: [
         {
           title: "One-word futures",
-          body: `Perfective verbs make the future with plain present endings:
+          body: `Perfective verbs (next unit covers the system) make their future with plain present endings — one word, no быть:
+
 - Я **прочита́ю** кни́гу за́втра. — I'll read it through tomorrow.
 - Она́ **купи́т** хлеб. — She'll buy bread.
-**собира́ться + infinitive** = be going to: Я собира́юсь купи́ть маши́ну.`,
+- Мы **пойдём** в кино́. — We'll go to the movies.
+
+And a handy pattern for plans: **собира́ться + infinitive** = to be going to: Я собира́юсь купи́ть маши́ну.`,
           examples: [
             { ru: "Мы посмо'трим фильм ве'чером.", en: "We'll watch a film tonight." },
+            { ru: "Она' собира'ется поступа'ть в магистратуру'.", en: "She's going to apply for a master's program." },
           ],
-          tip: "«За́втра я пойду́ в бассе́йн» — perfective пойти́ = one planned trip.",
+          tip: "Choosing between the two futures is a preview of aspect: бу́ду + infinitive = process/plan; perfective one-word = a completed act. «За́втра я бу́ду писа́ть письмо́» (working on it) vs «За́втра я напишу́ письмо́» (finish and send it).",
         },
       ],
       exercises: [
