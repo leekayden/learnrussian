@@ -29,18 +29,21 @@ ins = []  # (line_index, [lines to insert])
 for bi, body_line in enumerate(bodies):
     intro = spec[bi].get("intro")
     if intro:
-        # insert after the backtick on the body line itself: append text via replacement
-        lines[body_line] = lines[body_line].replace("body: `", "body: `" + intro, 1)
+        sep = chr(10)*2 if lines[body_line].strip() != "body: `" else ""
+        lines[body_line] = lines[body_line].replace("body: `", "body: `" + intro + sep, 1)
     why = spec[bi].get("why")
     if why:
         tbls = [t for t, owner in tbl_owner.items() if owner == bi]
         if tbls:
             ins.append((min(tbls), ["          why: " + json.dumps(why, ensure_ascii=False) + ",", ""]))
         else:
-            # place after body closing: find the closing backtick line (line ending with `,` and containing only backtick end)
-            close = next((i for i in range(body_line + 1, len(lines)) if lines[i].strip() in ("`,", '`,')), None)
-            if close is not None:
-                ins.append((close + 1, ["          why: " + json.dumps(why, ensure_ascii=False) + ","]))
+            # no table: place before the examples/next key that follows this body
+            follow = next((i for i in range(body_line + 1, len(lines))
+                           if lines[i].strip().startswith("examples: [") or
+                              lines[i].strip().startswith("drills: [") or
+                              lines[i].strip().startswith("],")), None)
+            if follow is not None:
+                ins.append((follow, ["          why: " + json.dumps(why, ensure_ascii=False) + ","]))
 
 for idx, newlines in sorted(ins, key=lambda x: -x[0]):
     lines[idx:idx] = newlines

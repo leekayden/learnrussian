@@ -16,9 +16,13 @@ export const u07: Unit = {
       grammar: [
         {
           title: "Two-form and six-form numerals",
-          body: `- **со́рок / девяно́сто / сто** have only two forms: nom/acc (со́рок) and everything else (сорока́).
+          body: `Indirect speech: statements take что (Он сказа́л, что за́нят), yes/no questions take ли (спроси́л, приду́ ли я), wh-questions keep their word (спроси́л, где я был). Crucially, NO tense shifting — Russian reports speech in its original tense.
+
+- **со́рок / девяно́сто / сто** have only two forms: nom/acc (со́рок) and everything else (сорока́).
 - **две́сти–девятьсо́т** decline fully: двухсо́т, двумста́м, двумяста́ми, о двухста́х.
 - **оба (m/n) / обе (f)** decline like adjectives: у обо́их братьев, с обеи́ми сёстрами.`,
+          why: "English backshifts (*said he WAS busy*); Russian treats the reported words as quoted reality. Only the person changes — the tense stands as the original speaker said it. This makes Russian reported speech simpler once you stop translating English habits.",
+
           table: {
             headers: ["Case", "200", "100", "40"],
             rows: [
@@ -59,10 +63,13 @@ export const u07: Unit = {
       grammar: [
         {
           title: "полтора, fractions, approximations",
-          body: `- **по́лтора** (m/n) / **полторы́** (f) + gen sg: полтора́ часа́, полторы́ мину́ты.
+          body: `Commands are reported with что́бы + past (Она́ попроси́ла, что́бы я позвони́л) or a bare infinitive after веле́ть/приказа́ть (Он веле́л мне уйти́). The что́бы-frame treats the command as a demanded unreal event; the bare-infinitive frame transmits the order verbatim. Register and power live in the choice.
+
+- **по́лтора** (m/n) / **полторы́** (f) + gen sg: полтора́ часа́, полторы́ мину́ты.
 - Fractions: тре́ть, четверть + gen sg: тре́ть ста́тьи́... тре́ть доро́ги.
 - Approximation: postposed genitive or reversed word order: **пять лет** → **ле́т пять**; **часа́ два** = about two hours.
 - Predicate with 2–10: singular neuter is neutral (Прошло́ два го́да), plural for animate/agents (Вы́шло пя́еро... Пя́теро дете́й вы́шли).`,
+          why: "Both frames exist because Russian distinguishes *requesting an outcome* (что́бы, softer) from *transmitting an instruction* (infinitive, harder). Fairy-tale tsars велят; office managers просят, чтобы.",
           examples: [
             { ru: "Я ждал полтора' часа'.", en: "I waited an hour and a half." },
             { ru: "Ле'т пять наза'д…", en: "About five years ago…" },
