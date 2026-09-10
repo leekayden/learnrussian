@@ -149,7 +149,7 @@ To negate, swap есть for **нет** and push the thing into the genitive: **
             { ru: "У меня' есть во'прос.", en: "I have a question — your opener for every seminar." },
             { ru: "У нас нет экза'менов в пя'тницу.", en: "We have no exams on Friday." },
           ],
-          tip: "Do not build a Russian sentence around «я име́ю» — it exists but sounds stiff, translated-from-English, or sociological. The у-construction is the native way to say "have" in 95% of situations. Also memorise «У меня́ нет де́нег» as a chunk: де́ньги is plural-only and its genitive (де́нег) is irregular.",
+          tip: "Do not build a Russian sentence around «я име́ю» — it exists but sounds stiff, translated-from-English, or sociological. The у-construction is the native way to say «have» in 95% of situations. Also memorise «У меня́ нет де́нег» as a chunk: де́ньги is plural-only and its genitive (де́нег) is irregular.",
         },
       ],
       exercises: [
