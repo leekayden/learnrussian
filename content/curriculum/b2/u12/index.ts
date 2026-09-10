@@ -35,8 +35,8 @@ Optional but stylish; with concrete definite objects accusative stays: Я не �
 - ** обяза́тельно** (certainly) → **probably на́верное / вероя́тно** → **вряд ли / едва́ ли** (unlikely) → **ни за что** (no way).
 - сомнева́ться в + prep: Я сомнева́юсь в э́том.
 - отрицать + acc: Он отрица́ет свою́ вину́.`,
+          why: "The в + prepositional after сомнева́ться treats doubt as a location — you stand inside uncertainty about it. And ни за что literally promises not-for-anything — you would not do it for any price. Russian probability is full of tiny arguments.",
         },
-          why: "The в + prepositional after сомнева́ться treats doubt as a location — you stand inside uncertainty about it. And ни за что literally promises 'not for anything' — you would not do it for any price. Russian probability is full of tiny arguments.",
       ],
       exercises: [
         {
