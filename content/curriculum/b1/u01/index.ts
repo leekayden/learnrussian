@@ -16,10 +16,16 @@ export const u01: Unit = {
       grammar: [
         {
           title: "One plural per gender — with overlaps",
-          body: `- masculine hard → **-ы** (студе́нты); **-й/-ь** → **-и** (музе́и, преподаватели)
+          body: `In English, pluralising is one move: add -s. Russian has four moves, assigned by the noun's gender — the same gender you read off the ending in A2:
+
+- masculine hard → **-ы** (студе́нты); **-й/-ь** → **-и** (музе́и, преподаватели)
 - feminine **-а → -ы**, **-я/-ь → -и** (газе́ты, тетра́ди)
 - neuter **-о → -а**, **-е → -я** (окна́, зда́ния)
-- Spelling: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги́)`,
+- Spelling: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги́)
+
+Notice that feminine -а and neuter -о pluralise by *swapping* their vowel, not adding to it. And the spelling rule you met with verbs (я учу́) returns here unchanged: hushers and к/г/х demand -и.`,
+          why: `The ending -ы/-и goes back to an old plural that behaved like a collective — Russians heard "students" as a crowd of student-kind, and crowds took their own form. The gender overlap (газеты vs студенты both -ы) is why you always need the noun's gender first.`,
+
           table: {
             headers: ["Sg", "Pl", "Sg", "Pl"],
             rows: [
@@ -65,11 +71,13 @@ export const u01: Unit = {
       grammar: [
         {
           title: "Learn these twelve by heart",
-          body: `- дeнь → дни, ло́жка → ло́жки... the real irregulars:
+          body: `Time to meet the outlaws. About a dozen of the most frequent masculine nouns build their plural with an ancient suffix **-ьj-** (written -ья/-ье), a leftover of the Old Russian dual number — and a handful more play hide-and-seek with a vowel:
 - **друг → друзья́**, **брат → бра́тья**, **сын → сыновья́**, **де́ньги** (pl only)
 - **стул → сту́лья**, **де́рево → дере́вья**
 - Mobile vowel drops: **продаве́ц → продавцы́**, **о́кно → о́кна** (о returns in gen pl)
 - **мать → до́чери / ма́тери** — дочь → до́чери, мать → ма́тери`,
+          why: `These irregulars are not random: the -ья suffix once marked collectives of kin — бра́тья, sons of one father. Russian kinship vocabulary froze in its oldest grammar, which is why the words you use most about people are the least regular.`,
+
           table: {
             headers: ["Singular", "Plural"],
             rows: [
@@ -118,8 +126,12 @@ export const u01: Unit = {
       grammar: [
         {
           title: "Two accusative plurals",
-          body: `- **Inanimate** = nominative plural: Я чита́ю журна́лы.
+          body: `One plural is not enough: the accusative splits by animacy, the distinction English never makes. The test from A2 still works — can it walk away and complain?
+
+- **Inanimate** = nominative plural: Я чита́ю журна́лы.
 - **Animate** = genitive plural: Я ви́жу студенто́в, студенток, друзе́й.`,
+          why: `Animacy reflects an old intuition: beings that can act back were promoted to receiver status. Russian drew the line between walking-and-protesting and everything else — and applies it to chess pieces, consistent to the point of absurdity.`,
+
           table: {
             headers: ["Noun", "Accusative plural"],
             rows: [
@@ -160,10 +172,14 @@ export const u01: Unit = {
       grammar: [
         {
           title: "All genders share one set",
-          body: `- **Dative: -ам/-ям** (студе́нтам, кни́гам, зда́ниям)
+          body: `Good news for a change: in the dative, instrumental and prepositional, **every gender collapses into one ending set**. This is the most forgiving corner of the plural system:
+
+- **Dative: -ам/-ям** (студе́нтам, кни́гам, зда́ниям)
 - **Instrumental: -ами/-ями** (студе́нтами, две́рями)
 - **Prepositional: -ах/-ях** (о студе́нтах, в кни́гах, в зда́ниях)
 Prepositional -ья nouns keep the ь: сту́лья → о сту́льях.`,
+          why: `Why one ending set for all genders? These cases descend from an older plural that never cared about gender. The genitive plural (next step) is where genders stayed separate — which is exactly why it is so much harder.`,
+
           table: {
             headers: ["Case", "Ending", "Example"],
             rows: [
@@ -204,10 +220,14 @@ Prepositional -ья nouns keep the ь: сту́лья → о сту́льях.`,
       grammar: [
         {
           title: "Five patterns cover most of it",
-          body: `- masculine hard → **-ов** (студе́нтов); -й/-ь → **-ев/-ей** (музе́ев, преподавателей)
+          body: `Here it is — the chart that decides whether your Russian reads native. The genitive plural is required after мно́го, ма́ло, не́сколько, ско́лько and every numeral from 5 up, and its endings follow five patterns:
+
+- masculine hard → **-ов** (студе́нтов); -й/-ь → **-ев/-ей** (музе́ев, преподавателей)
 - feminine **-а → drop** (кни́г), **-я → -ь** (пе́сен), **-ь → -ей** (тетра́дей)
 - neuter **-о → drop** (о́кон), **-е → -ей** (море́й), **-ие → -ий** (зда́ний)
 - Always: **мно́го / ма́ло / не́сколько / ско́лько / 5+ + gen pl**`,
+          why: `The drop-the-vowel pattern (книг from книга) is the mobile-vowel phenomenon: vowels strong in the singular weaken and vanish in the plural. Some plurals look "too short" because the old skeleton shows through.`,
+
           table: {
             headers: ["Nom pl", "Gen pl", "Pattern"],
             rows: [
