@@ -16,9 +16,13 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Barely…and all it takes…and",
-          body: `- **Не успе́л + past, как + past** — had barely done X when Y: Не успе́л я сесть, как телефо́н зазвони́л.
+          body: `The frame не успе́л + past, как + past: Не успе́л я сесть, как телефо́н зазвони́л — had barely sat down when the phone rang. Both verbs perfective past; the как-clause is the interruption.
+
+- **Не успе́л + past, как + past** — had barely done X when Y: Не успе́л я сесть, как телефо́н зазвони́л.
 - **Сто́ит + infinitive, и** — all it takes: Сто́ит попроси́ть, и он помо́жет.
 The first frame pairs perfective past with perfective past; the second pairs infinitive with future.`,
+          why: "The frame is a fixed two-part mould: first the interrupted action, then the interruption with как. Fossilised syntax — learn the chunk whole, not word by word.",
+
           table: {
             headers: ["Frame", "Meaning"],
             rows: [
@@ -59,8 +63,12 @@ The first frame pairs perfective past with perfective past; the second pairs inf
       grammar: [
         {
           title: "Enough to…and the more…the more…",
-          body: `- **Доста́точно + infinitive, что́бы / и** — it's enough to: Доста́точно оди́н раз попа́сть, что́бы полюби́ть.
+          body: `The frame сто́ит + infinitive, и: Сто́ит попроси́ть, и он помо́жет — all it takes is asking, and he helps. Infinitive first, future second.
+
+- **Доста́точно + infinitive, что́бы / и** — it's enough to: Доста́точно оди́н раз попа́сть, что́бы полюби́ть.
 - **Чем + comparative, тем + comparative** — the more, the more: Чем бо́льше, тем лу́чше.`,
+          why: "Стои́t here is impersonal ('it is worth'), so no subject appears; the и-clause then states the automatic consequence in the future. The pair достато́чно…, что́бы works the same way with sufficiency instead of minimal effort.",
+
           table: {
             headers: ["Frame", "Meaning"],
             rows: [
