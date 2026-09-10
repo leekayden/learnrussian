@@ -16,10 +16,12 @@ export const u03: Unit = {
       grammar: [
         {
           title: "Third dimension: what moves",
-          body: `- **нести́/носи́ть** = carry on foot
+          body: `A2 gave you идти and ехать — you moving. B1 adds the verbs for when something ELSE moves because you move it: нести́/носи́ть (carry on foot), везти́/вози́ть (carry by vehicle), вести́/води́ть (lead people, drive). Same one-trip-vs-habitual logic as the originals.- **нести́/носи́ть** = carry on foot
 - **везти́/вози́ть** = carry by vehicle
 - **вести́/води́ть** = lead (person, animal) / drive (вести́ маши́ну)
 One trip vs habitual, same as идти/ходить.`,
+          why: "Russian splits 'go' along mode-of-travel, then splits 'carry' along the same axis. Нести́ and везти́ differ exactly as идти́ and е́хать do — foot vs vehicle. Once the axis is visible, the verbs stop being a list and become a system.",
+
           table: {
             headers: ["", "one trip", "habitual"],
             rows: [
@@ -61,7 +63,7 @@ One trip vs habitual, same as идти/ходить.`,
       grammar: [
         {
           title: "Motion verbs that stopped moving",
-          body: `- **вы́йти за́муж за + acc** — to marry (a woman): Она́ вы́шла за́муж за врача́.
+          body: `Motion vocabulary also supplies everyday idioms: вы́йти за́муж (get married, said of a woman), жени́ться (of a man), проводи́ть вре́мя (spend time). The motion core (йти) is still visible inside them.- **вы́йти за́муж за + acc** — to marry (a woman): Она́ вы́шла за́муж за врача́.
 - **жени́ться на + prep** — to marry (a man): Он жени́лся на Та́не.
 - **проводи́ть вре́мя** — spend time: Мы хорошо́ проводи́м вре́мя.
 - **вы́ходно́й** — day off.`,

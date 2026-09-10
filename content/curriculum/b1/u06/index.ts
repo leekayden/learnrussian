@@ -16,10 +16,12 @@ export const u06: Unit = {
       grammar: [
         {
           title: "бы + past = hypothetical",
-          body: `The particle **бы** + past tense makes anything hypothetical:
+          body: `The particle бы + past tense builds the conditional: Если бы у меня́ было вре́мя, я бы пришёл. Notice бы floats freely around the clause — «я бы пришёл» and «я пришёл бы» are the same. The past tense after бы is NOT about the past; it is about unreality.The particle **бы** + past tense makes anything hypothetical:
 - Если бы у меня́ бы́ло вре́мя, я бы пришёл. — If I had time, I would come.
 - Я бы купи́л маши́ну. — I would buy a car. (бы can float: Я купи́л бы…)
 бы never changes — the PAST verb carries gender/number: Она́ бы сказа́ла.`,
+          why: "бы is a fossil of the old aorist of быть ('was'). Hypotheticals are imagined pasts of possible worlds — so Russian recruits the past form and marks the whole scene as unreal with this tiny particle. English split the job between 'would' and 'had'; Russian has one word.",
+
           table: {
             headers: ["Real (если + pres/past)", "Unreal (если бы + past)"],
             rows: [
@@ -59,7 +61,7 @@ export const u06: Unit = {
       grammar: [
         {
           title: "Softer than the imperative",
-          body: `- **Не мог бы ты…?** — Could you…? (polite!)
+          body: `бы also softens requests: Не мог бы ты мне помо́чь? is noticeably politer than Не можешь помо́чь? And Мне хоте́лось бы (I would like) beats Я хочу for ordering and asking.- **Не мог бы ты…?** — Could you…? (polite!)
 - **Мне хоте́лось бы** — I would like (also: я хоте́л бы).
 - **Хороши́ бы… / жаль** — set uses.
 - Wishes: Если бы (только) за́втра была́ суббо́та! — If only tomorrow were Saturday!`,

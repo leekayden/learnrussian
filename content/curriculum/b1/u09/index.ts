@@ -16,10 +16,12 @@ export const u09: Unit = {
       grammar: [
         {
           title: "Present stem + -я: simultaneous action",
-          body: `The imperfective verbal adverb says what the subject was doing AT THE SAME TIME as the main verb:
+          body: `Imperfective verbal adverbs: present stem + -я. Она́ вошла́, улыба́ясь — she came in smiling. They describe an action SIMULTANEOUS with the main verb, and the subject must be shared.The imperfective verbal adverb says what the subject was doing AT THE SAME TIME as the main verb:
 - Она́ вошла́, **улыба́ясь**. — She came in smiling.
 - Он шёл, **здороваясь** с прохо́жими.
 Formation: present-tense они-form minus -ут/-ат, plus -я: чита́ют → чита́я; занима́ются → занима́ясь.`,
+          why: "Two formations because two time-relations exist: simultaneous (-я) and prior (-в). English splits these across 'while smiling' and 'having smiled'; Russian keeps one part of speech and switches the ending. The golden rule: the verbal adverb's subject MUST be the main clause's subject — Chekhov's joke about the hat flying off 'while approaching the station' shows what happens otherwise.",
+
           table: {
             headers: ["Verb", "Verbal adverb"],
             rows: [
@@ -60,9 +62,11 @@ Formation: present-tense они-form minus -ут/-ат, plus -я: чита́ют
       grammar: [
         {
           title: "Past stem + -в / -вшись: action BEFORE the main verb",
-          body: `- **Прочита́в письмо́, он сжёг его́.** — Having read the letter, he burned it.
+          body: `Perfective verbal adverbs: past masc minus -л, plus -в (верну́вшись for -ся verbs). Прочита́в письмо́, он сжёг его́ — the reading COMPLETED before the burning began.- **Прочита́в письмо́, он сжёг его́.** — Having read the letter, he burned it.
 - Formation: perfective past masculine minus -л, plus -в: прочита́л → прочита́в
 - Reflexives add -шись: верну́лся → верну́вшись`,
+          why: "The -в suffix sits on the past stem, so the adverb inherits completion: its action is strictly BEFORE the main verb's. Sequence (first read, then burn) is baked into the morphology — no conjunction needed.",
+
           table: {
             headers: ["Verb", "Verbal adverb"],
             rows: [

@@ -16,9 +16,11 @@ export const u05: Unit = {
       grammar: [
         {
           title: "Three core meanings",
-          body: `- **True reflexive** — action on oneself: мы́ться, одева́ться, бри́ться
+          body: `-ся has four jobs (reflexive, reciprocal, engage-in, located) — and one spelling rule: after a consonant -ся, after a vowel -сь. Он купа́лся, она́ купа́лась. The rule is mechanical; the meanings need context.- **True reflexive** — action on oneself: мы́ться, одева́ться, бри́ться
 - **Reciprocal** — each other: знако́миться, обнима́ться, ви́деться (Мы ре́дко ви́димся.)
 - **Middle** — for oneself: собира́ться (get ready), купа́ться (go swimming)`,
+          why: "-ся is a worn-down stub of the old pronoun сябе (self), glued onto verb endings centuries ago. That is why one suffix covers 'myself', 'each other' and nothing-in-particular — context picks the reading, and Russian is comfortable with that ambiguity in a way English is not.",
+
           table: {
             headers: ["Verb", "Type", "Meaning"],
             rows: [
@@ -64,12 +66,14 @@ export const u05: Unit = {
       grammar: [
         {
           title: "The thing becomes the subject",
-          body: `- **Passive -ся**: До́м стро́ится (being built). Здесь продаю́тся фру́кты (are sold).
+          body: `The same -ся builds passives: До́м стро́ится (the house is being built), Здесь продаю́тся фру́кты. The thing acted upon becomes the subject — exactly like the English passive, but without any 'be' verb.- **Passive -ся**: До́м стро́ится (being built). Здесь продаю́тся фру́кты (are sold).
 - **Emotion verbs govern cases**:
   - ра́доваться / горди́ться + **instrumental**: горжу́сь страно́й
   - боя́ться + **genitive**: бою́сь темноты́
   - наде́яться **на + acc**: наде́юсь на тебя́
   - интересова́ться + **instrumental**: интересу́юсь исто́рией`,
+          why: "Passive -ся exists because Russian can passivise any imperfective verb without a participle — no auxiliary needed. That is why official Russian leans on it: it is shorter than the English passive and available in every tense for free. Watch the case government of emotion verbs too: горди́ться + instrumental, боя́ться + genitive — they pair with cases, not prepositions.",
+
           table: {
             headers: ["Verb", "Government"],
             rows: [

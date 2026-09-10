@@ -16,11 +16,13 @@ export const u04: Unit = {
       grammar: [
         {
           title: "Perfective → imperfective by suffix",
-          body: `- рассказа́ть → расска́зывать (-ыва-)
+          body: `A2 treated perfective prefixes as simple 'done' markers. Now look at how pairs are manufactured the other way: take a perfective verb and insert a suffix — -ыва-/-ива- — to manufacture its imperfective partner: рассказа́ть → расска́зывать, показа́ть → пока́зывать.- рассказа́ть → расска́зывать (-ыва-)
 - показа́ть → пока́зывать
 - провери́ть → проверя́ть (-я-)
 - дать → дава́ть (-ва-); узна́ть → узнава́ть
 - **-ну-** perfectives for a single jab: кри́кнуть (vs крича́ть)`,
+          why: "The -ыва-/-ива- suffix is the productive imperfective machine: whenever Russian needs a habitual/process partner for a newer perfective verb, this is the mold it reaches for. Recognising it turns hundreds of unfamiliar verbs into known pairs.",
+
           table: {
             headers: ["Perfective", "Imperfective"],
             rows: [
@@ -66,10 +68,12 @@ export const u04: Unit = {
       grammar: [
         {
           title: "Which infinitive follows which verb",
-          body: `- **на́чать / ста́ть / ко́нчить + IMPERFECTIVE**: на́чал чита́ть, ко́нчил писа́ть
+          body: `The hardest aspect choice is on infinitives, because the governing verb decides: на́чну and ко́нчу take imperfective (they frame a process), while уда́ться and успе́ть take perfective (they announce a result). The verbs themselves are the rulebook.- **на́чать / ста́ть / ко́нчить + IMPERFECTIVE**: на́чал чита́ть, ко́нчил писа́ть
 - **удава́ться / уда́ться + infinitive** (dative experiencer): Мне удало́сь купи́ть биле́ты.
 - **забы́ть / успе́ть + PERFECTIVE**: Я забы́л закро́ть окно́.
 - **привы́кнуть + IMPERFECTIVE**: Он привы́к встава́ть ра́но.`,
+          why: "Each governing verb carries its own logic: start/finish apply to processes, so they grab imperfective infinitives; manage/succeed apply to achievements, so they grab perfective ones. English hides this with 'to'; Russian exposes it.",
+
           table: {
             headers: ["Verb", "Infinitive aspect"],
             rows: [

@@ -16,10 +16,12 @@ export const u07: Unit = {
       grammar: [
         {
           title: "Forming and using them",
-          body: `Take the 3rd-person-plural present, swap -ут/-ют → -ущ-/-ющ-, -ат/-ят → -ащ-/-ящ-, add adjective endings:
+          body: `Active participles are adjective-forms of verbs: чита́ющий = 'who is reading right now'. They take adjective endings and replace a whole который-clause: «лю́ди, кото́рые говоря́т» → «лю́ди, говоря́щие». Formation: они-form minus -ут/-ют, plus -ущ/-ющ (or -ащ/-ящ).Take the 3rd-person-plural present, swap -ут/-ют → -ущ-/-ющ-, -ат/-ят → -ащ-/-ящ-, add adjective endings:
 - чита́ют → чита́ющий (who reads / reading)
 - говоря́т → говоря́щий, дерма́т... держа́т → держа́щий
 Active present participles describe a noun DOING the action NOW (relative time): лю́ди, говоря́щие по-ру́сски (people who speak Russian).`,
+          why: "Present participles are relative time: 'the man reading' is reading NOW relative to the main verb. That is why they pair with imperfectives only — perfectives describe completed events, and you cannot be 'currently done'. The aspect system polices the participle.",
+
           table: {
             headers: ["Verb", "Participle", "Example"],
             rows: [
@@ -60,7 +62,7 @@ Active present participles describe a noun DOING the action NOW (relative time):
       grammar: [
         {
           title: "-вш- + adjective endings",
-          body: `Past stem + **-вш-**: прочита́ть → прочита́вший (who (has) read), прие́хать → прие́хавший.
+          body: `Past active participles use -вш- on the past-tense stem: прочита́ть → прочита́вший ('who has read'). They describe someone whose action COMPLETED before the main verb — Арти́ст, спевший э́ту пе́сню, стал знамени́тым.Past stem + **-вш-**: прочита́ть → прочита́вший (who (has) read), прие́хать → прие́хавший.
 Verbs on consonant stems use -ш-: нести́ → нёсший, вести́ → ве́дший.
 Use: челове́к, __ who did the action BEFORE the main verb: Арти́ст, спевший э́ту песню, стал знамени́тым.`,
           examples: [

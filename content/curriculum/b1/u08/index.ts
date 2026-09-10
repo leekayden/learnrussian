@@ -16,10 +16,12 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Forming past passive participles",
-          body: `Perfective verb → participle with adjective endings:
+          body: `Passive participles reverse the roles: прочи́танный = 'having been read'. Formation depends on the infinitive's tail: -ать → -нн (прочи́танный), -ить → -енн with stem change (ку́пленный), single-syllable stems take -т (взя́тый, откры́тый).Perfective verb → participle with adjective endings:
 - verbs in -ать/-ять → **-нн-**: прочита́ть → про́читанный, потеря́ть → поте́рянный
 - verbs in -ить → **-енн-** (stem change): купи́ть → ку́пленный, реши́ть → решённый
 - one-syllable stems → **-т-**: взя́ть → взя́тый, откры́ть → откры́тый, забы́ть → за́бытый`,
+          why: "-нн/-енн/-т are three old adjective-forming suffixes that latched onto different verb classes. The distribution is historical, not logical — but it is almost exceptionless, which is why native speakers never hesitate: the infinitive's tail picks the suffix.",
+
           table: {
             headers: ["Verb", "Participle", "Short form"],
             rows: [
@@ -60,7 +62,7 @@ export const u08: Unit = {
       grammar: [
         {
           title: "Short form = predicate",
-          body: `Short participles act as predicates: Кни́га **прочи́тана**. Заво́д **постро́ен**. Окна **закры́ты**.
+          body: `Short participles (прочи́тана, постро́ен) are predicates: Кни́га прочи́тана. Long participles (прочи́танная кни́га) are attributes. The pair рассе́янный/рассе́ян shows the split at its clearest: permanent trait vs current state.Short participles act as predicates: Кни́га **прочи́тана**. Заво́д **постро́ен**. Окна **закры́ты**.
 Compare: **рассе́янный** (absent-minded — permanent trait) vs **рассе́ян** (scattered — state): Лю́ди рассе́яны по го́роду.
 **волнова́ть** → взволнова́н (upset, state) vs волнова́тельный (worrying).`,
           examples: [
