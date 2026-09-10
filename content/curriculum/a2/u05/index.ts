@@ -1,6 +1,9 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 5 — Instrumental singular, one step at a time. */
+/**
+ * A2 · Unit 5 — Instrumental singular, one step at a time. Notes v2:
+ * elaborate explanations, English contrasts, reasoning callouts.
+ */
 export const u05: Unit = {
   id: "a2-u05",
   level: "a2",
@@ -16,10 +19,13 @@ export const u05: Unit = {
       grammar: [
         {
           title: "с + instrumental = company",
-          body: `Endings:
-- masculine hard → **-ом** (with до́м → до́мом); **-й/-ь** → **-ем** (учи́телем)
-- feminine **-а → -ой** (жено́й), **-я/-ь → -ей** (Та́ней, пло́щадью)
-- Я пью ко́фе **с молоко́м**. Она́ прие́хала **с му́жем**.`,
+          body: `The everyday use of the instrumental is **company**: who you do things with. The preposition **с** (with) + instrumental covers it:
+
+- Я живу́ **с сосе́дями**. — I live with roommates.
+- Она́ разгова́ривает **с преподава́телем**. — She talks with the professor.
+
+Endings, singular: masculine hard consonant → **-ом** (до́мом); -й/-ь → **-ем** (учи́телем); feminine **-а → -ой** (жено́й); **-я/-ь → -ей** (Та́ней, пло́щадью). Notice the vowels о/е/ой/ей — the instrumental is the "o-sounding" case.`,
+          why: `Why «с» + instrumental and not just «с» + whatever? Because the instrumental case IS the case of accompaniment and instrument — its name literally means "the instrument". Whenever Russian expresses *using something* or *being with someone*, the noun slips into this form. The preposition с is just the spoken signal of "together"; the case carries the grammar.`,
           table: {
             headers: ["Nominative", "Instrumental"],
             rows: [
@@ -29,7 +35,11 @@ export const u05: Unit = {
               ["учитель", "с учителем"],
             ],
           },
-          tip: "After ж/ш/ч/щ unstressed → -ей: с врачом? — stressed, so врачо́м. The dictionary shows stress; your ear will settle the rest.",
+          examples: [
+            { ru: "Мы гуля'ем с соба'кой в па'рке.", en: "We walk the dog in the park — with-dog takes instrumental." },
+            { ru: "Он прие'хал с колле'гами на конфере'нцию.", en: "He came to the conference with colleagues." },
+          ],
+          tip: "After ж, ш, ч, щ the unstressed ending is **-ей** (с учи́тельницей... no — watch stress): с враче́м vs ножо́м. The rule of thumb: stressed final consonant → -о́м; unstressed after a husher → -е́м. Your dictionary's stress marks settle every doubt.",
         },
       ],
       exercises: [
@@ -56,16 +66,18 @@ export const u05: Unit = {
     },
     {
       id: "a2-u05-l2",
-      title: "Step 2: с чем — with what (coffee, tea, mixtures)",
+      title: "Step 2: с чем — coffee, tea, and other mixtures",
       topicIds: ["a2-u05-instrumental-sg"],
       vocab: ["кофе", "чай", "молоко", "сахар", "лимон", "хлеб", "суп", "соус", "бутерброд", "вкусный"],
       grammar: [
         {
           title: "Mixtures take с + instrumental",
-          body: `- Чай **с са́харом** / **без са́хара**
-- Кофе **с молоко́м**
-- Хлеб **с ма́слом**
-In/behind/in front of also use instrumental: **за столо́м** (at the table), **пе́ред до́мом** (in front of the house).`,
+          body: `The same с + instrumental covers ingredients and mixtures:
+
+- Чай **с са́харом** / **без са́хара** — with/without sugar (note: без takes genitive!)
+- Кофе **с молоко́м**; хлеб **с ма́слом**; борщ **со смета́ной**
+
+Two spatial prepositions also govern the instrumental: **за** (behind/at — за столо́м, at the table) and **пе́ред** (in front of — пе́ред до́мом). You will use за столо́м every time food appears.`,
           table: {
             headers: ["Phrase", "Case"],
             rows: [
@@ -106,11 +118,16 @@ In/behind/in front of also use instrumental: **за столо́м** (at the tab
       vocab: ["становиться", "стать", "казаться", "инженер", "врач", "юрист", "программист", "водитель", "переводчик", "парикмахер"],
       grammar: [
         {
-          title: "Naming the role",
-          body: `- **стать + instr.**: Он хо́чет **стать врачо́м**.
-- **быть (past/future) + instr.**: Она́ **была́ учи́тельницей**. Он **бу́дет инжене́ром**.
-- **работа́ть + instr.** (as): Он рабо́тает **перево́дчиком**.
-Present-tense plain predicate stays nominative: Он врач.`,
+          title: "Naming the role someone has or becomes",
+          body: `When you name someone's **profession or role** after certain verbs, the noun goes instrumental:
+
+- **стать + instr.**: Он хо́чет **стать врачо́м**. — He wants to become a doctor.
+- **быть (past/future) + instr.**: Она́ **была́ учи́тельницей**. — She was a teacher.
+- **рабо́тать + instr.** (work as): Он рабо́тает **перево́дчиком**.
+- **каза́ться + instr.** (seem): Он ка́жется уста́вшим.
+
+But the plain present keeps the nominative: Он врач. — He is a doctor. The instrumental appears when the role is a *process or change* (стать, быть в past/future) or a *function* (работать в качестве).`,
+          why: `The logic: in the present, being a doctor is a plain fact — nominative. But «был врачо́м» or «стал врачо́м» describes occupying a role across time or entering it — a kind of wearing the profession like a tool, which is instrumental territory. The case marks the role as something you carry, not something you equal.`,
           table: {
             headers: ["Russian", "English"],
             rows: [
@@ -151,13 +168,22 @@ Present-tense plain predicate stays nominative: Он врач.`,
       grammar: [
         {
           title: "The subject owns it → свой",
-          body: `- Я люблю́ **свою́** рабо́ту. — I love my (own) job.
-- Он живёт **со свое́й** семьёй. — with his own family (instr after с!)
-- Свой declines like этот: своего́, свое́й, свои́м…
-If the owner is NOT the subject, use мой/твой/его: Это его́ маши́на (not своя́).`,
-          examples: [
-            { ru: "У ка́ждого своё хо́бби.", en: "Everyone has their own hobby." },
-          ],
+          body: `Russian has a possessive that English lacks: **свой** = *one's own*. Use it when the possessor is the **subject** of the clause:
+
+- Я люблю́ **свою́** рабо́ту. — I love my (own) job. (I am the subject → свой)
+- Он живёт **со свое́й** семьёй. — He lives with his own family. (instr after с!)
+- У ка́ждого **своё** хо́бби. — Everyone has their own hobby.
+
+If the owner is NOT the subject, свой is wrong: Это **его́** маши́на (his car — I'm talking about him, he's not doing anything). Свой declines exactly like этот: своего́, свое́й, свои́м, свое́й…`,
+          why: `Свой solves a real ambiguity that English tolerates. «Иван любит его сестру» could mean Ivan loves *someone else's* sister; «Иван любит свою сестру» locks it down to *Ivan's own*. One word, and the possessor is legally bound to the subject. English needs extra phrasing to say the same.`,
+          table: {
+            headers: ["Person", "Form"],
+            rows: [
+              ["я", "свою работу (acc fem)"],
+              ["он", "со своей семьёй (instr fem)"],
+              ["мы", "свои идеи (pl)"],
+            ],
+          },
         },
       ],
       exercises: [
