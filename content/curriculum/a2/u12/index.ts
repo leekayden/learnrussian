@@ -1,6 +1,9 @@
 import type { Unit } from "@/lib/curriculum/types";
 
-/** A2 · Unit 12 — Reflexives, imperatives, modals, one step at a time. */
+/**
+ * A2 · Unit 12 — Reflexives, imperatives, modals, one step at a time. Notes v2:
+ * elaborate explanations, English contrasts, reasoning callouts.
+ */
 export const u12: Unit = {
   id: "a2-u12",
   level: "a2",
@@ -16,10 +19,15 @@ export const u12: Unit = {
       grammar: [
         {
           title: "Four jobs of -ся",
-          body: `- **True reflexive**: одева́ться (dress oneself), умыва́ться
-- **Reciprocal**: встреча́ться (meet each other), ви́деться
-- **Engage in**: занима́ться спо́ртом (do sports)
-- **Located / stayed**: находи́ться (be located), остава́ться`,
+          body: `That little suffix **-ся** (pronounced -sya) attaches to verbs and reroutes their action. It has four distinct jobs, and you already use two of them daily:
+
+- **True reflexive** — the action bounces back onto the doer: одева́ться (dress oneself), умыва́ться (wash oneself), бри́ться (shave).
+- **Reciprocal** — the parties do it *to each other*: встреча́ться (meet each other), ви́деться (see each other), обнима́ться (hug).
+- **Engage in**: занима́ться спо́ртом (do sports), занима́ться му́зыкой.
+- **Located / stayed**: находи́ться (be located — «Музе́й нахо́дится в це́нтре»), остава́ться (stay).
+
+English signals the first two with a separate word (*myself*, *each other*); Russian folds them into the verb. There is no separate word to memorise — just the ending.`,
+          why: `-ся is a worn-down stub of the old reflexive pronoun *сябе* (self). It glued onto the ends of verbs and stayed there. That is why one suffix can mean "myself", "each other", or nothing in particular — it is one pronoun squeezed into grammar over centuries, and context picks the reading.`,
           table: {
             headers: ["Verb", "Meaning"],
             rows: [
@@ -29,7 +37,11 @@ export const u12: Unit = {
               ["оставаться", "to stay"],
             ],
           },
-          tip: "занима́ться + instrumental: занима́ться спо́ртом, му́зыкой. горди́ться + instrumental: горжуса́ бра́том.",
+          examples: [
+            { ru: "Я просыпа'юсь в семь без буди'льника.", en: "I wake up at seven without an alarm." },
+            { ru: "Мы занима'емся спо'ртом по вечера'м.", en: "We work out in the evenings — занима́ться + instrumental." },
+          ],
+          tip: "занима́ться and горди́ться both demand the **instrumental**: занима́ться спо́ртом, горди́ться бра́том. English says *do sports* with no preposition and *proud of* with *of* — Russian says neither; it uses the instrumental. Verb + case travel in pairs.",
         },
       ],
       exercises: [
@@ -62,9 +74,12 @@ export const u12: Unit = {
       grammar: [
         {
           title: "After a vowel -ся becomes -сь",
-          body: `- Он купа́лся, она́ купа́**лась**, они́ купа́лись
-- я учу́**сь**, ты учи́**шься**, они́ у́чат**ся**
-Consonant → -ся; vowel → -сь. That's the whole rule.`,
+          body: `Pure spelling euphony: after a **consonant** the suffix is **-ся**; after a **vowel** it is **-сь**:
+
+- Он купа́**лся**, она́ купа́**лась**, они́ купа́**лись**
+- Я учу́**сь**, ты у́чишь**ся**, они́ у́чат**ся**
+
+In the past tense the letter before -ся/-сь is always -л- (a consonant), so masculine forms keep -ся (он купа́лся) while feminine forms get -сь (она́ купа́лась). The rule is mechanical — no exceptions, no stress tricks.`,
           table: {
             headers: ["Form", "Verb"],
             rows: [
@@ -105,10 +120,17 @@ Consonant → -ся; vowel → -сь. That's the whole rule.`,
       grammar: [
         {
           title: "Present stem + -й/-и/-те",
-          body: `- чита́ют → чита́й / чита́йте; говори́т → говори́ / говори́те
-- **-те** = plural or polite: Скажи́те, пожа́луйста!
-- Perfective imperative = one concrete order: Купи́ хлеб! Скажи́ ему́.
-- -ся stays: умыва́йся, одева́йтесь`,
+          body: `The imperative is built from the **они-form of the present**, minus its ending:
+
+- чита́ют → чита́- → чита́й (informal) / чита́йте (plural/polite)
+- говори́т → говори́ / говори́те
+
+If the stem ends in a consonant, add **-и**: сесть →сядут→ ся́дь, встать → вста́нь. The -ся suffix carries along: умыва́йся, одева́йтесь.
+
+The **-те** form is not "louder" — it is for several people AND for politeness with one person, exactly like вы. A shop assistant says «повтори́те», a coach says «повтори́».
+
+**Perfective imperatives** give one concrete instruction: Купи́ хлеб! Скажи́ ему́ пра́вду! — they ask for a single completed act, not an ongoing effort.`,
+          why: `Why build from the они-form? Because the stem that shows up in «они́ чита́ют» is the verb's true skeleton — the same skeleton the past participle used. Taking it minus the ending and adding -й/-и gives the imperative with almost no effort. Verbs whose они-form surprises you (даду́т) will have surprising imperatives (дай) — the skeleton never lies.`,
           table: {
             headers: ["Verb", "ты", "вы"],
             rows: [
@@ -150,12 +172,14 @@ Consonant → -ся; vowel → -сь. That's the whole rule.`,
       grammar: [
         {
           title: "не + imperfective; давай + perfective",
-          body: `- Negative commands take the **imperfective**: Не говори́ гро́мко! Не приходи́ сюда́!
-- **Дава́й / Дава́йте + perfective future or infinitive** = let's: Дава́й пойдём! Дава́йте поговори́ть.`,
+          body: `Negative commands take the **imperfective** imperative: Не говори́ гро́мко! (Don't speak loudly — stop that behaviour), Не приходи́ сюда́! The imperfective forbids the *activity*.
+
+**Дава́й / Дава́йте** builds invitations: дава́й + perfective future (Дава́й пойдём!) or дава́й + infinitive (Дава́йте поговори́ть). Both patterns are on the street every day. Дава́йте is the polite/plural version; use it with anyone you would call вы.`,
           examples: [
             { ru: "Не опа'здывай!", en: "Don't be late!" },
+            { ru: "Дава'йте начнём!", en: "Let's get started!" },
           ],
-          tip: "Perfective after не would forbid a single completed act — rare; the everyday ban is imperfective.",
+          tip: "Why imperfective after «не»? Because «Не опозда́й!» would target one specific completed lateness — it exists (a warning: mind you don't end up late) but the everyday ban on a behaviour is imperfective. If you catch yourself saying «Не купи́ хлеб!», ask: am I banning bread-shopping in general (не покупа́й) or warning about one fateful purchase (не купи́)?",
         },
       ],
       exercises: [
@@ -188,13 +212,22 @@ Consonant → -ся; vowel → -сь. That's the whole rule.`,
       grammar: [
         {
           title: "Obligation and permission",
-          body: `- **до́лжен / должнá / должны́** + infinitive (agrees in gender/number, NOT person): Я до́лжен идти́. Она́ должнá звони́ть.
-- **Можно + inf?** — May I? (Мо́жно мне войти́?)
-- **Нельзя́** — must not. **Стои́т посмотре́ть** — worth watching.`,
-          examples: [
-            { ru: "Вы должны' извиня'ться.", en: "You must apologise." },
-          ],
-          tip: "должен is a short adjective: я/он до́лжен, она́ должнá, они́ должны́.",
+          body: `**до́лжен / должна́ / должны́ + infinitive** = must / have to. It agrees in gender and number — never in person: Я до́лжен, ты до́лжен, она́ должнá, мы должны́. (Past: был до́лжен... был + должен + inf.)
+
+The impersonal set needs the dative person (from Unit 4): **Мне нужно рабо́тать**, **Мо́жно войти́?**, **Здесь нельзя́ кури́ть**. And **сто́ит** = it is worth: **Стои́т посмотре́ть** — worth watching.
+
+The difference between до́лжен and ну́жно is subtle: до́лжен carries personal duty or a promise made; ну́жно carries objective necessity. «Я до́лжен позвони́ть ма́ме» (I promised), «Ну́жно позвони́ть в банк» (the situation demands it).`,
+          why: `до́лжен is a short-form adjective (from долг, debt) — literally "in-debt for doing X". That is why it agrees like an adjective (gender/number) and never like a verb (person). Short adjectives were predicates in Old Russian — saying «он до́лжен» was "he is in-debt" — and the +infinitive glue came later. Grammar fossils again.`,
+          table: {
+            headers: ["Word", "Meaning", "Example"],
+            rows: [
+              ["должен", "must (personal duty)", "Я должен позвонить"],
+              ["нужно", "need (objective)", "Нужно учиться"],
+              ["можно", "may", "Можно войти?"],
+              ["нельзя", "must not", "Нельзя опаздывать"],
+              ["стоит", "is worth", "Стоит попробовать"],
+            ],
+          },
         },
       ],
       exercises: [
