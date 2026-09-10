@@ -16,10 +16,14 @@ export const u11: Unit = {
       grammar: [
         {
           title: "The synonymic ladder",
-          body: `Register is a choice of SYNONYMS plus syntax:
+          body: `Register is a synonym ladder: купи'ть → приобрести' → израсхо'довать средства; сказа'ть → сообщи'ть → уведоми'ть; ма'лыш → ребёнок → несоверше'нноле'тний. Each rung drags its own syntax with it.
+
+Register is a choice of SYNONYMS plus syntax:
 - colloquial: **купи́ть / си́нуть / де́ньги** → neutral: **приобрести́ / потра́тить / сре́дства** → formal-official: **израсхо́довать фина́нсовые сре́дства**.
 - «он че́сал язы́к» (idle chatter) → «он вёл пусты́е бесе́ды».
 - Ellipsis and parcellation disappear in formal style; participles and passive appear.`,
+          why: "Choosing a formal synonym changes the sentence around it: elliptical subjects disappear, participles appear, genitive chains lengthen. Register is not word-swapping — it is a whole grammatical costume.",
+
           table: {
             headers: ["Colloquial", "Neutral", "Formal"],
             rows: [
@@ -54,7 +58,9 @@ export const u11: Unit = {
       grammar: [
         {
           title: "Intention, five registers deep",
-          body: `«He is going to leave»:
+          body: `Paraphrase drills: «Он собира'ется уе'хать» has five register variants — Он наме'ревается уе'хать (formal), Он реши'лся на отъе'зд (deliberate + на acc), Он по'мыслил уе'хать (ironic/archaic), И'м плани'руется отъе'зд (bureaucratic passive).
+
+«He is going to leave»:
 1. Neutral: **Он собира́ется уехать.**
 2. Formal: **Он наме́ревается уехать.**
 3. Deliberate: **Он реши́лся на отъе́зд.**
@@ -62,6 +68,7 @@ export const u11: Unit = {
 5. Bureaucratic: **Им плани́руется отъе́зд.** (passive-impersonal)
 Each variant drags its own case/aspect furniture with it — that's why paraphrase is grammar.`,
         },
+          why: "Each variant drags its own government: наме'реваться + inf, реши'ться на + acc, плани'роваться impersonal. Paraphrase mastery means feeling which furniture moves with which word — that is C2 grammar: not more rules, but faster furniture-moving.",
       ],
       exercises: [
         {
