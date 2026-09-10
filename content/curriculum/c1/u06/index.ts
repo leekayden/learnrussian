@@ -16,8 +16,11 @@ export const u06: Unit = {
       grammar: [
         {
           title: "One verb, ten futures: писать × prefixes",
-          body: `- **написа́ть** — write (result); **переписа́ть** — rewrite; **дописа́ть** — finish writing; **записа́ть** — note down; **подписа́ть** — sign; **описа́ть** — describe; **списа́ть** — copy/cheat; **вы́писать** — order/write out; **прописа́ть** — register (officially).
+          body: `One verb, ten futures: писа́ть + prefixes. написа́ть (write), переписа́ть (rewrite), дописа́ть (finish writing), запи́са́ть (note down), подпи́са́ть (sign), опи́са́ть (describe), списа́ть (copy/cheat), вы́писать (write out/prescribe), пропи́са́ть (register officially).
+
+- **написа́ть** — write (result); **переписа́ть** — rewrite; **дописа́ть** — finish writing; **записа́ть** — note down; **подписа́ть** — sign; **описа́ть** — describe; **списа́ть** — copy/cheat; **вы́писать** — order/write out; **прописа́ть** — register (officially).
 Each prefix contributes direction, completeness, or metaphor. Compare nouns: подпись (signature), описа́ние (description), предписа́ние (directive).`,
+          why: "Each prefix contributes direction, completeness or metaphor — and the derived nouns keep the family resemblance: подпи́сь (signature), опи́сание (description), предписа́ние (directive). Learn the grid as a system and a dozen words come free with each verb.",
           examples: [
             { ru: "Не списыва'й!",
  en: "Don't copy (cheat)!" },
