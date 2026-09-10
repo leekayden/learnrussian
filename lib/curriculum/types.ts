@@ -21,16 +21,22 @@ export const LEVEL_DESCRIPTIONS: Record<Level, string> = {
 };
 
 /** One self-contained explanation block. Notes must be complete enough to
- * attempt the lesson's practices without external reference. */
+ * attempt the lesson's practices without external reference. Written for
+ * young adults: direct, plain English, real-world examples, and explicit
+ * contrast with English where it clarifies. */
 export interface GrammarBlock {
   title: string;
-  /** Concise markdown: what it is, when to use it. */
+  /** The core explanation: what it is, when to use it, how English does it
+   * differently. May run several paragraphs — depth is welcome. */
   body: string;
+  /** The reasoning behind the rule — why Russian works this way. Rendered
+   * as a distinct "why it works" callout. */
+  why?: string;
   /** Any pattern/endings table. */
   table?: { headers: string[]; rows: string[][]; caption?: string };
   /** 3-5 worked examples. */
   examples?: { ru: string; en: string }[];
-  /** Common-trap / usage note. */
+  /** Common-trap note: what learners get wrong and WHY. */
   tip?: string;
 }
 

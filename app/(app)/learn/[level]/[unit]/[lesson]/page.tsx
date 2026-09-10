@@ -79,6 +79,12 @@ export default async function LessonPage({
             </CardHeader>
             <CardContent className="space-y-3">
               <Md text={block.body} />
+              {block.why ? (
+                <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 py-2 text-sm">
+                  <span className="font-medium text-primary">Why it works: </span>
+                  <Md text={block.why} />
+                </div>
+              ) : null}
               {block.table ? (
                 <div className="overflow-x-auto rounded-lg border">
                   {block.table.caption ? (
