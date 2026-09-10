@@ -251,7 +251,7 @@ Notice what is missing: no я, no он. The dative pronoun does the whole job. T
             { ru: "Мне на'до гото'виться к экза'мену.", en: "I need to prepare for the exam." },
             { ru: "Уже' пору', дава'й зака'нчивать.", en: "It's already time — let's wrap up." },
           ],
-          tip: "The trap: adding a subject. «Я должен» is fine (that's the adjective должен, next unit), but «Я нужно» is impossible — ну́жно has no agreement and no subject. If you catch yourself building "I + нужно", switch the я to мне and delete the doubt.",
+          tip: "The trap: adding a subject. «Я должен» is fine (that's the adjective должен, next unit), but «Я нужно» is impossible — ну́жно has no agreement and no subject. If you catch yourself building «I + нужно», switch the я to мне and delete the doubt.",
         },
       ],
       exercises: [
