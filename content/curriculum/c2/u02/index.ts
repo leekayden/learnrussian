@@ -16,10 +16,14 @@ export const u02: Unit = {
       grammar: [
         {
           title: "быть + nominative vs instrumental",
-          body: `Both «Он был врач» and «Он был врачо́м» are correct — but not the same:
+          body: `Both «Он был врач» and «Он был врачо́м» are correct — but not the same. Nominative = a plain biographical fact; instrumental = a characteristic or role during that period: В де́тстве он был больны́м ребёном.
+
+Both «Он был врач» and «Он был врачо́м» are correct — but not the same:
 - **Nominative** (Он был врач): a *plain fact* of biography, no evaluation, often about the past only.
 - **Instrumental** (Он был врачо́м): a *characteristic/role during that time*, implying duration or classification: «В де́тстве он был больны́м ребёном».
 With стать/казаться/оказаться/являться the instrumental is REQUIRED.`,
+          why: "The instrumental frames the role as something the person WORE across time — a classification, an evaluation. The nominative just states the fact. And become/считаться/каза́ться always demand the instrumental, because entering or appearing-as a role is inherently dynamic.",
+
           table: {
             headers: ["Form", "Nuance"],
             rows: [
@@ -60,11 +64,14 @@ With стать/казаться/оказаться/являться the instrum
       grammar: [
         {
           title: "Instrumental as adverb",
-          body: `Time and manner instrumental without prepositions:
+          body: `The instrumental also makes adverbs: у́тром, о́сенью, но́чью (time), бего́м (at a run), шёпотом (in a whisper), сто́ять столбо́м (stand like a post). Nouns slip into the case and become manner-words.
+
+Time and manner instrumental without prepositions:
 - Time: **у́тром** (in the morning), **о́сенью**, **весно́й**, **но́чью**.
 - Manner: **бего́м** (at a run), **шёпотом** (in a whisper), **по́лзком** (crawling), **кри́ком** (with a shout).
 - Simile: **сто́ять столбо́м** (stand like a post).
 In short: the instrumental turns nouns into adverbs of time and manner.`,
+          why: "Time-instrumentals (у́тром, ле́том) are frozen: the preposition withered away and the case carries time alone. Manner-instrumentals paint pictures — сто́ять столбо́м is literal grammar doing metaphor work. English needs prepositions for all of these.",
           examples: [
             { ru: "У'тром я иду' в парк бего'м.", en: "In the morning I jog to the park." },
             { ru: "Он стоя'л столбо'м от удивле'ния.", en: "He stood rooted like a post in astonishment." },

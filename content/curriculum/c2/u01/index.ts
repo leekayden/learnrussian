@@ -16,10 +16,14 @@ export const u01: Unit = {
       grammar: [
         {
           title: "One noun, two genitives",
-          body: `Mass nouns used as *an indefinite quantity* often have a second, colloquial genitive in **-у/-ю**:
+          body: `Mass nouns used as an indefinite quantity often have a second, colloquial genitive in -у/-ю: При́сыпать са́хару (add some sugar) vs мешо́к са́хара (a sack of sugar as a type). The -у form = a portion; the -а form = the kind or class.
+
+Mass nouns used as *an indefinite quantity* often have a second, colloquial genitive in **-у/-ю**:
 - Both: ча́шка **ча́ю** / ча́шка **ча́я** — but only ча́й meaning the type of tea (сорт ча́я, NOT сорт ча́ю).
 - «При́сыпать са́хару» (add some sugar) vs «мешо́к са́хара» (a sack of sugar as a substance/type).
 The -у form = *a portion of it*; the -а form = *the kind / the whole class*.`,
+          why: "The partitive -у is a survival of a special 'portion' case. It lives only with indefinite quantities — the moment you mean the type or the whole class, regular -а returns. Сорт ча́ю is impossible; сорт ча́я is required.",
+
           table: {
             headers: ["Partitive (-у/-ю)", "Regular genitive (-а/-я)"],
             rows: [
@@ -64,9 +68,13 @@ The -у form = *a portion of it*; the -а form = *the kind / the whole class*.`,
       grammar: [
         {
           title: "The stressed -у́ locative",
-          body: `Masculine nouns for *place/enclosure* have a second prepositional in stressed **-у́** used only after в/на:
+          body: `Masculine place-nouns have a second prepositional in stressed -у́ after в/на: в лесу́, на полу́, в углу́, на мосту́, в году́. But about-ness keeps regular -е: о ле́се (about the forest).
+
+Masculine nouns for *place/enclosure* have a second prepositional in stressed **-у́** used only after в/на:
 - **в лесу́** (in the forest), **на полу́** (on the floor), **в углу́** (in the corner), **на мосту́**, **в году́** (in the year — fixed).
 - Regular -е means *about / in respect of*: **о ле́се** (about the forest), **в ле́те**... compare **в году́** (in such-and-such year) vs **о го́де** (about the year).`,
+          why: "The -у́ locative is the last living trace of a separate Proto-Slavic locative case. It survives only in WHERE-IS-IT contexts after в/на — the moment you talk ABOUT the noun (о + prep), regular -е returns. Location keeps the ancient form; reference uses the modern one.",
+
           table: {
             headers: ["About (regular -е)", "Located in (stressed -у́)"],
             rows: [
@@ -109,10 +117,13 @@ The -у form = *a portion of it*; the -а form = *the kind / the whole class*.`,
       grammar: [
         {
           title: "When both forms live but differ",
-          body: `Some nouns carry BOTH locatives with a style or meaning split:
+          body: `Some nouns carry both locatives with a style or meaning split: в о́тпуске (neutral) vs в о́тпуску (colloquial); рабо́тать на дому́ (from home) vs что-то на до́ме (on the building); and figurative на носу́ (imminent).
+
+Some nouns carry BOTH locatives with a style or meaning split:
 - **в о́тпуске** (neutral/administrative) vs **в о́тпуску** (colloquial).
 - **на носу́** (on the nose — located) vs **о но́се** (about the nose); **на носу́** figurative = looming: «экза́мен на носу́».
 - **на дому́** = at home (work location: рабо́тать на дому́) vs **на до́ме** = on the building (печная труба́ на до́ме).`,
+          why: "When two forms coexist, style or metaphor assigns them: -у́ forms drift toward colloquial speech and fixed figurative meanings (экза́мен на носу́). The dictionary notes both; conversation chooses by register.",
           examples: [
             { ru: "Он рабо'тает на дому'.", en: "He works from home." },
             { ru: "Экза'мен на носу', а он гуля'ет.", en: "The exam is imminent, and he's out strolling." },
