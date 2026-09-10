@@ -29,7 +29,7 @@ address, university-life contexts, no childish examples.
 
 | Level | Notes v2 status |
 |---|---|
-| A2 | u01-u08 done; u09-u12 pending |
+| A2 | ✅ all 12 units rewritten (notes v2) |
 | B1 | pending |
 | B2 | pending |
 | C1 | pending |
