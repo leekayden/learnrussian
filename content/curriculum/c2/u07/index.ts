@@ -16,10 +16,14 @@ export const u07: Unit = {
       grammar: [
         {
           title: "Tiny words, huge differences",
-          body: `- **же** (after the word it targets): reminder/contrast — Он же́ знал! (He DID know!); the same же also = the same: тот же́.
+          body: `Particles do discourse work: же (reminder/contrast — Он же знал!), ли (embedded question — Знает ли он; or doubt), ведь (appeal to shared knowledge — Ведь я предупрежда́л!), уж (intensity — Уж он-то знает).
+
+- **же** (after the word it targets): reminder/contrast — Он же́ знал! (He DID know!); the same же also = the same: тот же́.
 - **ли** (2nd word of the clause): embedded yes/no question — Зна́ет ли он об э́том? / as emphasis: Что ж, посмо́трим.
 - **ведь** — you know, after all: Ведь я предупрежда́л!
 - **уж / ну** — intensity or resignation: Уж он-то зна́ет. Ну и ну!`,
+          why: "Particles are position-sensitive: же attaches to the word it targets, ли sits second in the clause. They encode the speaker's attitude toward shared knowledge — Russian makes you declare whether your listener should already agree.",
+
           table: {
             headers: ["Particle", "Job", "Example"],
             rows: [
@@ -55,10 +59,13 @@ export const u07: Unit = {
       grammar: [
         {
           title: "Distance markers",
-          body: `- **мол** — he/she says (neutral distancing): Он мол знал заранее. — He says he knew in advance.
+          body: `Reported-speech particles distance the speaker from the claim: мол (he says), де (alleged — bureaucratic), дескать (supposedly, dismissive), and the pre-revolutionary clerk's -с (Нет-с).
+
+- **мол** — he/she says (neutral distancing): Он мол знал заранее. — He says he knew in advance.
 - **де** — alleged (older, bureaucratic): Он, де, при чём? — He claims he's not involved.
 - **дескать** — so-called, supposedly (dismissive): Де'скал всё про'сто.
 - **-с** (attached to verbs, pre-revolutionary clerkdom): Нет-с. — literary flavour only (Chekhov-era).`,
+          why: "мол/де/дескать let you quote without vouching: «Он мол ничего́ не знал» attributes the claim to him and quietly doubts it. Journalists and gossipers live on these particles — English needs whole clauses ('he claims that…').",
           examples: [
             { ru: "Он, мол, ничего' не зна'л.", en: "He says he knew nothing." },
             { ru: "Де'скал всё про'сто, а по факту — нет.", en: "Supposedly it's all simple, but in fact it isn't." },

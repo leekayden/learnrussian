@@ -16,10 +16,13 @@ export const u08: Unit = {
       grammar: [
         {
           title: "ни + genitive as pure emphasis",
-          body: `With no verb in sight, **ни + genitive** intensifies: 
+          body: `ни + genitive alone intensifies total absence — no verb needed: Ни ша'гу наза'д! Ни звука'. Ни сло'ва пра'вды. After negated verbs: не сказа'л ни сло'ва (not a single word).
+
+With no verb in sight, **ни + genitive** intensifies: 
 - **Ни ша́гу наза́д!** — Not one step back!
 - **Ни звука́.** — Not a sound. **Ни сло́ва пра́вды.** — Not a word of truth.
 After a negated verb: **ни одного́ / ни разу́ / ни копе́йки** — total absence. «Не сказа́л ни сло́ва» (didn't say a word).`,
+          why: "The emphatic genitive paints zero as a quantity — 'not even one step' is measured, which is why the genitive (the amount-case) appears. English uses 'not a single'; Russian uses case + ни, and it works with or without a verb.",
           examples: [
             { ru: "Ни мину'ты поко'я!", en: "Not a minute of peace!" },
           ],
@@ -50,11 +53,14 @@ After a negated verb: **ни одного́ / ни разу́ / ни копе́�
       grammar: [
         {
           title: "Broken sentences are grammar too",
-          body: `Spoken Russian thrives on cut syntax:
+          body: `Spoken syntax cuts itself short: ellipsis (Мне бы ко'фе), echo answers (— Ты куда'? — К Ма'ше), and parcellation — Он пришёл. По'здно. Опя'ть. Each fragment lands with its own stress.
+
+Spoken Russian thrives on cut syntax:
 - **Ellipsis**: «Мне бы ко́фе. И что-нибу́дь к ча́ю.» (no verbs)
 - **Parcellation** (parcelled-off fragments): «Он пришёл. Поздно. Опять.» — each fragment a separate sentence for punch.
 - **Question-reply echo**: «— Ты куда́? — К Ма́ше.»
 Punctuation in writing mirrors intonation in speech.`,
+          why: "Parcellation turns sentence-parts into standalone sentences for punch — punctuation mirrors the speaker's intonation. It belongs to prose, speech and advertising; academic writing would call it broken. Register decides what counts as a sentence.",
           examples: [
             { ru: "Он пришёл. Поздно. Опя'ть.", en: "He turned up. Late. Again." },
           ],
