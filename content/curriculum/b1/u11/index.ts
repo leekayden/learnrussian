@@ -16,10 +16,12 @@ export const u11: Unit = {
       grammar: [
         {
           title: "ни- forms + не verb; preposition splits",
-          body: `Negatives: **никто́, ничего́, никако́й, ничей**. A preposition squeezes in:
+          body: `Negative pronouns come as double trouble: the ни- word AND a negated verb. Никто́ не пришёл. And a preposition squeezes between ни and the word: ни с ке́м, ни о чём. The stressed variants не́кого/не́чего take infinitives: Мне не́чего сказа́ть.Negatives: **никто́, ничего́, никако́й, ничей**. A preposition squeezes in:
 - ни **с** ке́м (with nobody), ни **о** чём (about nothing)
 **Не́кому / не́чего** (stress on не-) = no one/nothing to do X:
 - Мне не́чего сказа́ть. Ему́ не́кого спра́шивать.`,
+          why: "Russian requires double negation the way English forbids it — negative concord was standard English until the 1700s and never left Russian. The preposition-splitting (ни с ке́м) exists because ни- words cannot carry a preposition on their back, so the preposition wedges inside.",
+
           table: {
             headers: ["Form", "Example"],
             rows: [
@@ -62,9 +64,11 @@ export const u11: Unit = {
       grammar: [
         {
           title: "Self vs in person",
-          body: `- **себя́** (self — declines like тебя́): Он купи́л **себе́** маши́ну. Взгляни́ **на себя́**! Он дово́лен **собо́й**.
+          body: `себя́ (self) declines like тебя́ and has no nominative: Он купи́л себе́ маши́ну. сам agrees fully and means 'in person, without help': Я сам э́то сде́лал. весь (all) declines too: весь день, всю неде́лю, все лю́ди.- **себя́** (self — declines like тебя́): Он купи́л **себе́** маши́ну. Взгляни́ **на себя́**! Он дово́лен **собо́й**.
 - **сам** = myself/in person (agrees like этот): Я **са́м** э́то сде́лал. Она́ **сама́** сказа́ла.
 - **весь / всё / все** = all: весь день, всё вре́мя, все лю́ди.`,
+          why: "себя́ never appears as a subject because Russian treats 'self' as the object of one's own actions — you direct things at yourself. сам, meanwhile, is an adjective meaning 'that very person, unaided' — which is why it agrees fully. The pair confuses because English 'self' covers both jobs.",
+
           table: {
             headers: ["Pronoun", "Example"],
             rows: [
@@ -105,9 +109,11 @@ export const u11: Unit = {
       grammar: [
         {
           title: "Three indefinite families",
-          body: `- **-то** = speaker knows it exists, you don't know what: кто́-то стучи́т (real).
+          body: `Three indefinite families: -то (a certain unknown one — real): кто́-то стучи́т; -нибудь (any, whatever): Ска́жи́ что-нибу́дь; кое- (the speaker knows): кое-кто зна́ет — with the preposition inside: кое о чём.- **-то** = speaker knows it exists, you don't know what: кто́-то стучи́т (real).
 - **-нибудь** = any old, non-specific: Ска́жи́ что-нибу́дь! за́втра и́ли когда́-нибу́дь.
 - **кое-** = speaker knows and hints: кое-кто зна́ет. Preposition splits: кое **о** чём.`,
+          why: "The choice encodes the speaker's knowledge: -то says it exists and I know which, -нибудь says I don't care which, кое- says I know and I'm not telling. Three particles, three epistemic stances — Russian makes you declare how much you know about your own vague reference.",
+
           table: {
             headers: ["Particle", "Meaning"],
             rows: [
