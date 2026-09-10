@@ -16,8 +16,11 @@ export const u02: Unit = {
       grammar: [
         {
           title: "-мый: passive potential",
-          body: `Imperfective passive in **-мый** = 'being ~-able': определя́емый (defined as), рассма́триваемый (under consideration), жела́емый (desired), любимый.
+          body: `-мый participles are imperfective passives with adjective endings: определя́емый (being defined), рассма́триваемый (under consideration), жела́емый (desired). They come ONLY from imperfective transitive verbs — no -мый from спать or пойти́.
+
+Imperfective passive in **-мый** = 'being ~-able': определя́емый (defined as), рассма́триваемый (under consideration), жела́емый (desired), любимый.
 Academic style chains them: «Пробле́ма, рассма́триваемая в э́той статье́, свя́зана с явле́ниями, опи́санными вы́ше» (The problem considered in this article relates to phenomena described above).`,
+          why: "-мый is the passive of the PROCESS: being defined, not having been defined. That is why academic Russian loves it — papers discuss problems under consideration, in progress. Perfective results need the -нн/-т participles instead.",
           examples: [
             { ru: "В раccма'триваемом слу'чае…", en: "In the case under consideration…" },
           ],
