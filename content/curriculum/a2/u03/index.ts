@@ -255,7 +255,7 @@ Notice how much English does with *of/from/for/without/after* — and Russian do
             { ru: "После па'р мы идём в буфе'т.", en: "After classes we head to the café — по́сле + gen." },
             { ru: "Она' прие'хала из Каза'ни.", en: "She came from Kazan." },
           ],
-          tip: "«До за́втра!» — literally "until tomorrow" — is how Russians say "see you tomorrow". A farewell built entirely on до + genitive. Little chunks like this make the prepositions stick.",
+          tip: "«До за́втра!» — literally «until tomorrow» — is how Russians say «see you tomorrow». A farewell built entirely on до + genitive. Little chunks like this make the prepositions stick.",
         },
       ],
       exercises: [
