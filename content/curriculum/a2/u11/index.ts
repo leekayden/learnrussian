@@ -79,6 +79,7 @@ So «два студе́нта» is literally *two of-student*. The counted noun
 - **Hundreds**: сто, две́сти, три́ста, четы́реста, then пятьсо́т…девятьсо́т (sót = hundred, pluralized).
 
 Only 40 (со́рок) and 90 (девяно́сто) have just two forms (nom/acc vs everything else). Ты́сяча behaves like a feminine noun — and watch out: «тысяча человек» is genitive plural after it, so a million Russians say «с ты́сячей челове́к» colloquially. Standard: с ты́сячей челове́к (gen pl allowed after ты́сяча).`,
+          why: "The -nadtsat family is a fossil of 'on ten': odin-na-dtsat = one-on-ten. Reading the etymology makes the whole teens row transparent — and sorok/devyanosto are the two rebels worth memorising on sight.",
           table: {
             headers: ["Number", "Russian"],
             rows: [
@@ -184,6 +185,7 @@ Special words: **полдень** (noon), **по́лночь** (midnight) — «
 - Months: **в + prepositional** — в январе́, в ма́е, в дека́бре́.
 - Years: **в + prepositional + году́** — в две ты́сячи два́дцать шесто́м году́. (Note году́ — a special old form, not году... it IS году.)
 - Weekend: **в вы́ходны́е**; on weekdays: **в бу́дни** / по бу́дням.`,
+          why: "The v/po switch on days is the fastest spoken test of plan vs habit: v pyatnitsu = one Friday on the calendar, po pyatnitsam = Fridays as a routine. Russians hear the difference instantly — so should you.",
           table: {
             headers: ["Pattern", "Example"],
             rows: [

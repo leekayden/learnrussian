@@ -80,6 +80,7 @@ So the trio works like this: **Я помога́ю сестре́.** — I help 
 - **он → ему́**: an н appears out of nowhere. Blame history; just memorise it.
 
 The preposition **к** (toward) also takes the dative, and it is how you say you are heading to a *person*: **Я иду́ к врачу́** (to the doctor's), **Заходи́ к нам** (come over to our place). For places you would use в/на + accusative instead: в шко́лу, на рабо́ту.`,
+          why: "The pronouns tebe, mne, emu are among the top 20 most frequent words in spoken Russian — they carry the dative in pomogi mne, mne nravitsya, mne kholodno. Master these seven and half of conversational dative usage is automatic.",
           examples: [
             { ru: "Помоги' мне, пожа'луйста.", en: "Help me, please." },
             { ru: "Я иду' к дру'гу на друго'й конец города'.", en: "I'm heading to my friend's across town." },

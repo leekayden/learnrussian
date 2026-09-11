@@ -81,6 +81,7 @@ There are two families: **hard** (но́вый, with ы) and **soft** (си́н�
 - feminine: **-ую/-юю** — Я купи́л **но́вую** маши́ну
 - neuter: no change — **но́вое** письмо́
 - masculine **animate**: **-ого** — Я ви́жу **но́вого** учителя́ (the adjective goes genitive-like, just like the noun did in Unit 2 Step 3)`,
+          why: "The animate accusative for adjectives mirrors the noun: novost stays novyj, but uchitel becomes novogo. The adjective cannot dodge what its noun does — agreement is obligatory in every case, which is why the dictionary gives the whole grid.",
           table: {
             headers: ["Phrase", "Case"],
             rows: [
@@ -126,6 +127,7 @@ There are two families: **hard** (но́вый, with ы) and **soft** (си́н�
 - plural: **-ых/-их** — в но́вых дома́х, в си́них джи́нсах
 
 Prepositional is the easiest accusative-follow-up: once you know в + prepositional (Unit 2), the adjective simply follows its noun into the same case.`,
+          why: "Prepositional is where adjective agreement becomes routine: after a couple of weeks the endings feel automatic because they repeat across every adjective. There are only two shapes (-om for m/n, -oj for f) — the plural -ykh arrives next step.",
           table: {
             headers: ["Nominative", "Prepositional"],
             rows: [
@@ -171,6 +173,7 @@ Prepositional is the easiest accusative-follow-up: once you know в + prepositio
 - Accusative plural of **animate** = genitive plural: Я ви́жу друзе́й, студе́нтов.
 
 The animate rule now applies to plurals too — and the genitive plural endings (Step 5 in B1 unit 1) are genuinely the hardest chart in the language. For now: recognise the split, master the forms you meet.`,
+          why: "The irregular plurals (druz'ya, deti, lyudi) are among the most frequent words in the language — which is exactly why they survived irregular. Frequent words resist regularisation; you meet them too often to forget.",
           table: {
             headers: ["Singular", "Plural (nom)", "Acc pl"],
             rows: [

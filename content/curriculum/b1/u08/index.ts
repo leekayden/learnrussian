@@ -65,6 +65,7 @@ export const u08: Unit = {
           body: `Short participles (прочи́тана, постро́ен) are predicates: Кни́га прочи́тана. Long participles (прочи́танная кни́га) are attributes. The pair рассе́янный/рассе́ян shows the split at its clearest: permanent trait vs current state.Short participles act as predicates: Кни́га **прочи́тана**. Заво́д **постро́ен**. Окна **закры́ты**.
 Compare: **рассе́янный** (absent-minded — permanent trait) vs **рассе́ян** (scattered — state): Лю́ди рассе́яны по го́роду.
 **волнова́ть** → взволнова́н (upset, state) vs волнова́тельный (worrying).`,
+          why: "Short forms descend from old predicative participles — they report what HAS HAPPENED to the subject. Long forms are adjectives — they describe what the subject IS. Result vs characteristic; English marks it with 'has been opened' vs 'is open'.",
           examples: [
             { ru: "Письмо' бы'ло напи'сано и отпра'влено.", en: "The letter was written and sent." },
           ],

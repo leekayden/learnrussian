@@ -65,6 +65,7 @@ export const u01: Unit = {
           title: "Irregular pair partners",
           body: `Other prefixes measure time or repetition: отрабо́тать пять лет (put in five years), просиде́ть весь ве́чер (sit through the whole evening), переписа́ть (rewrite). And some pairs have irregular partners: занима́ться → заня́ться, тро́гать → тро́нуть, сохну́ть → вы́сохнуть.Some pairs surprise: занима́ться → заня́ться; тро́гать → тро́нуть; сохну́ть → вы́сохнуть; лга́ть/лга́л → солга́ть/солга́л (stem shortens: лгу, лгал but солгал).
 Aspect decides vowel/stress: умере́ть → умира́ть (die: once → many metaphorically).`,
+          why: "Finitive prefixes (ot-, pro-) frame the action as SPENT — the time quantity becomes part of the verb. Irregular pairs exist because these verbs are old and frequent: frequent verbs resist regularisation the way English 'went' resists 'goed'.",
           examples: [
             { ru: "Он на'конец заня'лся спо'ртом.", en: "He finally took up sport." },
           ],

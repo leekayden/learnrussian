@@ -111,6 +111,7 @@ export const u02: Unit = {
 - **взро́слый** — an adult: кни́га для взро́слых (gen pl)
 - **учёный** — scientist; **рабо́чий** — worker
 - Rooms: гости́ная, ва́нная, столо́вая (living room / bathroom / canteen)`,
+          why: "Substantivised adjectives are productive: any adjective describing a class of people can be promoted to noun status. Because the endings already carry case, no new paradigm is needed — dlya bol'nogo is just the adjective in genitive.",
           examples: [
             { ru: "Больны'м ну'жно принима'ть лека'рство.", en: "Patients need to take medicine." },
           ],

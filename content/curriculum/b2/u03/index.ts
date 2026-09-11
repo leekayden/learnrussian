@@ -20,6 +20,7 @@ export const u03: Unit = {
 - Письмо́ **напи́сано** (автором). — The letter was written (by the author).
 - Решéние **бы́ло при́нято** коми́ссией. — The decision was taken by the commission.
 Short forms only in predicates; long forms only inside noun phrases (на́писанное письмо́).`,
+          why: "Short forms only in predicates; long forms only inside noun phrases. The agent instrumental (napisano pisatelem) is the Russian equivalent of English 'by the author' — except it works for every passive, not just formal ones.",
           examples: [
             { ru: "Дома' постро'ены в про'шлом ве'ке.", en: "The houses were built in the last century." },
           ],

@@ -65,6 +65,7 @@ Active present participles describe a noun DOING the action NOW (relative time):
           body: `Past active participles use -вш- on the past-tense stem: прочита́ть → прочита́вший ('who has read'). They describe someone whose action COMPLETED before the main verb — Арти́ст, спевший э́ту пе́сню, стал знамени́тым.Past stem + **-вш-**: прочита́ть → прочита́вший (who (has) read), прие́хать → прие́хавший.
 Verbs on consonant stems use -ш-: нести́ → нёсший, вести́ → ве́дший.
 Use: челове́к, __ who did the action BEFORE the main verb: Арти́ст, спевший э́ту песню, стал знамени́тым.`,
+          why: "Past active participles attach -vsh- to the past stem, so they inherit the past: they always mark PRIOR action relative to the main verb. English translates with a relative clause in any tense; Russian fixes the time relation in one word.",
           examples: [
             { ru: "Студе'нт, сде'лавший оши'бку, испра'вил её.", en: "The student who made a mistake corrected it." },
           ],

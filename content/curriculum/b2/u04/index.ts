@@ -23,6 +23,7 @@ Frozen forms and their shapes:
 - **к ра́тко говоря́** — in short; **открове́нно говоря́** — frankly.
 - **невзирая на** = despite (formal).
 Time: **спустя́** + acc (a while later): Спустя́ год он верну́лся.`,
+          why: "Frozen gerunds stopped being grammar and became discourse markers — sentence-level adverbs. They violate the shared-subject rule without raising an eyebrow: the language reanalysed them as fixed expressions, like 'considering' or 'generally speaking'.",
           examples: [
             { ru: "Открове'нно говоря', мне не понра'вился фильм.", en: "Frankly speaking, I didn't like the film." },
           ],
@@ -58,6 +59,7 @@ Time: **спустя́** + acc (a while later): Спустя́ год он ве�
 - **благодаря́ + dat** = thanks to (positive); **из-за + gen** = because of (negative).
 - **в то вре́мя как** = while/whereas; **впрочем / однако́ / тем не ме́нее** = however.
 - **вместо того что́бы + inf** = instead of doing: Вме́сто того что́бы спорить, подумай.`,
+          why: "blagodarya and iz-za encode the speaker's EVALUATION of causality: helping hands get blagodarya, ruined plans get iz-za. Saying blagodarya bolezni sounds blackly comic. Russian causality is not neutral — it has an attitude.",
           examples: [
             { ru: "Благодаря' его' по'мощи мы успе'ли.", en: "Thanks to his help we made it." },
             { ru: "Из-за дож'дя экску'рсию отмени'ли.", en: "Because of the rain the excursion was cancelled." },

@@ -65,6 +65,7 @@ export const u06: Unit = {
 - **Мне хоте́лось бы** — I would like (also: я хоте́л бы).
 - **Хороши́ бы… / жаль** — set uses.
 - Wishes: Если бы (только) за́втра была́ суббо́та! — If only tomorrow were Saturday!`,
+          why: "The mechanism is distance: by pushes the request into an imagined world, so the speaker never demands anything in the real one. Same politeness logic as English 'could you' vs 'can you' — grammatical distancing buys social softness.",
           examples: [
             { ru: "Не мог бы ты мне помо'чь?", en: "Could you help me?" },
             { ru: "Мне хоте'лось бы ча'ю.", en: "I would like some tea." },

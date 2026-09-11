@@ -71,6 +71,7 @@ export const u12: Unit = {
 - **-н-**: де́тство → де́тский? classic: пу́стой → пусты́нный (desert-like).
 - **-лив-** = inclined to: терпе́ть → терпе́ливый, говори́ть → говорли́вый, сча́стье → счастли́вый.
 - Verbs from adjectives: **беле́ть / черне́ть** (to turn white/black), старе́ть (grow old), молоде́ть.`,
+          why: "The -e- verbs (belet, staret) express a CHANGE OF STATE — becoming the quality. English needs become/turn/get; Russian has a conjugable family. And -liv- means 'having a habit of' — suffixes are compressed sentences.",
           examples: [
             { ru: "На рассве'те не'бо ста'ло розове'ть.", en: "At dawn the sky began to turn pink." },
           ],

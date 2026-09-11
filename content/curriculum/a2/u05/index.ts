@@ -78,6 +78,7 @@ Endings, singular: masculine hard consonant → **-ом** (до́мом); -й/-�
 - Кофе **с молоко́м**; хлеб **с ма́слом**; борщ **со смета́ной**
 
 Two spatial prepositions also govern the instrumental: **за** (behind/at — за столо́м, at the table) and **пе́ред** (in front of — пе́ред до́мом). You will use за столо́м every time food appears.`,
+          why: "Every food combination runs on this pattern: chai s limonom, buterbrod s syrom, kofe s molokom. The s + instrumental is one of the highest-frequency constructions in the language — order breakfast twice and you own it.",
           table: {
             headers: ["Phrase", "Case"],
             rows: [

@@ -76,6 +76,7 @@ Watch the stems bend: прийти́ → **приду́**, придёшь, пр�
 The destination keeps the accusative: войти́ **в ко́мнату**. Leaving takes **из + genitive**: вый­ти **из до́ма**, вы́йти **из авто́буса** (get off the bus).
 
 This pair also survives in everyday nouns you already know: **вход** (entrance) and **выход** (exit) — the metro signs you will look at every day.`,
+          why: "v-/vo- and vy- are exact antonyms: enter vs exit. The prefix v- is a preposition in disguise (v komnatu = vojti v komnatu), which is why the destination stays accusative. And vyjti derived the everyday nouns vkhod/vykhod.",
           examples: [
             { ru: "Гость вошёл и се'л у окна'.", en: "The guest came in and sat by the window." },
             { ru: "Мы вы'шли из теа'тра в интерва'ле.", en: "We stepped out of the theatre at intermission." },
@@ -161,6 +162,7 @@ This pair also survives in everyday nouns you already know: **вход** (entran
 - **пере-** = cross or relocate: перейти́ до́рогу (cross the street), перее́хать в но́вую кварти́ру (move flats)
 - **про-** = pass by/through: пройти́ ми́мо ма́газина (walk past), прое́хать свою́ остано́вку (miss your stop)
 - **с-** = descend: сойти́ с авто́буса (get OFF — с + genitive), while сесть на авто́бус is getting ON.`,
+          why: "Each prefix paints a spatial scene: do- reaching a goal, pere- crossing over, pro- sliding past, s- descending. Russian builds abstract meaning from these scenes too — pereekhat (move house) is literal crossing turned metaphor.",
           table: {
             headers: ["Prefix", "Meaning", "Example"],
             rows: [

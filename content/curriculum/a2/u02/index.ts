@@ -197,6 +197,7 @@ A quick sanity test students find useful: can it walk away and complain? Then it
           body: `To say where you or something **is** (not where it is going — that's the next lesson), Russian uses the **prepositional case**, which exists only after a handful of prepositions: в (in), на (on/at), о/об (about), при (at the time of).
 
 The formation is friendly: almost everything ends in **-е**. Masculine consonants grow -е (в го́роде, в музе́е), feminine -а/-я trade their ending for -е/-и (в шко́ле, в Росси́и — note -ия → -ии), and neuters swap -о/-е for stressed -е (окно́ → в окне́, мо́ре → в мо́ре). The case is easy to form and impossible to use alone — it never appears without one of its prepositions (в, на, о/об, при), which is exactly why it is called the PREPOsitional.`,
+          why: "The prepositional is the only case that cannot exist without its preposition — that is the whole point of its name. It is also the easiest to form: almost everything grows -e. The work is choosing v vs na, which is vocabulary.",
           table: {
             headers: ["Nominative", "Prepositional"],
             rows: [

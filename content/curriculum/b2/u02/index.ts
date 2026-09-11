@@ -69,6 +69,7 @@ export const u02: Unit = {
 - **ле́нь + inf** (colloquial): Мне ле́нь встава́ть. — I can't be bothered to get up.
 - **видно / слы́шно**: Отсюда́ хорошо́ ви́дно мо́ре.
 - **хо́лодно/тру́дно + dative**: Ему́ бы́ло тру́дно говори́ть.`,
+          why: "These predicates (zhal', len', vidno, trudno) are neither verbs nor adjectives in the English sense — they are state-words. The frame [dative + state-word + infinitive] replaces [it is X for me to Y] wholesale. Own the frame, own a hundred sentences.",
           examples: [
             { ru: "Мне ле'нь сегодня рабо'тать.", en: "I don't feel like working today." },
           ],

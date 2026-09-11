@@ -105,6 +105,7 @@ Gender/number copy the noun being replaced.`,
           body: `что́бы marks purpose or a demanded outcome: Я пришёл, что́бы помо́чь. Я хочу́, что́бы ты пришёл. The verb after что́бы is always in the PAST form — even for future meaning.- **что́бы + past/infinitive** = in order to / that: Я пришёл, что́бы помо́чь. Важно́, что́бы ты пришёл.
 - **когда́** = when; **пока́** = while / until: Пока́ я гото́влю, ты накрыва́й на стол.
 Negative purpose: что́бы не + past: Он закры́л окно́, что́бы не шумело́... simpler: что́бы не просту́диться.`,
+          why: "chtoby is a fusion of chto + by: the hypothetical particle lives inside. That explains the past form after it — the demanded outcome is an imagined event, so it takes by's tense. English 'that you will come' has no such logic; Russian's is airtight.",
           examples: [
             { ru: "Я взял зонт, что'бы не промо'кнуть.", en: "I took an umbrella so as not to get soaked." },
           ],

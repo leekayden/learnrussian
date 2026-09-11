@@ -183,6 +183,7 @@ Only бу́ду conjugates; the second verb stays frozen in the infinitive. This
 - Мы **пойдём** в кино́. — We'll go to the movies.
 
 And a handy pattern for plans: **собира́ться + infinitive** = to be going to: Я собира́юсь купи́ть маши́ну.`,
+          why: "The two futures preview the aspect system: budu + infinitive = process, perfective one-word = completed act. Learning them side by side now means learning aspect later as a refinement rather than a revolution.",
           examples: [
             { ru: "Мы посмо'трим фильм ве'чером.", en: "We'll watch a film tonight." },
             { ru: "Она' собира'ется поступа'ть в магистратуру'.", en: "She's going to apply for a master's program." },

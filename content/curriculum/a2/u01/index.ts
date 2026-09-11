@@ -247,6 +247,7 @@ One verb in this family drops an extra letter: **чувствовать** → я
           body: `Two verbs carry so much daily weight that they are worth knowing cold. **хоте́ть** (to want) and **мочь** (to be able) ignore both conjugation families and follow their own music. They also have a quirk: in хо́чешь/хо́чет the stress sits on the first syllable, but in хоти́м/хоти́те it jumps to the end — and they do not even keep the same root all the way through (хот- vs хот-ят is fine, but мочь → мо́гут swaps its consonant).
 
 Learn them as two six-word poems, speak them out loud a few times, and they are yours for life. You will use «я хочу́» and «мо́жно» in almost every conversation you have in Russian — ordering food, asking favours, making plans.`,
+          why: "Irregular verbs resist regularisation precisely because they are frequent — everyone hears them daily, so the odd forms never wear off. Rare verbs quietly level out; frequent ones fossilise. Same in English: went, was, gave.",
           table: {
             headers: ["", "хотеть", "мочь"],
             rows: [

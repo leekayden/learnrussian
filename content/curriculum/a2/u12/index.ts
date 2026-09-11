@@ -80,6 +80,7 @@ English signals the first two with a separate word (*myself*, *each other*); Rus
 - Я учу́**сь**, ты у́чишь**ся**, они́ у́чат**ся**
 
 In the past tense the letter before -ся/-сь is always -л- (a consonant), so masculine forms keep -ся (он купа́лся) while feminine forms get -сь (она́ купа́лась). The rule is mechanical — no exceptions, no stress tricks.`,
+          why: "After -l (a consonant) the suffix stays -sya; after a vowel (a) it becomes -s'. Pure euphony, zero exceptions: on kupalSYA, ona kupalAS'. The spelling rule is easier than saying it wrong in public.",
           table: {
             headers: ["Form", "Verb"],
             rows: [
@@ -175,6 +176,7 @@ The **-те** form is not "louder" — it is for several people AND for politene
           body: `Negative commands take the **imperfective** imperative: Не говори́ гро́мко! (Don't speak loudly — stop that behaviour), Не приходи́ сюда́! The imperfective forbids the *activity*.
 
 **Дава́й / Дава́йте** builds invitations: дава́й + perfective future (Дава́й пойдём!) or дава́й + infinitive (Дава́йте поговори́ть). Both patterns are on the street every day. Дава́йте is the polite/plural version; use it with anyone you would call вы.`,
+          why: "Negative commands take the imperfective because they ban a BEHAVIOUR, not one event. Ne opazdyvaj targets the habit of lateness. The perfective ne opozdaj exists as a one-off warning — rare and urgent. Ban = impf; warn = pf.",
           examples: [
             { ru: "Не опа'здывай!", en: "Don't be late!" },
             { ru: "Дава'йте начнём!", en: "Let's get started!" },

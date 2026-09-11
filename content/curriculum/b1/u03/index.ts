@@ -67,6 +67,7 @@ One trip vs habitual, same as идти/ходить.`,
 - **жени́ться на + prep** — to marry (a man): Он жени́лся на Та́не.
 - **проводи́ть вре́мя** — spend time: Мы хорошо́ проводи́м вре́мя.
 - **вы́ходно́й** — day off.`,
+          why: "Idioms freeze old grammar: vyjti zamuzh literally 'walk out beyond [into the husband's household]' — the za + accusative is the historical transfer. Knowing the scene makes both the meaning and the government memorable.",
           examples: [
             { ru: "Мы хорошо' проводи'м вре'мя вме'сте.", en: "We have a good time together." },
           ],
