@@ -67,8 +67,8 @@ Register is a choice of SYNONYMS plus syntax:
 4. Bookish: **Он по́мыслил уехать.** (ironic/archaic)
 5. Bureaucratic: **Им плани́руется отъе́зд.** (passive-impersonal)
 Each variant drags its own case/aspect furniture with it — that's why paraphrase is grammar.`,
-        },
           why: "Each variant drags its own government: наме'реваться + inf, реши'ться на + acc, плани'роваться impersonal. Paraphrase mastery means feeling which furniture moves with which word — that is C2 grammar: not more rules, but faster furniture-moving.",
+        },
       ],
       exercises: [
         {

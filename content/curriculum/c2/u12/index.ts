@@ -16,13 +16,16 @@ export const u12: Unit = {
       grammar: [
         {
           title: "One paragraph, every C2 device",
-          body: `Test-sentence surgery across all of unit 1–11:
+          body: `The C2 review spots devices in one paragraph: partitive (налива'й ча'ю), second locative (в саду'), diminutive (до'мик), particles (мол, же), frozen idiom (заруби' на носу'), instrumental (у'тром, врачо'м). Identify, explain, reproduce.
+
+Test-sentence surgery across all of unit 1–11:
 - partitive: налива́й **ча́ю**;
 - second locative: в **саду́** стои́т **до́мик**;
 - particles: он, **мол**, не знал; **же** я предупрежда́л;
 - idioms: заруби́ **на носу́**; бить **баклу́ши**;
 - instrumental: **у́тром**; **был врачо́м**.
 Practice = spot, explain, and reproduce each device in your own sentences.`,
+          why: "At C2 the devices stop being separate lessons and become one texture — real prose uses five per paragraph. Recognition speed is the last skill: the exam samples exactly that.",
         },
       ],
       exercises: [
@@ -55,7 +58,10 @@ Practice = spot, explain, and reproduce each device in your own sentences.`,
       grammar: [
         {
           title: "Edit like a native editor",
-          body: `Take a clumsy paragraph and fix: register clashes (канцеляри́т in dialogue), wrong aspect in performatives, non-frozen idiom swaps, parcellation in formal prose. The C2 exam below samples the same skills.`,
+          body: `The editing pass fixes register clashes: канцеляри'т in a friendly letter gets replaced with neutral phrasing; parcellation belongs to prose and speech, not legal documents. Style is knowing which grammar costume each genre wears.
+
+Take a clumsy paragraph and fix: register clashes (канцеляри́т in dialogue), wrong aspect in performatives, non-frozen idiom swaps, parcellation in formal prose. The C2 exam below samples the same skills.`,
+          why: "C2 editing is grammar plus taste: every device has a home register, and moving it out of place is a mistake even when the forms are perfect. That judgement — where does this construction belong? — is the final layer of mastery.",
         },
       ],
       exercises: [
