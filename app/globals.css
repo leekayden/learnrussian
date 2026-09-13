@@ -134,3 +134,29 @@
     @apply font-sans;
     }
 }
+/* ── Cyrillic stroke player ─────────────────────────────────────── */
+.ru-stroke-svg .ru-stroke-draw,
+.ru-stroke-svg .ru-stroke-ghost {
+  fill: none;
+  stroke: var(--color-foreground);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ru-stroke-svg .ru-stroke-ghost {
+  stroke-width: 3.4;
+}
+
+.ru-stroke-num-bg {
+  fill: var(--color-foreground);
+  opacity: 0.85;
+}
+
+.ru-stroke-num-text {
+  fill: var(--color-background);
+  font-size: 7px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+}

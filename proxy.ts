@@ -5,7 +5,7 @@ import { getSessionCookie } from "better-auth/cookies";
  * Next.js 16 proxy (formerly middleware). Cookie-presence checks only —
  * the authoritative session check happens in server layouts/actions.
  */
-const PROTECTED = ["/dashboard", "/learn", "/review", "/practice", "/progress", "/settings", "/placement"];
+const PROTECTED = ["/dashboard", "/learn", "/review", "/practice", "/progress", "/settings", "/placement", "/handwriting"];
 
 export function proxy(request: NextRequest) {
   const hasSession = getSessionCookie(request, { cookiePrefix: "learnrussian" });
