@@ -23,6 +23,7 @@ Omissions leave visible case traces:
 - **Ему́ не до э́того.** (He's got other concerns — prepositional idiom)
 - **Что ему́ поте́рять?** (What does he have to lose — infinitive question)
 Particles tune the mood: **вряд ли** (unlikely), **чуть не / едва́ не** (almost — with perfective past: Чуть не упа́л!), **а́вось** (hoping for the best).`,
+          plain: `Spoken Russian lives on short bursts: Мне бы кофе, Ни слова, Чуть не упал! Memorise such phrases whole — their punch comes from what they leave unsaid.`,
           why: "ни + genitive paints TOTAL absence — zero units of the thing, no verb needed because the absence itself is the statement. And parcellation (broken-off fragments) builds rhythm English can only imitate with dashes: prose and speech yes, academic writing no. Register decides.",
           examples: [
             { ru: "Я чуть не опозда'л!", en: "I almost missed it!" },

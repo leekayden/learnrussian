@@ -24,6 +24,7 @@ export const u01: Unit = {
 - Spelling: after к,г,х,ж,ш,ч,щ → **-и** (кни́ги, враги́)
 
 Notice that feminine -а and neuter -о pluralise by *swapping* their vowel, not adding to it. And the spelling rule you met with verbs (я учу́) returns here unchanged: hushers and к/г/х demand -и.`,
+          plain: `Find the noun's gender from its ending, and the plural ending follows almost automatically. One extra habit: after к, г, х and the hissing letters, always write -и instead of -ы.`,
           why: `The ending -ы/-и goes back to an old plural that behaved like a collective — Russians heard "students" as a crowd of student-kind, and crowds took their own form. The gender overlap (газеты vs студенты both -ы) is why you always need the noun's gender first.`,
 
           table: {
@@ -76,6 +77,7 @@ Notice that feminine -а and neuter -о pluralise by *swapping* their vowel, not
 - **стул → сту́лья**, **де́рево → дере́вья**
 - Mobile vowel drops: **продаве́ц → продавцы́**, **о́кно → о́кна** (о returns in gen pl)
 - **мать → до́чери / ма́тери** — дочь → до́чери, мать → ма́тери`,
+          plain: `English kept child/children from its own past; Russian does the same with друг/друзья and брат/братья. These are everyday words, so memorise each pair as it comes.`,
           why: `These irregulars are not random: the -ья suffix once marked collectives of kin — бра́тья, sons of one father. Russian kinship vocabulary froze in its oldest grammar, which is why the words you use most about people are the least regular.`,
 
           table: {
@@ -130,6 +132,7 @@ Notice that feminine -а and neuter -о pluralise by *swapping* their vowel, not
 
 - **Inanimate** = nominative plural: Я чита́ю журна́лы.
 - **Animate** = genitive plural: Я ви́жу студенто́в, студенток, друзе́й.`,
+          plain: `Before saying who you see or meet, ask one question: is it alive? Living beings take the form you would use after "many"; objects just keep their ordinary plural.`,
           why: `Animacy reflects an old intuition: beings that can act back were promoted to receiver status. Russian drew the line between walking-and-protesting and everything else — and applies it to chess pieces, consistent to the point of absurdity.`,
 
           table: {
@@ -178,6 +181,7 @@ Notice that feminine -а and neuter -о pluralise by *swapping* their vowel, not
 - **Instrumental: -ами/-ями** (студе́нтами, две́рями)
 - **Prepositional: -ах/-ях** (о студе́нтах, в кни́гах, в зда́ниях)
 Prepositional -ья nouns keep the ь: сту́лья → о сту́льях.`,
+          plain: `Good news: for the "to", "with" and "about" plural forms, every noun — man, woman or thing — uses the same short set of endings. Learn -ам, -ами, -ах once and you have them all.`,
           why: `Why one ending set for all genders? These cases descend from an older plural that never cared about gender. The genitive plural (next step) is where genders stayed separate — which is exactly why it is so much harder.`,
 
           table: {
@@ -226,6 +230,7 @@ Prepositional -ья nouns keep the ь: сту́лья → о сту́льях.`,
 - feminine **-а → drop** (кни́г), **-я → -ь** (пе́сен), **-ь → -ей** (тетра́дей)
 - neuter **-о → drop** (о́кон), **-е → -ей** (море́й), **-ие → -ий** (зда́ний)
 - Always: **мно́го / ма́ло / не́сколько / ско́лько / 5+ + gen pl**`,
+          plain: `After "many", "few", "how many" and every number from five up, the noun shrinks into its shortest, most stubborn form — sometimes even losing an ending. Treat each common word's version as its own little fact.`,
           why: `The drop-the-vowel pattern (книг from книга) is the mobile-vowel phenomenon: vowels strong in the singular weaken and vanish in the plural. Some plurals look "too short" because the old skeleton shows through.`,
 
           table: {

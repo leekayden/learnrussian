@@ -20,6 +20,7 @@ export const u08: Unit = {
 - verbs in -ать/-ять → **-нн-**: прочита́ть → про́читанный, потеря́ть → поте́рянный
 - verbs in -ить → **-енн-** (stem change): купи́ть → ку́пленный, реши́ть → решённый
 - one-syllable stems → **-т-**: взя́ть → взя́тый, откры́ть → откры́тый, забы́ть → за́бытый`,
+          plain: `These are "done-to" words: прочитанный means "having been read". Build them from the done-version of the verb, and the verb's last letters usually tell you which ending to attach — -нн-, -енн- or -т-.`,
           why: "-нн/-енн/-т are three old adjective-forming suffixes that latched onto different verb classes. The distribution is historical, not logical — but it is almost exceptionless, which is why native speakers never hesitate: the infinitive's tail picks the suffix.",
 
           table: {
@@ -65,6 +66,7 @@ export const u08: Unit = {
           body: `Short participles (прочи́тана, постро́ен) are predicates: Кни́га прочи́тана. Long participles (прочи́танная кни́га) are attributes. The pair рассе́янный/рассе́ян shows the split at its clearest: permanent trait vs current state.Short participles act as predicates: Кни́га **прочи́тана**. Заво́д **постро́ен**. Окна **закры́ты**.
 Compare: **рассе́янный** (absent-minded — permanent trait) vs **рассе́ян** (scattered — state): Лю́ди рассе́яны по го́роду.
 **волнова́ть** → взволнова́н (upset, state) vs волнова́тельный (worrying).`,
+          plain: `The long form is a label; the short form is news — the book has been read, the tickets are sold out. Reach for the short form when the result matters.`,
           why: "Short forms descend from old predicative participles — they report what HAS HAPPENED to the subject. Long forms are adjectives — they describe what the subject IS. Result vs characteristic; English marks it with 'has been opened' vs 'is open'.",
           examples: [
             { ru: "Письмо' бы'ло напи'сано и отпра'влено.", en: "The letter was written and sent." },

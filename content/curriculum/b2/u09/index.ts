@@ -23,6 +23,7 @@ Prefixes attach to all three carry pairs:
 - везти́/вози́ть: привезти́, увезти́, перевезти́ (transport across)
 - вести́/води́ть: привести́ (bring a person), увести́ (lead away), отвести́ (take aside)
 Metaphor: переноси́ть встре́чу (reschedule a meeting), заводи́ть друзья́ (make friends), доводи́ть до бе́зумия.`,
+          plain: `The same direction tags you know from going verbs attach to carrying verbs: при- brings it here, у- takes it away. Watch out — переносить means reschedule, not carry across.`,
           why: "The prefix логика transfers wholesale: при- toward the speaker, у- away, пере- across. Перенести́ встре́чу works because time is being treated as space — the meeting gets moved across the calendar. Russian spatial grammar runs the abstract world too.",
           examples: [
             { ru: "Он принё'с мне кофе.", en: "He brought me coffee." },

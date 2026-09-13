@@ -29,6 +29,7 @@ Compare:
 - «Я уже́ прочита́л.» — I've already read it. (done)
 
 English gets by with one verb plus helper words (*was reading* / *have read* / *managed to read*). Russian builds the distinction directly into the verb. Every single verb you learn from now on comes with an aspect label — treat the pair as one vocabulary item.`,
+          plain: `Most actions come as a two-verb team: one names the doing, the other the getting-it-done. Читать is reading as a process, прочитать means you finished it. Learn every verb together with its partner.`,
           why: `Why does Russian need this? Because without helper verbs like *was/have/managed*, Russian needs some other machine to distinguish "I was reading" from "I read it". Aspect is that machine — baked into the verb itself. It is arguably the deepest feature of the language, and the habits you build now will pay off through C1.`,
           table: {
             headers: ["Question", "Aspect", "Example"],
@@ -83,6 +84,7 @@ English gets by with one verb plus helper words (*was reading* / *have read* / *
 - пить → **вы**пить (drink up)
 
 Some pairs change more than a prefix: покупа́ть → **купи́ть** (the whole stem swaps — these are called suppletive pairs and simply need memorising). The dictionary does the bookkeeping for you: every verb's page lists its aspect partner (the partner field in our database), so you never have to guess.`,
+          plain: `The done-partner is usually the everyday verb with a small piece glued on the front: делать becomes сделать, писать becomes написать. A few pairs swap more than that and just need memorising.`,
           why: "Prefixes are the productive engine of the verb system: hundreds of perfective partners are manufactured this way. The dictionary lists each pair (partner field), so you never guess — but recognising the pattern turns new verbs into old friends.",
           table: {
             headers: ["Imperfective", "Perfective"],
@@ -140,6 +142,7 @@ Some pairs change more than a prefix: покупа́ть → **купи́ть** 
 - «Я гото́вился, но не сдал.» — I prepared but didn't pass. (process = imperfective)
 
 There is a second distinction hiding here. «Я не чита́л э́ту кни́гу» (imperfective) = I never read it at all. «Я не прочита́л» (perfective) = I didn't finish it. Negation + aspect lets you say very precise things about very little.`,
+          plain: `In the past, ask one question: did it get done? Я читал means you were reading; я прочитал means you finished. Even 'never read it' and 'didn't finish it' split this way.`,
           why: `The negated perfective is subtle but learnable: a perfective verb claims a completed event, so negating it denies exactly that completion — *the result didn't happen*. The negated imperfective denies the process itself. English forces you to paraphrase ("didn't manage to read" vs "never read it"); Russian just flips the aspect.`,
           table: {
             headers: ["Sentence", "Reading"],
@@ -190,6 +193,7 @@ There is a second distinction hiding here. «Я не чита́л э́ту кн�
 Negative future: **не бу́ду + imperfective** — Я не бу́ду кури́ть. (I won't smoke / won't be smoking)
 
 And a construction you will use constantly: **на́чну / ко́нчу + imperfective infinitive** — на́чну чита́ть (I'll start reading), ко́нчу писа́ть (I'll finish writing). The aspect lives in на́чну/ко́нчу; the infinitive stays imperfective because it names the process being started or ended.`,
+          plain: `Two futures, two jobs: буду plus the plain verb for ongoing plans (буду готовиться), and a single changed verb for a finished act (куплю). To refuse in the future: не буду курить.`,
           why: `Why must на́чать take an imperfective infinitive? Because starting and finishing apply to *processes* — you cannot "start a completed action", you start the doing of it. The perfective partner (нача́ть + прочита́ть) sounds wrong to natives for the same logical reason. Aspect choices often reduce to simple logic once you see what each form claims.`,
           table: {
             headers: ["Pattern", "Example"],

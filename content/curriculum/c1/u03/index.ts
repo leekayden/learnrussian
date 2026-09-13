@@ -21,6 +21,7 @@ export const u03: Unit = {
 Writers compress chains of actions: «Он встал, помолча́в, и, не глядя на нас, вы́шел» (He stood, silent a moment, and left without looking at us).
 Adverbial gerunds also express MANNER: игра́ючи (effortlessly), лю́бясь... молча́ (wordlessly — lexicalised).
 Perfective gerunds sequence events BEFORE the main verb: Прочита́в, он вздохну́л.`,
+          plain: `The -в and -я words fold two sentences into one, a bookish economy Russians write more than they say. Whatever you compress, the same person must be doing both actions.`,
           why: "When subjects diverge between the gerund and the main verb, Russian grammar rejects the construction — use a когда́-clause instead. And some gerunds are lexicalised: молча́ stopped being 'while silent' and became just an adverb meaning silently — grammar fossilised into vocabulary.",
           examples: [
             { ru: "Не перестава'я, она' писа'ла.", en: "Without pausing, she kept writing." },

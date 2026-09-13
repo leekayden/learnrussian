@@ -21,6 +21,7 @@ export const u09: Unit = {
 - **Не успе́л + past, как + past** — had barely done X when Y: Не успе́л я сесть, как телефо́н зазвони́л.
 - **Сто́ит + infinitive, и** — all it takes: Сто́ит попроси́ть, и он помо́жет.
 The first frame pairs perfective past with perfective past; the second pairs infinitive with future.`,
+          plain: `These frames are how Russians tell quick-fire stories: No sooner had I…, All it takes is…. Nail them and your storytelling instantly sounds more native.`,
           why: "The frame is a fixed two-part mould: first the interrupted action, then the interruption with как. Fossilised syntax — learn the chunk whole, not word by word.",
 
           table: {
@@ -67,6 +68,7 @@ The first frame pairs perfective past with perfective past; the second pairs inf
 
 - **Доста́точно + infinitive, что́бы / и** — it's enough to: Доста́точно оди́н раз попа́сть, что́бы полюби́ть.
 - **Чем + comparative, тем + comparative** — the more, the more: Чем бо́льше, тем лу́чше.`,
+          plain: `Чем…, тем… maps onto the more…, the more… almost word for word — the one frame you can build by feel. Достаточно…, чтобы is its cousin: one small action, and the result follows.`,
           why: "Стои́t here is impersonal ('it is worth'), so no subject appears; the и-clause then states the automatic consequence in the future. The pair достато́чно…, что́бы works the same way with sufficiency instead of minimal effort.",
 
           table: {

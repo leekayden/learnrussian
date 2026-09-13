@@ -22,6 +22,7 @@ Register is a choice of SYNONYMS plus syntax:
 - colloquial: **купи́ть / си́нуть / де́ньги** → neutral: **приобрести́ / потра́тить / сре́дства** → formal-official: **израсхо́довать фина́нсовые сре́дства**.
 - «он че́сал язы́к» (idle chatter) → «он вёл пусты́е бесе́ды».
 - Ellipsis and parcellation disappear in formal style; participles and passive appear.`,
+          plain: `Raising the register means re-dressing whole sentences, not swapping single words: деньги become денежные средства and every casual shortcut vanishes. Choose the rung first — the wording and the sentence shape follow together.`,
           why: "Choosing a formal synonym changes the sentence around it: elliptical subjects disappear, participles appear, genitive chains lengthen. Register is not word-swapping — it is a whole grammatical costume.",
 
           table: {
@@ -67,6 +68,7 @@ Register is a choice of SYNONYMS plus syntax:
 4. Bookish: **Он по́мыслил уехать.** (ironic/archaic)
 5. Bureaucratic: **Им плани́руется отъе́зд.** (passive-impersonal)
 Each variant drags its own case/aspect furniture with it — that's why paraphrase is grammar.`,
+          plain: `'He is going to leave' has five Russian versions, from собирается уехать to the bureaucratic им планируется отъезд. Each new verb drags its own endings and partners along — the furniture comes as a set.`,
           why: "Each variant drags its own government: наме'реваться + inf, реши'ться на + acc, плани'роваться impersonal. Paraphrase mastery means feeling which furniture moves with which word — that is C2 grammar: not more rules, but faster furniture-moving.",
         },
       ],

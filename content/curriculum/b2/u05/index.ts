@@ -20,6 +20,7 @@ export const u05: Unit = {
 - Yes/no questions: Он спроси́л: «Ты придёшь?» → Он спроси́л, **приду́ ли я** (ли after the key word).
 - Wh-questions keep the question word: Она́ спроси́ла, **где** я был.
 NO tense shifting — Russian keeps the original tense, changes only person.`,
+          plain: `Report statements with что, yes-or-no questions with ли, and keep where and when words as they are. The tense never changes — repeat it exactly as it was said.`,
           why: "English backshifts tenses in reported speech (*'I am busy' → he said he WAS busy*); Russian refuses. The reported words are treated as quoted reality, not re-timed. Only the person changes — everything else stands as the original speaker said it.",
 
           table: {
@@ -66,6 +67,7 @@ NO tense shifting — Russian keeps the original tense, changes only person.`,
 - **Он попроси́л меня́ + infinitive**: Он попроси́л меня́ позвони́ть.
 - Stronger verbs: веле́ть, приказа́ть, тре́бовать + что́бы / infinitive:
   Он веле́л мне уйти́. — He ordered me to leave.`,
+          plain: `To report an order, use чтобы with a past form, or glue the action word straight after the asking verb. Softer requests take чтобы; sharp orders take the short version.`,
           why: "The что́бы-frame treats the command as a demanded unreal event — hypothetical particle inside, past form outside. The bare-infinitive frame treats it as an order transmitted verbatim. Register and power live in the choice.",
 
           table: {

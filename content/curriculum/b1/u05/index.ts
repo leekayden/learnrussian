@@ -19,6 +19,7 @@ export const u05: Unit = {
           body: `-ся has four jobs (reflexive, reciprocal, engage-in, located) — and one spelling rule: after a consonant -ся, after a vowel -сь. Он купа́лся, она́ купа́лась. The rule is mechanical; the meanings need context.- **True reflexive** — action on oneself: мы́ться, одева́ться, бри́ться
 - **Reciprocal** — each other: знако́миться, обнима́ться, ви́деться (Мы ре́дко ви́димся.)
 - **Middle** — for oneself: собира́ться (get ready), купа́ться (go swimming)`,
+          plain: `Think of -ся as a tiny "self" tag: the action bounces back on the doer, two people do it to each other, or it marks a routine like getting dressed. Context decides which.`,
           why: "-ся is a worn-down stub of the old pronoun сябе (self), glued onto verb endings centuries ago. That is why one suffix covers 'myself', 'each other' and nothing-in-particular — context picks the reading, and Russian is comfortable with that ambiguity in a way English is not.",
 
           table: {
@@ -72,6 +73,7 @@ export const u05: Unit = {
   - боя́ться + **genitive**: бою́сь темноты́
   - наде́яться **на + acc**: наде́юсь на тебя́
   - интересова́ться + **instrumental**: интересу́юсь исто́рией`,
+          plain: `To say a house "is being built", Russian just adds -ся — no helping verb needed. Feeling verbs like гордиться demand their own fixed noun form, so memorise each one with its partner.`,
           why: "Passive -ся exists because Russian can passivise any imperfective verb without a participle — no auxiliary needed. That is why official Russian leans on it: it is shorter than the English passive and available in every tense for free. Watch the case government of emotion verbs too: горди́ться + instrumental, боя́ться + genitive — they pair with cases, not prepositions.",
 
           table: {

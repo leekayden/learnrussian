@@ -20,6 +20,7 @@ export const u03: Unit = {
 - Письмо́ **напи́сано** (автором). — The letter was written (by the author).
 - Решéние **бы́ло при́нято** коми́ссией. — The decision was taken by the commission.
 Short forms only in predicates; long forms only inside noun phrases (на́писанное письмо́).`,
+          plain: `To say that something was done, put the thing first and use the short done-form: письмо написано. If you name the doer, it comes at the end with a changed ending.`,
           why: "Short forms only in predicates; long forms only inside noun phrases. The agent instrumental (napisano pisatelem) is the Russian equivalent of English 'by the author' — except it works for every passive, not just formal ones.",
           examples: [
             { ru: "Дома' постро'ены в про'шлом ве'ке.", en: "The houses were built in the last century." },
@@ -61,6 +62,7 @@ Short forms only in predicates; long forms only inside noun phrases (на́пи�
 - Письмо́ **пи́шется**. — The letter is being written.
 - Здесь **продаю́тся** фру́кты. — Fruit is sold here.
 - Автомоби́ли **выпуска́ются** заво́дом. — Cars are produced by the factory (agent instrumental also with -ся!).`,
+          plain: `Add -ся to say a thing is being done or gets done in general; the short form appears only for a finished result. Дом строится versus дом построен — now versus done.`,
           why: "The aspect system polices the passive twice over: -ся passives are imperfective (ongoing/general), short participles are perfective (completed result). Choosing between them is the same 'process vs done' question you first met in A2 Unit 7 — now in the passive voice.",
 
           table: {

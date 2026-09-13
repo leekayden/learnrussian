@@ -21,6 +21,7 @@ export const u10: Unit = {
 - Short comparative + **genitive**: Он умне́е меня́. Он ста́рше бра́та.
 - **чем + any case** (must repeat the noun's case): Он умне́е, чем я. Это важне́е, чем э́то.
 The genitive version is shorter and very common in speech.`,
+          plain: `After a comparison word like старше, the thing you compare against changes its ending: старше брата. If that feels awkward, say чем and keep the word in its normal shape.`,
           why: "The genitive after a comparative is Russian's 'of the two' logic — he is older OF THE TWO brothers. чем instead builds a full comparison clause. Both correct; the genitive is what speech prefers and writing tolerates in either form.",
 
           table: {
@@ -69,6 +70,7 @@ The genitive version is shorter and very common in speech.`,
 - **горáздо / значи́тельно / мно́го + comparative** = much: мно́го лу́чше.
 - **чем…, тем…**: Чем бо́льше, тем лу́чше. — The more, the better.
 - Superlative: **са́мый** (neutral), наибо́лее (formal), -ейший (emphatic bookish): важне́йший.`,
+          plain: `Boost any comparison with гораздо or значительно to mean much better. For the more…the better pattern, both halves need their own comparison word; самый makes things the best.`,
           why: "чем…тем is a fixed correlative frame — both halves required, each holding a comparative. And the three superlative strategies differ by register, not meaning: са́мый for speech, наибо́лее for reports, -ейший for rhetoric. Choosing is choosing a register.",
 
           table: {

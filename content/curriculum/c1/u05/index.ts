@@ -23,6 +23,7 @@ Evidential markers show WHERE the knowledge comes from:
 - **ка́жется / оказа́лось** — impression vs discovery: Ка́жется, дождь ко́нчился. Оказа́лось, что... 
 - **я́кобы** — reported with doubt: Он я́кобы был там. (he CLAIMED to be)
 - **ка́к бу́дто / бу́дто бы** — as if (doubtful reporting): Он бу́дто бы не зна́л.`,
+          plain: `These words tell your listener how you know something and how much you vouch for it. Pick должно быть when you are guessing from evidence and якобы when you repeat a claim you doubt.`,
           why: "я́кобы and бу́дто бы cast doubt on the REPORT, not the event — journalists and gossipers live on them. And «Вам бы отдохну́ть» is advice without an imperative: бы marks the situation as unreal/desirable, the dative names who would benefit. Soft advice, no order given.",
           examples: [
             { ru: "Он я'кобы ничего' не зна'л.", en: "He claims he knew nothing (and we doubt it)." },

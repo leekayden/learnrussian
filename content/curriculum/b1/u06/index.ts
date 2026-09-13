@@ -20,6 +20,7 @@ export const u06: Unit = {
 - Если бы у меня́ бы́ло вре́мя, я бы пришёл. — If I had time, I would come.
 - Я бы купи́л маши́ну. — I would buy a car. (бы can float: Я купи́л бы…)
 бы never changes — the PAST verb carries gender/number: Она́ бы сказа́ла.`,
+          plain: `Add бы and a past-tense verb, and any sentence becomes a daydream: if I had time, I would come. The past form here is fake — it signals "not real", exactly like English would and had.`,
           why: "бы is a fossil of the old aorist of быть ('was'). Hypotheticals are imagined pasts of possible worlds — so Russian recruits the past form and marks the whole scene as unreal with this tiny particle. English split the job between 'would' and 'had'; Russian has one word.",
 
           table: {
@@ -65,6 +66,7 @@ export const u06: Unit = {
 - **Мне хоте́лось бы** — I would like (also: я хоте́л бы).
 - **Хороши́ бы… / жаль** — set uses.
 - Wishes: Если бы (только) за́втра была́ суббо́та! — If only tomorrow were Saturday!`,
+          plain: `Drop бы into a request and the demand melts away: "could you" instead of "can you". Use "I would like" forms when ordering or asking, and you will sound polite without trying.`,
           why: "The mechanism is distance: by pushes the request into an imagined world, so the speaker never demands anything in the real one. Same politeness logic as English 'could you' vs 'can you' — grammatical distancing buys social softness.",
           examples: [
             { ru: "Не мог бы ты мне помо'чь?", en: "Could you help me?" },

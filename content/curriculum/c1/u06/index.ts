@@ -20,6 +20,7 @@ export const u06: Unit = {
 
 - **написа́ть** — write (result); **переписа́ть** — rewrite; **дописа́ть** — finish writing; **записа́ть** — note down; **подписа́ть** — sign; **описа́ть** — describe; **списа́ть** — copy/cheat; **вы́писать** — order/write out; **прописа́ть** — register (officially).
 Each prefix contributes direction, completeness, or metaphor. Compare nouns: подпись (signature), описа́ние (description), предписа́ние (directive).`,
+          plain: `Learn new verbs in families, not alone: one root plus a small front piece gives you write, rewrite, sign, copy and more. Guessing from the piece works more often than it fails.`,
           why: "Each prefix contributes direction, completeness or metaphor — and the derived nouns keep the family resemblance: подпи́сь (signature), опи́сание (description), предписа́ние (directive). Learn the grid as a system and a dozen words come free with each verb.",
           examples: [
             { ru: "Не списыва'й!",

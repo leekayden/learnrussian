@@ -21,6 +21,7 @@ export const u07: Unit = {
 - **со́рок / девяно́сто / сто** have only two forms: nom/acc (со́рок) and everything else (сорока́).
 - **две́сти–девятьсо́т** decline fully: двухсо́т, двумста́м, двумяста́ми, о двухста́х.
 - **оба (m/n) / обе (f)** decline like adjectives: у обо́их братьев, с обеи́ми сёстрами.`,
+          plain: `Good news first: сорок, девяносто and сто have only two shapes between them. The hundreds change in every position, while оба and обе bend like short adjectives.`,
           why: "English backshifts (*said he WAS busy*); Russian treats the reported words as quoted reality. Only the person changes — the tense stands as the original speaker said it. This makes Russian reported speech simpler once you stop translating English habits.",
 
           table: {
@@ -69,6 +70,7 @@ export const u07: Unit = {
 - Fractions: тре́ть, четверть + gen sg: тре́ть ста́тьи́... тре́ть доро́ги.
 - Approximation: postposed genitive or reversed word order: **пять лет** → **ле́т пять**; **часа́ два** = about two hours.
 - Predicate with 2–10: singular neuter is neutral (Прошло́ два го́да), plural for animate/agents (Вы́шло пя́еро... Пя́теро дете́й вы́шли).`,
+          plain: `To say about five years, flip the order: лет пять. And полтора is your one-and-a-half word — after it the thing stays in its single form, as in полтора часа.`,
           why: "Both frames exist because Russian distinguishes *requesting an outcome* (что́бы, softer) from *transmitting an instruction* (infinitive, harder). Fairy-tale tsars велят; office managers просят, чтобы.",
           examples: [
             { ru: "Я ждал полтора' часа'.", en: "I waited an hour and a half." },

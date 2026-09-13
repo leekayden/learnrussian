@@ -25,6 +25,7 @@ export const u10: Unit = {
 - **у-** = depart: уходи́ть/уйти́, уезжа́ть/уе́хать
 
 Watch the stems bend: прийти́ → **приду́**, придёшь, приду́т (the д resurfaces), while уй­ти → уйду́ keeps its й. The imperfective partners (приходи́ть, уходи́ть) are what you use for habits and processes: «Он всегда́ ухо́дит по́здно».`,
+          plain: `при- means arriving and у- means leaving: пришёл (came), ушёл (left). Once you feel при as 'here now' and у as 'gone', dozens of other verbs start explaining themselves.`,
           why: `При- and у- are pure spatial logic: при- presses *toward* the speaker or destination (it lives inside прие́хать, принеси́... bring here, прийти́), у- pulls *away* (уйти́, увезти́). Once you feel при = "here now" and у = "gone", dozens of verbs decode themselves without a dictionary.`,
           table: {
             headers: ["Prefix", "On foot", "By vehicle"],
@@ -76,6 +77,7 @@ Watch the stems bend: прийти́ → **приду́**, придёшь, пр�
 The destination keeps the accusative: войти́ **в ко́мнату**. Leaving takes **из + genitive**: вый­ти **из до́ма**, вы́йти **из авто́буса** (get off the bus).
 
 This pair also survives in everyday nouns you already know: **вход** (entrance) and **выход** (exit) — the metro signs you will look at every day.`,
+          plain: `в- sends you in, вы- sends you out: войти (enter), выйти (exit). The same two live on every metro sign as вход and выход — likely the first words you read underground.`,
           why: "v-/vo- and vy- are exact antonyms: enter vs exit. The prefix v- is a preposition in disguise (v komnatu = vojti v komnatu), which is why the destination stays accusative. And vyjti derived the everyday nouns vkhod/vykhod.",
           examples: [
             { ru: "Гость вошёл и се'л у окна'.", en: "The guest came in and sat by the window." },
@@ -117,6 +119,7 @@ This pair also survives in everyday nouns you already know: **вход** (entran
           body: `- **за-** = drop in on the way / step in briefly: заходи́ть/зайти́. «Заходи́те!» is what Russians say when you visit — *come on in!* The за- tells the guest the visit is casual, unplanned.
 - **под-** = approach: подходи́ть/подойти́ — Подойди́ сюда́. (Come up here.) The по- intensifies the *near* idea.
 - **от-** = move away from: отходи́ть/отойти́ — Отойди́ от две́ри. Also, for trains: **По́езд отхо́дит в семь** (departs).`,
+          plain: `Three prefixes paint three little scenes: за- for dropping in on the way, под- for coming closer, от- for stepping away. Заходите! — come on in! — is what a host says when you knock.`,
           why: `Notice how physical these prefixes are: за- ducking behind/into something, под- closing a distance, от- opening one. Russian builds its motion vocabulary from *spatial scenes*, then reuses the same scenes for abstract meaning — отойти́ от дел (retire from business), зайти́ слишком далеко́ (go too far). Feel the scene, and the abstract uses follow.`,
           table: {
             headers: ["Prefix", "Meaning", "Example"],
@@ -162,6 +165,7 @@ This pair also survives in everyday nouns you already know: **вход** (entran
 - **пере-** = cross or relocate: перейти́ до́рогу (cross the street), перее́хать в но́вую кварти́ру (move flats)
 - **про-** = pass by/through: пройти́ ми́мо ма́газина (walk past), прое́хать свою́ остано́вку (miss your stop)
 - **с-** = descend: сойти́ с авто́буса (get OFF — с + genitive), while сесть на авто́бус is getting ON.`,
+          plain: `Four more scenes: до- reaches a goal, пере- crosses over, про- passes by, с- climbs down. They even explain everyday phrases: перейти дорогу (cross the street), сойти с автобуса (get off the bus).`,
           why: "Each prefix paints a spatial scene: do- reaching a goal, pere- crossing over, pro- sliding past, s- descending. Russian builds abstract meaning from these scenes too — pereekhat (move house) is literal crossing turned metaphor.",
           table: {
             headers: ["Prefix", "Meaning", "Example"],

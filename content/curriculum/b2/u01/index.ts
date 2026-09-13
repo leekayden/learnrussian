@@ -20,6 +20,7 @@ export const u01: Unit = {
 - **по-** + imperfective = do for a while: погуля́ть (take a walk), почита́ть, походи́ть (walk around a bit).
 - **от-/про- + time quantity** = spend that long: отрабо́тать пять лет (put in five years), просиде́ть весь ве́чер (sit through the whole evening).
 - **пере-/за-/по- + прекращение**: переста́ть (stop), забы́ть.`,
+          plain: `Small pieces stuck on the front of a verb add their own meaning: start doing, do for a while, or spend that long doing. Learn the piece, not just the whole verb.`,
           why: "These are called aspectual sub-meanings: the prefix no longer changes the scene, only the action's phase. За- = ingressive (crossing the entrance), по- = delimitative (a bounded stretch of doing). English needs a whole clause ('started singing', 'walked for a bit'); Russian gets it inside one word.",
 
           table: {
@@ -65,6 +66,7 @@ export const u01: Unit = {
           title: "Irregular pair partners",
           body: `Other prefixes measure time or repetition: отрабо́тать пять лет (put in five years), просиде́ть весь ве́чер (sit through the whole evening), переписа́ть (rewrite). And some pairs have irregular partners: занима́ться → заня́ться, тро́гать → тро́нуть, сохну́ть → вы́сохнуть.Some pairs surprise: занима́ться → заня́ться; тро́гать → тро́нуть; сохну́ть → вы́сохнуть; лга́ть/лга́л → солга́ть/солга́л (stem shortens: лгу, лгал but солгал).
 Aspect decides vowel/stress: умере́ть → умира́ть (die: once → many metaphorically).`,
+          plain: `Most verb pairs follow the pattern, but a few old, everyday verbs reshape themselves. Memorize занялся, тронул and высох as individuals, like English went or children.`,
           why: "Finitive prefixes (ot-, pro-) frame the action as SPENT — the time quantity becomes part of the verb. Irregular pairs exist because these verbs are old and frequent: frequent verbs resist regularisation the way English 'went' resists 'goed'.",
           examples: [
             { ru: "Он на'конец заня'лся спо'ртом.", en: "He finally took up sport." },

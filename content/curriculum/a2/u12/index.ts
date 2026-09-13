@@ -27,6 +27,7 @@ export const u12: Unit = {
 - **Located / stayed**: находи́ться (be located — «Музе́й нахо́дится в це́нтре»), остава́ться (stay).
 
 English signals the first two with a separate word (*myself*, *each other*); Russian folds them into the verb. There is no separate word to memorise — just the ending.`,
+          plain: `That little -ся folds 'myself' or 'each other' into the verb itself. English needs a separate word; Russian keeps it on the end: одеваться means to dress oneself.`,
           why: `-ся is a worn-down stub of the old reflexive pronoun *сябе* (self). It glued onto the ends of verbs and stayed there. That is why one suffix can mean "myself", "each other", or nothing in particular — it is one pronoun squeezed into grammar over centuries, and context picks the reading.`,
           table: {
             headers: ["Verb", "Meaning"],
@@ -80,6 +81,7 @@ English signals the first two with a separate word (*myself*, *each other*); Rus
 - Я учу́**сь**, ты у́чишь**ся**, они́ у́чат**ся**
 
 In the past tense the letter before -ся/-сь is always -л- (a consonant), so masculine forms keep -ся (он купа́лся) while feminine forms get -сь (она́ купа́лась). The rule is mechanical — no exceptions, no stress tricks.`,
+          plain: `Pure spelling comfort: after a vowel the tail shortens from -ся to -сь. Он купался, она купалась. Look at the letter before the tail and you cannot get it wrong.`,
           why: "After -l (a consonant) the suffix stays -sya; after a vowel (a) it becomes -s'. Pure euphony, zero exceptions: on kupalSYA, ona kupalAS'. The spelling rule is easier than saying it wrong in public.",
           table: {
             headers: ["Form", "Verb"],
@@ -131,6 +133,7 @@ If the stem ends in a consonant, add **-и**: сесть →сядут→ ся́
 The **-те** form is not "louder" — it is for several people AND for politeness with one person, exactly like вы. A shop assistant says «повтори́те», a coach says «повтори́».
 
 **Perfective imperatives** give one concrete instruction: Купи́ хлеб! Скажи́ ему́ пра́вду! — they ask for a single completed act, not an ongoing effort.`,
+          plain: `Commands come from the they-form: читают gives читай, and adding -те makes it polite or plural — читайте. If you would say вы to someone, use the -те form; that is the whole politeness rule.`,
           why: `Why build from the они-form? Because the stem that shows up in «они́ чита́ют» is the verb's true skeleton — the same skeleton the past participle used. Taking it minus the ending and adding -й/-и gives the imperative with almost no effort. Verbs whose они-form surprises you (даду́т) will have surprising imperatives (дай) — the skeleton never lies.`,
           table: {
             headers: ["Verb", "ты", "вы"],
@@ -176,6 +179,7 @@ The **-те** form is not "louder" — it is for several people AND for politene
           body: `Negative commands take the **imperfective** imperative: Не говори́ гро́мко! (Don't speak loudly — stop that behaviour), Не приходи́ сюда́! The imperfective forbids the *activity*.
 
 **Дава́й / Дава́йте** builds invitations: дава́й + perfective future (Дава́й пойдём!) or дава́й + infinitive (Дава́йте поговори́ть). Both patterns are on the street every day. Дава́йте is the polite/plural version; use it with anyone you would call вы.`,
+          plain: `To ban something, use the everyday verb: не говори громко. To invite, start with давай: давай пойдём, давайте поговорим. Forbidding and inviting each have their own fixed shape.`,
           why: "Negative commands take the imperfective because they ban a BEHAVIOUR, not one event. Ne opazdyvaj targets the habit of lateness. The perfective ne opozdaj exists as a one-off warning — rare and urgent. Ban = impf; warn = pf.",
           examples: [
             { ru: "Не опа'здывай!", en: "Don't be late!" },
@@ -219,6 +223,7 @@ The **-те** form is not "louder" — it is for several people AND for politene
 The impersonal set needs the dative person (from Unit 4): **Мне нужно рабо́тать**, **Мо́жно войти́?**, **Здесь нельзя́ кури́ть**. And **сто́ит** = it is worth: **Стои́т посмотре́ть** — worth watching.
 
 The difference between до́лжен and ну́жно is subtle: до́лжен carries personal duty or a promise made; ну́жно carries objective necessity. «Я до́лжен позвони́ть ма́ме» (I promised), «Ну́жно позвони́ть в банк» (the situation demands it).`,
+          plain: `должен means must and changes with gender: я должен, она должна. Можно asks permission, нельзя forbids, and стоит means something is worth doing: стоит попробовать.`,
           why: `до́лжен is a short-form adjective (from долг, debt) — literally "in-debt for doing X". That is why it agrees like an adjective (gender/number) and never like a verb (person). Short adjectives were predicates in Old Russian — saying «он до́лжен» was "he is in-debt" — and the +infinitive glue came later. Grammar fossils again.`,
           table: {
             headers: ["Word", "Meaning", "Example"],

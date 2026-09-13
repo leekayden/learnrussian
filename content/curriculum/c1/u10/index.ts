@@ -21,6 +21,7 @@ export const u10: Unit = {
 - Relative clause → **participle**: «студе́нты, кото́рые сдали́ экза́мен» → «студе́нты, сдавшие экза́мен»
 - Clause → **verbal adverb**: «Когда́ он уви́дел нас, он улы́бнулся» → «Уви́дев нас, он улы́бнулся»
 Same subject required for the verbal adverb; participle agrees with its noun.`,
+          plain: `These rewrites are the fastest way to sound advanced: same facts, fewer words. English does the same when the students who passed become the passing students.`,
           why: "Both transformations DELETE a conjunction and its subject — which is why the shared-subject and agreement rules matter so much. The compressed version is one grammatical level higher: exactly the shift from B1-clarity to C1-economy.",
           examples: [
             { ru: "Де'ти, кото'рые игра'ют во дворе', шумя'т. → Де'ти, игра'ющие во дворе', шумя'т.", en: "Children playing in the yard are noisy." },
@@ -62,6 +63,7 @@ Same subject required for the verbal adverb; participle agrees with its noun.`,
 - Personal → **impersonal**: «Я хочу́ спать» → «Мне хо́чется спать»; «Я не спал» → «Мне не спало́сь»
 - Active → **passive**: «Заво́д вы́пускает авто́мобили» → «Автомоби́ли выпуска́ются заво́дом»; «Писа́тель написа́л рома́н» → «Рома́н на́писан писа́телем»
 Check agreement after EVERY transformation — number, gender, case.`,
+          plain: `Russian often reports states as things that happen to you rather than things you do: мне не спалось instead of I did not sleep. After any rewrite like this, recheck every ending.`,
           why: "The impersonal shift moves the experiencer into the dative and demotes the verb to -ся; the passive shift promotes the object to subject and demotes the agent to instrumental. Every transformation ends with an agreement check — number, gender, case — because transformations break exactly where agreement slips.",
 
           table: {

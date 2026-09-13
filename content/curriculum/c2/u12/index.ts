@@ -25,6 +25,7 @@ Test-sentence surgery across all of unit 1–11:
 - idioms: заруби́ **на носу́**; бить **баклу́ши**;
 - instrumental: **у́тром**; **был врачо́м**.
 Practice = spot, explain, and reproduce each device in your own sentences.`,
+          plain: `By now the devices should fire in one breath: наливай чаю, в саду домик, заруби на носу, он мол знал. Spot them in a paragraph, explain them, then produce them yourself on demand.`,
           why: "At C2 the devices stop being separate lessons and become one texture — real prose uses five per paragraph. Recognition speed is the last skill: the exam samples exactly that.",
         },
       ],
@@ -61,6 +62,7 @@ Practice = spot, explain, and reproduce each device in your own sentences.`,
           body: `The editing pass fixes register clashes: канцеляри'т in a friendly letter gets replaced with neutral phrasing; parcellation belongs to prose and speech, not legal documents. Style is knowing which grammar costume each genre wears.
 
 Take a clumsy paragraph and fix: register clashes (канцеляри́т in dialogue), wrong aspect in performatives, non-frozen idiom swaps, parcellation in formal prose. The C2 exam below samples the same skills.`,
+          plain: `The final skill is taste: every construction has a home — чаю and parcellation live in speech, настоящий договор in contracts. When the form is right but the room is wrong, a native editor rewrites.`,
           why: "C2 editing is grammar plus taste: every device has a home register, and moving it out of place is a mistake even when the forms are perfect. That judgement — where does this construction belong? — is the final layer of mastery.",
         },
       ],

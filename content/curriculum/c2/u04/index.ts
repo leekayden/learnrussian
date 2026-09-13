@@ -21,6 +21,7 @@ export const u04: Unit = {
 - **не + imperfective imperative** = general prohibition, don't even start: Не кури́ здесь! Не тро́гай!
 - **не + perfective imperative** = warning against a SPECIFIC, often accidental completion: Не опозда́й! (mind you don't be late), Не забу́дь (don't forget), Не упади́!
 The perfective version fears a one-off mishap; the imperfective bans the practice.`,
+          plain: `Не кури! bans the habit itself; Не забудь! fears one specific slip. Every Russian 'don't' makes you choose: forbid a practice, or brace for one accident.`,
           why: "The perfective prohibition fears a single completed accident — the same 'done' logic, deployed protectively. The imperfective ban targets the behaviour itself. English 'don't' covers both; Russian makes you decide whether you are legislating or warning.",
 
           table: {
@@ -70,6 +71,7 @@ The perfective version fears a one-off mishap; the imperfective bans the practic
 Russian once had a habitual marker **-ива-/-ва-** + stress shift: ха́живал (used to walk [regularly]), си́живал (used to sit), гова́ривал (used to say), ви́дывал (have seen in one's time).
 Today they survive as **folkloric/facetious**: «Зна́ем мы, как вы пе́вали!» or literary nostalgia: «Здесь Пу́шкин быва́л».
 Modern Russian expresses habit with imperfective past: он чита́л по вечера́м.`,
+          plain: `Verbs like хаживал and говаривал mean 'used to do it regularly', yet today they survive only in folk tales and jokes. Enjoy them in classic novels; in your own speech say читал по вечерам.`,
           why: "The -ива- habitual was a full aspect category once; Russian dissolved it and kept a few forms as seasoning. You will read them in Tolstoy and hear them in irony — «Он вида́л ви́ды» (he's seen it all). Never use them neutrally; they carry a wink.",
           examples: [
             { ru: "Мы с ним вмéсте хаживали по грибы.", en: "He and I used to go mushrooming together." },

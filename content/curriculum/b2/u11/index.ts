@@ -21,6 +21,7 @@ export const u11: Unit = {
 - Surprise questions: **Ра́зве ты не знал?** (Surely you didn't know?), **Неуже́ли он согласи́лся?**
 - Ellipsis — the verb drops, cases stay: **Мне бы ко́фе.** (I'd like coffee), **Ему́ не до э́того.**
 - **А́вось** — hoping for the best: А́вось повезёт.`,
+          plain: `In casual speech Russians drop the verb and let the word endings do the work: мне бы кофе says it all. Use разве and неужели when a fact surprises you.`,
           why: "Ellipsis is grammatical, not sloppy: the dative «мне» plus a bare noun is a complete utterance because case endings carry the meaning the verb would. English needs 'I would like'; Russian's case system makes the verb redundant.",
           examples: [
             { ru: "Мне бы ко'фе и что'-нибу'дь к ча'ю.", en: "I'd like a coffee and something to go with it." },
@@ -57,6 +58,7 @@ export const u11: Unit = {
 - Impersonal officialese: **предполага́ется** (it is assumed), **сле́дует** (one should), **не допуска́ется** (is not permitted).
 - Headlines use infinitives / verbless noun strings: **«Откры́ть станцию к ма́ю»**, **«Встре́ча в Кремле́: что изве́стно»**.
 - Set public signs: **Тре́буется** (Wanted), **Ка́сса**, **Ухо́д отсю́да воспрещён** (bookish).`,
+          plain: `Official Russian avoids naming people — signs and rules lean on fixed phrases like следует and не допускается. Learn these as whole chunks; you will meet them on every form and door.`,
           why: "Official Russian is impersonal on principle: responsibility dissolves into the institution. Предполага́ется has no subject because nobody person is claiming it. Headlines use infinitives to freeze the future into a plan. Learning the register means learning who is allowed NOT to appear in the sentence.",
           examples: [
             { ru: "Не допуска'ется кури'ть.", en: "Smoking is not permitted." },

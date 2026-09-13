@@ -22,6 +22,7 @@ After negated modal words:
 - **Imperfective** forbids the practice: Не на́до кури́ть (don't smoke — ever), Не сто́ит спо́рить.
 - **Perfective** forbids ONE specific deed, often with regret that it already happened: Не на́до бы́ло купи́ть э́ту кварти́ру! (shouldn't have bought THIS one)
 - **избега́ть + gerund**: избега́й встреча́ться с ним.`,
+          plain: `Ask yourself what you are really banning: a habit in general takes the everyday form, a single deed you regret takes the once-only one — and that wording admits the deed already happened.`,
           why: "Aspect polices the imperative like everything else: perfective = one bounded act, imperfective = the activity itself. «Сади́тесь» at dinner is hospitality; «Сядь!» is a drill sergeant. Same verb, different world.",
 
           table: {
@@ -69,6 +70,7 @@ After negated modal words:
 - Perfective imperative = one concrete order: **Закро́й окно́!**
 - Imperfective imperative = process, politeness, 'start doing': **Расска́зывай!** (Go on, tell me!), **Сади́тесь** (please sit — inviting, not ordering)
 - Double forbidding: **Ни в ко́ем слу́чае не согласи́тесь!** (under no circumstances agree — perfective for the single deed)`,
+          plain: `Pointed commands and warm invitations come from the same verb. Choose the ongoing form when you mean please do, go ahead, or keep going — natives use it far more often than textbooks suggest.`,
           why: "The perfective after не на́до implies the deed ALREADY happened — it is regret spoken aloud. The imperfective version is advice against a practice. Same two words, different timelines.",
           examples: [
             { ru: "Расска'зывай, не оста'навливайся!", en: "Go on telling, don't stop!" },

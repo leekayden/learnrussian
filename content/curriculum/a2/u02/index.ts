@@ -27,6 +27,7 @@ export const u02: Unit = {
 - Ends in **-й** (музе́й, σουvenir... no: сувени́р is consonant; музе́й) or soft **-ь** → usually **masculine** (музе́й, слова́рь), though a small set of -ь nouns are feminine (пло́щадь, дверь) — those you learn with the word, like accounting for exceptions in any language.
 
 Why should a word for "table" have a gender at all? Because gender is not about sex — it is a filing system. It tells every adjective, every past-tense verb and every pronoun which ending to take: краси́вый го́род, краси́вая у́лица, краси́вое мо́ре; го́род стои́л, у́лица стои́ла. Once you know a noun's gender, a whole chain of other forms decides itself.`,
+          plain: `You can usually read a noun's gender straight off its last letter: consonant means masculine, -а or -я means feminine, -о or -е means neuter. No memorising lists.`,
           why: `Gender endings are the visible tracks of case endings: masculine nouns keep a bare consonant, feminine nouns carry the historical -а, neuters carry -о/-е. Because the endings are so consistent, the gender is not arbitrary data to memorise — it is printed on the word itself.`,
           table: {
             headers: ["Gender", "Ending", "Example"],
@@ -88,6 +89,7 @@ For **inanimate things** the system is delightfully light:
 - Feminine **-а → -у**: кни́га → Я чита́ю кни́гу; **-я → -ю**: му́зыка → слу́шаю му́зыку.
 
 So the entire workload falls on feminine nouns in -а/-я. Everything else keeps its dictionary form.`,
+          plain: `Making something the object changes its ending — but for things, only feminine words in -а/-я actually move: книга becomes книгу. Masculine and neuter objects look exactly the same.`,
           why: `Why do only feminines move? Historical accident with a pattern: the -у/-ю ending was originally a separate object-marker that attached to one class of nouns and then spread only to feminine -а/-я words. Masculine objects stay "nominative-looking" because the accusative form they would have had merged with the nominative centuries ago.`,
           table: {
             headers: ["Nominative", "Accusative"],
@@ -144,6 +146,7 @@ So the entire workload falls on feminine nouns in -а/-я. Everything else keeps
 Feminine animates work exactly like objects did in the previous lesson (сестра́ → сестру́). What changes the game conceptually: now a sentence like «Я зна́ю э́того челове́ка» shows the *person* marked, and the marking agrees in an unexpected place — the adjective too (**э́того**, not э́тот).
 
 A quick sanity test students find useful: can it walk away and complain? Then it's animate. Кот — yes. Книга — no. Слова́рь — no (despite containing "words").`,
+          plain: `Living things get special treatment: when a person or animal is the object, their ending changes — я вижу брата, not 'брат'. Objects like books and houses stay as they are.`,
           why: `The animate/inanimate split is ancient grammar memory: objects that could act back were grammatically treated more like recipients. Russian kept the distinction with remarkable discipline — it even applies to chess pieces (виннова́я фи́гура... skip) and to nouns like поко́йник (deceased) versus труп (corpse): one is animate, the other isn't. Language is dark sometimes.`,
           table: {
             headers: ["Nominative", "Accusative"],
@@ -197,6 +200,7 @@ A quick sanity test students find useful: can it walk away and complain? Then it
           body: `To say where you or something **is** (not where it is going — that's the next lesson), Russian uses the **prepositional case**, which exists only after a handful of prepositions: в (in), на (on/at), о/об (about), при (at the time of).
 
 The formation is friendly: almost everything ends in **-е**. Masculine consonants grow -е (в го́роде, в музе́е), feminine -а/-я trade their ending for -е/-и (в шко́ле, в Росси́и — note -ия → -ии), and neuters swap -о/-е for stressed -е (окно́ → в окне́, мо́ре → в мо́ре). The case is easy to form and impossible to use alone — it never appears without one of its prepositions (в, на, о/об, при), which is exactly why it is called the PREPOsitional.`,
+          plain: `To say where something is, put в or на in front and change the place's ending, usually to -е: в городе, в школе, на работе. The little word and the ending work as a team.`,
           why: "The prepositional is the only case that cannot exist without its preposition — that is the whole point of its name. It is also the easiest to form: almost everything grows -e. The work is choosing v vs na, which is vocabulary.",
           table: {
             headers: ["Nominative", "Prepositional"],
@@ -253,6 +257,7 @@ The formation is friendly: almost everything ends in **-е**. Masculine consonan
 - **Куда́?** (where to?) → в/на + **accusative**: Я иду́ в шко́лу. — I am going to school.
 
 Same preposition, different case, different reality. With feminine nouns you can see it plainly: в Росси́и (in Russia) vs в Росси́ю (to Russia). With masculine nouns the difference is invisible (в теа́тре vs в теа́тр) — you still know which is which from the verb (idyom vs est).`,
+          plain: `Being somewhere and going somewhere are two different questions with two different endings: в России means in Russia, в Россию means to Russia. The verb tells you which one you need.`,
           why: `This pair (prepositional = static location, accusative = direction) is one of the most systematic things in Russian. It never wobbles: если you can ask где?, it is prepositional; если куда́?, it is accusative. Learners who anchor on the two question words stop mixing them up within a week.`,
           table: {
             headers: ["Question", "Case", "Example"],

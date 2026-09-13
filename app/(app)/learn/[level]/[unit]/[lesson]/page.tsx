@@ -12,7 +12,7 @@ import { AudioButton } from "@/components/audio-button";
 import { withStress, GENDER_LABELS } from "@/lib/russian";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lock } from "lucide-react";
+import { Lock, Lightbulb } from "lucide-react";
 
 export default async function LessonPage({
   params,
@@ -81,6 +81,17 @@ export default async function LessonPage({
               <CardTitle className="text-base">{block.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
+              {block.plain ? (
+                <div className="flex gap-2 rounded-lg border border-emerald-600/30 bg-emerald-500/5 px-3 py-2 text-sm">
+                  <Lightbulb className="mt-0.5 size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                  <p>
+                    <span className="font-medium text-emerald-700 dark:text-emerald-400">
+                      In plain terms:{" "}
+                    </span>
+                    {block.plain}
+                  </p>
+                </div>
+              ) : null}
               <Md text={block.body} />
               {block.why ? (
                 <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 py-2 text-sm">

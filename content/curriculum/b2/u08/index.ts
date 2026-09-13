@@ -22,6 +22,7 @@ Word order in Russian is grammar, not preference. Ма́ма прие́хала 
 - **Ма́ма прие́хала.** (answer to: Что случи́лось? — news: mom arrived)
 - **Прие́хала ма́ма.** (answer to: Кто прие́хал? — news: it's MOM)
 Particles sharpen focus: же (contrast/reminder), ведь (you know, after all), именно (precisely), да́же (even).`,
+          plain: `Before you speak, decide which question your sentence answers and put that answer last. Мама приехала reports the event; приехала мама points the finger at mom.`,
           why: "Because case endings carry the grammar, Russian can reorder freely — and uses that freedom to mark information structure. English fixes SVO and marks focus with stress; Russian marks it with position. Answering 'who came?' with 'Мама прие́хала' answers a different question than the one asked.",
           examples: [
             { ru: "Я же говори'л!", en: "But I told you so!" },

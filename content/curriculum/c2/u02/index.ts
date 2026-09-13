@@ -22,6 +22,7 @@ Both «Он был врач» and «Он был врачо́м» are correct —
 - **Nominative** (Он был врач): a *plain fact* of biography, no evaluation, often about the past only.
 - **Instrumental** (Он был врачо́м): a *characteristic/role during that time*, implying duration or classification: «В де́тстве он был больны́м ребёном».
 With стать/казаться/оказаться/являться the instrumental is REQUIRED.`,
+          plain: `Он был врач is a bare fact from a biography; Он был врачом shows him living the role day after day. After стать, казаться and оказаться, the -ом ending is not optional.`,
           why: "The instrumental frames the role as something the person WORE across time — a classification, an evaluation. The nominative just states the fact. And become/считаться/каза́ться always demand the instrumental, because entering or appearing-as a role is inherently dynamic.",
 
           table: {
@@ -71,6 +72,7 @@ Time and manner instrumental without prepositions:
 - Manner: **бего́м** (at a run), **шёпотом** (in a whisper), **по́лзком** (crawling), **кри́ком** (with a shout).
 - Simile: **сто́ять столбо́м** (stand like a post).
 In short: the instrumental turns nouns into adverbs of time and manner.`,
+          plain: `English says 'in the morning', 'in a whisper', 'at a run'; Russian simply ends the word: утром, шёпотом, бегом. No preposition — the ending alone says when or how.`,
           why: "Time-instrumentals (у́тром, ле́том) are frozen: the preposition withered away and the case carries time alone. Manner-instrumentals paint pictures — сто́ять столбо́м is literal grammar doing metaphor work. English needs prepositions for all of these.",
           examples: [
             { ru: "У'тром я иду' в парк бего'м.", en: "In the morning I jog to the park." },

@@ -20,6 +20,7 @@ export const u12: Unit = {
 - **-ние / -тие** = the process (of perfective verbs): чита́ть → чте́ние, строи́ть → строи́тельство, писа́ть → писа́ние (rare) / письмо́ (result).
 - **-ость** (adj → abstract noun): ра́достный → ра́дость, молодо́й → мо́лодость, сле́пой → слепота́.
 - **-изм** = -ism: тури́зм, капитали́зм, федерали́зм.`,
+          plain: `Learn a few word-building endings and your vocabulary grows by itself: -тель names the doer, -ние names the action, -ость turns qualities into things. Writer, reading, youth — all manufactured, not memorised.`,
           why: "These suffixes are nearly productivity rules: given any verb, -тель predicts its agent and -ние predicts its process noun with 90% accuracy. That is why Russian dictionaries feel smaller than they look — the morphology manufactures vocabulary on demand.",
 
           table: {
@@ -71,6 +72,7 @@ export const u12: Unit = {
 - **-н-**: де́тство → де́тский? classic: пу́стой → пусты́нный (desert-like).
 - **-лив-** = inclined to: терпе́ть → терпе́ливый, говори́ть → говорли́вый, сча́стье → счастли́вый.
 - Verbs from adjectives: **беле́ть / черне́ть** (to turn white/black), старе́ть (grow old), молоде́ть.`,
+          plain: `A well-chosen ending can carry a whole attitude: -лив- means "in the habit of", which is why терпеливый, from "to hold out", means patient. Colours even become verbs: белеть means to turn white.`,
           why: "The -e- verbs (belet, staret) express a CHANGE OF STATE — becoming the quality. English needs become/turn/get; Russian has a conjugable family. And -liv- means 'having a habit of' — suffixes are compressed sentences.",
           examples: [
             { ru: "На рассве'те не'бо ста'ло розове'ть.", en: "At dawn the sky began to turn pink." },

@@ -24,6 +24,7 @@ Suffixes shrink nouns — with warmth or with contempt for the OBJECT'S importan
 - **-иц-/-иц**: лу́жа → лу́жица.
 - Feminine -к-/-очк-/-ечк-: вода́ → во́дичка, ру́ка → ру́чка (also: handle/pen!).
 Diminutives of names: Ма́ша → Ма́шенька, Пе́тя → Пе́тенька.`,
+          plain: `Endings like -ик and -ечка add warmth, not size: водичка is simply a friendly way to offer water, and ручка just means pen. Listen for the affection, not for anything small.`,
           why: "Diminutives are emotional grammar: they rank the speaker's ATTITUDE toward the object, not its size. Води́чка at a party is affectionate; in a recipe it is just cosy register. And lexicalised ones (ручка) have left size behind entirely.",
 
           table: {
@@ -68,6 +69,7 @@ Diminutives of names: Ма́ша → Ма́шенька, Пе́тя → Пе́т
 - Pejoratives: **-ашк-/-яшк-**: старика́шка (old geezer), мальчи́шка (can be neutral: boy).
 - Collective contempt: **-ня**: солдатня́, матро́сня, бюрократи́ческая братва́ — the -ня pattern (солдатня́) is derogatory.
 - **-ило/-ыло**: громи́ло (bruiser), верзи́ла (lanky fellow) — animate masculine in -а, decline feminine-style but masculine agreement!`,
+          plain: `Big endings carry attitude: домище is enormous, ручища a crude paw, солдатня an open insult. And громила-type names for men end in -а yet still go with masculine verbs — громила пришёл.`,
           why: "The -ищ- suffix is size with attitude; -ня and -ашк- add contempt. And громи́ла-type nouns agree masculine (вошёл) while declining feminine in the accusative — the noun's meaning (a man) overrides its ending. Agreement follows sense where it must.",
           examples: [
             { ru: "Ру́ки-крюки́, язи'к-лопа'та.", en: "All thumbs and a gift of the gab (folk description)." },

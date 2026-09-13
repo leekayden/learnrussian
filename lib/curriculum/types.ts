@@ -29,6 +29,10 @@ export interface GrammarBlock {
   /** The core explanation: what it is, when to use it, how English does it
    * differently. May run several paragraphs — depth is welcome. */
   body: string;
+  /** The gist in one or two short, jargon-free sentences — what this rule
+   * means for the learner, in words anyone can follow. Rendered as an
+   * "In plain terms" callout above the body. */
+  plain?: string;
   /** The reasoning behind the rule — why Russian works this way. Rendered
    * as a distinct "why it works" callout. */
   why?: string;

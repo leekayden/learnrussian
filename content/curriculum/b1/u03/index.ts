@@ -20,6 +20,7 @@ export const u03: Unit = {
 - **везти́/вози́ть** = carry by vehicle
 - **вести́/води́ть** = lead (person, animal) / drive (вести́ маши́ну)
 One trip vs habitual, same as идти/ходить.`,
+          plain: `For carrying and leading, Russian asks two quick questions: on foot or by vehicle, and once or again and again? Answer both and the right verb picks itself.`,
           why: "Russian splits 'go' along mode-of-travel, then splits 'carry' along the same axis. Нести́ and везти́ differ exactly as идти́ and е́хать do — foot vs vehicle. Once the axis is visible, the verbs stop being a list and become a system.",
 
           table: {
@@ -67,6 +68,7 @@ One trip vs habitual, same as идти/ходить.`,
 - **жени́ться на + prep** — to marry (a man): Он жени́лся на Та́не.
 - **проводи́ть вре́мя** — spend time: Мы хорошо́ проводи́м вре́мя.
 - **вы́ходно́й** — day off.`,
+          plain: `Some everyday phrases about marriage and time are just old "go" words with a twist — выйти замуж literally pictures walking out into marriage. Learn these as whole phrases rather than word by word.`,
           why: "Idioms freeze old grammar: vyjti zamuzh literally 'walk out beyond [into the husband's household]' — the za + accusative is the historical transfer. Knowing the scene makes both the meaning and the government memorable.",
           examples: [
             { ru: "Мы хорошо' проводи'м вре'мя вме'сте.", en: "We have a good time together." },

@@ -20,6 +20,7 @@ export const u09: Unit = {
 - Она́ вошла́, **улыба́ясь**. — She came in smiling.
 - Он шёл, **здороваясь** с прохо́жими.
 Formation: present-tense они-form minus -ут/-ат, plus -я: чита́ют → чита́я; занима́ются → занима́ясь.`,
+          plain: `One word in -я packs "while doing" into a sentence: she came in, smiling. The rule that matters: the -я action must belong to the same person as the main verb.`,
           why: "Two formations because two time-relations exist: simultaneous (-я) and prior (-в). English splits these across 'while smiling' and 'having smiled'; Russian keeps one part of speech and switches the ending. The golden rule: the verbal adverb's subject MUST be the main clause's subject — Chekhov's joke about the hat flying off 'while approaching the station' shows what happens otherwise.",
 
           table: {
@@ -65,6 +66,7 @@ Formation: present-tense они-form minus -ут/-ат, plus -я: чита́ют
           body: `Perfective verbal adverbs: past masc minus -л, plus -в (верну́вшись for -ся verbs). Прочита́в письмо́, он сжёг его́ — the reading COMPLETED before the burning began.- **Прочита́в письмо́, он сжёг его́.** — Having read the letter, he burned it.
 - Formation: perfective past masculine minus -л, plus -в: прочита́л → прочита́в
 - Reflexives add -шись: верну́лся → верну́вшись`,
+          plain: `Swap -я for -в and the timing flips: the small word's action is finished first, then the main event happens. Having read the letter, he burned it — order baked right in.`,
           why: "The -в suffix sits on the past stem, so the adverb inherits completion: its action is strictly BEFORE the main verb's. Sequence (first read, then burn) is baked into the morphology — no conjunction needed.",
 
           table: {

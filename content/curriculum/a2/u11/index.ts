@@ -26,6 +26,7 @@ export const u11: Unit = {
 - **5 and up + genitive plural**: пять мину́т, де́сять рубле́й
 
 So «два студе́нта» is literally *two of-student*. The counted noun never stays in the plain plural next to 2–4 — that is the single most counterintuitive thing in early Russian.`,
+          plain: `In English the noun never moves: two books, five books. In Russian the noun's ending depends on the number in front of it — два часа but пять часов. Two to four, and five and up, follow different patterns.`,
           why: `Why "two of-hour"? Russian counts from a whole: два часа́ means *two units taken out of the hours-pile*, and taking from a pile is genitive territory. Five and up simply grab a bigger armful — the plural genitive. The system is ancient, logical, and completely regular once you surrender to the "of" feeling.`,
           table: {
             headers: ["Number", "Phrase", "Noun case"],
@@ -79,6 +80,7 @@ So «два студе́нта» is literally *two of-student*. The counted noun
 - **Hundreds**: сто, две́сти, три́ста, четы́реста, then пятьсо́т…девятьсо́т (sót = hundred, pluralized).
 
 Only 40 (со́рок) and 90 (девяно́сто) have just two forms (nom/acc vs everything else). Ты́сяча behaves like a feminine noun — and watch out: «тысяча человек» is genitive plural after it, so a million Russians say «с ты́сячей челове́к» colloquially. Standard: с ты́сячей челове́к (gen pl allowed after ты́сяча).`,
+          plain: `Russian builds big numbers from three neat blocks: 11–19 all end in -надцать, the tens follow one pattern, and the hundreds stack up from сто. Only two rebels break it: сорок (40) and девяносто (90).`,
           why: "The -nadtsat family is a fossil of 'on ten': odin-na-dtsat = one-on-ten. Reading the etymology makes the whole teens row transparent — and sorok/devyanosto are the two rebels worth memorising on sight.",
           table: {
             headers: ["Number", "Russian"],
@@ -133,6 +135,7 @@ Only 40 (со́рок) and 90 (девяно́сто) have just two forms (nom/ac
 **The native folk system** counts the *coming* hour: 3:05 is «пять мину́т четвё́ртого» — *five minutes of the fourth [hour]*; 3:15 is «четверть четвё́ртого» (a quarter of the fourth); 3:30 has its own word: **пол четвё́ртого** (half of the fourth). The coming-hour logic is why «две мину́ты четвё́ртого» means 3:02, never 2:02.
 
 Special words: **полдень** (noon), **по́лночь** (midnight) — «Встре́тимся в по́лночь».`,
+          plain: `For telling time, the simple way always works: три тридцать. Russians also count the coming hour — 3:05 is 'five minutes of the fourth' — so learn to understand that and speak whichever feels easier.`,
           why: `Why count the coming hour? Old European clocks struck a bell (the "fourth stroke" announced the fourth hour) — so the minutes *before* the fourth stroke belonged to the coming hour. Russian kept that bell-logic; English kept it only in fossil phrases like *quarter to four*.`,
           table: {
             headers: ["Time", "Russian"],
@@ -185,6 +188,7 @@ Special words: **полдень** (noon), **по́лночь** (midnight) — «
 - Months: **в + prepositional** — в январе́, в ма́е, в дека́бре́.
 - Years: **в + prepositional + году́** — в две ты́сячи два́дцать шесто́м году́. (Note году́ — a special old form, not году... it IS году.)
 - Weekend: **в вы́ходны́е**; on weekdays: **в бу́дни** / по бу́дням.`,
+          plain: `One small switch separates a plan from a habit: в пятницу is this Friday, по пятницам is Fridays in general. Months are simpler — just в plus the month: в мае, в январе.`,
           why: "The v/po switch on days is the fastest spoken test of plan vs habit: v pyatnitsu = one Friday on the calendar, po pyatnitsam = Fridays as a routine. Russians hear the difference instantly — so should you.",
           table: {
             headers: ["Pattern", "Example"],
@@ -234,6 +238,7 @@ Special words: **полдень** (noon), **по́лночь** (midnight) — «
 **How often?** — **раз** (time/occasion) + в + accusative: **раз в неде́лю** (once a week), **два ра́за в ме́сяц** (twice a month), **три ра́за в день**. Or frequency adverbs: ча́сто, ре́дко, всегда́, никогда́ (remember: никогда́ needs a negated verb — Я никогда́ не курю́).
 
 English *for* two hours has no Russian preposition — «два ча́са» stands alone. Adding «в тече́ние двух часо́в» is correct but bookish.`,
+          plain: `How long takes no preposition at all — я ждал два часа, and English 'for two hours' loses its 'for'. How often counts occasions instead: два раза в неделю is twice a week.`,
           why: `Duration uses accusative because the time-span is measured like an object being consumed — you live *through* two hours, the way you read *two books*. Frequency instead counts *occasions* (раз), and occasions stack in the раз в неде́лю frame. Different question → different grammar.`,
           examples: [
             { ru: "Я занима'лся три ча'са и вы'жат.", en: "I studied for three hours and I'm drained." },

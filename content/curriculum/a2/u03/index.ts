@@ -26,6 +26,7 @@ For masculine nouns the formation could not be simpler — take the dictionary f
 - soft -й/-ь → **-я**: музе́й → музе́я, учи́тель → учи́теля
 
 This case is everywhere once you start noticing it: authorship (рома́н Пу́шкина), ingredients (ча́шка ча́я), parts (ключ от маши́ны), and the whole "possession" system you will meet in Step 3.`,
+          plain: `To connect two nouns — my brother's car, a cup of tea — Russian changes the ending of the second noun instead of adding a word. No 's and no 'of'; the ending does the joining.`,
           why: `Think of the genitive as Russian's way of gluing two nouns together without a preposition. English glues with apostrophe-s or *of*; Russian glues with the ending -а/-я. Because the glue is the ending, the glued noun can move around the sentence freely: маши́на бра́та / бра́та маши́на — same meaning, different emphasis.`,
           table: {
             headers: ["Nominative", "Genitive", "Example"],
@@ -81,6 +82,7 @@ This case is everywhere once you start noticing it: authorship (рома́н П�
 - After к, г, х, ж, ш, ч the feminine is always **-и** (подру́га → подру́ги) — the same spelling law you met in verbs.
 
 Two small irregular tribes live here too. Nouns ending in **-ия** double the vowel: Росси́я → Росси́и, лекция → лекции. And the **-мя** nouns (вре́мя, и́мя) grow an extra -ен-: вре́мя → вре́мени, и́мя → и́мени. You will meet вре́мени constantly, because time is exactly what students never have enough of.`,
+          plain: `For feminine and neuter words, the connecting ending replaces the last vowel rather than adding to it: машина becomes машины, море becomes моря. A few small words like время simply have to be memorised.`,
           why: `Notice the elegant symmetry: the genitive mostly just swaps the noun's "gender badge" (-а/-о) for a different vowel. The genitive is the oldest case in the language — it is doing the work English spreads across 's, *of*, *from*, and partitive *some*. One case, many jobs — that is why you will keep meeting it in every unit from now on.`,
           table: {
             headers: ["Nominative", "Genitive"],
@@ -137,6 +139,7 @@ The construction has three slots, and you control what goes in each:
 3. **the thing, in the nominative** — it is the grammatical subject!
 
 To negate, swap есть for **нет** and push the thing into the genitive: **У меня́ нет маши́ны**. The thing that "isn't there" is measured in genitive — as if absence had a quantity of zero.`,
+          plain: `There is no everyday 'I have' in Russian. You say 'by me there is...' — у меня есть машина — and to say you lack it, you swap есть for нет.`,
           why: `This pattern exists because Russian treats possession as *location*: what you "have" is simply what is near you. That is also why the past tense agrees with the THING, not the owner — «У меня́ бы́ла маши́на» (the car was by me) — the car is still the grammatical hero of the sentence.`,
           table: {
             headers: ["Pattern", "Example"],
@@ -188,6 +191,7 @@ To negate, swap есть for **нет** and push the thing into the genitive: **
 - containers and units: **ча́шка ча́я**, **ли́тр молока́**, **килогра́мм я́блок**, **стака́н воды́**, **па́чка чи́псов**
 
 There is a subtle meaning shift worth stealing: «Я хочу́ воды́» (genitive) = *I want some water*, an indefinite gulp; «Я хочу́ во́ду» (accusative) = *I want THE water*, the specific one in front of you. Genitive keeps the request vague and polite.`,
+          plain: `Amounts change the noun's ending: много работы, чашка чая, литр молока. Where English uses 'of', Russian uses this ending — and it keeps requests pleasantly vague: дай воды.`,
           why: `Why genitive after quantities? Because the genitive is fundamentally the case of "amount/portion" — it answers "how much of it?". English shows the same instinct when it uses *of*: a cup **of** tea, a lot **of** work. Russian just made the *of*-part an ending.`,
           table: {
             headers: ["Measure", "Genitive"],
@@ -241,6 +245,7 @@ There is a subtle meaning shift worth stealing: «Я хочу́ воды́» (ge
 - **Relations**: для (for the benefit of), без (without), о́коло (near), у (by/at someone's place), про́тив (against): для ма́мы, без са́хара, о́коло до́ма
 
 Notice how much English does with *of/from/for/without/after* — and Russian does all of it with one case. The preposition tells you the relationship; the genitive ending is the constant.`,
+          plain: `Eight little words — from, off, after, until, without, for, near, by — all ask for the same 'of'-style ending on the noun after them. Learn it once and eight prepositions come free.`,
           why: `These prepositions share a deep meaning: distance, origin, separation, absence. The genitive is the "away from" case — so of course it pairs with *from*, *until*, *without*, *against*. Once you see the semantic logic (genitive = pulling away), the list stops being arbitrary.`,
           table: {
             headers: ["Preposition", "Example"],

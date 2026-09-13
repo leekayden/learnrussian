@@ -20,6 +20,7 @@ export const u07: Unit = {
 - чита́ют → чита́ющий (who reads / reading)
 - говоря́т → говоря́щий, дерма́т... держа́т → держа́щий
 Active present participles describe a noun DOING the action NOW (relative time): лю́ди, говоря́щие по-ру́сски (people who speak Russian).`,
+          plain: `This is a whole which-clause folded into one adjective: "people who speak Russian" becomes "speaking people". Take the they-form of the verb, swap its ending for -щ-, and let it agree like any adjective.`,
           why: "Present participles are relative time: 'the man reading' is reading NOW relative to the main verb. That is why they pair with imperfectives only — perfectives describe completed events, and you cannot be 'currently done'. The aspect system polices the participle.",
 
           table: {
@@ -65,6 +66,7 @@ Active present participles describe a noun DOING the action NOW (relative time):
           body: `Past active participles use -вш- on the past-tense stem: прочита́ть → прочита́вший ('who has read'). They describe someone whose action COMPLETED before the main verb — Арти́ст, спевший э́ту пе́сню, стал знамени́тым.Past stem + **-вш-**: прочита́ть → прочита́вший (who (has) read), прие́хать → прие́хавший.
 Verbs on consonant stems use -ш-: нести́ → нёсший, вести́ → ве́дший.
 Use: челове́к, __ who did the action BEFORE the main verb: Арти́ст, спевший э́ту песню, стал знамени́тым.`,
+          plain: `Same trick for someone who has already done the thing. English needs a whole who-clause for this; Russian folds "who performed" into one adjective ending in -вш-.`,
           why: "Past active participles attach -vsh- to the past stem, so they inherit the past: they always mark PRIOR action relative to the main verb. English translates with a relative clause in any tense; Russian fixes the time relation in one word.",
           examples: [
             { ru: "Студе'нт, сде'лавший оши'бку, испра'вил её.", en: "The student who made a mistake corrected it." },

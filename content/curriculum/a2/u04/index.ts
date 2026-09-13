@@ -27,6 +27,7 @@ export const u04: Unit = {
 - feminine **-я/-ь → -е**: Та́ня → Та́не, ма́ть → ма́тери
 
 So the trio works like this: **Я помога́ю сестре́.** — I help my sister. The helping flows *toward* her, and the dative ending is the arrow.`,
+          plain: `Verbs like help, call and answer point at a person, and that person gets its own ending: я звоню сестре, я помогаю другу. It does the work of English 'to'.`,
           why: `The dative is called the "giving" case for a reason: its core meaning is **direction toward a receiver**. That is why the same case shows up later for gifts (дарю́ кому́), showing (показыва́ть кому́), promises, and even age and emotions — anything that happens *to* someone rather than being done *by* someone. Learn it as the receiver-case and the later uses feel inevitable.`,
           table: {
             headers: ["Nominative", "Dative"],
@@ -80,6 +81,7 @@ So the trio works like this: **Я помога́ю сестре́.** — I help 
 - **он → ему́**: an н appears out of nowhere. Blame history; just memorise it.
 
 The preposition **к** (toward) also takes the dative, and it is how you say you are heading to a *person*: **Я иду́ к врачу́** (to the doctor's), **Заходи́ к нам** (come over to our place). For places you would use в/на + accusative instead: в шко́лу, на рабо́ту.`,
+          plain: `Seven short words — мне, тебе, ему, ей, нам, вам, им — cover 'to me, to you, to him' and the rest. They turn up everywhere, from 'help me' to 'I like it', so learn them early.`,
           why: "The pronouns tebe, mne, emu are among the top 20 most frequent words in spoken Russian — they carry the dative in pomogi mne, mne nravitsya, mne kholodno. Master these seven and half of conversational dative usage is automatic.",
           examples: [
             { ru: "Помоги' мне, пожа'луйста.", en: "Help me, please." },
@@ -132,6 +134,7 @@ The year-word depends on the number:
 - **5 and up → лет**: Мне два́дцать **лет**. (and yes: 11–14 also take лет)
 
 This год/го́да/лет trio is the same agreement logic you will meet with any counted noun — age is simply where everyone meets it first.`,
+          plain: `Age happens to you in Russian: мне двадцать лет says 'to me are twenty years', never 'I am twenty'. The year-word also follows the number: год, года or лет.`,
           why: `Why does age use the dative? Because Russian frames age as something that *happens to you* — the years are accumulating onto you, the receiver. The same dative-experiencer logic later gives you «Мне хо́лодно» (I'm cold) and «Мне повезло́» (I got lucky). You are not the agent of your own age; it arrives at you.`,
           table: {
             headers: ["Number", "Word"],
@@ -186,6 +189,7 @@ The verb agrees with the THING, not with you:
 - several things → **нра́вятся**: Ей нра́вятся ру́сские фи́льмы.
 
 And it works for people too: «Ей нра́вится твой брат» can absolutely mean she fancies your brother. Context decides how deep the liking goes.`,
+          plain: `Liking runs backwards: the thing pleases you. Мне нравится этот город literally says 'this city is pleasing to me' — and the verb follows the thing, singular or plural, not the liker.`,
           why: `Why backwards? Because Russian frames liking as something that happens **to** you — an experience you receive, not an action you perform. The dative-experiencer pattern from age (мне 20 лет) and sensation (мне хо́лодно) extends to emotions: liking, preferring, and even «Мне надое́ло» (I'm fed up). You are the target of the feeling.`,
           table: {
             headers: ["Person (dat)", "Verb", "Thing (nom)"],
@@ -238,6 +242,7 @@ And it works for people too: «Ей нра́вится твой брат» can a
 - **мне пору́** — it's time (for me): Нам пору́ идти́.
 
 Notice what is missing: no я, no он. The dative pronoun does the whole job. This is not slang — it is standard literary grammar, and it is everywhere.`,
+          plain: `Надо, можно, нельзя and пора arrive with no subject and no 'is': just мне надо работать, ему пора. The person appears as мне, тебе, ему — that is the whole trick.`,
           why: `These are called **impersonal constructions**, and they exist because Russian is comfortable saying that a situation simply *is* — without an agent causing it. Necessity, permission, and timing are seen as circumstances, not choices. The dative person is the one affected; nobody is the hero. You will feel this pattern again in B2 (прихо́дится, удаётся).`,
           table: {
             headers: ["Word", "Meaning", "Example"],

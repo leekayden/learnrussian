@@ -26,6 +26,7 @@ export const u09: Unit = {
 **Fact 2: one direction or round trip?** Идти́/е́хать describe motion **in progress right now** or **one single journey**: Я иду́ в шко́лу (I'm on my way). Ходи́ть/е́здить describe **habits and round trips** — there AND back: Я хожу́ в шко́лу (I attend school), Я е́зжу на рабо́ту (I commute).
 
 So «Я е́зжу в Москву́» does not mean "I'm driving to Moscow" — it means you make that trip repeatedly. And «Я иду́ в кино́» means you are literally on your way, foot-powered, this minute.`,
+          plain: `English has one 'go'; Russian makes you pick two things first — on foot or by vehicle, one trip or a regular round trip. That is why there are four go-verbs: идти, ходить, ехать, ездить.`,
           why: `Why four verbs where English needs one? Russian divides motion along two axes that matter grammatically: the *mode* (foot vs vehicle) and the *shape* of the journey (single vector vs repeated circuit). The round-trip verbs exist because the question "how do you get to work?" is about a recurring circuit, not a one-time vector — a distinction English speakers feel but never had to encode.`,
           table: {
             headers: ["", "one direction (now)", "habitual / round trips"],
@@ -79,6 +80,7 @@ So «Я е́зжу в Москву́» does not mean "I'm driving to Moscow" —
 - **е́здить**: е́зжу, е́здишь, е́здит, е́здим, е́здите, е́здят
 
 Later you will meet their siblings — бежать́ (run), плыть (swim), лете́ть (fly) — which follow the same logic but keep their own quirks. The grid above is the core investment; everything else builds on it.`,
+          plain: `All four motion verbs use endings you already know, with one small surprise each: иду, едешь, хожу, езжу. Learn the four grids once and every journey you describe comes out right.`,
           why: `The -ш- in хожу́ is the same consonant history you met with писа́ть → пишу́: an old *х* softened toward ш before the personal ending. And ё in идёшь is not decoration — ё is always stressed in Russian, so these forms announce themselves loudly in speech, which is exactly what motion verbs do in conversation.`,
           table: {
             headers: ["Person", "идти", "ехать"],
@@ -125,6 +127,7 @@ Later you will meet their siblings — бежать́ (run), плыть (swim), 
 The destination keeps the rule from Unit 2: в/на + accusative. So a full journey is two case decisions stacked: **Я е́ду в Казань на по́езде** (to Kazan — accusative; by train — prepositional).
 
 Watch the fine print: **на метро́** never becomes «в метро́» when talking about means of travel, but «в метро́» is fine for *location inside the system* («в метро́ хо́лодно»). And на та́кси means riding by taxi; в такси́ means sitting inside one.`,
+          plain: `To say how you travel, put на before the vehicle: на автобусе, на метро, на машине. Walking is the lone exception — пешком, one word, no preposition needed.`,
           why: `Why «на» for transport? Historically you climbed *onto* vehicles — they were platforms, not boxes. Trains and buses still work that way (на по́езде, на авто́бусе — you get ON). Cars are the modern loophole: на маши́не treats the car as a means, в маши́не treats it as a box you sit inside. The preposition remembers when vehicles stopped being open-air.`,
           table: {
             headers: ["Phrase", "Meaning"],
@@ -173,6 +176,7 @@ Watch the fine print: **на метро́** never becomes «в метро́» wh
 - Она́ **по́ехала** домо́й. — She headed home. (one departure, completed)
 
 In invitations they are unbeatable: **Дава́й пойдём гуля́ть!** — Let's go for a walk! The по- prefix promises a beginning and an end, which is what an invitation needs.`,
+          plain: `Add по- and the trip becomes one complete journey: пойти, поехать. These are the invitation verbs — давай пойдём гулять! — because they promise a beginning and an end.`,
           why: `Why does по- make the trip "complete"? По- is the prefix of *setting a boundary* — it appears all over Russian marking actions with a finish line (поесть = have a bite, попить = have a drink). Пойти́ frames the journey as one bounded event: you leave, you arrive, done. That is why it loves future tense and invitations.`,
           table: {
             headers: ["Imperfective", "Perfective", "Feel"],

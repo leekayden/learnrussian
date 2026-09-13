@@ -23,6 +23,7 @@ Many formal adjectives ARE frozen participles:
 - **выдаю́щийся учёный** — an outstanding scientist (from выдаю́тся)
 - **гряду́щие поколе́ния** — generations to come; **мину́вший год** — the past year; **проше́дшее вре́мя** — past tense.
 They no longer take complements like verbs: «выдаю́щийся» = remarkable, full stop.`,
+          plain: `Words like выдающийся and текущий look like verbs but behave as plain adjectives — no action, just description. Treat them as vocabulary: выдающийся учёный is simply 'an outstanding scientist'.`,
           why: "The test: if you cannot naturally add a который-clause after it, it is an adjective now. Выдаю́щийся = remarkable, full stop. The participle origin explains the meaning (literally 'standing out from') but the grammar has moved on.",
 
           table: {
@@ -66,6 +67,7 @@ They no longer take complements like verbs: «выдаю́щийся» = remarka
 - **Short (кра́ткая) форма** = the predicate — a RESULT: «Зако́н вы́веден из play»... properly: «Програ́мма вы́ведена на экран» (the program has been brought up on screen).
 - **Long (по́лная) форма** = attribute inside a noun phrase: «выве́денный на экран текст».
 Short forms dominate official reporting (Установлено, что… — It has been established that…); long forms dominate description.`,
+          plain: `One ending reports the news — Программа выведена, Установлено, что… — the other merely describes: выведенный на экран текст. Official writing lives on the reporting one; mixing them up is the classic learner's slip.`,
           why: "The short form is the perfective passive's only predicate shape — «Зако́н при́нят» cannot become «при́нятый зако́н» without changing the meaning to 'an accepted law'. Official Russian (Установлено, что…) runs on short participles; using a long form there is a classic foreigner's slip.",
           examples: [
             { ru: "Установлено, что… (report opening)", en: "It has been established that…" },

@@ -21,6 +21,7 @@ export const u04: Unit = {
 - провери́ть → проверя́ть (-я-)
 - дать → дава́ть (-ва-); узна́ть → узнава́ть
 - **-ну-** perfectives for a single jab: кри́кнуть (vs крича́ть)`,
+          plain: `Most Russian verbs come in pairs: one for getting it done, one for the ongoing version. Spot -ыва- or -ива- in the middle and you know you have the "in progress" partner.`,
           why: "The -ыва-/-ива- suffix is the productive imperfective machine: whenever Russian needs a habitual/process partner for a newer perfective verb, this is the mold it reaches for. Recognising it turns hundreds of unfamiliar verbs into known pairs.",
 
           table: {
@@ -72,6 +73,7 @@ export const u04: Unit = {
 - **удава́ться / уда́ться + infinitive** (dative experiencer): Мне удало́сь купи́ть биле́ты.
 - **забы́ть / успе́ть + PERFECTIVE**: Я забы́л закро́ть окно́.
 - **привы́кнуть + IMPERFECTIVE**: Он привы́к встава́ть ра́но.`,
+          plain: `Verbs like "start" and "finish" want the everyday, in-progress form of the next verb; verbs like "manage" and "succeed" want the get-it-done form. The first verb is the giveaway — memorise its preference.`,
           why: "Each governing verb carries its own logic: start/finish apply to processes, so they grab imperfective infinitives; manage/succeed apply to achievements, so they grab perfective ones. English hides this with 'to'; Russian exposes it.",
 
           table: {

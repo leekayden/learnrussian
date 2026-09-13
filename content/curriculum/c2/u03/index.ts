@@ -23,6 +23,7 @@ Speech-act verbs use the **1st-person singular imperfective present** to PERFORM
 - **Благодарю́ вас.** — Thank you (more formal than спаси́бо).
 - **Извиня́юсь** (colloquial) / **прошу́ проще́ния** (careful style).
 The perfective here would break the act: «пообеща́ю» = I'll promise (later) — different meaning.`,
+          plain: `When saying is doing — Обещаю!, Благодарю вас — use the plain present; the promise happens in the very moment of speaking. The other version only promises to promise later, and the deed never lands.`,
           why: "Performatives are actions done BY SAYING: the utterance is the deed. That is why only the imperfective present works — the act is ongoing at the instant of speech. Saying «Я поблагодарю́ его» plans a future act; it no longer performs one.",
 
           table: {
@@ -74,6 +75,7 @@ Some pairs diverge lexically:
 - **ре́зать / разре́зать** (cut up) vs **отре́зать** (cut off) vs **нареза́ть** (cut into pieces) — prefix decides the result.
 - **сы́пать / насы́пать** — pour in; **вы́сыпать** — pour out; **просы́пать** (colloquial) — oversleep (different verb family!).
 - **слу́шать / прослу́шать** — listen vs miss/hear out (запи́сь прослу́шана = the recording HAS BEEN PLAYED).`,
+          plain: `These are not two copies of one verb — each partner has its own result: насыпать pours in, высыпать pours out. Learn every pair as separate words with separate pictures.`,
           why: "In these pairs the prefix is not just 'done' — it chooses a result-scenario. Запись прослу́шана is bureaucratic passive ('the recording has been reviewed'), and просы́пать drifted to 'oversleep' entirely. Learn each pair with its own scenario, not as pure grammar.",
 
           table: {

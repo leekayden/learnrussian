@@ -32,6 +32,7 @@ Every regular verb follows the same two-step recipe. First, take the infinitive 
 - **-ют** for они́ (they)
 
 Notice something convenient: the endings all contain **е** (ешь, ет, ем, ете). This family of verbs is therefore called the **first conjugation** or the **-е- family**. Once you can hear that -е-, you can produce every form.`,
+          plain: `Russian verbs have only one present tense. Learn one set of endings, swap them for whoever is acting, and that single form covers I work, I am working and I do work.`,
           why: `English marks "who is acting" with a subject pronoun and mostly leaves the verb alone — the only change is the -s on *he/she works*. Russian goes the other way: the **ending itself** announces who is acting, so the pronoun can even be dropped («Рабо́таю» = *I'm working*). That is why memorising the endings matters more here than it ever did in English.`,
           table: {
             caption: "рабо́тать (to work) — the model verb",
@@ -96,6 +97,7 @@ Notice something convenient: the endings all contain **е** (ешь, ет, ем,
 So with слы́шать (to hear), the я-form is **слы́шу** (never "слушю") and the они-form is **слы́шат** (never "слушают"). The same applies to держа́ть (to hold) → держу́, де́ржат and молча́ть (to be silent) → молчу́, мо́лчат.
 
 Why should you care so early? Because this rule silently explains dozens of forms you will meet: **учу́** (I teach), **плачу́** (I pay), **ищу́** (I search). Learners who skip it keep writing illegal forms like "учю" for years. Thirty seconds of attention now saves all of that.`,
+          plain: `This one is pure spelling: after ж, ш, ч, щ write у or а in endings, never ю or я. The sound barely changes — you just cannot write 'учю'.`,
           why: `The rule exists because ю/я historically signalled a *soft* (palatalised) consonant before them. Ж, ш, ч, щ are already hushing sounds that could not stay soft in endings, so the spelling settled on у/а. You are not learning an arbitrary exception — you are seeing a 1000-year-old sound law in action.`,
           table: {
             headers: ["Infinitive", "я", "они"],
@@ -149,6 +151,7 @@ Two complications make this family feel trickier than it is:
 **1. The я/они forms shift the final consonant.** In roughly half of common -ить verbs, the last consonant of the stem softens or doubles in the я and они forms: люби́ть → я **люблю́**, они́ **лю́бят** (б grows an л); гото́вить → я гото́влю (в grows an л). The middle of the table is untouched — ты лю́бишь, мы лю́бим, вы лю́бите are perfectly regular.
 
 **2. Some -еть verbs belong here too.** смотре́ть looks first-conjugation but conjugates soft: я смотрю́, ты смо́тришь, они́ смо́трят. The dictionary flags these; after two or three you start predicting them correctly.`,
+          plain: `The second verb family uses и endings: ты говоришь, мы говорим. In about half of these verbs only the я and они forms change their consonant — the other four stay perfectly regular.`,
           why: `Why does the shift happen only in я and они? Those two endings historically began with a vowel (-ю, -ят) that pressed against the stem and palatalised its final consonant; the other endings started with и/е sounds that fit without pressure. The result: two "special" forms per verb, four regular ones. That 2-out-of-6 asymmetry is normal in Russian and worth expecting rather than fighting.`,
           table: {
             headers: ["", "говорить", "любить", "смотреть"],
@@ -204,6 +207,7 @@ Two complications make this family feel trickier than it is:
 In the person forms, that chunk collapses to **-у-**: рисова́ть → я рису́ю, ты рису́ешь, они́ рису́ют. The -ова- is only there to hold the infinitive together.
 
 One verb in this family drops an extra letter: **чувствовать** → я **чувствую** (the first в vanishes). You will meet it constantly — feelings come up in every conversation — so treat «я чувствую» as a single memorised chunk rather than a puzzle.`,
+          plain: `Verbs with -ова- or -ева- in the middle drop that piece when you use them: рисовать becomes я рисую. Dance, try, advise, travel — they all follow this one move.`,
           why: `The -ова- suffix is an old verb-builder that rode along with hundreds of borrowed activities (танцева́ть from French danser, организова́ть, координи́ровать). It survives in the infinitive only; the moment personal endings attach, Russian strips it back down to -у-. That is why so many "international" activities follow this pattern automatically.`,
           table: {
             headers: ["Infinitive", "я", "ты", "они"],
@@ -247,6 +251,7 @@ One verb in this family drops an extra letter: **чувствовать** → я
           body: `Two verbs carry so much daily weight that they are worth knowing cold. **хоте́ть** (to want) and **мочь** (to be able) ignore both conjugation families and follow their own music. They also have a quirk: in хо́чешь/хо́чет the stress sits on the first syllable, but in хоти́м/хоти́те it jumps to the end — and they do not even keep the same root all the way through (хот- vs хот-ят is fine, but мочь → мо́гут swaps its consonant).
 
 Learn them as two six-word poems, speak them out loud a few times, and they are yours for life. You will use «я хочу́» and «мо́жно» in almost every conversation you have in Russian — ordering food, asking favours, making plans.`,
+          plain: `Just two verbs to memorise cold: хотеть (to want) and мочь (to be able). They ignore both regular patterns, so learn their six forms by heart — you will use them every single day.`,
           why: "Irregular verbs resist regularisation precisely because they are frequent — everyone hears them daily, so the odd forms never wear off. Rare verbs quietly level out; frequent ones fossilise. Same in English: went, was, gave.",
           table: {
             headers: ["", "хотеть", "мочь"],
@@ -305,6 +310,7 @@ Learn them as two six-word poems, speak them out loud a few times, and they are 
 - **иска́ть** (to search): ищу́, и́щешь; **ждать** (to wait): жду, ждёшь — the last two are regular enough to pick up on the way.
 
 And one pattern to take away today: **хотеть + infinitive**. To say what you want *to do*, conjugate хотеть and leave the second verb completely alone: «Я хочу́ чита́ть», «Они́ хотя́т отдохну́ть». No linking word is needed — Russian just stacks the two verbs.`,
+          plain: `A few very common verbs each have one odd form to memorise. The want-to pattern is simple: only 'want' changes — я хочу читать — and the second verb stays exactly as it is.`,
           why: `Verbs like дать and есть are leftovers from the oldest layer of the language — the same words that gave English *give* and *eat* their irregular pasts. High-frequency verbs resist regularisation because everyone hears them daily; rare ones quietly level out. So irregularity is not chaos — it is a frequency fossil.`,
           examples: [
             { ru: "Мы живём в обща'ге на второ'м ку'рсе.", en: "We live in the dorm in our second year." },

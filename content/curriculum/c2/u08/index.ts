@@ -22,6 +22,7 @@ With no verb in sight, **ни + genitive** intensifies:
 - **Ни ша́гу наза́д!** — Not one step back!
 - **Ни звука́.** — Not a sound. **Ни сло́ва пра́вды.** — Not a word of truth.
 After a negated verb: **ни одного́ / ни разу́ / ни копе́йки** — total absence. «Не сказа́л ни сло́ва» (didn't say a word).`,
+          plain: `To hammer home that there was zero of something, reach for ни: Ни шагу назад, не сказал ни слова. It works with or without a verb and lands far harder than a plain 'not'.`,
           why: "The emphatic genitive paints zero as a quantity — 'not even one step' is measured, which is why the genitive (the amount-case) appears. English uses 'not a single'; Russian uses case + ни, and it works with or without a verb.",
           examples: [
             { ru: "Ни мину'ты поко'я!", en: "Not a minute of peace!" },
@@ -60,6 +61,7 @@ Spoken Russian thrives on cut syntax:
 - **Parcellation** (parcelled-off fragments): «Он пришёл. Поздно. Опять.» — each fragment a separate sentence for punch.
 - **Question-reply echo**: «— Ты куда́? — К Ма́ше.»
 Punctuation in writing mirrors intonation in speech.`,
+          plain: `Real speech happily drops verbs — Мне бы кофе — and breaks sentences for punch: Он пришёл. Поздно. Опять. Use it in conversation and fiction; keep it out of official and academic writing.`,
           why: "Parcellation turns sentence-parts into standalone sentences for punch — punctuation mirrors the speaker's intonation. It belongs to prose, speech and advertising; academic writing would call it broken. Register decides what counts as a sentence.",
           examples: [
             { ru: "Он пришёл. Поздно. Опя'ть.", en: "He turned up. Late. Again." },

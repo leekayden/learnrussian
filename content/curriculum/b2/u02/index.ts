@@ -21,6 +21,7 @@ export const u02: Unit = {
 - **Ей прихо́дится рабо́тать ве́черами.** — She has to work evenings. (приходи́тся/пришло́сь/придё́тся)
 - **Нам удало́сь дого́вори́ться.** — We managed to agree. (удава́ться/уда́стся)
 - **Сто́ит поду́мать.** — It's worth thinking about. **Сле́дует учи́ть** — one should learn.`,
+          plain: `When a feeling or a duty just happens to you, Russian says it with no subject: put the person in the to-whom form and leave the verb unchanged. Мне хочется — I feel like.`,
           why: "Impersonal constructions treat states as circumstances, not choices — nobody willed the sleepiness; it simply is. The dative experiencer (from A2: мне хо́лодно, мне 20 лет) extends to desires and obligations. B2 just makes the family tree visible.",
 
           table: {
@@ -69,6 +70,7 @@ export const u02: Unit = {
 - **ле́нь + inf** (colloquial): Мне ле́нь встава́ть. — I can't be bothered to get up.
 - **видно / слы́шно**: Отсюда́ хорошо́ ви́дно мо́ре.
 - **хо́лодно/тру́дно + dative**: Ему́ бы́ло тру́дно говори́ть.`,
+          plain: `Words like жаль, лень and трудно do the job of a whole English phrase. Put the person first, add the state word, then the action — and drop it is hard for me entirely.`,
           why: "These predicates (zhal', len', vidno, trudno) are neither verbs nor adjectives in the English sense — they are state-words. The frame [dative + state-word + infinitive] replaces [it is X for me to Y] wholesale. Own the frame, own a hundred sentences.",
           examples: [
             { ru: "Мне ле'нь сегодня рабо'тать.", en: "I don't feel like working today." },

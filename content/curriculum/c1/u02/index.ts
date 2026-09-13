@@ -20,6 +20,7 @@ export const u02: Unit = {
 
 Imperfective passive in **-мый** = 'being ~-able': определя́емый (defined as), рассма́триваемый (under consideration), жела́емый (desired), любимый.
 Academic style chains them: «Пробле́ма, рассма́триваемая в э́той статье́, свя́зана с явле́ниями, опи́санными вы́ше» (The problem considered in this article relates to phenomena described above).`,
+          plain: `These being-done words belong to textbooks and news reports, not to chat. When you read Russian scholarship, treat them like English -ed adjectives describing something under discussion, not something finished.`,
           why: "-мый is the passive of the PROCESS: being defined, not having been defined. That is why academic Russian loves it — papers discuss problems under consideration, in progress. Perfective results need the -нн/-т participles instead.",
           examples: [
             { ru: "В раccма'триваемом слу'чае…", en: "In the case under consideration…" },

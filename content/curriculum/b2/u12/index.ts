@@ -22,6 +22,7 @@ Accusative objects often flip to **genitive** under negation (especially abstrac
 - Я чита́л э́ту статью́ → Я не чита́л э́той статьи́.
 - Он не зна́ет ни одного́ слова́. (ni + gen for total negation)
 Optional but stylish; with concrete definite objects accusative stays: Я не чита́л э́ту статью́ (also fine).`,
+          plain: `When you say you did not do something, the thing often changes its ending: не читал этой статьи. It is optional but common; ни слова or ни одного stress not even one.`,
           why: "Genitive under negation is the grammar of absence: if the object never got received, it stays 'unpossessed' — genitive territory. Optional with concrete objects, near-obligatory with abstract ones (нет вре́мени).",
           examples: [
             { ru: "Он не сказа'л ни сло'ва.", en: "He didn't say a single word." },
@@ -35,6 +36,7 @@ Optional but stylish; with concrete definite objects accusative stays: Я не �
 - ** обяза́тельно** (certainly) → **probably на́верное / вероя́тно** → **вряд ли / едва́ ли** (unlikely) → **ни за что** (no way).
 - сомнева́ться в + prep: Я сомнева́юсь в э́том.
 - отрицать + acc: Он отрица́ет свою́ вину́.`,
+          plain: `Russian grades how sure you are with a ladder of little words, from обязательно down to ни за что. Pick the rung that matches your confidence and place it before the verb.`,
           why: "The в + prepositional after сомнева́ться treats doubt as a location — you stand inside uncertainty about it. And ни за что literally promises not-for-anything — you would not do it for any price. Russian probability is full of tiny arguments.",
         },
       ],

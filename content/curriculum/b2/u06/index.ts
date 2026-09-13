@@ -25,6 +25,7 @@ Russian conditional sentences with хотя́/если concessions contrast with
 - Что бы ни случи́лось, звони́. — Whatever happens, call me.
 - Ско́лько бы он ни рабо́тал… — However much he worked…
 Note: **что бы ни** is two words (бы + ни); compare **чтобы** (in order to).`,
+          plain: `To say no matter what or however much, take the question word, add ни, and put the verb in its past form. Что бы ни случилось — whatever happens, the rule holds.`,
           why: "Concession is argumentation: you grant the opposing fact, then override it. Russian packages the grant in хотя́/хоть + indicative, and the override in but-word (но, зато́). Unlike unreal conditionals, there is no бы here — the conceded fact is real.",
           examples: [
             { ru: "Ско'лько бы мы ни спо'рили, он на своём.", en: "However much we argue, he sticks to his guns." },

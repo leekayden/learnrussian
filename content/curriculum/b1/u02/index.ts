@@ -19,6 +19,7 @@ export const u02: Unit = {
           body: `In A2 you declined adjectives in three cases; B1 adds the plural and the remaining cases, completing the grid. The good news: plural adjective endings are identical for all three genders — the noun alone decides -ые vs -ие.- Nominative plural: **-ые/-ие** (но́вые, ру́сские)
 - Accusative plural **inanimate** = nominative: Я чита́ю но́вые кни́ги.
 - Accusative plural **animate** = genitive: Я встрети́л **но́вых** студе́нтов.`,
+          plain: `Plural adjectives are easier than singular ones: one ending pair for every gender. The only split is the familiar one — for living things the describing word changes too, for objects it does not.`,
           why: "One plural for all genders is the exception that proves the rule: the plural endings come from a different, older declension that never cared about gender. Singular agreement is three systems; plural agreement is one. Half the forms you feared are shared.",
 
           table: {
@@ -64,6 +65,7 @@ export const u02: Unit = {
           body: `The oblique cases (dative, instrumental, prepositional) reuse one ending set across the plural — the adjectives simply follow their nouns, which you already decline from A2 Unit 3-5.- **Dative: -ым/-им** (но́вым, си́ним): Он объясня́ет **но́вым** студе́нтам.
 - **Instrumental: -ыми/-ими** (но́выми, си́ними): Я дово́лен **но́выми** результа́тами.
 - **Prepositional: -ых/-их** (о но́вых, в си́них)`,
+          plain: `The describing word simply copies its noun: learn the noun's ending, and the adjective twin is -ым, -ыми or -ых. One small drill covers all three jobs at once.`,
           why: "Same logic as the nouns themselves: dative/instrumental/prepositional plurals collapsed all genders into -ам/-ями/-ах centuries ago. Adjectives followed their nouns. Learn the noun ending and the adjective ending is its twin.",
 
           table: {
@@ -111,6 +113,7 @@ export const u02: Unit = {
 - **взро́слый** — an adult: кни́га для взро́слых (gen pl)
 - **учёный** — scientist; **рабо́чий** — worker
 - Rooms: гости́ная, ва́нная, столо́вая (living room / bathroom / canteen)`,
+          plain: `When a describing word becomes a person — a patient, an adult, a scientist — it keeps its adjective endings. Think of English "the rich": same idea, and Russian even does it for rooms like the canteen.`,
           why: "Substantivised adjectives are productive: any adjective describing a class of people can be promoted to noun status. Because the endings already carry case, no new paradigm is needed — dlya bol'nogo is just the adjective in genitive.",
           examples: [
             { ru: "Больны'м ну'жно принима'ть лека'рство.", en: "Patients need to take medicine." },
