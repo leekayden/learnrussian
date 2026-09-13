@@ -19,6 +19,8 @@ export type LevelLocks = {
   examScore: number | null;
   /** The next level exists and is unlocked. */
   nextLevelUnlocked: boolean;
+  /** Free-navigation setting: every lesson, test and level is open. */
+  unlockAll: boolean;
 };
 
 export function unitTestId(unitId: string): string {
@@ -40,43 +42,70 @@ export async function computeLevelLocks(
   ]);
   lessonIds.push(examTestId(curriculum.level));
 
-  const progress = await prisma.lrLessonProgress.findMany({
-    where: { userId, lessonId: { in: lessonIds } },
-    select: { lessonId: true, status: true, bestScore: true },
-  });
+  const [unlockAll, progress] = await Promise.all([
+    prisma.lrProfile
+      .findUnique({ where: { userId }, select: { unlockAll: true } })
+      .then((p) => p?.unlockAll ?? false),
+    prisma.lrLessonProgress.findMany({
+      where: { userId, lessonId: { in: lessonIds } },
+      select: { lessonId: true, status: true, bestScore: true },
+    }),
+  ]);
   const byId = new Map(progress.map((p) => [p.lessonId, p]));
 
   const examId = examTestId(curriculum.level);
   const examRow = byId.get(examId);
   const examPassed = examRow?.status === "completed";
 
-  // The first unit of a level is always open; later units need the
-  // previous unit's test passed.
-  let previousTestPassed = true;
   const units: UnitLocks[] = curriculum.units.map((unit) => {
     const testId = unitTestId(unit.id);
     const testRow = byId.get(testId);
     const testPassed = testRow?.status === "completed";
     const completed = unit.lessons.every((l) => byId.get(l.id)?.status === "completed");
-    const locks: UnitLocks = {
-      unlocked: previousTestPassed,
-      lessons: unit.lessons.map((l, i) => {
-        if (!previousTestPassed) return { unlocked: false, completed: false };
-        const lessonUnlocked =
-          i === 0 || byId.get(unit.lessons[i - 1].id)?.status === "completed";
-        return {
-          unlocked: lessonUnlocked,
-          completed: byId.get(l.id)?.status === "completed",
-        };
-      }),
-      testUnlocked: previousTestPassed && completed,
+    return {
+      unlocked: true,
+      lessons: unit.lessons.map((l) => ({
+        unlocked: true,
+        completed: byId.get(l.id)?.status === "completed",
+      })),
+      testUnlocked: true,
       testPassed,
       testScore: testRow?.bestScore ?? null,
       completed,
     };
-    if (testPassed) previousTestPassed = true;
-    return locks;
   });
+
+  if (unlockAll) {
+    // Free navigation: everything is open; completion flags stay truthful.
+    return {
+      units,
+      examUnlocked: true,
+      examPassed,
+      examScore: examRow?.bestScore ?? null,
+      nextLevelUnlocked: true,
+      unlockAll: true,
+    };
+  }
+
+  // The first unit of a level is always open; later units need the
+  // previous unit's test passed.
+  let previousTestPassed = true;
+  for (const [i, unit] of curriculum.units.entries()) {
+    const testPassed = units[i].testPassed;
+    units[i].unlocked = previousTestPassed;
+    units[i].lessons = unit.lessons.map((l, li) => {
+      if (!previousTestPassed) return { unlocked: false, completed: false };
+      const lessonUnlocked =
+        li === 0 || byId.get(unit.lessons[li - 1].id)?.status === "completed";
+      return {
+        unlocked: lessonUnlocked,
+        completed: byId.get(l.id)?.status === "completed",
+      };
+    });
+    units[i].testUnlocked = previousTestPassed && units[i].completed;
+    // The next unit only opens once this unit's test is passed.
+    previousTestPassed = testPassed;
+  }
 
   return {
     units,
@@ -84,6 +113,7 @@ export async function computeLevelLocks(
     examPassed,
     examScore: examRow?.bestScore ?? null,
     nextLevelUnlocked: examPassed,
+    unlockAll: false,
   };
 }
 

@@ -34,6 +34,7 @@ model User {
   reviewLogs       LrReviewLog[]
   exerciseAttempts LrExerciseAttempt[]
   dailyActivity    LrDailyActivity[]
+  externalQuizResults ExternalQuizResult[]
 
   @@map("user")
 }
@@ -96,6 +97,8 @@ model LrProfile {
   placementDone        Boolean   @default(false) @map("placement_done")
   showStress           Boolean   @default(true) @map("show_stress")
   showTranslitKeyboard Boolean   @default(true) @map("show_translit_keyboard")
+  /// Free navigation: every lesson, unit test and level is open regardless of progress.
+  unlockAll            Boolean   @default(false) @map("unlock_all")
   createdAt            DateTime  @default(now()) @map("created_at")
   updatedAt            DateTime  @updatedAt @map("updated_at")
 
@@ -252,6 +255,8 @@ model WordForm {
 
   @@index([formType], map: "idx_words_forms_type")
   @@index([wordId], map: "idx_words_forms_word")
+  /// Added for inflected-form search; additive index, no column changes.
+  @@index([formBare], map: "idx_words_forms_form_bare")
   @@map("words_forms")
 }
 
@@ -397,4 +402,21 @@ model Scenario {
   onlyPro  Boolean @default(false) @map("only_pro")
 
   @@map("scenarios")
+}
+
+// Results returned from quiz-renderer (external attempts). One row per
+// renderer attempt id so replays of the results webhook are idempotent.
+model ExternalQuizResult {
+  id             String   @id @default(cuid())
+  userId         String   @map("user_id")
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attemptId      String   @unique @map("attempt_id")
+  sourceApp      String   @default("learnrussian") @map("source_app")
+  externalQuizId String   @map("external_quiz_id")
+  score          Int
+  responses      Json?
+  appliedAt      DateTime @default(now()) @map("applied_at")
+
+  @@index([userId])
+  @@map("external_quiz_results")
 }

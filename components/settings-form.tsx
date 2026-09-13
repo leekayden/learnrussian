@@ -12,11 +12,17 @@ import { Switch } from "@/components/ui/switch";
 export function SettingsForm({
   initial,
 }: {
-  initial: { dailyGoalXp: number; showStress: boolean; showTranslitKeyboard: boolean };
+  initial: {
+    dailyGoalXp: number;
+    showStress: boolean;
+    showTranslitKeyboard: boolean;
+    unlockAll: boolean;
+  };
 }) {
   const [goal, setGoal] = useState(String(initial.dailyGoalXp));
   const [stress, setStress] = useState(initial.showStress);
   const [translit, setTranslit] = useState(initial.showTranslitKeyboard);
+  const [unlock, setUnlock] = useState(initial.unlockAll);
   const [saving, setSaving] = useState(false);
 
   async function save() {
@@ -26,6 +32,7 @@ export function SettingsForm({
       dailyGoalXp: parsed,
       showStress: stress,
       showTranslitKeyboard: translit,
+      unlockAll: unlock,
     });
     if (r.ok) toast.success("Settings saved");
     setSaving(false);
@@ -68,6 +75,24 @@ export function SettingsForm({
               </p>
             </div>
             <Switch checked={translit} onCheckedChange={setTranslit} />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Course access</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-medium">Unlock all lessons</p>
+              <p className="text-xs text-muted-foreground">
+                Free navigation: every level, lesson, unit test and level exam is open,
+                regardless of progress. Turn it off to go back to step-by-step unlocking.
+              </p>
+            </div>
+            <Switch checked={unlock} onCheckedChange={setUnlock} />
           </div>
         </CardContent>
       </Card>

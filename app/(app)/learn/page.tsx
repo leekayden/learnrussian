@@ -6,21 +6,23 @@ import { LEVELS, LEVEL_LABELS, LEVEL_DESCRIPTIONS, type Level } from "@/lib/curr
 import { getDueCount, getNewCount } from "@/lib/curriculum/locks";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { UnlockAllToggle } from "@/components/unlock-all-toggle";
 import { Lock, Sparkles } from "lucide-react";
 
 export const metadata = { title: "Learn — learnrussian" };
 
-/** A level is open if it is a2, or the previous level's exam was passed. */
+/** A level is open if it is a2, the previous level's exam was passed, or free navigation is on. */
 async function levelUnlocked(level: Level, userId: string): Promise<boolean> {
   const idx = LEVELS.indexOf(level);
   if (idx <= 0) return true;
   const prev = CURRICULUM[LEVELS[idx - 1]];
+  if (prev.units.length === 0) return true;
   const locks = await computeLevelLocks(prev, userId);
-  return locks.examPassed || prev.units.length === 0;
+  return locks.examPassed || locks.unlockAll;
 }
 
 export default async function LearnPage() {
-  const { user } = await requireUser();
+  const { user, profile } = await requireUser();
 
   const cards = await Promise.all(
     LEVELS.map(async (level) => {
@@ -57,6 +59,8 @@ export default async function LearnPage() {
           </Link>
         ) : null}
       </div>
+
+      <UnlockAllToggle initial={!!profile.unlockAll} />
 
       <div className="grid gap-4 md:grid-cols-2">
         {cards.map(({ level, curriculum, unlocked, totalLessons, doneLessons, locks }) => (

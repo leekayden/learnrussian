@@ -17,6 +17,7 @@ export default async function SettingsPage() {
           dailyGoalXp: profile.dailyGoalXp,
           showStress: !!profile.showStress,
           showTranslitKeyboard: !!profile.showTranslitKeyboard,
+          unlockAll: !!profile.unlockAll,
         }}
       />
     </div>
