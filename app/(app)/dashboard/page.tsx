@@ -134,7 +134,7 @@ export default async function DashboardPage() {
         </Card>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Levels</CardTitle>
@@ -171,6 +171,31 @@ export default async function DashboardPage() {
             ) : (
               <p className="text-sm text-muted-foreground">
                 No weak topics yet — complete lessons to build your mastery map.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">New here?</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 text-sm">
+            <Link
+              href="/handwriting"
+              className="block rounded-lg border px-4 py-2 transition-colors hover:bg-accent"
+            >
+              ✍️ Learn the alphabet — watch every letter written stroke by stroke
+            </Link>
+            {!profile.placementDone ? (
+              <Link
+                href="/placement"
+                className="block rounded-lg border px-4 py-2 transition-colors hover:bg-accent"
+              >
+                📏 Not a beginner? Take the placement test
+              </Link>
+            ) : (
+              <p className="px-1 text-muted-foreground">
+                Placement done — you are set to {profile.currentLevel}. Keep the streak alive!
               </p>
             )}
           </CardContent>
