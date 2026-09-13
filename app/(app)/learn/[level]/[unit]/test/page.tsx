@@ -4,11 +4,14 @@ import { getUnit } from "@/lib/curriculum/content";
 import { LEVELS, type Level, PASS_TEST } from "@/lib/curriculum/types";
 import { saveTestResult } from "@/app/actions/progress";
 import { ExerciseRunner } from "@/components/practice/exercise-runner";
+import { ExternalResultBanner } from "@/components/external-result-banner";
 
 export default async function UnitTestPage({
   params,
+  searchParams,
 }: PageProps<"/learn/[level]/[unit]/test">) {
   const { level, unit } = await params;
+  const { qr } = await searchParams;
   if (!LEVELS.includes(level as Level)) notFound();
   const lv = level as Level;
   const unitData = getUnit(lv, Number(unit));
@@ -34,6 +37,7 @@ export default async function UnitTestPage({
 
   return (
     <div className="space-y-6">
+      {qr === "1" && <ExternalResultBanner externalQuizId={`lr:unit-test:${unitData.id}`} />}
       <div>
         <Link
           href={`/learn/${lv}/${unitData.number}`}
@@ -51,6 +55,7 @@ export default async function UnitTestPage({
       <ExerciseRunner
         exercises={unitData.test}
         submit={submit}
+        externalQuiz={{ kind: "unit-test", refId: unitData.id }}
         exportTitle={`${unitData.id}-test`}
         onDoneHref={`/learn/${lv}`}
         onDoneLabel="Back to the level →"

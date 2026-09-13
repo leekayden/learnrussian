@@ -6,6 +6,7 @@ import { computeLevelLocks } from "@/lib/curriculum/locks";
 import { generateDrills } from "@/lib/curriculum/generate";
 import { LEVELS, type Level } from "@/lib/curriculum/types";
 import { submitLesson } from "@/app/actions/progress";
+import { ExternalResultBanner } from "@/components/external-result-banner";
 import { ExerciseRunner, Md } from "@/components/practice/exercise-runner";
 import { AudioButton } from "@/components/audio-button";
 import { withStress, GENDER_LABELS } from "@/lib/russian";
@@ -15,8 +16,10 @@ import { Lock } from "lucide-react";
 
 export default async function LessonPage({
   params,
+  searchParams,
 }: PageProps<"/learn/[level]/[unit]/[lesson]">) {
   const { level, unit, lesson: lessonParam } = await params;
+  const { qr } = await searchParams;
   if (!LEVELS.includes(level as Level)) notFound();
   const lv = level as Level;
   const unitNumber = Number(unit);
@@ -178,6 +181,7 @@ export default async function LessonPage({
 
       {/* ── Practice ──────────────────────────────────────────── */}
       <section className="space-y-3">
+        {qr === "1" && <ExternalResultBanner externalQuizId={`lr:lesson:${lesson.id}`} />}
         <h2 className="text-lg font-semibold">Practice</h2>
         <p className="text-sm text-muted-foreground">
           Score ≥70% to complete the lesson and add the new words to your review deck.
@@ -186,6 +190,7 @@ export default async function LessonPage({
           exercises={exercises}
           submit={submit}
           keyboard={!!lessonProfile.showTranslitKeyboard}
+          externalQuiz={{ kind: "lesson", refId: lesson.id }}
           exportTitle={`${lv}-u${String(unitNumber).padStart(2, "0")}-l${lessonNumber} ${lesson.title}`}
           onDoneHref={
             lessonNumber < unitData.lessons.length

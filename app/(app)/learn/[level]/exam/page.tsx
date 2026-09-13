@@ -4,8 +4,12 @@ import { getLevel } from "@/lib/curriculum/content";
 import { LEVELS, type Level, LEVEL_LABELS, PASS_TEST } from "@/lib/curriculum/types";
 import { saveTestResult } from "@/app/actions/progress";
 import { ExerciseRunner } from "@/components/practice/exercise-runner";
+import { ExternalResultBanner } from "@/components/external-result-banner";
 
-export default async function LevelExamPage({ params }: PageProps<"/learn/[level]/exam">) {
+export default async function LevelExamPage(
+  { params, searchParams }: PageProps<"/learn/[level]/exam">,
+) {
+  const { qr } = await searchParams;
   const { level } = await params;
   if (!LEVELS.includes(level as Level)) notFound();
   const lv = level as Level;
@@ -28,6 +32,7 @@ export default async function LevelExamPage({ params }: PageProps<"/learn/[level
 
   return (
     <div className="space-y-6">
+      {qr === "1" && <ExternalResultBanner externalQuizId={`lr:level-exam:${lv}`} />}
       <div>
         <Link href={`/learn/${lv}`} className="text-sm text-muted-foreground hover:text-foreground">
           ← Level {LEVEL_LABELS[lv]}
@@ -42,6 +47,7 @@ export default async function LevelExamPage({ params }: PageProps<"/learn/[level
       <ExerciseRunner
         exercises={curriculum.exam}
         submit={submit}
+        externalQuiz={{ kind: "level-exam", refId: lv }}
         exportTitle={`${lv}-exam`}
         onDoneHref={`/learn/${lv}`}
         onDoneLabel="Back to the level →"

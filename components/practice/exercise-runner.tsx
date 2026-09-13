@@ -8,6 +8,7 @@ import {
   Check,
   ChevronRight,
   Download,
+  MonitorPlay,
   RotateCcw,
   X,
 } from "lucide-react";
@@ -15,6 +16,8 @@ import { toast } from "sonner";
 import type { Exercise, Option } from "@/lib/curriculum/types";
 import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
 import { downloadFilename, exercisesToRendererQuiz } from "@/lib/quiz-export";
+import { startExternalQuiz } from "@/app/actions/external";
+import type { ExternalQuizKind } from "@/lib/external/quiz-builders";
 import { RuKeyboard } from "@/components/practice/cyrillic-keyboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -79,6 +82,7 @@ export function ExerciseRunner({
   onDoneLabel,
   passPercent = 70,
   keyboard = true,
+  externalQuiz,
 }: {
   exercises: Exercise[];
   submit: (
@@ -90,6 +94,8 @@ export function ExerciseRunner({
   onDoneLabel?: string;
   passPercent?: number;
   keyboard?: boolean;
+  /** Offer taking this quiz in the sibling quiz-renderer app instead. */
+  externalQuiz?: { kind: ExternalQuizKind; refId: string };
 }) {
   const [idx, setIdx] = useState(0);
   const [responses, setResponses] = useState<Record<string, ExerciseResponse>>({});
@@ -99,6 +105,7 @@ export function ExerciseRunner({
   const [finished, setFinished] = useState(false);
   const [result, setResult] = useState<SubmitResult | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [externalPending, setExternalPending] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const ex = exercises[idx];
@@ -185,6 +192,23 @@ export function ExerciseRunner({
     toast.success("Quiz JSON downloaded — open quiz-renderer → /quizzes/new");
   }
 
+  // Hand the user over to quiz-renderer: pushes the quiz, mints a one-time
+  // sign-in URL and redirects. Results come back automatically afterwards.
+  async function openInRenderer() {
+    if (!externalQuiz) return;
+    setExternalPending(true);
+    try {
+      const res = await startExternalQuiz(externalQuiz.kind, externalQuiz.refId);
+      if (res && res.ok === false) {
+        toast.error(res.error);
+        setExternalPending(false);
+      }
+    } catch {
+      toast.error("Could not open Quiz Renderer — check your connection");
+      setExternalPending(false);
+    }
+  }
+
   if (finished && result) {
     const passed = (result.passed ?? result.completed ?? result.score >= passPercent);
     return (
@@ -203,6 +227,12 @@ export function ExerciseRunner({
           <Button variant="outline" onClick={restart}>
             <RotateCcw className="size-4" /> Try again
           </Button>
+          {externalQuiz ? (
+            <Button variant="outline" onClick={openInRenderer} disabled={externalPending}>
+              <MonitorPlay className="size-4" />
+              {externalPending ? "Opening Quiz Renderer…" : "Take it in Quiz Renderer"}
+            </Button>
+          ) : null}
           {exportTitle ? (
             <Button variant="outline" onClick={exportQuiz}>
               <Download className="size-4" /> Export for Quiz Renderer
@@ -235,6 +265,14 @@ export function ExerciseRunner({
 
   return (
     <div className="space-y-4">
+      <div className="flex items-center justify-end">
+        {externalQuiz ? (
+          <Button variant="ghost" size="sm" onClick={openInRenderer} disabled={externalPending}>
+            <MonitorPlay className="size-4" />
+            {externalPending ? "Opening Quiz Renderer…" : "Take in Quiz Renderer instead"}
+          </Button>
+        ) : null}
+      </div>
       <div className="flex items-center gap-3">
         <Progress value={((idx + (checked ? 1 : 0)) / exercises.length) * 100} />
         <span className="shrink-0 text-sm text-muted-foreground">
