@@ -80,7 +80,7 @@ export default async function LearnLevelPage({ params }: PageProps<"/learn/[leve
                     </>
                   ) : (
                     <span className="text-sm text-muted-foreground">
-                      Pass the previous unit's test (≥80%) to unlock.
+                      Pass the previous unit&apos;s test (≥80%) to unlock.
                     </span>
                   )}
                 </div>

@@ -21,7 +21,6 @@ model User {
   email         String    @unique
   emailVerified Boolean   @default(false) @map("email_verified")
   image         String?   @db.VarChar(500)
-  role          String    @default("USER") @db.VarChar(32)
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
 
@@ -90,7 +89,6 @@ model LrProfile {
   userId               String    @id @map("user_id") @db.VarChar(36)
   user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   dailyGoalXp          Int       @default(20) @map("daily_goal_xp")
-  timezone             String    @default("UTC") @db.VarChar(64)
   streakCount          Int       @default(0) @map("streak_count")
   lastActiveDate       DateTime? @map("last_active_date") @db.Date
   currentLevel         String    @default("A2") @map("current_level") @db.VarChar(2)
@@ -182,6 +180,10 @@ model LrExerciseAttempt {
   exerciseType String   @map("exercise_type") @db.VarChar(16)
   correct      Boolean
   response     Json?
+  /// Snapshot of the prompt/answer at attempt time — exercises are generated
+  /// live, so the row must be self-contained for the "recent slips" view.
+  prompt       String?  @db.VarChar(255)
+  answer       String?  @db.VarChar(255)
   createdAt    DateTime @default(now()) @map("created_at")
 
   @@index([userId, createdAt])

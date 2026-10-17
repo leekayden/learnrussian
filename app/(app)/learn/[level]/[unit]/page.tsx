@@ -61,6 +61,11 @@ export default async function UnitPage({ params }: PageProps<"/learn/[level]/[un
                 <Badge variant="outline">
                   {lesson.grammar.length} note{lesson.grammar.length === 1 ? "" : "s"}
                 </Badge>
+                {l.attempts > 1 ? (
+                  <Badge variant="outline" className="text-muted-foreground">
+                    {l.attempts} attempts
+                  </Badge>
+                ) : null}
                 {l.unlocked ? (
                   <Link
                     href={`/learn/${lv}/${unitData.number}/${i + 1}`}

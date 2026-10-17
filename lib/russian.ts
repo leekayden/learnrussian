@@ -33,6 +33,23 @@ export function stripStress(s: string): string {
   return s.replace(/'/g, "");
 }
 
+/** Display transform honouring the user's stress-mark preference.
+ * Accepts raw (apostrophe) and pre-accented text: "on" renders ударе́ние,
+ * "off" strips the marks while leaving English apostrophes alone. */
+export function renderRu(s: string, showStress: boolean): string {
+  if (showStress) return withStress(s);
+  let out = "";
+  for (const ch of s) {
+    if (ch === ACUTE) continue;
+    if (ch === "'") {
+      const prev = [...out].pop();
+      if (prev && CYRILLIC_VOWELS.includes(prev)) continue;
+    }
+    out += ch;
+  }
+  return out;
+}
+
 /** Normalization for grading typed answers: lowercase, ё→е, trimmed. */
 export function normalizeRu(s: string): string {
   return stripStress(s).toLowerCase().replace(/ё/g, "е").replace(/\s+/g, " ").trim();

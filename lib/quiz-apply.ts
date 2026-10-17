@@ -1,7 +1,11 @@
 import { randomUUID } from "crypto";
 
 import { prisma } from "@/lib/prisma";
-import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
+import {
+  correctAnswerText,
+  isCorrect,
+  type ExerciseResponse,
+} from "@/lib/curriculum/grade";
 import type { Exercise, Level } from "@/lib/curriculum/types";
 import { PASS_LESSON, PASS_TEST } from "@/lib/curriculum/types";
 import {
@@ -34,7 +38,7 @@ export async function recordActivity(
   userId: string,
   localDate: string,
   xp: number,
-  patch: { lessonsDone?: number; reviewsDone?: number },
+  patch: { lessonsDone?: number; reviewsDone?: number; minutes?: number },
 ) {
   const day = new Date(localDate + "T00:00:00Z");
   await prisma.lrDailyActivity.upsert({
@@ -43,11 +47,13 @@ export async function recordActivity(
       userId,
       day,
       xp,
+      minutes: patch.minutes ?? 0,
       lessonsDone: patch.lessonsDone ?? 0,
       reviewsDone: patch.reviewsDone ?? 0,
     },
     update: {
       xp: { increment: xp },
+      minutes: { increment: patch.minutes ?? 0 },
       lessonsDone: { increment: patch.lessonsDone ?? 0 },
       reviewsDone: { increment: patch.reviewsDone ?? 0 },
     },
@@ -93,8 +99,17 @@ async function logAttempts(
       exerciseType: exercise.type,
       correct,
       response: (responses[exercise.id] ?? null) as never,
+      // Self-contained snapshot: drills are generated live, so a bare
+      // exerciseId can't be resolved back to text later.
+      prompt: promptSnapshot(exercise),
+      answer: correctAnswerText(exercise).slice(0, 255) || null,
     })),
   });
+}
+
+function promptSnapshot(exercise: Exercise): string | null {
+  const text = exercise.text.replace(/\{\{blank\}\}/g, "___").replace(/\*\*/g, "");
+  return text ? text.slice(0, 255) : null;
 }
 
 export type ApplyResult = {
@@ -116,6 +131,7 @@ export async function applyLessonResult(
   lessonNumber: number,
   exercises: Exercise[],
   responses: Record<string, ExerciseResponse>,
+  localDate?: string,
 ): Promise<ApplyResult> {
   const { getLesson } = await import("@/lib/curriculum/content");
   const found = getLesson(level, unitNumber, lessonNumber);
@@ -162,7 +178,7 @@ export async function applyLessonResult(
 
   const firstCompletion = completed && existing?.status !== "completed";
   const xpEarned = (firstCompletion ? XP_LESSON : 0) + correct * XP_EXERCISE;
-  const streak = await recordActivity(userId, todayLocal(undefined), xpEarned, {
+  const streak = await recordActivity(userId, todayLocal(localDate), xpEarned, {
     lessonsDone: 1,
   });
 
@@ -211,6 +227,7 @@ export async function applyTestResult(
   testId: string,
   exercises: Exercise[],
   responses: Record<string, ExerciseResponse>,
+  localDate?: string,
 ): Promise<ApplyResult> {
   const { perExercise, correct, score } = await gradeAll(exercises, responses);
   const passed = score >= PASS_TEST;
@@ -246,7 +263,7 @@ export async function applyTestResult(
   await logAttempts(userId, testId, perExercise, responses);
 
   const xpEarned = (isExam ? XP_EXAM : XP_UNIT_TEST) + correct * XP_EXERCISE;
-  const streak = await recordActivity(userId, todayLocal(undefined), xpEarned, {
+  const streak = await recordActivity(userId, todayLocal(localDate), xpEarned, {
     lessonsDone: 1,
   });
   return { score, correct, total: exercises.length, passed, xpEarned, streak: streak ?? 0 };

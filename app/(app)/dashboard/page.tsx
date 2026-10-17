@@ -77,7 +77,9 @@ export default async function DashboardPage() {
             <Flame className="size-4" /> {profile.streakCount}-day streak
           </span>
           <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary">
-            <TrendingUp className="size-4" /> {todayActivity?.xp ?? 0} / {profile.dailyGoalXp} XP today
+            <TrendingUp className="size-4" /> {todayActivity?.xp ?? 0} / {profile.dailyGoalXp} XP
+            {" · "}
+            {todayActivity?.minutes ?? 0} min today
           </span>
         </div>
       </div>

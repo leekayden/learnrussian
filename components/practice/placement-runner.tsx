@@ -12,9 +12,11 @@ import { Button } from "@/components/ui/button";
 export function PlacementRunner({
   exercises,
   submit,
+  showStress = true,
 }: {
   exercises: Exercise[];
   submit: (exercises: Exercise[], responses: Record<string, ExerciseResponse>) => Promise<PlacementResult>;
+  showStress?: boolean;
 }) {
   const [result, setResult] = useState<PlacementResult | null>(null);
 
@@ -47,6 +49,7 @@ export function PlacementRunner({
   return (
     <ExerciseRunner
       exercises={exercises}
+      showStress={showStress}
       submit={async (ex, responses) => {
         const r = await submit(ex, responses);
         setResult(r);

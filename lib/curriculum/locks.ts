@@ -5,7 +5,7 @@ import { PASS_TEST } from "@/lib/curriculum/types";
 export type UnitLocks = {
   unlocked: boolean;
   /** Per lesson index. */
-  lessons: { unlocked: boolean; completed: boolean }[];
+  lessons: { unlocked: boolean; completed: boolean; attempts: number }[];
   testUnlocked: boolean;
   testPassed: boolean;
   testScore: number | null;
@@ -48,7 +48,7 @@ export async function computeLevelLocks(
       .then((p) => p?.unlockAll ?? false),
     prisma.lrLessonProgress.findMany({
       where: { userId, lessonId: { in: lessonIds } },
-      select: { lessonId: true, status: true, bestScore: true },
+      select: { lessonId: true, status: true, bestScore: true, attempts: true },
     }),
   ]);
   const byId = new Map(progress.map((p) => [p.lessonId, p]));
@@ -67,6 +67,7 @@ export async function computeLevelLocks(
       lessons: unit.lessons.map((l) => ({
         unlocked: true,
         completed: byId.get(l.id)?.status === "completed",
+        attempts: byId.get(l.id)?.attempts ?? 0,
       })),
       testUnlocked: true,
       testPassed,
@@ -94,12 +95,13 @@ export async function computeLevelLocks(
     const testPassed = units[i].testPassed;
     units[i].unlocked = previousTestPassed;
     units[i].lessons = unit.lessons.map((l, li) => {
-      if (!previousTestPassed) return { unlocked: false, completed: false };
+      if (!previousTestPassed) return { unlocked: false, completed: false, attempts: 0 };
       const lessonUnlocked =
         li === 0 || byId.get(unit.lessons[li - 1].id)?.status === "completed";
       return {
         unlocked: lessonUnlocked,
         completed: byId.get(l.id)?.status === "completed",
+        attempts: byId.get(l.id)?.attempts ?? 0,
       };
     });
     units[i].testUnlocked = previousTestPassed && units[i].completed;

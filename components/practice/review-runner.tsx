@@ -1,12 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, Ear, Eye, PenLine, Sparkles, X } from "lucide-react";
+import { Ban, Check, Ear, Eye, PenLine, Sparkles, X } from "lucide-react";
 import { toast } from "sonner";
 import type { ReviewItem } from "@/lib/review";
-import { normalizeRu, withStress } from "@/lib/russian";
-import { gradeCard } from "@/app/actions/progress";
+import { normalizeRu, renderRu } from "@/lib/russian";
+import { gradeCard, logStudyMinutes, setCardSuspended } from "@/app/actions/progress";
 import { AudioButton } from "@/components/audio-button";
 import { RuKeyboard } from "@/components/practice/cyrillic-keyboard";
 import { Button } from "@/components/ui/button";
@@ -39,9 +39,11 @@ function kindLabel(kind: ReviewItem["kind"]) {
 export function ReviewRunner({
   items,
   keyboard = true,
+  showStress = true,
 }: {
   items: ReviewItem[];
   keyboard?: boolean;
+  showStress?: boolean;
 }) {
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("prompt");
@@ -50,6 +52,18 @@ export function ReviewRunner({
   const [choice, setChoice] = useState<string | null>(null);
   const [wasCorrect, setWasCorrect] = useState(false);
   const [doneCount, setDoneCount] = useState(0);
+  // Wall-clock study time, logged once when the batch is finished.
+  const [startedAt] = useState(() => Date.now());
+  const minutesLogged = useRef(false);
+
+  useEffect(() => {
+    if (phase !== "done" || minutesLogged.current) return;
+    minutesLogged.current = true;
+    const minutes = Math.min(240, Math.max(0, Math.round((Date.now() - startedAt) / 60000)));
+    if (minutes >= 1) {
+      void logStudyMinutes(minutes, new Date().toLocaleDateString("en-CA")).catch(() => {});
+    }
+  }, [phase]);
 
   const item = items[idx];
 
@@ -106,19 +120,41 @@ export function ReviewRunner({
 
   const meta = kindLabel(item.kind);
 
+  function resetCard() {
+    setPhase("prompt");
+    setTyped("");
+    setBlank("");
+    setChoice(null);
+  }
+
   async function rate(rating: number) {
     try {
-      await gradeCard({ cardId: item.cardId, rating });
+      await gradeCard({
+        cardId: item.cardId,
+        rating,
+        localDate: new Date().toLocaleDateString("en-CA"),
+      });
     } catch {
       toast.error("Could not save the review");
       return;
     }
     setDoneCount((d) => d + 1);
     setIdx((i) => i + 1);
-    setPhase("prompt");
-    setTyped("");
-    setBlank("");
-    setChoice(null);
+    resetCard();
+  }
+
+  /** Bury this card: skipped by review batches until restored on the
+   * progress page. Doesn't count as a review. */
+  async function suspend() {
+    try {
+      await setCardSuspended(item.cardId, true);
+      toast.success("Card suspended — restore it on the Progress page");
+    } catch {
+      toast.error("Could not suspend the card");
+      return;
+    }
+    setIdx((i) => i + 1);
+    resetCard();
   }
 
   function reveal() {
@@ -168,7 +204,7 @@ export function ReviewRunner({
           {item.kind === "recog" ? (
             <>
               <div className="flex items-center gap-2">
-                <span className="text-3xl font-semibold">{withStress(item.accented)}</span>
+                <span className="text-3xl font-semibold">{renderRu(item.accented, showStress)}</span>
                 <AudioButton text={item.bare} audioUrl={item.audio} />
               </div>
               <div className="grid gap-2">
@@ -214,7 +250,7 @@ export function ReviewRunner({
                         "border-green-600 bg-green-500/10",
                     )}
                   >
-                    {withStress(o.label)}
+                    {renderRu(o.label, showStress)}
                   </button>
                 ))}
               </div>
@@ -275,9 +311,12 @@ export function ReviewRunner({
             >
               <div className="flex items-center gap-2 font-medium">
                 {wasCorrect || revealedCorrect ? <Check className="size-4" /> : <X className="size-4" />}
-                {revealedCorrect
-                  ? "Верно!"
-                  : `Answer: ${withStress(item.kind === "cloze" && item.cloze ? item.cloze.answer : item.accented)}`}
+              {revealedCorrect
+                ? "Верно!"
+                : `Answer: ${renderRu(
+                    item.kind === "cloze" && item.cloze ? item.cloze.answer : item.accented,
+                    showStress,
+                  )}`}
               </div>
               {item.senses.length ? (
                 <div className="mt-1 text-muted-foreground">{item.senses.join(", ")}</div>
@@ -299,6 +338,16 @@ export function ReviewRunner({
                   <div className="text-xs text-muted-foreground">{r.hint}</div>
                 </button>
               ))}
+            </div>
+            <div className="flex justify-end">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={suspend}
+                title="Bury this card — it won't come up in reviews until you restore it on the Progress page"
+              >
+                <Ban className="size-3.5" /> Suspend card
+              </Button>
             </div>
           </div>
         )}

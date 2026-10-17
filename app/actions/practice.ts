@@ -5,21 +5,13 @@ import { requireSession } from "@/lib/session";
 import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
 import type { Exercise } from "@/lib/curriculum/types";
 import { XP_EXERCISE } from "@/lib/curriculum/xp";
-
-async function recordActivityXp(userId: string, xp: number) {
-  const now = new Date();
-  const day = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
-  await prisma.lrDailyActivity.upsert({
-    where: { userId_day: { userId, day } },
-    create: { userId, day, xp, lessonsDone: 0, reviewsDone: 0 },
-    update: { xp: { increment: xp } },
-  });
-}
+import { recordActivity, todayLocal } from "@/lib/quiz-apply";
 
 /** Record a free-practice session: attempts + XP, no lesson progress. */
 export async function savePracticeResult(
   exercises: Exercise[],
   responses: Record<string, ExerciseResponse>,
+  localDate?: string,
 ): Promise<{ correct: number; total: number; xpEarned: number }> {
   const session = await requireSession();
   let correct = 0;
@@ -45,7 +37,7 @@ export async function savePracticeResult(
   }
   await prisma.lrExerciseAttempt.createMany({ data: rows });
   const xpEarned = correct * XP_EXERCISE;
-  await recordActivityXp(session.user.id, xpEarned);
+  await recordActivity(session.user.id, todayLocal(localDate), xpEarned, {});
   return { correct, total: exercises.length, xpEarned };
 }
 
@@ -63,9 +55,9 @@ export async function savePlacementResult(
   responses: Record<string, ExerciseResponse>,
 ): Promise<PlacementResult> {
   const session = await requireSession();
-  let a2 = { ok: 0, n: 0 };
-  let b1 = { ok: 0, n: 0 };
-  let b2 = { ok: 0, n: 0 };
+  const a2 = { ok: 0, n: 0 };
+  const b1 = { ok: 0, n: 0 };
+  const b2 = { ok: 0, n: 0 };
   for (const ex of exercises) {
     const ok = isCorrect(ex, responses[ex.id] ?? "");
     const bucket = ex.id.startsWith("a2-") ? a2 : ex.id.startsWith("b1-") ? b1 : b2;

@@ -1,6 +1,6 @@
 # learnrussian — русский шаг за шагом
 
-A structured Russian course from **A2 to C1**: grammar-first lessons, vocabulary
+A structured Russian course from **A2 to C2**: grammar-first lessons, vocabulary
 injected per CEFR level, spaced repetition, and unlimited generated drills —
 built on the [openrussian.org](https://openrussian.org) dictionary dump
 (90,586 words, 1.7M inflected forms, 359k CEFR-tagged sentences).
@@ -32,7 +32,7 @@ BETTER_AUTH_URL="http://localhost:3000"
 
 ## Course structure
 
-4 levels (A2/B1/B2/C1) × 12/12/12/10 units, each unit = 2–5 lessons + unit test
+5 levels (A2/B1/B2/C1/C2) × 12/12/12/10/12 units, each unit = 2–5 lessons + unit test
 (≥80% unlocks the next unit) + level exam. Every lesson follows the same loop:
 
 1. **Notes** — self-contained grammar blocks (rule → table → examples → trap)
@@ -65,6 +65,7 @@ quiz-renderer → `/quizzes/new`. Schema ported in `lib/quiz-schema.ts`.
 
 - Dictionary tables are never written by the app; app tables are prefixed `lr_`
 - Stress in stored text is an ASCII apostrophe after the vowel (`сказа'ть`);
-  render through `withStress()` (safe for mixed English text)
+  render through `renderRu(text, showStress)` which honours the per-user
+  stress-marks setting (`withStress()` is the always-on variant)
 - Typed answers compare via `normalizeRu` (lowercase, ё→е, apostrophes stripped)
 - Next 16: `proxy.ts` (not middleware), `await params/searchParams`

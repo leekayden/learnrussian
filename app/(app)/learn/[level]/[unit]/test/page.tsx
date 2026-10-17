@@ -21,7 +21,7 @@ export default async function UnitTestPage({
       <div className="rounded-xl border bg-card p-8 text-center">
         <p className="font-medium">This unit test is not written yet.</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          It will appear here as soon as the unit's content is complete.
+          It will appear here as soon as the unit&apos;s content is complete.
         </p>
         <Link
           href={`/learn/${lv}/${unitData.number}`}

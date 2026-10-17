@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { withStress } from "@/lib/russian";
+import { requireUser } from "@/lib/session";
 import { searchDictionary } from "@/lib/dictionary";
 import { WordResultRow } from "@/components/word-result-row";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +21,7 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"];
 export default async function DictionaryPage({
   searchParams,
 }: PageProps<"/dictionary">) {
+  const { profile } = await requireUser();
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q : "";
   const type = typeof params.type === "string" ? params.type : "";
@@ -79,7 +80,7 @@ export default async function DictionaryPage({
               {results.length} result{results.length === 1 ? "" : "s"} for «{q}»
             </p>
             {results.map((w) => (
-              <WordResultRow key={w.id} word={w} />
+              <WordResultRow key={w.id} word={w} showStress={!!profile.showStress} />
             ))}
           </div>
         ) : (

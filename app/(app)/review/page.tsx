@@ -16,7 +16,11 @@ export default async function ReviewPage() {
           Spaced repetition: {batch.dueCount} due · {batch.newCount} new in this session.
         </p>
       </div>
-      <ReviewRunner items={batch.items} keyboard={!!profile.showTranslitKeyboard} />
+      <ReviewRunner
+        items={batch.items}
+        keyboard={!!profile.showTranslitKeyboard}
+        showStress={!!profile.showStress}
+      />
     </div>
   );
 }

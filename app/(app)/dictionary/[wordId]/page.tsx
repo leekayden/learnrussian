@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { withStress, posLabel, GENDER_LABELS, type FormTables } from "@/lib/russian";
+import { requireUser } from "@/lib/session";
+import { renderRu, posLabel, GENDER_LABELS, type FormTables } from "@/lib/russian";
 import { getWordDetail } from "@/lib/dictionary";
 import { AudioButton } from "@/components/audio-button";
 import { Badge } from "@/components/ui/badge";
@@ -21,8 +22,12 @@ import {
 
 export default async function WordPage({ params }: PageProps<"/dictionary/[wordId]">) {
   const { wordId } = await params;
-  const word = await getWordDetail(Number(wordId));
+  const [{ profile }, word] = await Promise.all([
+    requireUser(),
+    getWordDetail(Number(wordId)),
+  ]);
   if (!word) notFound();
+  const show = !!profile.showStress;
 
   return (
     <div className="space-y-6">
@@ -33,13 +38,29 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <h1 className="text-4xl font-semibold tracking-tight">{withStress(word.accented)}</h1>
+        <h1 className="text-4xl font-semibold tracking-tight">{renderRu(word.accented, show)}</h1>
         <AudioButton text={word.bare} audioUrl={word.audio} size="icon-lg" />
         <Badge variant="outline">{posLabel(word.type)}</Badge>
         {word.level ? <Badge variant="secondary">{word.level}</Badge> : null}
         {word.gender ? <Badge variant="secondary">{GENDER_LABELS[word.gender]}</Badge> : null}
         {word.animate ? <Badge variant="secondary">animate</Badge> : null}
         {word.aspect ? <Badge variant="secondary">{word.aspect}</Badge> : null}
+        {word.aspectPartners.map((p) => (
+          <Link key={p.id} href={`/dictionary/${p.id}`} title="Aspect pair">
+            <Badge
+              variant="secondary"
+              className="transition-colors hover:bg-accent"
+            >
+              pair: {renderRu(p.accented, show)}
+            </Badge>
+          </Link>
+        ))}
+        {word.incomparable ? <Badge variant="outline">no comparative</Badge> : null}
+        {word.tags.map((t) => (
+          <Badge key={t} variant="outline" className="text-muted-foreground">
+            {t}
+          </Badge>
+        ))}
       </div>
 
       {word.usageEn ? <p className="max-w-2xl text-sm text-muted-foreground">{word.usageEn}</p> : null}
@@ -61,7 +82,7 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
                 {s.info ? <div className="text-sm text-muted-foreground">{s.info}</div> : null}
                 {s.exampleRu ? (
                   <div className="mt-1 border-l-2 pl-3 text-sm">
-                    <span>{withStress(s.exampleRu)}</span>
+                    <span>{renderRu(s.exampleRu, show)}</span>
                     {s.exampleTl ? (
                       <span className="block text-muted-foreground">{s.exampleTl}</span>
                     ) : null}
@@ -73,7 +94,7 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
         </CardContent>
       </Card>
 
-      <FormsSection tables={word.forms} type={word.type} />
+      <FormsSection tables={word.forms} type={word.type} show={show} />
 
       {/* Example sentences */}
       {word.sentences.length > 0 ? (
@@ -84,7 +105,7 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
           <CardContent className="space-y-3">
             {word.sentences.map((s) => (
               <div key={s.id} className="border-l-2 pl-3 text-sm">
-                <span>{withStress(s.ru)}</span>
+                <span>{renderRu(s.ru, show)}</span>
                 <span className="block text-muted-foreground">{s.en}</span>
               </div>
             ))}
@@ -107,7 +128,7 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
                 title={r.relation}
               >
                 {r.relation === "synonym" ? "≈ " : r.relation === "antonym" ? "≠ " : ""}
-                {withStress(r.word.accented)}
+                {renderRu(r.word.accented, show)}
               </Link>
             ))}
           </CardContent>
@@ -127,7 +148,7 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
                 href={`/dictionary/${d.id}`}
                 className="rounded-md border px-2.5 py-1.5 text-sm transition-colors hover:bg-accent"
               >
-                {withStress(d.accented)}
+                {renderRu(d.accented, show)}
               </Link>
             ))}
           </CardContent>
@@ -137,7 +158,15 @@ export default async function WordPage({ params }: PageProps<"/dictionary/[wordI
   );
 }
 
-function FormsSection({ tables, type }: { tables: FormTables; type: string | null }) {
+function FormsSection({
+  tables,
+  type,
+  show,
+}: {
+  tables: FormTables;
+  type: string | null;
+  show: boolean;
+}) {
   const hasAny =
     tables.nounSingular ||
     tables.nounPlural ||
@@ -159,7 +188,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
             <CardTitle className="text-base">Singular</CardTitle>
           </CardHeader>
           <CardContent>
-            <CaseTable rows={tables.nounSingular} />
+            <CaseTable rows={tables.nounSingular} show={show} />
           </CardContent>
         </Card>
       ) : null}
@@ -169,7 +198,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
             <CardTitle className="text-base">Plural</CardTitle>
           </CardHeader>
           <CardContent>
-            <CaseTable rows={tables.nounPlural} />
+            <CaseTable rows={tables.nounPlural} show={show} />
           </CardContent>
         </Card>
       ) : null}
@@ -194,10 +223,10 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
                 {tables.adjectiveGrid.map((r) => (
                   <TableRow key={r.case}>
                     <TableCell className="text-muted-foreground">{r.case}</TableCell>
-                    <TableCell>{r.m ? withStress(r.m.form) : "—"}</TableCell>
-                    <TableCell>{r.f ? withStress(r.f.form) : "—"}</TableCell>
-                    <TableCell>{r.n ? withStress(r.n.form) : "—"}</TableCell>
-                    <TableCell>{r.pl ? withStress(r.pl.form) : "—"}</TableCell>
+                    <TableCell>{r.m ? renderRu(r.m.form, show) : "—"}</TableCell>
+                    <TableCell>{r.f ? renderRu(r.f.form, show) : "—"}</TableCell>
+                    <TableCell>{r.n ? renderRu(r.n.form, show) : "—"}</TableCell>
+                    <TableCell>{r.pl ? renderRu(r.pl.form, show) : "—"}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -212,7 +241,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
             <CardTitle className="text-base">Present / future</CardTitle>
           </CardHeader>
           <CardContent>
-            <CaseTable rows={tables.verbPresentFuture} />
+            <CaseTable rows={tables.verbPresentFuture} show={show} />
           </CardContent>
         </Card>
       ) : null}
@@ -222,7 +251,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
             <CardTitle className="text-base">Past</CardTitle>
           </CardHeader>
           <CardContent>
-            <CaseTable rows={tables.verbPast} />
+            <CaseTable rows={tables.verbPast} show={show} />
           </CardContent>
         </Card>
       ) : null}
@@ -238,6 +267,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
                 ...(tables.verbParticiples ?? []),
                 ...(tables.verbGerunds ?? []),
               ]}
+              show={show}
             />
           </CardContent>
         </Card>
@@ -250,6 +280,7 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
           <CardContent>
             <CaseTable
               rows={[...(tables.adjectiveShort ?? []), ...(tables.adjectiveComparative ?? [])]}
+              show={show}
             />
           </CardContent>
         </Card>
@@ -260,8 +291,10 @@ function FormsSection({ tables, type }: { tables: FormTables; type: string | nul
 
 function CaseTable({
   rows,
+  show,
 }: {
   rows: { label: string; form: string; formBare: string }[];
+  show: boolean;
 }) {
   return (
     <Table>
@@ -275,7 +308,7 @@ function CaseTable({
         {rows.map((r) => (
           <TableRow key={`${r.label}-${r.form}`}>
             <TableCell className="text-muted-foreground">{r.label}</TableCell>
-            <TableCell className="font-medium">{withStress(r.form)}</TableCell>
+            <TableCell className="font-medium">{renderRu(r.form, show)}</TableCell>
           </TableRow>
         ))}
       </TableBody>

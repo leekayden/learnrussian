@@ -1,6 +1,5 @@
 import { requireUser } from "@/lib/session";
 import { generateDrills } from "@/lib/curriculum/generate";
-import { savePracticeResult } from "@/app/actions/practice";
 import { PracticeHub } from "@/components/practice/practice-hub";
 
 export const metadata = { title: "Practice — learnrussian" };
@@ -40,7 +39,11 @@ export default async function PracticePage() {
           Free drills beyond the curriculum — pick a muscle and train it.
         </p>
       </div>
-      <PracticeHub start={start} keyboard={!!profile.showTranslitKeyboard} />
+      <PracticeHub
+        start={start}
+        keyboard={!!profile.showTranslitKeyboard}
+        showStress={!!profile.showStress}
+      />
     </div>
   );
 }

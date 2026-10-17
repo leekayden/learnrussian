@@ -26,9 +26,11 @@ const KINDS: { id: DrillKind; title: string; description: string }[] = [
 export function PracticeHub({
   start,
   keyboard = true,
+  showStress = true,
 }: {
   start: (kind: DrillKind, level: string) => Promise<Exercise[]>;
   keyboard?: boolean;
+  showStress?: boolean;
 }) {
   const [kind, setKind] = useState<DrillKind | null>(null);
   const [level, setLevel] = useState("A2");
@@ -59,8 +61,8 @@ export function PracticeHub({
     return (
       <ExerciseRunner
         exercises={exercises}
-        submit={async (_ex, responses) => {
-          const r = await savePracticeResult(exercises, responses);
+        submit={async (_ex, responses, localDate) => {
+          const r = await savePracticeResult(exercises, responses, localDate);
           const result: SubmitResult = {
             ...r,
             score: Math.round((r.correct / r.total) * 100) || 0,
@@ -70,6 +72,7 @@ export function PracticeHub({
         }}
         exportTitle={`practice-${kind}-${level}`}
         keyboard={keyboard}
+        showStress={showStress}
         onDoneHref="/practice"
         onDoneLabel="Another drill →"
         passPercent={100}

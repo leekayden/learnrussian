@@ -1,10 +1,12 @@
+import { requireUser } from "@/lib/session";
 import { savePlacementResult } from "@/app/actions/practice";
 import { placement } from "@/content/placement";
 import { PlacementRunner } from "@/components/practice/placement-runner";
 
 export const metadata = { title: "Placement — learnrussian" };
 
-export default function PlacementPage() {
+export default async function PlacementPage() {
+  const { profile } = await requireUser();
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div>
@@ -14,7 +16,11 @@ export default function PlacementPage() {
           freely. We&apos;ll recommend a starting level.
         </p>
       </div>
-      <PlacementRunner exercises={placement} submit={savePlacementResult} />
+      <PlacementRunner
+        exercises={placement}
+        submit={savePlacementResult}
+        showStress={!!profile.showStress}
+      />
     </div>
   );
 }

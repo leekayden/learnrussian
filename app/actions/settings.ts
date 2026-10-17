@@ -9,7 +9,6 @@ export async function updateSettings(
     showStress?: boolean;
     showTranslitKeyboard?: boolean;
     unlockAll?: boolean;
-    timezone?: string;
   },
 ): Promise<{ ok: true }> {
   const session = await requireSession();

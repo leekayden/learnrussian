@@ -14,10 +14,16 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import type { Exercise, Option } from "@/lib/curriculum/types";
-import { isCorrect, type ExerciseResponse } from "@/lib/curriculum/grade";
+import {
+  correctAnswerText,
+  isCorrect,
+  type ExerciseResponse,
+} from "@/lib/curriculum/grade";
 import { downloadFilename, exercisesToRendererQuiz } from "@/lib/quiz-export";
 import { startExternalQuiz } from "@/app/actions/external";
+import { logStudyMinutes } from "@/app/actions/progress";
 import type { ExternalQuizKind } from "@/lib/external/quiz-builders";
+import { renderRu } from "@/lib/russian";
 import { RuKeyboard } from "@/components/practice/cyrillic-keyboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,8 +41,17 @@ export type SubmitResult = {
 };
 
 /** Minimal inline markdown: **bold**, *italic*, > muted line. */
-export function Md({ text, className }: { text: string; className?: string }) {
-  const lines = text.split("\n");
+export function Md({
+  text,
+  className,
+  stress = true,
+}: {
+  text: string;
+  className?: string;
+  stress?: boolean;
+}) {
+  const shown = renderRu(text, stress);
+  const lines = shown.split("\n");
   return (
     <div className={className}>
       {lines.map((line, li) => {
@@ -82,18 +97,22 @@ export function ExerciseRunner({
   onDoneLabel,
   passPercent = 70,
   keyboard = true,
+  showStress = true,
   externalQuiz,
 }: {
   exercises: Exercise[];
   submit: (
     exercises: Exercise[],
     responses: Record<string, ExerciseResponse>,
+    localDate: string,
   ) => Promise<SubmitResult>;
   exportTitle?: string;
   onDoneHref?: string;
   onDoneLabel?: string;
   passPercent?: number;
   keyboard?: boolean;
+  /** Render ударе́ние marks on Russian text (from the stress-marks setting). */
+  showStress?: boolean;
   /** Offer taking this quiz in the sibling quiz-renderer app instead. */
   externalQuiz?: { kind: ExternalQuizKind; refId: string };
 }) {
@@ -107,6 +126,22 @@ export function ExerciseRunner({
   const [submitting, setSubmitting] = useState(false);
   const [externalPending, setExternalPending] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  // Wall-clock time in this session; only the delta since the last finished
+  // attempt is logged, so retakes don't double-count.
+  const [startedAt] = useState(() => Date.now());
+  const loggedMinutes = useRef(0);
+
+  function todayLocal(): string {
+    return new Date().toLocaleDateString("en-CA");
+  }
+
+  function logElapsed() {
+    const total = Math.min(240, Math.max(0, Math.round((Date.now() - startedAt) / 60000)));
+    const delta = total - loggedMinutes.current;
+    if (delta < 1) return;
+    loggedMinutes.current = total;
+    void logStudyMinutes(delta, todayLocal()).catch(() => {});
+  }
 
   const ex = exercises[idx];
   const response = ex ? responses[ex.id] : undefined;
@@ -153,7 +188,8 @@ export function ExerciseRunner({
       }
     }
     try {
-      const r = await submit(exercises, finalResponses);
+      const r = await submit(exercises, finalResponses, todayLocal());
+      logElapsed();
       setResult(r);
       setFinished(true);
     } catch {
@@ -304,6 +340,7 @@ export function ExerciseRunner({
           inputRef={inputRef}
           disabled={checked}
           keyboard={keyboard}
+          showStress={showStress}
         />
 
         {checked ? (
@@ -319,10 +356,10 @@ export function ExerciseRunner({
               {correctNow ? <Check className="size-4" /> : <X className="size-4" />}
               {correctNow ? "Верно!" : "Not quite."}
             </div>
-            {!correctNow ? <CorrectAnswer exercise={ex} /> : null}
+            {!correctNow ? <CorrectAnswer exercise={ex} showStress={showStress} /> : null}
             {ex.explanation ? (
               <div className="mt-1 text-muted-foreground">
-                <Md text={ex.explanation} />
+                <Md text={ex.explanation} stress={showStress} />
               </div>
             ) : null}
           </div>
@@ -345,42 +382,14 @@ export function ExerciseRunner({
   );
 }
 
-function CorrectAnswer({ exercise }: { exercise: Exercise }) {
-  let answer = "";
-  switch (exercise.type) {
-    case "single":
-      answer = exercise.options.find((o) => o.id === exercise.answer)?.label ?? "";
-      break;
-    case "multiple":
-      answer = exercise.options
-        .filter((o) => exercise.answers.includes(o.id))
-        .map((o) => o.label)
-        .join(", ");
-      break;
-    case "true-false":
-      answer = exercise.answer ? "True" : "False";
-      break;
-    case "short-answer":
-      answer = exercise.answer;
-      break;
-    case "ordering":
-      answer = exercise.answer
-        .map((id) => exercise.items.find((it) => it.id === id)?.label ?? id)
-        .join(" ");
-      break;
-    case "fill-blank":
-      answer = exercise.answers.join(" / ");
-      break;
-    case "matching":
-      answer = Object.entries(exercise.answer)
-        .map(([p, r]) => {
-          const prompt = exercise.prompts.find((x) => x.id === p)?.label ?? p;
-          const resp = exercise.responses.find((x) => x.id === r)?.label ?? r;
-          return `${prompt} → ${resp}`;
-        })
-        .join("; ");
-      break;
-  }
+function CorrectAnswer({
+  exercise,
+  showStress,
+}: {
+  exercise: Exercise;
+  showStress: boolean;
+}) {
+  const answer = renderRu(correctAnswerText(exercise), showStress);
   return (
     <div className="mt-1">
       <span className="font-medium">Answer: </span>
@@ -403,6 +412,7 @@ function ExerciseView({
   inputRef,
   disabled,
   keyboard,
+  showStress,
 }: {
   exercise: Exercise;
   response: ExerciseResponse | undefined;
@@ -417,12 +427,13 @@ function ExerciseView({
   inputRef: React.RefObject<HTMLInputElement | null>;
   disabled: boolean;
   keyboard: boolean;
+  showStress: boolean;
 }) {
   switch (exercise.type) {
     case "single":
       return (
         <div className="space-y-2">
-          <Md text={exercise.text} className="font-medium" />
+          <Md text={exercise.text} className="font-medium" stress={showStress} />
           {exercise.options.map((o) => (
             <button
               key={o.id}
@@ -440,7 +451,7 @@ function ExerciseView({
                   response === o.id && "border-[5px] border-primary",
                 )}
               />
-              <Md text={o.label} />
+              <Md text={o.label} stress={showStress} />
             </button>
           ))}
         </div>
@@ -448,7 +459,7 @@ function ExerciseView({
     case "multiple":
       return (
         <div className="space-y-2">
-          <Md text={exercise.text} className="font-medium" />
+          <Md text={exercise.text} className="font-medium" stress={showStress} />
           <p className="text-xs text-muted-foreground">Select all that apply.</p>
           {exercise.options.map((o) => {
             const selected = Array.isArray(response) && response.includes(o.id);
@@ -476,7 +487,7 @@ function ExerciseView({
                 >
                   {selected ? <Check className="size-3" /> : null}
                 </span>
-                <Md text={o.label} />
+                <Md text={o.label} stress={showStress} />
               </button>
             );
           })}
@@ -485,7 +496,7 @@ function ExerciseView({
     case "true-false":
       return (
         <div className="space-y-3">
-          <Md text={exercise.text} className="font-medium" />
+          <Md text={exercise.text} className="font-medium" stress={showStress} />
           <div className="flex gap-2">
             {[true, false].map((v) => (
               <Button
@@ -503,7 +514,7 @@ function ExerciseView({
       );
     case "short-answer": {
       const value = typeof response === "string" ? response : "";
-      return <ShortAnswerView exercise={exercise} value={value} onChange={onResponse} checked={checked} correct={correct} disabled={disabled} keyboard={keyboard} />;
+      return <ShortAnswerView exercise={exercise} value={value} onChange={onResponse} checked={checked} correct={correct} disabled={disabled} keyboard={keyboard} showStress={showStress} />;
     }
     case "ordering": {
       const order = Array.isArray(response) ? response : exercise.items.map((i) => i.id);
@@ -519,7 +530,7 @@ function ExerciseView({
       }
       return (
         <div className="space-y-2">
-          <Md text={exercise.text} className="font-medium" />
+          <Md text={exercise.text} className="font-medium" stress={showStress} />
           <p className="text-xs text-muted-foreground">Put the words in the right order.</p>
           <div className="space-y-1.5">
             {items.map((item, i) => (
@@ -527,7 +538,7 @@ function ExerciseView({
                 key={item.id}
                 className="flex items-center justify-between gap-2 rounded-lg border px-3 py-2"
               >
-                <span>{item.label}</span>
+                <span>{renderRu(item.label, showStress)}</span>
                 <span className="flex gap-1">
                   <Button
                     type="button"
@@ -576,7 +587,7 @@ function ExerciseView({
                 />
               ) : (
                 <span key={i} className="whitespace-pre-wrap">
-                  {inline(part.text)}
+                  {inline(renderRu(part.text, showStress))}
                 </span>
               ),
             )}
@@ -590,10 +601,10 @@ function ExerciseView({
     case "matching":
       return (
         <div className="space-y-2">
-          <Md text={exercise.text} className="font-medium" />
+          <Md text={exercise.text} className="font-medium" stress={showStress} />
           {exercise.prompts.map((p) => (
             <div key={p.id} className="flex items-center justify-between gap-3">
-              <span className="text-sm">{p.label}</span>
+              <span className="text-sm">{renderRu(p.label, showStress)}</span>
               <select
                 className="w-48 rounded-md border bg-background px-2 py-1.5 text-sm"
                 value={(typeof response === "object" && response !== null && !Array.isArray(response) ? response[p.id] : "") ?? ""}
@@ -610,7 +621,7 @@ function ExerciseView({
                 <option value="">— choose —</option>
                 {exercise.responses.map((r) => (
                   <option key={r.id} value={r.id}>
-                    {r.label}
+                    {renderRu(r.label, showStress)}
                   </option>
                 ))}
               </select>
@@ -631,6 +642,7 @@ function ShortAnswerView({
   correct,
   disabled,
   keyboard,
+  showStress,
 }: {
   exercise: Extract<Exercise, { type: "short-answer" }>;
   value: string;
@@ -639,10 +651,11 @@ function ShortAnswerView({
   correct: boolean;
   disabled: boolean;
   keyboard: boolean;
+  showStress: boolean;
 }) {
   return (
     <div className="space-y-2">
-      <Md text={exercise.text} className="font-medium" />
+      <Md text={exercise.text} className="font-medium" stress={showStress} />
       <Input
         value={value}
         disabled={disabled}

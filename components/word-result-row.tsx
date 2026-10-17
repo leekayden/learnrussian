@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { withStress, posLabel } from "@/lib/russian";
+import { renderRu, posLabel } from "@/lib/russian";
 import type { SearchResult } from "@/lib/dictionary";
 import { Badge } from "@/components/ui/badge";
 
-export function WordResultRow({ word }: { word: SearchResult }) {
+export function WordResultRow({
+  word,
+  showStress = true,
+}: {
+  word: SearchResult;
+  showStress?: boolean;
+}) {
   return (
     <Link
       href={`/dictionary/${word.id}`}
@@ -11,7 +17,7 @@ export function WordResultRow({ word }: { word: SearchResult }) {
     >
       <div className="min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-lg font-medium">{withStress(word.accented)}</span>
+          <span className="text-lg font-medium">{renderRu(word.accented, showStress)}</span>
           {word.level ? <Badge variant="secondary">{word.level}</Badge> : null}
         </div>
         <div className="truncate text-sm text-muted-foreground">

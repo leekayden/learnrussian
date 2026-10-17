@@ -19,7 +19,7 @@ export default async function LevelExamPage(
       <div className="rounded-xl border bg-card p-8 text-center">
         <p className="font-medium">The {LEVEL_LABELS[lv]} exam is not written yet.</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          It unlocks after all unit tests are passed, once the level's content is complete.
+          It unlocks after all unit tests are passed, once the level&apos;s content is complete.
         </p>
         <Link href={`/learn/${lv}`} className="mt-4 inline-block text-sm text-primary hover:underline">
           ← Back to the level

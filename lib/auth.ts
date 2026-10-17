@@ -10,11 +10,6 @@ export const auth = betterAuth({
     updateAge: 60 * 60 * 24, // refresh once a day
     cookieCache: { enabled: true, maxAge: 60 * 5 },
   },
-  user: {
-    additionalFields: {
-      role: { type: "string", defaultValue: "USER", input: false },
-    },
-  },
   trustedOrigins: [
     process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
     "http://localhost:*",

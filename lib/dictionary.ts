@@ -247,6 +247,23 @@ export async function getWordDetail(id: number) {
     })),
   ];
 
+  // verbs.partner holds a semicolon-separated list of the aspect pair,
+  // stress-marked ("сказа'ть;говори'ть") — resolve each to a word entry.
+  let aspectPartners: { id: number; bare: string; accented: string }[] = [];
+  const partnerRaw = (word.verb?.partner ?? "")
+    .split(";")
+    .map((p) => p.trim())
+    .filter(Boolean);
+  if (partnerRaw.length) {
+    const candidates = [...new Set(partnerRaw.flatMap((p) => [p, stripStress(p)]))];
+    aspectPartners = await prisma.word.findMany({
+      where: { bare: { in: candidates }, disabled: false },
+      select: { id: true, bare: true, accented: true },
+      orderBy: [{ rank: { sort: "asc", nulls: "last" } }, { bare: "asc" }],
+      take: 3,
+    });
+  }
+
   return {
     id: word.id,
     bare: word.bare,
@@ -260,6 +277,7 @@ export async function getWordDetail(id: number) {
     animate: word.noun?.animate ?? null,
     aspect: word.verb?.aspect ?? null,
     aspectPartner: word.verb?.partner ?? null,
+    aspectPartners,
     incomparable: word.adjective?.incomparable ?? null,
     senses: word.senses.map((s) => ({
       tl: s.tl,

@@ -52,6 +52,51 @@ export function isCorrect(ex: Exercise, response: ExerciseResponse): boolean {
   }
 }
 
+/** Human-readable correct answer, shared by the runner's feedback panel
+ * and the server-side attempt log ("recent slips"). */
+export function correctAnswerText(ex: Exercise): string {
+  switch (ex.type) {
+    case "single":
+      return ex.options.find((o) => o.id === ex.answer)?.label ?? "";
+    case "multiple":
+      return ex.options
+        .filter((o) => ex.answers.includes(o.id))
+        .map((o) => o.label)
+        .join(", ");
+    case "true-false":
+      return ex.answer ? "True" : "False";
+    case "short-answer":
+      return ex.answer;
+    case "ordering":
+      return ex.answer
+        .map((id) => ex.items.find((it) => it.id === id)?.label ?? id)
+        .join(" ");
+    case "fill-blank":
+      return ex.answers.join(" / ");
+    case "matching":
+      return Object.entries(ex.answer)
+        .map(([p, r]) => {
+          const prompt = ex.prompts.find((x) => x.id === p)?.label ?? p;
+          const resp = ex.responses.find((x) => x.id === r)?.label ?? r;
+          return `${prompt} → ${resp}`;
+        })
+        .join("; ");
+    default:
+      return "";
+  }
+}
+
+/** Compact display of what the user actually answered. */
+export function responseText(response: ExerciseResponse): string {
+  if (Array.isArray(response)) return response.join(" ");
+  if (typeof response === "object" && response !== null) {
+    return Object.entries(response)
+      .map(([p, r]) => `${p} → ${r}`)
+      .join("; ");
+  }
+  return String(response);
+}
+
 /** Split a fill-blank text into [before, "{{blank}}", between, ...] segments. */
 export function fillBlankSegments(text: string): { before: string; blanks: string[] } {
   const blanks: string[] = [];

@@ -9,7 +9,7 @@ import { submitLesson } from "@/app/actions/progress";
 import { ExternalResultBanner } from "@/components/external-result-banner";
 import { ExerciseRunner, Md } from "@/components/practice/exercise-runner";
 import { AudioButton } from "@/components/audio-button";
-import { withStress, GENDER_LABELS } from "@/lib/russian";
+import { renderRu, GENDER_LABELS } from "@/lib/russian";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lock, Lightbulb } from "lucide-react";
@@ -29,6 +29,7 @@ export default async function LessonPage({
   const { unit: unitData, lesson } = found;
 
   const { user, profile: lessonProfile } = await requireUser();
+  const showStress = !!lessonProfile.showStress;
   const locks = await computeLevelLocks(getLevel(lv), user.id);
   const lock = locks.units[unitData.number - 1];
   const lessonLock = lock?.lessons[lessonNumber - 1];
@@ -88,15 +89,15 @@ export default async function LessonPage({
                     <span className="font-medium text-emerald-700 dark:text-emerald-400">
                       In plain terms:{" "}
                     </span>
-                    {block.plain}
+                    {renderRu(block.plain, showStress)}
                   </p>
                 </div>
               ) : null}
-              <Md text={block.body} />
+              <Md text={block.body} stress={showStress} />
               {block.why ? (
                 <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 py-2 text-sm">
                   <span className="font-medium text-primary">Why it works: </span>
-                  <Md text={block.why} />
+                  <Md text={block.why} stress={showStress} />
                 </div>
               ) : null}
               {block.table ? (
@@ -128,7 +129,7 @@ export default async function LessonPage({
                                   : "px-3 py-1.5 font-medium"
                               }
                             >
-                              {cell}
+                              {renderRu(cell, showStress)}
                             </td>
                           ))}
                         </tr>
@@ -141,7 +142,7 @@ export default async function LessonPage({
                 <div className="space-y-1.5">
                   {block.examples.map((e, ei) => (
                     <div key={ei} className="border-l-2 pl-3 text-sm">
-                      {withStress(e.ru)}
+                      {renderRu(e.ru, showStress)}
                       <span className="block text-muted-foreground">{e.en}</span>
                     </div>
                   ))}
@@ -150,7 +151,7 @@ export default async function LessonPage({
               {block.tip ? (
                 <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm">
                   <span className="font-medium">⚠ Watch out: </span>
-                  {block.tip}
+                  {renderRu(block.tip, showStress)}
                 </div>
               ) : null}
             </CardContent>
@@ -173,7 +174,7 @@ export default async function LessonPage({
               >
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg font-medium">{withStress(w.accented)}</span>
+                    <span className="text-lg font-medium">{renderRu(w.accented, showStress)}</span>
                     {w.gender ? (
                       <Badge variant="secondary">{GENDER_LABELS[w.gender]}</Badge>
                     ) : null}
@@ -201,6 +202,7 @@ export default async function LessonPage({
           exercises={exercises}
           submit={submit}
           keyboard={!!lessonProfile.showTranslitKeyboard}
+          showStress={showStress}
           externalQuiz={{ kind: "lesson", refId: lesson.id }}
           exportTitle={`${lv}-u${String(unitNumber).padStart(2, "0")}-l${lessonNumber} ${lesson.title}`}
           onDoneHref={
